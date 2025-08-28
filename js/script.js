@@ -1101,3 +1101,113 @@ window.addEventListener('resize', function() {
 //     initSimpleMobileMenu();
 //     console.log('Enkel mobile menu (deaktivert)');
 // });
+/* === Fade/Reveal System (no CSS file edits needed) === */
+(function initRevealSystem(){
+  if (window.__revealSystemInit) return;
+  window.__revealSystemInit = true;
+
+  // 1) Inject styles & keyframes
+  const style = document.createElement('style');
+  style.setAttribute('data-reveal-styles','1');
+  style.textContent = `
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-base { transition: none !important; animation: none !important; opacity: 1 !important; transform: none !important; filter: none !important; }
+    }
+
+    .reveal-base{opacity:0; will-change: transform, opacity, filter; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1), filter .7s ease; filter: blur(2px);}
+    .reveal-in{opacity:1; transform: translateY(0); filter: blur(0);}
+
+    /* Variants */
+    .reveal-fade-up{transform: translateY(24px);}
+    .reveal-fade-down{transform: translateY(-24px);}
+    .reveal-fade-left{transform: translateX(24px);}
+    .reveal-fade-right{transform: translateX(-24px);}
+    .reveal-scale-in{transform: scale(.96);}
+
+    /* Optional extras via data-anim="...+pop" or "...+soft" */
+    .reveal-pop { transition-timing-function: cubic-bezier(.18,.89,.32,1.28) !important; }
+    .reveal-soft { transition-duration: .9s !important; }
+
+    /* Page-load helper for hero */
+    .pl-initial{opacity:0; transform: translateY(12px); filter: blur(2px);}
+    .pl-in{opacity:1; transform:none; filter:none; transition: opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1), filter .7s ease;}
+  `;
+  document.head.appendChild(style);
+
+  // 2) Mark elements
+  function prep(el){
+    if (el.dataset.revealReady === '1') return;
+    el.dataset.revealReady = '1';
+
+    const anim = (el.dataset.anim || 'fade-up').toLowerCase();
+    el.classList.add('reveal-base');
+
+    // support composable flags like "fade-up+pop" or "fade-left+soft"
+    const parts = anim.split('+');
+    parts.forEach(p=>{
+      const key = p.trim();
+      if (!key) return;
+      const map = {
+        'fade-up':'reveal-fade-up',
+        'fade-down':'reveal-fade-down',
+        'fade-left':'reveal-fade-left',
+        'fade-right':'reveal-fade-right',
+        'scale-in':'reveal-scale-in',
+        'pop':'reveal-pop',
+        'soft':'reveal-soft'
+      };
+      el.classList.add(map[key] || 'reveal-fade-up');
+    });
+
+    // per-element delay
+    if (el.dataset.delay){
+      const ms = parseInt(el.dataset.delay,10) || 0;
+      el.style.transitionDelay = `${ms}ms`;
+    }
+  }
+
+  // 3) IntersectionObserver for scroll reveal
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if (entry.isIntersecting){
+        const el = entry.target;
+
+        // stagger via container: data-stagger on parent sets step in ms
+        const parent = el.closest('[data-stagger]');
+        const step = parent ? (parseInt(parent.dataset.stagger,10) || 80) : 0;
+        const idx = parent ? Array.from(parent.querySelectorAll('[data-anim]')).indexOf(el) : 0;
+        const existing = parseFloat((el.style.transitionDelay||'0ms').replace('ms','')) || 0;
+        const totalDelay = existing + (step * Math.max(idx,0));
+        if (totalDelay) el.style.transitionDelay = `${totalDelay}ms`;
+
+        requestAnimationFrame(()=> el.classList.add('reveal-in'));
+        io.unobserve(el);
+      }
+    });
+  }, {rootMargin: '0px 0px -10% 0px', threshold: 0.12});
+
+  // 4) Boot: prepare & observe
+  function boot(){
+    document.querySelectorAll('[data-anim]').forEach(el=>{ prep(el); io.observe(el); });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', boot, {once:true});
+  } else {
+    boot();
+  }
+
+  // 5) Page‑load hero intro (optional)
+  function pageLoadIntro(){
+    const group = document.querySelectorAll('[data-pl]');
+    if (!group.length) return;
+    group.forEach((el,i)=>{
+      el.classList.add('pl-initial');
+      // allow css to apply
+      setTimeout(()=>{
+        el.style.transitionDelay = `${(parseInt(el.dataset.pl,10) || (i*80))}ms`;
+        el.classList.add('pl-in');
+      }, 30);
+    });
+  }
+  window.addEventListener('load', pageLoadIntro, {once:true});
+})();
