@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Kontakt - Ararat Skredder</title>
+  <meta name="description" content="Kontakt Ararat Skredder for skreddersøm og reparasjon i Oslo. Ring 48 18 85 52 eller besøk oss i Torggata 8." />
+  <meta name="keywords" content="kontakt, telefon, adresse, Oslo, skredder, åpningstider" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+
+<header class="fade-in-start">
+  <nav class="container">
+    <div class="logo">
+      <a href="/">
+        <h2>Ararat Skredder</h2>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Hjem</a></li>
+      <li><a href="tjenester.html">Tjenester</a></li>
+      <li><a href="om-oss.html">Om Oss</a></li>
+      <li><a href="galleri.html">Galleri</a></li>
+      <li><a href="kontakt.html" class="navbar-cta active">Kontakt oss</a></li>
+    </ul>
+    <button class="mobile-menu-button" aria-label="Åpne meny">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+<section class="page-header">
+  <div class="container">
+    <h1 class="section-title" data-animate="fade-up">Kontakt Oss</h1>
+    <p data-animate="fade-up" data-delay="100">Vi er her for å hjelpe deg med alle dine skredderbehov</p>
+  </div>
+</section>
+
+<section class="contact-main">
+  <div class="container">
+    <div class="contact-intro animate-on-scroll">
+      <h2>Be om vårt gunstige prisoverslag nå!</h2>
+      <p>Vi er klare til å gi deg et prisoverslag skreddersydd etter dine behov. Fyll ut skjemaet under eller bruk kontaktinformasjonen til høyre for å komme i kontakt med oss.</p>
+    </div>
+    
+    <div class="contact-content">
+      <div class="contact-form-section">
+        <form id="contactForm" class="contact-form">
+          <div class="form-group">
+            <label for="name">Navn *</label>
+            <input type="text" id="name" name="name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-post *</label>
+            <input type="email" id="email" name="email" required />
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Telefon</label>
+            <input type="tel" id="phone" name="phone" />
+          </div>
+
+          <div class="form-group">
+            <label for="service">Tjeneste</label>
+            <select id="service" name="service">
+              <option value="">Velg tjeneste...</option>
+              <option value="dresser">Målsøm av dresser</option>
+              <option value="reparasjon">Endringer & reparasjon</option>
+              <option value="omforming">Omforming av plagg</option>
+              <option value="skjorter">Skjorter & bluser</option>
+              <option value="skomakeri">Skomakeri</option>
+              <option value="annet">Annet</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="message">Melding *</label>
+            <textarea id="message" name="message" rows="5" placeholder="Beskriv ditt prosjekt eller behov..." required></textarea>
+          </div>
+
+          <button type="submit" class="cta-button">Send Melding</button>
+        </form>
+
+        <div id="thankYouMessage" class="thank-you-message">
+          <i class="fas fa-check-circle"></i>
+          <h3>Takk for meldingen!</h3>
+          <p>Vi tar kontakt med deg så snart som mulig.</p>
+        </div>
+      </div>
+
+      <div class="contact-info-section">
+        <div class="contact-info-card">
+          <h3><i class="fas fa-phone"></i> Telefon</h3>
+          <p><a href="tel:+4748188552">48 18 85 52</a></p>
+          <small>Ring oss for rask hjelp</small>
+        </div>
+
+        <div class="contact-info-card">
+          <h3><i class="fas fa-envelope"></i> E-post</h3>
+          <p><a href="mailto:ararat.skredder@hotmail.com">ararat.skredder@hotmail.com</a></p>
+          <small>Send oss en e-post</small>
+        </div>
+
+        <div class="contact-info-card">
+          <h3><i class="fas fa-map-marker-alt"></i> Adresse</h3>
+          <p>Torggata 8<br />0181 Oslo</p>
+          <small>Besøk oss i butikken</small>
+        </div>
+
+        <div class="contact-info-card">
+          <h3><i class="fas fa-clock"></i> Åpningstider</h3>
+          <div class="opening-hours">
+            <div class="hours-row">
+              <span>Mandag - Lørdag:</span>
+              <span>09:00 - 17:00</span>
+            </div>
+            <div class="hours-row">
+              <span>Søndag:</span>
+              <span>Stengt</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-info-card">
+          <h3><i class="fas fa-share-alt"></i> Følg Oss</h3>
+          <div class="social-links">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+          </div>
+          <small>Hold deg oppdatert</small>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="location-section">
+  <div class="container">
+    <h2 class="section-title animate-on-scroll">Finn Oss</h2>
+    <div class="location-content">
+      <div class="location-text animate-on-scroll">
+        <h3>Sentralt Beliggende i Oslo</h3>
+        <p>Vår butikk ligger i Torggata 8, midt i Oslo sentrum. Vi er lett tilgjengelige med offentlig transport og ligger nær flere bussholdeplasser og T-bane stasjoner.</p>
+        
+        <div class="location-features">
+          <div class="feature-item">
+            <i class="fas fa-subway"></i>
+            <span>5 min gange fra Jernbanetorget</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-bus"></i>
+            <span>Flere bussholdeplasser i nærheten</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-parking"></i>
+            <span>Offentlig parkering tilgjengelig</span>
+          </div>
+          <div class="feature-item">
+            <i class="fas fa-wheelchair"></i>
+            <span>Tilgjengelig for alle</span>
+          </div>
+        </div>
+      </div>
+      <div class="map-placeholder animate-on-scroll">
+        <div class="map-content">
+          <i class="fas fa-map-marked-alt"></i>
+          <h4>Torggata 8, 0181 Oslo</h4>
+          <p>Klikk for å åpne i Google Maps</p>
+          <a href="https://maps.google.com/?q=Torggata+8,+0181+Oslo" target="_blank" class="map-link">
+            Åpne i Google Maps
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq-section">
+  <div class="container">
+    <h2 class="section-title animate-on-scroll">Ofte Stilte Spørsmål</h2>
+    <div class="faq-grid">
+      <div class="faq-item animate-on-scroll">
+        <h3>Hvor lang tid tar det å sy en dress?</h3>
+        <p>Tiden varierer avhengig av kompleksiteten, men vanligvis tar det 2-4 uker fra måltaking til ferdig dress.</p>
+      </div>
+      <div class="faq-item animate-on-scroll">
+        <h3>Tilbyr dere hjemmebesøk?</h3>
+        <p>For spesielle anledninger og større prosjekter kan vi arrangere hjemmebesøk. Kontakt oss for mer informasjon.</p>
+      </div>
+      <div class="faq-item animate-on-scroll">
+        <h3>Kan dere reparere alle typer klær?</h3>
+        <p>Vi har erfaring med de fleste typer tekstiler og plagg. Kom innom så vurderer vi hva som er mulig.</p>
+      </div>
+      <div class="faq-item animate-on-scroll">
+        <h3>Hvor mye koster en skreddersydd dress?</h3>
+        <p>Prisen avhenger av stoff, design og kompleksitet. Kontakt oss for et personlig tilbud.</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-col">
+        <h3 class="footer-title">Ararat Skredder</h3>
+        <p>Profesjonell skreddersøm og reparasjon i Oslo. Over 25 års erfaring med kvalitetshåndverk.</p>
+        <p>Vi tar stolhet i vårt håndverk og fokuserer på detaljer for å skape skreddersydde løsninger.</p>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-title">Nyttige Lenker</h3>
+        <ul>
+          <li><a href="index.html">Hjem</a></li>
+          <li><a href="tjenester.html">Våre Tjenester</a></li>
+          <li><a href="om-oss.html">Om Oss</a></li>
+          <li><a href="galleri.html">Galleri</a></li>
+          <li><a href="kontakt.html">Kontakt Oss</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-title">Kontakt Informasjon</h3>
+        <p><i class="fas fa-phone"></i> Telefon: <a href="tel:+4748188552">48 18 85 52</a></p>
+        <p><i class="fas fa-envelope"></i> E-post: <a href="mailto:ararat.skredder@hotmail.com">ararat.skredder@hotmail.com</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> Adresse: Torggata 8, 0181 Oslo</p>
+      </div>
+    </div>
+    <div class="copyright">
+      © <span id="current-year"></span> Ararat Skredder. Alle rettigheter reservert.
+    </div>
+  </div>
+</footer>
+
+<style>
+.page-header {
+  background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+  color: white;
+  padding: 120px 0 80px;
+  text-align: center;
+}
+
+.contact-main {
+  padding: 80px 0;
+  background: #f7fafc;
+}
+
+.contact-intro {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.contact-intro h2 {
+  color: #1a365d;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.contact-intro p {
+  color: #718096;
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.contact-content {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 4rem;
+}
+
+.contact-form {
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+  margin-bottom: 2rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-weight: 600;
+  color: #1a365d;
+  font-size: 1rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 1.2rem;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f7fafc;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #d69e2e;
+  background: white;
+  box-shadow: 0 0 0 3px rgba(214, 158, 46, 0.1);
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.thank-you-message {
+  display: none;
+  background: white;
+  padding: 3rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.thank-you-message i {
+  font-size: 4rem;
+  color: #48bb78;
+  margin-bottom: 1.5rem;
+}
+
+.thank-you-message h3 {
+  color: #1a365d;
+  margin-bottom: 1rem;
+}
+
+.thank-you-message p {
+  color: #718096;
+}
+
+.contact-info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.contact-info-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.contact-info-card:hover {
+  transform: translateY(-5px);
+}
+
+.contact-info-card h3 {
+  color: #1a365d;
+  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.contact-info-card h3 i {
+  color: #d69e2e;
+  font-size: 1.2rem;
+}
+
+.contact-info-card p {
+  color: #2d3748;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.contact-info-card a {
+  color: #d69e2e;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-info-card a:hover {
+  color: #b7791f;
+}
+
+.contact-info-card small {
+  color: #718096;
+  font-size: 0.9rem;
+}
+
+.opening-hours {
+  margin-top: 0.5rem;
+}
+
+.hours-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.hours-row:last-child {
+  border-bottom: none;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  background: #d69e2e;
+  color: white;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  background: #b7791f;
+  transform: translateY(-2px);
+}
+
+.location-section {
+  padding: 80px 0;
+  background: white;
+}
+
+.location-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.location-text h3 {
+  color: #1a365d;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.location-text p {
+  color: #718096;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 2rem;
+}
+
+.location-features {
+  margin-top: 2rem;
+}
+
+.feature-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #f7fafc;
+  border-radius: 8px;
+}
+
+.feature-item i {
+  color: #d69e2e;
+  margin-right: 1rem;
+  font-size: 1.2rem;
+  width: 25px;
+}
+
+.map-placeholder {
+  background: #f7fafc;
+  border-radius: 15px;
+  padding: 3rem;
+  text-align: center;
+  border: 2px dashed #d69e2e;
+}
+
+.map-content i {
+  font-size: 4rem;
+  color: #d69e2e;
+  margin-bottom: 1.5rem;
+}
+
+.map-content h4 {
+  color: #1a365d;
+  margin-bottom: 1rem;
+}
+
+.map-content p {
+  color: #718096;
+  margin-bottom: 1.5rem;
+}
+
+.map-link {
+  display: inline-block;
+  background: #d69e2e;
+  color: white;
+  padding: 1rem 2rem;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
+
+.map-link:hover {
+  background: #b7791f;
+  transform: translateY(-2px);
+}
+
+.faq-section {
+  padding: 80px 0;
+  background: #f7fafc;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.faq-item {
+  background: white;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item h3 {
+  color: #1a365d;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.faq-item p {
+  color: #718096;
+  line-height: 1.6;
+}
+
+.nav-links .active {
+  background: #b7791f !important;
+}
+
+@media (max-width: 768px) {
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .contact-form {
+    padding: 2rem;
+  }
+  
+  .contact-intro h2 {
+    font-size: 2rem;
+  }
+  
+  .location-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .page-header {
+    padding: 100px 0 60px;
+  }
+}
+</style>
+
+<script src="js/script.js"></script>
+</body>
+</html>
+

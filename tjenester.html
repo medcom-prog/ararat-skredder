@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>Tjenester - Ararat Skredder</title>
+  <meta name="description" content="Våre tjenester inkluderer målsøm av dresser, endringer og reparasjon, omforming av plagg, skjorter og bluser, samt skomakeri." />
+  <meta name="keywords" content="skreddersøm, målsøm, reparasjon, omforming, skjorter, skomakeri, Oslo" />
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+
+<header class="fade-in-start">
+  <nav class="container">
+    <div class="logo">
+      <a href="/">
+        <h2>Ararat Skredder</h2>
+      </a>
+    </div>
+    <ul class="nav-links">
+      <li><a href="index.html">Hjem</a></li>
+      <li><a href="tjenester.html" class="active">Tjenester</a></li>
+      <li><a href="om-oss.html">Om Oss</a></li>
+      <li><a href="galleri.html">Galleri</a></li>
+      <li><a href="kontakt.html" class="navbar-cta">Kontakt oss</a></li>
+    </ul>
+    <button class="mobile-menu-button" aria-label="Åpne meny">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+</header>
+
+<main>
+<!-- Hero Section for Tjenester -->
+<section class="services-hero">
+  <div class="container">
+    <div class="hero-content">
+      <h1 class="section-title typewriter" data-animation="fade-up">Våre Tjenester</h1>
+      <p class="hero-subtitle" data-animation="fade-up" data-delay="200">Profesjonell skreddersøm og reparasjon med over 25 års erfaring</p>
+      <div class="hero-stats" data-animation="fade-up" data-delay="400">
+        <div class="stat-item">
+          <div class="stat-number">25+</div>
+          <div class="stat-label">År erfaring</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">1000+</div>
+          <div class="stat-label">Fornøyde kunder</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">6</div>
+          <div class="stat-label">Spesialtjenester</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Tjenester Oversikt med Tabs -->
+<section class="services-tabs">
+  <div class="container">
+    <div class="tabs-navigation">
+      <button class="tab-button active" data-tab="dresser">
+        <i class="fas fa-cut"></i>
+        <span>Målsøm av Dresser</span>
+      </button>
+      <button class="tab-button" data-tab="reparasjon">
+        <i class="fas fa-tshirt"></i>
+        <span>Endringer & Reparasjon</span>
+      </button>
+      <button class="tab-button" data-tab="omforming">
+        <i class="fas fa-magic"></i>
+        <span>Omforming av Plagg</span>
+      </button>
+      <button class="tab-button" data-tab="skjorter">
+        <i class="fas fa-user-tie"></i>
+        <span>Skjorter & Bluser</span>
+      </button>
+      <button class="tab-button" data-tab="skomakeri">
+        <i class="fas fa-shoe-prints"></i>
+        <span>Skomakeri</span>
+      </button>
+      <button class="tab-button" data-tab="spesial">
+        <i class="fas fa-star"></i>
+        <span>Spesialbestillinger</span>
+      </button>
+    </div>
+
+    <div class="tabs-content">
+      <!-- Målsøm av Dresser Tab -->
+      <div class="tab-content active" id="dresser">
+        <div class="service-detail">
+          <div class="service-content">
+            <div class="service-text">
+              <h2 class="text-reveal">Målsøm av Dresser</h2>
+              <p class="service-description">Vi skreddersyr elegante dresser etter dine unike mål og preferanser. Gjennom en grundig prosess garanterer vi en perfekt passform og stil som passer din personlighet og anledning.</p>
+              
+              <div class="service-features">
+                <div class="feature-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Personlig konsultasjon og design</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Premium stoffer og materialer</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Håndverk av høyeste kvalitet</span>
+                </div>
+                <div class="feature-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Perfekt passform garantert</span>
+                </div>
+              </div>
+
+              <div class="process-timeline">
+                <h3>Vår Prosess:</h3>
+                <div class="timeline">
+                  <div class="timeline-item">
+                    <div class="timeline-icon">1</div>
+                    <div class="timeline-content">
+                      <h4>Konsultasjon</h4>
+                      <p>Diskuter dine preferanser og behov med våre erfarne skreddere.</p>
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-icon">2</div>
+                    <div class="timeline-content">
+                      <h4>Måltaking</h4>
+                      <p>Nøyaktig måltaking av kroppsmål for en skreddersydd passform.</p>
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-icon">3</div>
+                    <div class="timeline-content">
+                      <h4>Designvalg</h4>
+                      <p>Velg stoff, snitt og detaljer som passer din personlige stil.</p>
+                    </div>
+                  </div>
+                  <div class="timeline-item">
+                    <div class="timeline-icon">4</div>
+                    <div class="timeline-content">
+                      <h4>Prøving og tilpasning</h4>
+                      <p>Prøv og tilpass dressen for perfekt passform og komfort.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="pricing-info">
+                <h3>Priser fra:</h3>
+                <div class="price-range">
+                  <span class="price">Fra 8.000 kr</span>
+                  <span class="price-note">Avhengig av stoff og kompleksitet</span>
+                </div>
+              </div>
+            </div>
+            <div class="service-image">
+              <img src="images/z2zdtmyzTcgA.jpg" alt="Målsøm av dresser" />
+              <div class="image-overlay">
+                <div class="overlay-content">
+                  <i class="fas fa-play-circle"></i>
+                  <span>Se prosessen</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Endringer & Reparasjon Tab -->
+      <div class="tab-content" id="reparasjon">
+        <div class="service-detail">
+          <div class="service-content reverse">
+            <div class="service-text">
+              <h2 class="text-reveal">Endringer og Reparasjon</h2>
+              <p class="service-description">Vi tilbyr endringer og reparasjoner av klær for å sikre at dine plagg passer perfekt og varer lengre. Våre erfarne skreddere tar seg av alt fra enkle til mer komplekse justeringer.</p>
+              
+              <div class="service-grid">
+                <div class="service-item">
+                  <i class="fas fa-ruler"></i>
+                  <h4>Lengdejusteringer</h4>
+                  <p>Bukser, skjørt og ermer</p>
+                </div>
+                <div class="service-item">
+                  <i class="fas fa-expand-arrows-alt"></i>
+                  <h4>Vidde-endringer</h4>
+                  <p>Inn- og uttak av plagg</p>
+                </div>
+                <div class="service-item">
+                  <i class="fas fa-tools"></i>
+                  <h4>Reparasjoner</h4>
+                  <p>Rifter, hull og slitasje</p>
+                </div>
+                <div class="service-item">
+                  <i class="fas fa-exchange-alt"></i>
+                  <h4>Utskiftinger</h4>
+                  <p>Glidelåser og knapper</p>
+                </div>
+              </div>
+
+              <div class="pricing-info">
+                <h3>Priser fra:</h3>
+                <div class="price-list">
+                  <div class="price-item">
+                    <span>Bukselengde</span>
+                    <span>Fra 200 kr</span>
+                  </div>
+                  <div class="price-item">
+                    <span>Inntak/uttak</span>
+                    <span>Fra 300 kr</span>
+                  </div>
+                  <div class="price-item">
+                    <span>Glidelås</span>
+                    <span>Fra 250 kr</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="service-image">
+              <img src="images/axGdIt01hTHs.jpg" alt="Endringer og reparasjon" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Omforming av Plagg Tab -->
+      <div class="tab-content" id="omforming">
+        <div class="service-detail">
+          <div class="service-content">
+            <div class="service-text">
+              <h2 class="text-reveal">Omforming av Plagg</h2>
+              <p class="service-description">Gi nytt liv til gamle plagg ved å omforme dem til trendy og moderne design. Våre dyktige skreddere kan gi råd og utføre omformingstjenester for å oppgradere ditt klesskap.</p>
+              
+              <div class="transformation-examples">
+                <div class="example-item">
+                  <div class="before-after">
+                    <span class="label">Fra</span>
+                    <i class="fas fa-arrow-right"></i>
+                    <span class="label">Til</span>
+                  </div>
+                  <p>Gammel dress → Moderne blazer</p>
+                </div>
+                <div class="example-item">
+                  <div class="before-after">
+                    <span class="label">Fra</span>
+                    <i class="fas fa-arrow-right"></i>
+                    <span class="label">Til</span>
+                  </div>
+                  <p>Lang kjole → Trendy topp</p>
+                </div>
+                <div class="example-item">
+                  <div class="before-after">
+                    <span class="label">Fra</span>
+                    <i class="fas fa-arrow-right"></i>
+                    <span class="label">Til</span>
+                  </div>
+                  <p>Stor skjorte → Tilpasset passform</p>
+                </div>
+              </div>
+
+              <div class="pricing-info">
+                <h3>Priser:</h3>
+                <p class="price-note">Priser vurderes individuelt basert på kompleksitet og ønsket resultat. Kontakt oss for et gratis tilbud.</p>
+              </div>
+            </div>
+            <div class="service-image">
+              <img src="images/uNShKHQD3lks.png" alt="Omforming av plagg" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skjorter & Bluser Tab -->
+      <div class="tab-content" id="skjorter">
+        <div class="service-detail">
+          <div class="service-content reverse">
+            <div class="service-text">
+              <h2 class="text-reveal">Skjorter & Bluser</h2>
+              <p class="service-description">La oss skape skreddersydde skjorter og bluser som passer perfekt til din kropp og stil. Våre erfarne skreddere vil veilede deg gjennom valg av stoff, mønster og detaljer.</p>
+              
+              <div class="style-options">
+                <h3>Stilalternativer:</h3>
+                <div class="style-grid">
+                  <div class="style-item">
+                    <i class="fas fa-briefcase"></i>
+                    <span>Business</span>
+                  </div>
+                  <div class="style-item">
+                    <i class="fas fa-glass-cheers"></i>
+                    <span>Casual</span>
+                  </div>
+                  <div class="style-item">
+                    <i class="fas fa-star"></i>
+                    <span>Formell</span>
+                  </div>
+                  <div class="style-item">
+                    <i class="fas fa-heart"></i>
+                    <span>Romantisk</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="fabric-options">
+                <h3>Stoffalternativer:</h3>
+                <ul>
+                  <li>Premium bomull</li>
+                  <li>Silke og sateng</li>
+                  <li>Lin og hør</li>
+                  <li>Tekniske stoffer</li>
+                </ul>
+              </div>
+
+              <div class="pricing-info">
+                <h3>Priser fra:</h3>
+                <div class="price-range">
+                  <span class="price">Fra 2.500 kr</span>
+                  <span class="price-note">Avhengig av stoff og design</span>
+                </div>
+              </div>
+            </div>
+            <div class="service-image">
+              <img src="images/YT9MKhzjEwOj.jpg" alt="Skjorter og bluser" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skomakeri Tab -->
+      <div class="tab-content" id="skomakeri">
+        <div class="service-detail">
+          <div class="service-content">
+            <div class="service-text">
+              <h2 class="text-reveal">Skomakeri</h2>
+              <p class="service-description">Vi utfører alle typer skoreparasjoner - enten det gjelder skinnsko eller andre typer materialer. Kom gjerne innom for en hyggelig prat!</p>
+              
+              <div class="shoe-services">
+                <div class="shoe-service">
+                  <i class="fas fa-shoe-prints"></i>
+                  <h4>Sålereparasjon</h4>
+                  <p>Utskifting og reparasjon av såler på alle typer sko</p>
+                </div>
+                <div class="shoe-service">
+                  <i class="fas fa-hammer"></i>
+                  <h4>Hælreparasjon</h4>
+                  <p>Reparasjon og utskifting av hæler på både dame- og herresko</p>
+                </div>
+                <div class="shoe-service">
+                  <i class="fas fa-cut"></i>
+                  <h4>Skinnreparasjon</h4>
+                  <p>Reparasjon av rifter og skader på skinnsko</p>
+                </div>
+                <div class="shoe-service">
+                  <i class="fas fa-link"></i>
+                  <h4>Glidelåsreparasjon</h4>
+                  <p>Utskifting og reparasjon av glidelåser på støvler</p>
+                </div>
+              </div>
+
+              <div class="pricing-info">
+                <h3>Priser fra:</h3>
+                <div class="price-list">
+                  <div class="price-item">
+                    <span>Sålereparasjon</span>
+                    <span>Fra 400 kr</span>
+                  </div>
+                  <div class="price-item">
+                    <span>Hælreparasjon</span>
+                    <span>Fra 200 kr</span>
+                  </div>
+                  <div class="price-item">
+                    <span>Skinnreparasjon</span>
+                    <span>Fra 300 kr</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="service-image">
+              <img src="images/A21yAjsn33CX.jpg" alt="Skomakeri" />
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Spesialbestillinger Tab -->
+      <div class="tab-content" id="spesial">
+        <div class="service-detail">
+          <div class="service-content reverse">
+            <div class="service-text">
+              <h2 class="text-reveal">Spesialbestillinger</h2>
+              <p class="service-description">Har du et spesielt ønske eller en unik idé? Vi tar gjerne imot utfordrende prosjekter og spesialbestillinger. Kontakt oss for å diskutere dine behov.</p>
+              
+              <div class="special-services">
+                <div class="special-item">
+                  <i class="fas fa-ring"></i>
+                  <h4>Bryllupsklær</h4>
+                  <p>Skreddersydde brudekjoler og brudesvitesdrakter</p>
+                </div>
+                <div class="special-item">
+                  <i class="fas fa-theater-masks"></i>
+                  <h4>Kostymer</h4>
+                  <p>Teater, film og spesielle anledninger</p>
+                </div>
+                <div class="special-item">
+                  <i class="fas fa-medal"></i>
+                  <h4>Uniformer</h4>
+                  <p>Profesjonelle og seremonielle uniformer</p>
+                </div>
+                <div class="special-item">
+                  <i class="fas fa-palette"></i>
+                  <h4>Designsamarbeid</h4>
+                  <p>Samarbeid med designere og motemerker</p>
+                </div>
+              </div>
+
+              <div class="contact-cta">
+                <h3>Interessert?</h3>
+                <p>Kontakt oss for en uforpliktende samtale om ditt prosjekt.</p>
+                <a href="kontakt.html" class="cta-button">Kontakt Oss</a>
+              </div>
+            </div>
+            <div class="service-image">
+              <img src="images/I6KDmnq5Tu3H.jpg" alt="Spesialbestillinger" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Prosess Oversikt -->
+<section class="process-overview">
+  <div class="container">
+    <h2 class="section-title" data-animation="fade-up">Vår Arbeidsmetode</h2>
+    <p class="section-subtitle" data-animation="fade-up" data-delay="100">Fra første møte til ferdig resultat</p>
+    
+    <div class="process-steps">
+      <div class="process-step" data-animation="slide-up" data-delay="100">
+        <div class="step-number">01</div>
+        <div class="step-content">
+          <h3>Konsultasjon</h3>
+          <p>Vi starter med en grundig samtale om dine ønsker og behov</p>
+        </div>
+      </div>
+      <div class="process-step" data-animation="slide-up" data-delay="200">
+        <div class="step-number">02</div>
+        <div class="step-content">
+          <h3>Planlegging</h3>
+          <p>Detaljert planlegging av prosjektet med tidsramme og kostnader</p>
+        </div>
+      </div>
+      <div class="process-step" data-animation="slide-up" data-delay="300">
+        <div class="step-number">03</div>
+        <div class="step-content">
+          <h3>Utførelse</h3>
+          <p>Profesjonell utførelse med høyeste kvalitet og presisjon</p>
+        </div>
+      </div>
+      <div class="process-step" data-animation="slide-up" data-delay="400">
+        <div class="step-number">04</div>
+        <div class="step-content">
+          <h3>Levering</h3>
+          <p>Ferdig resultat som overgår dine forventninger</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Call to Action -->
+<section class="services-cta">
+  <div class="container">
+    <div class="cta-content" data-animation="zoom-in">
+      <h2>Klar for å starte ditt prosjekt?</h2>
+      <p>Kontakt oss i dag for et gratis og uforpliktende tilbud på våre tjenester.</p>
+      <div class="cta-buttons">
+        <a href="kontakt.html" class="cta-button primary">Be om Tilbud</a>
+        <a href="tel:+4748188552" class="cta-button secondary">Ring Oss</a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-content">
+      <div class="footer-col">
+        <h3 class="footer-title">Ararat Skredder</h3>
+        <p>Profesjonell skreddersøm og reparasjon i Oslo. Over 25 års erfaring med kvalitetshåndverk.</p>
+        <p>Vi tar stolhet i vårt håndverk og fokuserer på detaljer for å skape skreddersydde løsninger.</p>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-title">Nyttige Lenker</h3>
+        <ul>
+          <li><a href="index.html">Hjem</a></li>
+          <li><a href="tjenester.html">Våre Tjenester</a></li>
+          <li><a href="om-oss.html">Om Oss</a></li>
+          <li><a href="galleri.html">Galleri</a></li>
+          <li><a href="kontakt.html">Kontakt Oss</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3 class="footer-title">Kontakt Informasjon</h3>
+        <p><i class="fas fa-phone"></i> Telefon: <a href="tel:+4748188552">48 18 85 52</a></p>
+        <p><i class="fas fa-envelope"></i> E-post: <a href="mailto:ararat.skredder@hotmail.com">ararat.skredder@hotmail.com</a></p>
+        <p><i class="fas fa-map-marker-alt"></i> Adresse: Torggata 8, 0181 Oslo</p>
+      </div>
+    </div>
+    <div class="copyright">
+      © <span id="current-year"></span> Ararat Skredder. Alle rettigheter reservert.
+    </div>
+  </div>
+</footer>
+
+<script src="js/script.js"></script>
+<script>
+// Tab functionality for services
+document.addEventListener('DOMContentLoaded', function() {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabContents = document.querySelectorAll('.tab-content');
+    
+    tabButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const targetTab = this.dataset.tab;
+            
+            // Remove active class from all buttons and contents
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Add active class to clicked button and corresponding content
+            this.classList.add('active');
+            document.getElementById(targetTab).classList.add('active');
+        });
+    });
+});
+</script>
+</body>
+</html>
+
