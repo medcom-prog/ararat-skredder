@@ -176,34 +176,54 @@ function animateCounter(element) {
 
 /* ================= HEADER EFFECTS ================= */
 function initHeaderEffects() {
-    const header = document.querySelector('header');
-    let lastScrollY = window.scrollY;
-    let ticking = false;
-    function updateHeader() {
-        const currentScrollY = window.scrollY;
-        if (currentScrollY > 100) {
-            header.style.background = 'rgba(255, 255, 255, 0.98)';
-            header.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.15)';
-            header.style.backdropFilter = 'blur(25px)';
-        } else {
-            header.style.background = 'rgba(255, 255, 255, 0.95)';
-            header.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.12)';
-        }
-        if (currentScrollY > lastScrollY && currentScrollY > 200) {
-            header.style.transform = 'translateY(-100%)';
-        } else {
-            header.style.transform = 'translateY(0)';
-        }
-        lastScrollY = currentScrollY;
-        ticking = false;
+  const header = document.querySelector('header');
+  let lastScrollY = window.scrollY;
+  let ticking = false;
+
+  // Hjelpefunksjon for mobil
+  function isMobile() {
+    return window.innerWidth <= 768;
+  }
+
+  function updateHeader() {
+    const currentScrollY = window.scrollY;
+
+    // Juster stiler avhengig av scroll
+    if (currentScrollY > 100) {
+      header.style.background = 'rgba(255, 255, 255, 0.98)';
+      header.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.15)';
+      header.style.backdropFilter = isMobile() ? 'none' : 'blur(25px)';
+      header.style.webkitBackdropFilter = isMobile() ? 'none' : 'blur(25px)';
+    } else {
+      header.style.background = 'rgba(255, 255, 255, 0.95)';
+      header.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.12)';
+      header.style.backdropFilter = isMobile() ? 'none' : 'blur(25px)';
+      header.style.webkitBackdropFilter = isMobile() ? 'none' : 'blur(25px)';
     }
-    window.addEventListener('scroll', function() {
-        if (!ticking) {
-            requestAnimationFrame(updateHeader);
-            ticking = true;
-        }
-    });
+
+    // Scroll opp/ned skjuling (kun desktop)
+    if (!isMobile()) {
+      if (currentScrollY > lastScrollY && currentScrollY > 200) {
+        header.style.transform = 'translateY(-100%)';
+      } else {
+        header.style.transform = 'translateY(0)';
+      }
+    } else {
+      header.style.transform = 'translateY(0)';
+    }
+
+    lastScrollY = currentScrollY;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      requestAnimationFrame(updateHeader);
+      ticking = true;
+    }
+  }, { passive: true });
 }
+
 
 /* ================= CONTACT FORM ================= */
 function initContactForm() {
@@ -389,23 +409,36 @@ function initServiceCardEffects() {
 
 /* ================= PARALLAX ================= */
 function initParallaxEffects() {
-    let ticking = false;
-    function updateParallax() {
-        const scrolled = window.pageYOffset;
-        const heroSection = document.querySelector('.hero-section');
-        if (heroSection) heroSection.style.transform = `translateY(${scrolled * 0.3}px)`;
-        document.querySelectorAll('.parallax-element').forEach(element => {
-            const speed = element.dataset.speed || 0.5;
-            element.style.transform = `translateY(${scrolled * speed}px)`;
-        });
-        ticking = false;
-    }
-    window.addEventListener('scroll', function() {
-        if (!ticking) {
-            requestAnimationFrame(updateParallax);
-            ticking = true;
-        }
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (isMobile() || prefersReduced) return; // 🚫 ingen parallax på mobil
+
+  let ticking = false;
+  const heroSection = document.querySelector('.hero-section');
+
+  function updateParallax() {
+    const scrolled = window.pageYOffset;
+    if (heroSection) heroSection.style.transform = `translate3d(0, ${scrolled * 0.3}px, 0)`; // GPU
+    document.querySelectorAll('.parallax-element').forEach((el) => {
+      const speed = Number(el.dataset.speed || 0.5);
+      el.style.transform = `translate3d(0, ${scrolled * speed}px, 0)`;
     });
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', () => {
+    if (!ticking) {
+      requestAnimationFrame(updateParallax);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Hvis brukeren endrer størrelse til mobil, rydd opp
+  window.addEventListener('resize', debounce(() => {
+    if (isMobile() && heroSection) {
+      heroSection.style.transform = '';
+      document.querySelectorAll('.parallax-element').forEach(el => { el.style.transform = ''; });
+    }
+  }, 150), { passive: true });
 }
 
 /* ================= FAB ================= */
