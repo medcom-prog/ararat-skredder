@@ -201,242 +201,164 @@
 </footer>
 
 <style>
+:root{
+  --container-pad: clamp(16px, 4vw, 24px);
+  --radius: 15px;
+}
+
+/* container polstring i tilfelle global CSS ikke har det */
+.container { padding-left: var(--container-pad); padding-right: var(--container-pad); }
+
+/* Headerseksjon */
 .page-header {
   background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
   color: white;
-  padding: 120px 0 80px;
+  padding: clamp(80px, 22vw, 120px) 0 clamp(48px, 10vw, 80px);
   text-align: center;
 }
 
-.about-main {
-  padding: 80px 0;
-  background: white;
-}
+/* Seksjoner */
+.about-main,
+.philosophy-section { padding: clamp(48px, 10vw, 80px) 0; background: #fff; }
+.experience-section,
+.location-section  { padding: clamp(48px, 10vw, 80px) 0; background: #f7fafc; }
 
-.about-content {
+/* Grids */
+.about-content,
+.philosophy-content,
+.location-content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 4rem;
+  gap: clamp(1.5rem, 6vw, 4rem);
   align-items: center;
 }
 
-.about-text h2 {
+/* Tekst */
+.about-text h2,
+.philosophy-text h2 {
   color: #1a365d;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
+  font-size: clamp(1.6rem, 4.8vw, 2.5rem);
+  margin-bottom: 1.2rem;
 }
-
-.about-text p {
+.about-text p,
+.philosophy-text p,
+.location-text p {
   color: #718096;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
+  font-size: clamp(1rem, 3.6vw, 1.1rem);
+  line-height: 1.75;
+  margin-bottom: 1rem;
 }
 
-.values {
-  margin-top: 3rem;
-}
-
+/* Verdier */
+.values { margin-top: 2rem; }
 .values h3 {
   color: #1a365d;
-  font-size: 1.5rem;
-  margin-bottom: 2rem;
+  font-size: clamp(1.25rem, 3.8vw, 1.5rem);
+  margin-bottom: 1.25rem;
 }
+.value-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.25rem; }
+.value-item i { font-size: 1.6rem; color: #d69e2e; margin-top: .2rem; }
+.value-item h4 { color: #1a365d; margin-bottom: .25rem; }
+.value-item p  { color: #718096; margin: 0; }
 
-.value-item {
-  display: flex;
-  align-items: flex-start;
-  margin-bottom: 2rem;
-}
-
-.value-item i {
-  font-size: 2rem;
-  color: #d69e2e;
-  margin-right: 1.5rem;
-  margin-top: 0.5rem;
-}
-
-.value-item h4 {
-  color: #1a365d;
-  margin-bottom: 0.5rem;
-}
-
-.value-item p {
-  color: #718096;
-  margin: 0;
-}
-
-.about-image img {
+/* Bilder: lås aspekt, dropp tunge skygger på mobil */
+.about-image img,
+.philosophy-image img,
+.location-image img {
   width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  height: auto;
+  display: block;
+  border-radius: var(--radius);
+  box-shadow: 0 10px 30px rgba(0,0,0,.18);
+  /* Fikser CLS og «jumping» ved last; behold auto-høyde men hint om form */
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
 }
 
-.experience-section {
-  padding: 80px 0;
-  background: #f7fafc;
-}
-
+/* Erfaring */
 .experience-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 3rem;
-  margin-top: 3rem;
+  grid-template-columns: repeat(3, minmax(0,1fr));
+  gap: clamp(1rem, 5vw, 3rem);
+  margin-top: 2rem;
 }
-
 .experience-item {
   text-align: center;
   background: white;
-  padding: 3rem 2rem;
-  border-radius: 15px;
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+  padding: clamp(1.25rem, 4.5vw, 3rem) clamp(1rem, 3.5vw, 2rem);
+  border-radius: var(--radius);
+  box-shadow: 0 5px 18px rgba(0,0,0,.08);
 }
-
 .experience-number {
-  font-size: 3rem;
+  font-size: clamp(2.2rem, 7vw, 3rem);
   font-weight: 700;
   color: #d69e2e;
-  margin-bottom: 1rem;
+  margin-bottom: .5rem;
   font-family: 'Bebas Neue', cursive;
 }
+.experience-item h3 { color: #1a365d; margin-bottom: .5rem; }
+.experience-item p  { color: #718096; }
 
-.experience-item h3 {
-  color: #1a365d;
-  margin-bottom: 1rem;
-}
-
-.experience-item p {
-  color: #718096;
-}
-
-.philosophy-section {
-  padding: 80px 0;
-  background: white;
-}
-
-.philosophy-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-}
-
-.philosophy-text h2 {
-  color: #1a365d;
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-}
-
-.philosophy-text p {
-  color: #718096;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
-}
-
+/* Sitat */
 blockquote {
   background: #f7fafc;
-  padding: 2rem;
+  padding: clamp(1rem, 3.5vw, 2rem);
   border-left: 4px solid #d69e2e;
   border-radius: 8px;
   font-style: italic;
   color: #1a365d;
-  margin: 2rem 0;
+  margin: 1.25rem 0;
 }
 
-.philosophy-image img {
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
-.location-section {
-  padding: 80px 0;
-  background: #f7fafc;
-}
-
-.location-content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 4rem;
-  align-items: center;
-  margin-top: 3rem;
-}
-
-.location-text h3 {
-  color: #1a365d;
-  font-size: 2rem;
-  margin-bottom: 1.5rem;
-}
-
-.location-text p {
-  color: #718096;
-  font-size: 1.1rem;
-  line-height: 1.8;
-  margin-bottom: 2rem;
-}
-
-.location-details {
-  margin-top: 2rem;
-}
-
-.detail-item {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
-}
-
-.detail-item i {
-  color: #d69e2e;
-  margin-right: 1rem;
-  width: 20px;
-}
-
-.location-image img {
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-}
-
+/* CTA */
 .cta-section {
-  padding: 80px 0;
+  padding: clamp(48px, 10vw, 80px) 0;
   background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
-  color: white;
-  text-align: center;
+  color: white; text-align: center;
 }
+.cta-section .section-title { color: #fff; }
 
-.cta-section .section-title {
-  color: white;
-}
+.nav-links .active { color: #d69e2e !important; font-weight: 600; }
 
-.nav-links .active {
-  color: #d69e2e !important;
-  font-weight: 600;
+/* --- Mobiljusteringer --- */
+@media (max-width: 1024px){
+  /* mykere skygger på nettbrett/mobil */
+  .about-image img,
+  .philosophy-image img,
+  .location-image img { box-shadow: 0 6px 16px rgba(0,0,0,.12); }
 }
 
 @media (max-width: 768px) {
+  /* 1-kol layout + riktig rekkefølge: bilde først for bedre «scan» */
   .about-content,
   .philosophy-content,
-  .location-content {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .about-text h2,
-  .philosophy-text h2 {
-    font-size: 2rem;
-  }
-  
-  .experience-grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
-  
-  .page-header {
-    padding: 100px 0 60px;
-  }
+  .location-content { grid-template-columns: 1fr; gap: 1.25rem; }
+  .about-image, .philosophy-image, .location-image { order: -1; }
+
+  /* kompakt verdiliste */
+  .value-item { gap: .75rem; margin-bottom: .9rem; }
+  .value-item i { font-size: 1.4rem; }
+
+  /* erfaring i to rader for luft */
+  .experience-grid { grid-template-columns: 1fr; gap: 1rem; }
+
+  /* mildere reveal for å unngå jank */
+  .reveal-base { transform: translateY(12px) !important; filter: blur(1px) !important; }
+  .reveal-in   { transform: none !important; filter: none !important; }
+
+  /* reduserte skygger/effekter */
+  .experience-item,
+  .about-image img,
+  .philosophy-image img,
+  .location-image img { box-shadow: 0 4px 12px rgba(0,0,0,.10); }
+}
+
+/* iPhone safe-area padding når headeren er sticky */
+@supports(padding:max(0px)){
+  .page-header { padding-top: calc(clamp(80px, 22vw, 120px) + env(safe-area-inset-top)); }
 }
 </style>
+
 
 <!-- Reveal-system (injiserer keyframes/stiler og håndterer data-anim / data-pl) -->
 <script>

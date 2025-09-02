@@ -177,53 +177,68 @@ function animateCounter(element) {
 /* ================= HEADER EFFECTS ================= */
 function initHeaderEffects() {
   const header = document.querySelector('header');
+  if (!header) return;
+
   let lastScrollY = window.scrollY;
   let ticking = false;
 
   // Hjelpefunksjon for mobil
-  function isMobile() {
+  function isNarrow() {
     return window.innerWidth <= 768;
   }
 
   function updateHeader() {
     const currentScrollY = window.scrollY;
+    const mobile = isNarrow();
 
-    // Juster stiler avhengig av scroll
+    // Bakgrunn / skygge
     if (currentScrollY > 100) {
       header.style.background = 'rgba(255, 255, 255, 0.98)';
       header.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.15)';
-      header.style.backdropFilter = isMobile() ? 'none' : 'blur(25px)';
-      header.style.webkitBackdropFilter = isMobile() ? 'none' : 'blur(25px)';
     } else {
       header.style.background = 'rgba(255, 255, 255, 0.95)';
       header.style.boxShadow = '0 8px 32px rgba(0, 0, 0, 0.12)';
-      header.style.backdropFilter = isMobile() ? 'none' : 'blur(25px)';
-      header.style.webkitBackdropFilter = isMobile() ? 'none' : 'blur(25px)';
     }
 
-    // Scroll opp/ned skjuling (kun desktop)
-    if (!isMobile()) {
+    // Blur: deaktivert på mobil for ytelse
+    const blur = 'blur(25px)';
+    if (mobile) {
+      header.style.backdropFilter = 'none';
+      header.style.webkitBackdropFilter = 'none';
+    } else {
+      header.style.backdropFilter = blur;
+      header.style.webkitBackdropFilter = blur;
+    }
+
+    // Synlighet: alltid synlig på mobil
+    if (mobile) {
+      header.style.transform = 'translateY(0)';
+    } else {
       if (currentScrollY > lastScrollY && currentScrollY > 200) {
         header.style.transform = 'translateY(-100%)';
       } else {
         header.style.transform = 'translateY(0)';
       }
-    } else {
-      header.style.transform = 'translateY(0)';
     }
 
     lastScrollY = currentScrollY;
     ticking = false;
   }
 
+  // Init state
+  updateHeader();
+
+  // Scroll-oppdatering
   window.addEventListener('scroll', function () {
     if (!ticking) {
       requestAnimationFrame(updateHeader);
       ticking = true;
     }
   }, { passive: true });
-}
 
+  // Resize-oppdatering
+  window.addEventListener('resize', debounce(updateHeader, 150), { passive: true });
+}
 
 /* ================= CONTACT FORM ================= */
 function initContactForm() {
@@ -940,16 +955,11 @@ function initMobilePerformance() {
 }
 function initMobileScrollOptimization() {
     if (!isMobile()) return;
-    let ticking = false, lastScrollY = 0;
-    function updateScrollElements() {
-        const currentScrollY = window.scrollY;
-        const header = document.querySelector('header');
-        if (currentScrollY > lastScrollY && currentScrollY > 100) header.style.transform = 'translateY(-100%)';
-        else header.style.transform = 'translateY(0)';
-        lastScrollY = currentScrollY; ticking = false;
-    }
+    // Header skal alltid være synlig på mobil – ikke overstyr transform her
+    let ticking = false;
+    function noop() { ticking = false; }
     window.addEventListener('scroll', () => {
-        if (!ticking) { requestAnimationFrame(updateScrollElements); ticking = true; }
+        if (!ticking) { requestAnimationFrame(noop); ticking = true; }
     }, { passive: true });
 }
 function initMobileFormEnhancements() {
@@ -1101,6 +1111,9 @@ function initNavbarScrollEffects() {
             header.style.backdropFilter = 'blur(10px)';
         }
         if (isMobile()) {
+            // Hold alltid synlig på mobil
+            header.style.transform = 'translateY(0)';
+        } else {
             if (currentScrollY > lastScrollY && currentScrollY > 100) header.style.transform = 'translateY(-100%)';
             else header.style.transform = 'translateY(0)';
         }

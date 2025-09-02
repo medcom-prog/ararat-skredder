@@ -3351,3 +3351,80 @@ header nav {
   /* Skjul topp progressbar – sparer litt arbeid per scroll */
   .scroll-indicator { display: none !important; }
 }
+/* ========== Tjenester (page--services) ========== */
+body.page--services .container { padding-inline: clamp(16px, 4vw, 24px); }
+body.page--services .services-hero{
+  background: linear-gradient(135deg,#1a365d 0%,#2c5282 100%);
+  color:#fff;
+  padding: clamp(80px, 22vw, 120px) 0 clamp(48px, 10vw, 80px);
+}
+body.page--services .tabs-navigation{
+  display:flex; gap:.75rem; overflow:auto; -webkit-overflow-scrolling:touch;
+  scroll-snap-type:x mandatory; padding-bottom:.5rem; border-bottom:1px solid #edf2f7;
+}
+body.page--services .tab-button{
+  flex:0 0 auto; scroll-snap-align:center;
+  display:flex; align-items:center; gap:.5rem;
+  padding:.7rem 1rem; border-radius:999px; border:1px solid #e2e8f0; background:#fff;
+  font-weight:500; white-space:nowrap;
+}
+body.page--services .tab-button.active{ background:#1a365d; color:#fff; border-color:transparent; }
+body.page--services .tabs-content{ margin-top:1.25rem; }
+body.page--services .tab-content{ display:none; }
+body.page--services .tab-content.active{ display:block; }
+body.page--services .service-content{
+  display:grid; grid-template-columns: 1.15fr .85fr; gap: clamp(1.25rem, 5vw, 3rem); align-items:center;
+}
+body.page--services .service-content.reverse{ grid-template-columns: .85fr 1.15fr; }
+body.page--services .service-text h2{ color:#1a365d; font-size: clamp(1.5rem, 4.8vw, 2.2rem); margin:0 0 .75rem; }
+body.page--services .service-description{ color:#718096; line-height:1.75; margin:.5rem 0 1rem; }
+body.page--services .service-features,
+body.page--services .style-grid,
+body.page--services .service-grid,
+body.page--services .shoe-services,
+body.page--services .special-services{ display:grid; gap:.75rem; }
+body.page--services .service-grid,
+body.page--services .shoe-services,
+body.page--services .special-services{ grid-template-columns: repeat(2,minmax(0,1fr)); }
+body.page--services .feature-item,
+body.page--services .service-item,
+body.page--services .shoe-service,
+body.page--services .special-item{
+  display:flex; align-items:center; gap:.6rem; background:#f7fafc; border-radius:12px; padding:.75rem .9rem;
+}
+body.page--services .service-image{ position:relative; }
+body.page--services .service-image img{
+  width:100%; height:auto; display:block; border-radius:14px;
+  box-shadow: 0 10px 28px rgba(0,0,0,.16); aspect-ratio: 4/3; object-fit: cover;
+}
+@media (max-width: 900px){
+  body.page--services .service-content,
+  body.page--services .service-content.reverse{
+    grid-template-columns: 1fr; gap: 1rem;
+  }
+  body.page--services .service-image{ order:-1; }
+}
+@media (max-width: 640px){
+  body.page--services .service-grid,
+  body.page--services .shoe-services,
+  body.page--services .special-services{ grid-template-columns: 1fr; }
+}
+
+/* ========== Om oss (page--about) ========== */
+/* Flytt alt som lå i <style> på om-oss.html hit og prefiks med body.page--about ... */
+/* Eksempel: */
+body.page--about .about-content{
+  display:grid; grid-template-columns: 1fr 1fr; gap:4rem; align-items:center;
+}
+@media (max-width: 768px){
+  body.page--about .about-content{ grid-template-columns: 1fr; gap:2rem; }
+}
+
+/* ========== Felles småjusteringer ========== */
+.nav-links .active{ color:#d69e2e !important; font-weight:600; }
+
+/* Reveal – mildere på mobil (gjelder overalt) */
+@media (max-width: 768px){
+  .reveal-base{ transform: translateY(12px)!important; filter: blur(1px)!important; }
+  .reveal-in{ transform:none!important; filter:none!important; }
+}
