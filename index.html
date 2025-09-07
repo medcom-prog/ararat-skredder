@@ -13,7 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
 </head>
-<body>
+<body class="page--services">
 
 <header class="fade-in-start">
   <nav class="container">
@@ -29,9 +29,11 @@
       <li><a href="galleri.html">Galleri</a></li>
       <li><a href="kontakt.html" class="navbar-cta">Kontakt oss</a></li>
     </ul>
-    <button class="mobile-menu-button" aria-label="Åpne meny">
-      <span></span><span></span><span></span>
-    </button>
+  <button class="mobile-menu-button" id="mobileMenuBtn" aria-label="Åpne meny" aria-expanded="false" aria-controls="primaryNav">
+  <span class="bar"></span>
+  <span class="bar"></span>
+  <span class="bar"></span>
+</button>
   </nav>
 </header>
 
@@ -151,62 +153,100 @@
   </div>
 </section>
 
-<section id="contact-form" class="contact-full">
-  <div class="container">
-    <h2 class="section-title animate-on-scroll">Kontakt Oss</h2>
-    <p class="animate-on-scroll">Fyll ut skjemaet under eller bruk kontaktinformasjonen til høyre.</p>
-    <div class="contact-content">
-
-      <form id="contactForm" action="#" method="POST">
-        <label for="name">Navn:</label>
-        <input type="text" id="name" name="name" required />
-
-        <label for="email">E-post:</label>
-        <input type="email" id="email" name="email" required />
-
-        <label for="phone">Telefon:</label>
-        <input type="tel" id="phone" name="phone" />
-
-        <label for="service">Tjeneste:</label>
-        <select id="service" name="service">
-          <option value="">Velg tjeneste...</option>
-          <option value="dresser">Målsøm av dresser</option>
-          <option value="reparasjon">Endringer & reparasjon</option>
-          <option value="omforming">Omforming av plagg</option>
-          <option value="skjorter">Skjorter & bluser</option>
-          <option value="skomakeri">Skomakeri</option>
-          <option value="annet">Annet</option>
-        </select>
-
-        <label for="message">Melding:</label>
-        <textarea id="message" name="message" rows="4" required></textarea>
-
-        <button type="submit" class="cta-button">Send Melding</button>
-      </form>
-
-      <div id="thankYouMessage" style="display:none; color: green; font-weight: bold; margin-top: 20px;">
-        Takk for meldingen! Vi tar kontakt med deg så snart som mulig.
+<section id="kontakt" class="contact-main">
+    <div class="container">
+      <div class="contact-intro animate-on-scroll">
+        <h2>Be om vårt gunstige prisoverslag nå!</h2>
+        <p>Vi er klare til å gi deg et prisoverslag skreddersydd etter dine behov. Fyll ut skjemaet under eller bruk kontaktinformasjonen til høyre for å komme i kontakt med oss.</p>
       </div>
 
-      <div class="contact-info">
-        <h3>Kontaktinformasjon</h3>
-        <p><i class="fas fa-phone"></i> Telefon: <a href="tel:+4748188552">48 18 85 52</a></p>
-        <p><i class="fas fa-envelope"></i> E-post: <a href="mailto:ararat.skredder@hotmail.com">ararat.skredder@hotmail.com</a></p>
-        <p><i class="fas fa-map-marker-alt"></i> Adresse: Torggata 8, 0181 Oslo</p>
-        <h3>Åpningstider</h3>
-        <p><i class="fas fa-clock"></i> Mandag - Lørdag: 09:00 - 17:00</p>
-        <p><i class="fas fa-clock"></i> Søndag: Stengt</p>
-        <h3>Følg Oss</h3>
-        <div class="social-links">
-          <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-          <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
-          <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+      <div class="contact-content">
+        <div class="contact-form-section">
+          <form id="contactForm" class="contact-form" novalidate>
+            <div class="form-group">
+              <label for="name">Navn *</label>
+              <input type="text" id="name" name="name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">E-post *</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Telefon</label>
+              <input type="tel" id="phone" name="phone" />
+            </div>
+
+            <div class="form-group">
+              <label for="service">Tjeneste</label>
+              <select id="service" name="service">
+                <option value="">Velg tjeneste...</option>
+                <option value="dresser">Målsøm av dresser</option>
+                <option value="reparasjon">Endringer &amp; reparasjon</option>
+                <option value="omforming">Omforming av plagg</option>
+                <option value="skjorter">Skjorter &amp; bluser</option>
+                <option value="skomakeri">Skomakeri</option>
+                <option value="annet">Annet</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Melding *</label>
+              <textarea id="message" name="message" rows="5" placeholder="Beskriv ditt prosjekt eller behov..." required></textarea>
+            </div>
+
+            <button type="submit" class="cta-button">Send Melding</button>
+          </form>
+
+          <div id="thankYouMessage" class="thank-you-message" aria-live="polite">
+            <i class="fas fa-check-circle" aria-hidden="true"></i>
+            <h3>Takk for meldingen!</h3>
+            <p>Vi tar kontakt med deg så snart som mulig.</p>
+          </div>
         </div>
+
+        <aside class="contact-info-section">
+          <div class="contact-info-card">
+            <h3><i class="fas fa-phone" aria-hidden="true"></i> Telefon</h3>
+            <p><a href="tel:+4748188552">48 18 85 52</a></p>
+            <small>Ring oss for rask hjelp</small>
+          </div>
+
+          <div class="contact-info-card">
+            <h3><i class="fas fa-envelope" aria-hidden="true"></i> E-post</h3>
+            <p><a href="mailto:ararat.skredder@hotmail.com">ararat.skredder@hotmail.com</a></p>
+            <small>Send oss en e-post</small>
+          </div>
+
+          <div class="contact-info-card">
+            <h3><i class="fas fa-map-marker-alt" aria-hidden="true"></i> Adresse</h3>
+            <p>Torggata 8<br />0181 Oslo</p>
+            <small>Besøk oss i butikken</small>
+          </div>
+
+          <div class="contact-info-card">
+            <h3><i class="fas fa-clock" aria-hidden="true"></i> Åpningstider</h3>
+            <div class="opening-hours">
+              <div class="hours-row"><span>Mandag - Lørdag:</span><span>09:00 - 17:00</span></div>
+              <div class="hours-row"><span>Søndag:</span><span>Stengt</span></div>
+            </div>
+          </div>
+
+          <div class="contact-info-card">
+            <h3><i class="fas fa-share-alt" aria-hidden="true"></i> Følg Oss</h3>
+            <div class="social-links">
+              <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+              <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+              <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+              <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <small>Hold deg oppdatert</small>
+          </div>
+        </aside>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 </main>
 
 <footer>

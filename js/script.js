@@ -1257,3 +1257,142 @@ window.addEventListener('resize', function() {
   }
   window.addEventListener('load', pageLoadIntro, {once:true});
 })();
+(function initRevealSystem(){
+  if (window.__revealSystemInit) return; window.__revealSystemInit = true;
+  const style = document.createElement('style');
+  style.setAttribute('data-reveal-styles','1');
+  style.textContent = `
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-base { transition: none !important; animation: none !important; opacity: 1 !important; transform: none !important; filter: none !important; }
+      .pl-initial { opacity: 1 !important; transform: none !important; filter: none !important; }
+    }
+    .reveal-base{opacity:0; will-change: transform, opacity, filter; transform: translateY(24px); transition: opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1), filter .7s ease; filter: blur(2px);}
+    .reveal-in{opacity:1; transform: translateY(0); filter: blur(0);}
+    .reveal-fade-up{transform: translateY(24px);} .reveal-fade-down{transform: translateY(-24px);} .reveal-fade-left{transform: translateX(24px);} .reveal-fade-right{transform: translateX(-24px);} .reveal-scale-in{transform: scale(.96);} .reveal-pop { transition-timing-function: cubic-bezier(.18,.89,.32,1.28) !important; } .reveal-soft { transition-duration: .9s !important; }
+    .pl-initial{opacity:0; transform: translateY(12px); filter: blur(2px);} .pl-in{opacity:1; transform:none; filter:none; transition: opacity .7s ease, transform .7s cubic-bezier(.22,.61,.36,1), filter .7s ease;}
+  `;
+  document.head.appendChild(style);
+
+  function prep(el){
+    if (el.dataset.revealReady === '1') return; el.dataset.revealReady = '1';
+    const anim = (el.dataset.anim || 'fade-up').toLowerCase();
+    el.classList.add('reveal-base');
+    const parts = anim.split('+');
+    const map = { 'fade-up':'reveal-fade-up','fade-down':'reveal-fade-down','fade-left':'reveal-fade-left','fade-right':'reveal-fade-right','scale-in':'reveal-scale-in','pop':'reveal-pop','soft':'reveal-soft' };
+    parts.forEach(p=> el.classList.add(map[p.trim()] || 'reveal-fade-up'));
+    if (el.dataset.delay){ const ms = parseInt(el.dataset.delay,10) || 0; el.style.transitionDelay = `${ms}ms`; }
+  }
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(entry=>{
+      if (entry.isIntersecting){
+        const el = entry.target;
+        const parent = el.closest('[data-stagger]');
+        const step = parent ? (parseInt(parent.dataset.stagger,10) || 80) : 0;
+        const idx = parent ? Array.from(parent.querySelectorAll('[data-anim]')).indexOf(el) : 0;
+        const existing = parseFloat((el.style.transitionDelay||'0ms').replace('ms','')) || 0;
+        const totalDelay = existing + (step * Math.max(idx,0));
+        if (totalDelay) el.style.transitionDelay = `${totalDelay}ms`;
+        requestAnimationFrame(()=> el.classList.add('reveal-in'));
+        io.unobserve(el);
+      }
+    });
+  }, {rootMargin: '0px 0px -10% 0px', threshold: 0.12});
+
+  function boot(){ document.querySelectorAll('[data-anim]').forEach(el=>{ prep(el); io.observe(el); }); }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', boot, {once:true}); else boot();
+
+  function pageLoadIntro(){
+    const group = document.querySelectorAll('[data-pl]');
+    if (!group.length) return;
+    group.forEach((el,i)=>{
+      el.classList.add('pl-initial');
+      setTimeout(()=>{ el.style.transitionDelay = `${(parseInt(el.dataset.pl,10) || (i*80))}ms`; el.classList.add('pl-in'); }, 30);
+    });
+  }
+  window.addEventListener('load', pageLoadIntro, {once:true});
+})();
+(function initPageBoot(){
+  document.addEventListener('DOMContentLoaded', () => {
+    // Mark active nav link by URL path (fallback to existing class if present)
+    const path = location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      const href = a.getAttribute('href');
+      if (!a.classList.contains('navbar-cta') && href && href.endsWith(path)) {
+        a.classList.add('active');
+      }
+    });
+  });
+})();
+
+/* ===== Services Tabs ===== */
+(function initServicesTabs(){
+  if (!document.body.classList.contains('page--services')) return;
+  const tabButtons = document.querySelectorAll('.tab-button');
+  const tabContents = document.querySelectorAll('.tab-content');
+  if (!tabButtons.length || !tabContents.length) return;
+
+  const header = document.querySelector('header');
+  const headerOffset = (header ? header.offsetHeight : 0) + 16;
+
+  function activateTab(id){
+    tabButtons.forEach(btn => btn.classList.toggle('active', btn.dataset.tab === id));
+    tabContents.forEach(el => el.classList.toggle('active', el.id === id));
+    // Reset transition delays so reveal anims can play inside new tab
+    document.querySelectorAll('#'+id+' [data-anim]').forEach(el => {
+      el.style.transitionDelay = '';
+      el.classList.remove('reveal-in');
+      // Let the global IntersectionObserver from reveal-system pick them up again
+      // If reveal system hasn't observed yet, a small timeout helps
+      setTimeout(()=>{ el.classList.add('reveal-base'); }, 0);
+    });
+    // Scroll nicely to start of content
+    const top = document.getElementById(id).getBoundingClientRect().top + window.pageYOffset - headerOffset;
+    window.scrollTo({ top, behavior: 'smooth' });
+  }
+
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => activateTab(btn.dataset.tab));
+    btn.addEventListener('keydown', (e)=>{
+      // arrow-key navigation
+      if (e.key !== 'ArrowLeft' && e.key !== 'ArrowRight') return;
+      e.preventDefault();
+      const list = Array.from(tabButtons);
+      const i = list.indexOf(btn);
+      const next = e.key === 'ArrowRight' ? list[(i+1)%list.length] : list[(i-1+list.length)%list.length];
+      next.focus();
+      activateTab(next.dataset.tab);
+    });
+  });
+
+  // Optional: deep-link via hash (#tab)
+  const initial = (location.hash || '').replace('#','');
+  if (initial && document.getElementById(initial)) activateTab(initial);
+})();// Services tabs (idempotent – gjør ingenting hvis allerede satt opp)
+(function(){
+  if (window.__svcTabsInit) return; window.__svcTabsInit = true;
+
+  const buttons = document.querySelectorAll('.services-tabs .tab-button');
+  const panes   = document.querySelectorAll('.services-tabs .tab-content');
+  if (!buttons.length || !panes.length) return;
+
+  function activate(id){
+    buttons.forEach(b => b.classList.toggle('active', b.dataset.tab === id));
+    panes.forEach(p => p.classList.toggle('active', p.id === id));
+    // scroll litt opp så starten av innhold vises pent under header
+    const header = document.querySelector('header');
+    const y = document.getElementById(id).getBoundingClientRect().top + window.pageYOffset - ((header?.offsetHeight || 0) + 12);
+    window.scrollTo({ top: y, behavior: 'smooth' });
+  }
+  buttons.forEach(b=>{
+    b.addEventListener('click', ()=> activate(b.dataset.tab));
+  });
+})();
+// Legg/ta bort .scrolled på body for subtil skygge
+(function(){
+  function onScroll(){
+    document.body.classList.toggle('scrolled', window.scrollY > 4);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+})();
