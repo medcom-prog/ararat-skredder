@@ -786,7 +786,7 @@ body.page--gallery .gallery-overlay i{ position:absolute; top:1rem; right:1rem; 
 body.page--gallery .gallery-item.hidden{ display:none; }
 
 /* Nav aktiv farge for denne siden */
-body.page--gallery .nav-links .active{ color:#d69e2e !important; font-weight:600; }
+body.page--gallery .nav-links .active{ color:#ffffff !important; font-weight:600; }
 
 /* Responsivitet */
 @media (max-width: 768px){
