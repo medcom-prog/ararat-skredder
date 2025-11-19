@@ -1,0 +1,33 @@
+# robots.txt
+# For Ararat Skredderi website
+
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+Disallow: /temp/
+
+# Delay for aggressive crawlers (optional)
+Crawl-delay: 1
+
+# Sitemap reference
+Sitemap: https://araratskredderi.no/sitemap.xml
+
+# Specific rules for common bot types
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: MJ12bot
+Crawl-delay: 2
+
+# Block bad bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
