@@ -2,6 +2,7 @@ import { lazy, Suspense, useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { FloatingCallButton } from "@/components/FloatingCallButton";
 
 const Forside = lazy(() => import("@/pages/Forside"));
 const Tjenester = lazy(() => import("@/pages/Tjenester"));
@@ -44,6 +45,7 @@ export default function App() {
         </Suspense>
       </main>
       <Footer />
+      <FloatingCallButton />
     </div>
   );
 }
