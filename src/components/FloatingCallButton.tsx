@@ -1,4 +1,5 @@
 import { Phone } from "lucide-react";
+import { useLocation } from "react-router-dom";
 import { BUSINESS } from "@/data/business";
 
 /**
@@ -10,8 +11,13 @@ import { BUSINESS } from "@/data/business";
  * - Subtle pulse-ring animation; disabled by prefers-reduced-motion
  *   (the keyframe sits in a media query in index.css)
  * - aria-label spelling out the action for screen-readers
+ * - Hidden on /kontakt where multiple visible Phone CTAs would conflict
+ *   with form submit button on mobile (same bottom-right zone)
  */
 export function FloatingCallButton() {
+  const { pathname } = useLocation();
+  if (pathname === "/kontakt") return null;
+
   return (
     <div
       className="pointer-events-none fixed inset-x-0 bottom-0 z-30 flex justify-end"
