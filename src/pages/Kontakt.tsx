@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQAccordion } from "@/components/FAQAccordion";
 import { Reveal } from "@/components/Reveal";
+import { ContactForm } from "@/components/ContactForm";
 import { BUSINESS } from "@/data/business";
 import { generalFaqs } from "@/data/faqs";
 
@@ -51,42 +52,67 @@ export default function Kontakt() {
         </div>
       </section>
 
-      {/* Contact cards */}
+      {/* Contact form + cards */}
       <section className="container-wide pb-16">
-        <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
-          <ContactCard
-            icon={<MapPin className="h-5 w-5" />}
-            title="Besøk oss"
-            primary={
-              <>
-                {BUSINESS.address.street}
-                <br />
-                {BUSINESS.address.postalCode} {BUSINESS.address.city}
-              </>
-            }
-            cta={{
-              href: BUSINESS.address.googleMapsUrl,
-              label: "Åpne i Google Maps",
-              external: true,
-            }}
-          />
-          <ContactCard
-            icon={<Phone className="h-5 w-5" />}
-            title="Ring oss"
-            primary={BUSINESS.contact.phone}
-            secondary="Vi svarer raskt på spørsmål, prisoverslag og avtaler."
-            cta={{ href: `tel:${BUSINESS.contact.phoneE164}`, label: "Ring nå" }}
-          />
-          <ContactCard
-            icon={<Mail className="h-5 w-5" />}
-            title="Send e-post"
-            primary={BUSINESS.contact.email}
-            secondary="For større prosjekter, bilder eller spørsmål utenom åpningstid."
-            cta={{
-              href: `mailto:${BUSINESS.contact.email}`,
-              label: "Send e-post",
-            }}
-          />
+        <div className="grid gap-8 lg:grid-cols-[1.4fr_1fr] lg:items-start">
+          {/* Form takes the lead on desktop */}
+          <Reveal>
+            <div>
+              <p className="eyebrow">Send melding</p>
+              <h2 className="mt-2 font-display text-2xl uppercase tracking-wide text-foreground md:text-3xl">
+                Skriv til oss
+              </h2>
+              <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
+                Fyll ut skjemaet — vi svarer som regel innen samme arbeidsdag.
+              </p>
+              <div className="mt-5">
+                <ContactForm />
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Sidebar cards */}
+          <Reveal delay={120}>
+            <div className="grid gap-4">
+              <ContactCard
+                icon={<Phone className="h-5 w-5" />}
+                title="Ring oss"
+                primary={BUSINESS.contact.phone}
+                secondary="Raskest når du har konkret spørsmål eller trenger pris med en gang."
+                cta={{
+                  href: `tel:${BUSINESS.contact.phoneE164}`,
+                  label: "Ring nå",
+                }}
+              />
+              <ContactCard
+                icon={<MapPin className="h-5 w-5" />}
+                title="Besøk oss"
+                primary={
+                  <>
+                    {BUSINESS.address.street}
+                    <br />
+                    {BUSINESS.address.postalCode} {BUSINESS.address.city}
+                  </>
+                }
+                secondary="Drop-in mandag til lørdag — ingen avtale nødvendig."
+                cta={{
+                  href: BUSINESS.address.googleMapsUrl,
+                  label: "Veibeskrivelse",
+                  external: true,
+                }}
+              />
+              <ContactCard
+                icon={<Mail className="h-5 w-5" />}
+                title="E-post"
+                primary={BUSINESS.contact.email}
+                secondary="For større prosjekter eller meldinger utenom åpningstid."
+                cta={{
+                  href: `mailto:${BUSINESS.contact.email}`,
+                  label: "Åpne e-post",
+                }}
+              />
+            </div>
+          </Reveal>
         </div>
       </section>
 
