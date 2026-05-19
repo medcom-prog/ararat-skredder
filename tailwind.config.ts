@@ -43,8 +43,10 @@ const config: Config = {
         sans: ["'Poppins'", "system-ui", "sans-serif"],
       },
       fontSize: {
-        "hero": ["clamp(2.5rem, 7vw, 5.5rem)", { lineHeight: "1.02", letterSpacing: "-0.01em" }],
-        "display": ["clamp(2rem, 5vw, 3.75rem)", { lineHeight: "1.05", letterSpacing: "-0.005em" }],
+        // Reduced from clamp(2.5, 7vw, 5.5) — was too dominant on desktop.
+        // Caps at 4.5rem (72px) which still reads as hero without overwhelming.
+        "hero": ["clamp(2rem, 5vw, 4.5rem)", { lineHeight: "1.05", letterSpacing: "-0.015em" }],
+        "display": ["clamp(1.75rem, 3.8vw, 3rem)", { lineHeight: "1.1", letterSpacing: "-0.005em" }],
       },
       borderRadius: {
         DEFAULT: "var(--radius)",

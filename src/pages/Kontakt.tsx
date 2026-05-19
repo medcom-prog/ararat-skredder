@@ -1,13 +1,16 @@
-import { Clock, Mail, MapPin, Phone } from "lucide-react";
+import { ArrowUpRight, Clock, Mail, MapPin, Phone } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { FAQAccordion } from "@/components/FAQAccordion";
+import { Reveal } from "@/components/Reveal";
 import { BUSINESS } from "@/data/business";
 import { generalFaqs } from "@/data/faqs";
 
 export default function Kontakt() {
-  const mapUrl = `https://www.google.com/maps/embed/v1/place?q=Ararat+Skredderi+Torggata+8+Oslo&zoom=16&key=DUMMY`;
+  // OpenStreetMap embed — no API key, no tracking. Same view as Google Maps
+  // for the casual user. Direct "Åpne i Google Maps" link sits next to it.
+  const osmEmbed = `https://www.openstreetmap.org/export/embed.html?bbox=10.7475%2C59.9153%2C10.7519%2C59.9183&layer=mapnik&marker=${BUSINESS.address.geo.lat}%2C${BUSINESS.address.geo.lng}`;
 
   return (
     <>
@@ -90,16 +93,25 @@ export default function Kontakt() {
       {/* Map + hours */}
       <section className="bg-surface section">
         <div className="container-wide grid gap-10 md:grid-cols-2">
-          <div className="overflow-hidden rounded-3xl border border-border bg-background shadow-sm">
-            <iframe
-              title="Kart til Ararat Skredderi"
-              src={mapUrl}
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="h-full min-h-[360px] w-full"
-              allowFullScreen
-            />
-          </div>
+          <Reveal>
+            <div className="relative overflow-hidden rounded-3xl border border-border bg-background shadow-sm">
+              <iframe
+                title="Kart som viser Ararat Skredderi i Torggata 8, Oslo"
+                src={osmEmbed}
+                loading="lazy"
+                className="h-[360px] w-full md:h-full"
+              />
+              <a
+                href={BUSINESS.address.googleMapsUrl}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="absolute bottom-4 right-4 inline-flex items-center gap-2 rounded-full bg-navy/90 px-4 py-2 text-sm font-medium text-white shadow-lg backdrop-blur transition-transform hover:scale-105"
+              >
+                Åpne i Google Maps
+                <ArrowUpRight className="h-4 w-4" aria-hidden="true" />
+              </a>
+            </div>
+          </Reveal>
 
           <div className="flex flex-col gap-6">
             <div>

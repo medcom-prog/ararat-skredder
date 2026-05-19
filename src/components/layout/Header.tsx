@@ -38,7 +38,7 @@ export function Header() {
   return (
     <header
       className={cn(
-        "sticky top-0 z-40 w-full transition-all duration-300",
+        "sticky top-0 z-40 w-full transition-[background-color,border-color,backdrop-filter] duration-300",
         scrolled
           ? "border-b border-border bg-background/85 backdrop-blur-md"
           : "bg-transparent",
@@ -96,7 +96,7 @@ export function Header() {
       <div
         id="mobile-nav"
         className={cn(
-          "fixed inset-x-0 top-16 bottom-0 z-40 bg-background transition-all duration-300 md:hidden",
+          "fixed inset-x-0 top-16 bottom-0 z-40 bg-background transition-[opacity,transform] duration-300 md:hidden",
           open ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0",
         )}
       >

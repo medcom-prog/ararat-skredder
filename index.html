@@ -34,6 +34,15 @@
       rel="stylesheet"
     />
 
+    <!-- Hero image preload — LCP candidate. Without this Vite waits for
+         JS hydration before requesting the image, costing ~400-800ms LCP. -->
+    <link
+      rel="preload"
+      as="image"
+      href="/images/gallery/araratsowingwithmachine.jpg"
+      fetchpriority="high"
+    />
+
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",

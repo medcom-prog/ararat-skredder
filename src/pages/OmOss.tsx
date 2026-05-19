@@ -4,6 +4,7 @@ import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { QuickAnswer } from "@/components/QuickAnswer";
+import { Reveal } from "@/components/Reveal";
 import { BUSINESS, yearsExperience } from "@/data/business";
 
 const values = [
@@ -47,9 +48,9 @@ export default function OmOss() {
       </div>
 
       {/* Hero */}
-      <section className="container-wide pt-10 pb-12 md:pt-16 md:pb-20">
-        <div className="grid items-end gap-10 md:grid-cols-12">
-          <div className="md:col-span-7 min-w-0">
+      <section className="container-wide pt-8 pb-10 md:pt-14 md:pb-16">
+        <div className="grid items-end gap-8 md:grid-cols-12 md:gap-10">
+          <Reveal as="div" className="md:col-span-7 min-w-0">
             <p className="eyebrow">Om oss</p>
             <h1 className="mt-4 text-display-1 text-foreground break-words">
               <span className="block">{yearsExperience}+ år med</span>
@@ -57,24 +58,25 @@ export default function OmOss() {
                 håndverk
               </span>
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
+            <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
               Vår skredderbutikk i Oslo har i mer enn 50 år levert
               kvalitetsarbeid innen reparasjon, tilpasning og søm av nye klær.
               Vi tar stolthet i håndverket og fokuserer på detaljer som varer.
             </p>
-          </div>
-          <div className="md:col-span-5">
+          </Reveal>
+          <Reveal as="div" delay={120} className="md:col-span-5">
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
               <img
                 src="/images/gallery/araratstandingbehindcounter.jpg"
                 alt="Ahmad Abdulhamid, skreddermester"
                 loading="eager"
+                decoding="async"
                 width="1200"
                 height="1500"
                 className="h-full w-full object-cover"
               />
             </div>
-          </div>
+          </Reveal>
         </div>
 
         <QuickAnswer

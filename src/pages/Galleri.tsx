@@ -3,6 +3,7 @@ import * as Dialog from "@radix-ui/react-dialog";
 import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
+import { Reveal } from "@/components/Reveal";
 import { BUSINESS } from "@/data/business";
 import { galleryCategories, galleryImages, type GalleryCategory } from "@/data/gallery";
 import { cn } from "@/lib/utils";
@@ -53,18 +54,22 @@ export default function Galleri() {
         <Breadcrumbs items={[{ label: "Galleri", href: "/galleri" }]} />
       </div>
 
-      <section className="container-wide pt-10 pb-8 md:pt-16 md:pb-12">
-        <div className="max-w-2xl">
-          <p className="eyebrow">Galleri</p>
-          <h1 className="mt-4 text-display-1 text-foreground">
-            Bak
-            <span className="font-serif font-medium italic text-accent"> håndverket</span>
-          </h1>
-          <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
-            Bilder fra verkstedet, kundemøter og lokalene i Torggata 8. Klikk på
-            et bilde for å se det i full størrelse.
-          </p>
-        </div>
+      <section className="container-wide pt-8 pb-8 md:pt-14 md:pb-10">
+        <Reveal>
+          <div className="max-w-2xl">
+            <p className="eyebrow">Galleri</p>
+            <h1 className="mt-4 text-display-1 text-foreground">
+              Bak{" "}
+              <span className="font-serif font-medium italic text-accent">
+                håndverket
+              </span>
+            </h1>
+            <p className="mt-5 text-base leading-relaxed text-muted-foreground md:text-lg">
+              Bilder fra verkstedet, kundemøter og lokalene i Torggata 8. Klikk
+              på et bilde for å se det i full størrelse.
+            </p>
+          </div>
+        </Reveal>
 
         {/* Category filter */}
         <div className="mt-10 flex flex-wrap gap-2">
@@ -104,12 +109,13 @@ export default function Galleri() {
                 src={img.src}
                 alt={img.alt}
                 loading="lazy"
+                decoding="async"
                 width={img.width}
                 height={img.height}
-                className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="h-full w-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.04]"
               />
               <div className="absolute inset-0 bg-navy-dark/0 transition-colors group-hover:bg-navy-dark/30" />
-              <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-navy-dark/85 to-transparent p-3 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-2 bg-gradient-to-t from-navy-dark/85 to-transparent p-3 opacity-0 transition-[opacity,transform] duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                 <p className="text-xs leading-snug text-white line-clamp-2">
                   {img.alt}
                 </p>

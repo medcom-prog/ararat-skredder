@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
 import { QuickAnswer } from "@/components/QuickAnswer";
 import { FAQAccordion } from "@/components/FAQAccordion";
+import { Reveal } from "@/components/Reveal";
 import { BUSINESS } from "@/data/business";
 import { services } from "@/data/services";
 import { generalFaqs } from "@/data/faqs";
@@ -63,38 +64,41 @@ export default function Tjenester() {
       </div>
 
       {/* Hero */}
-      <section className="container-wide pt-10 pb-12 md:pt-16 md:pb-20">
-        <div className="max-w-3xl">
-          <p className="eyebrow">Tjenester</p>
-          <h1 className="mt-4 text-display-1 text-foreground">
-            Skreddersøm,
-            <br />
-            <span className="font-serif font-medium italic text-accent">
-              reparasjon og mer
-            </span>
-          </h1>
-          <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            Vi tar oppdrag fra de minste justeringene til komplette
-            skreddersydde plagg. Alle priser er veiledende og settes endelig
-            etter vurdering på stedet.
-          </p>
-        </div>
+      <section className="container-wide pt-8 pb-10 md:pt-14 md:pb-16">
+        <Reveal>
+          <div className="max-w-3xl">
+            <p className="eyebrow">Tjenester</p>
+            <h1 className="mt-4 text-display-1 text-foreground">
+              Skreddersøm,{" "}
+              <span className="font-serif font-medium italic text-accent">
+                reparasjon og mer
+              </span>
+            </h1>
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-muted-foreground md:text-lg">
+              Vi tar oppdrag fra de minste justeringene til komplette
+              skreddersydde plagg. Alle priser er veiledende og settes endelig
+              etter vurdering på stedet.
+            </p>
+          </div>
+        </Reveal>
 
-        <QuickAnswer
-          label="Kort fortalt:"
-          schemaName="Tjenester hos Ararat Skredderi"
-          className="mt-10"
-          points={[
-            { name: "Målsøm fra 8 000 kr", description: "Dresser, skjorter og bluser etter dine mål." },
-            { name: "Reparasjon fra 200 kr", description: "Lengdejustering, glidelås, knapper og rifter." },
-            { name: "Omforming etter avtale", description: "Gi gamle plagg nytt liv med moderne snitt." },
-            { name: "Skomakeri fra 300 kr", description: "Såler, hæler, skinn og glidelåser." },
-          ]}
-        />
+        <Reveal delay={120}>
+          <QuickAnswer
+            label="Kort fortalt:"
+            schemaName="Tjenester hos Ararat Skredderi"
+            className="mt-8"
+            points={[
+              { name: "Målsøm fra 8 000 kr", description: "Dresser, skjorter og bluser etter dine mål." },
+              { name: "Reparasjon fra 200 kr", description: "Lengdejustering, glidelås, knapper og rifter." },
+              { name: "Omforming etter avtale", description: "Gi gamle plagg nytt liv med moderne snitt." },
+              { name: "Skomakeri fra 300 kr", description: "Såler, hæler, skinn og glidelåser." },
+            ]}
+          />
+        </Reveal>
       </section>
 
       {/* Service blocks — alternating layout */}
-      <section className="space-y-20 md:space-y-32 pb-24">
+      <section className="space-y-16 md:space-y-24 pb-20">
         {services.map((svc, i) => {
           const isReverse = i % 2 === 1;
           const Icon = svc.icon;
@@ -104,25 +108,27 @@ export default function Tjenester() {
               id={svc.slug}
               className="container-wide scroll-mt-24"
             >
-              <div
-                className={`grid items-start gap-10 md:gap-16 ${
-                  isReverse ? "md:grid-cols-[1fr_1.1fr]" : "md:grid-cols-[1.1fr_1fr]"
-                }`}
-              >
+              <Reveal>
                 <div
-                  className={`relative aspect-[4/5] overflow-hidden rounded-3xl bg-muted ${
-                    isReverse ? "md:order-last" : ""
+                  className={`grid items-start gap-8 md:gap-14 ${
+                    isReverse ? "md:grid-cols-[1fr_1.1fr]" : "md:grid-cols-[1.1fr_1fr]"
                   }`}
                 >
-                  <img
-                    src={serviceImageMap[svc.slug] ?? galleryImages[0].src}
-                    alt={`${svc.title} hos Ararat Skredderi`}
-                    loading="lazy"
-                    width="1200"
-                    height="1500"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
+                  <div
+                    className={`relative aspect-[4/5] overflow-hidden rounded-3xl bg-muted ${
+                      isReverse ? "md:order-last" : ""
+                    }`}
+                  >
+                    <img
+                      src={serviceImageMap[svc.slug] ?? galleryImages[0].src}
+                      alt={`${svc.title} hos Ararat Skredderi`}
+                      loading="lazy"
+                      decoding="async"
+                      width="1200"
+                      height="1500"
+                      className="h-full w-full object-cover"
+                    />
+                  </div>
 
                 <div>
                   <div className="inline-flex items-center gap-3">
@@ -193,6 +199,7 @@ export default function Tjenester() {
                   </div>
                 </div>
               </div>
+              </Reveal>
             </article>
           );
         })}
