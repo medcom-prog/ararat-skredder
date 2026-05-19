@@ -1,0 +1,132 @@
+import { useEffect, useState } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { Menu, Phone, X } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { BUSINESS } from "@/data/business";
+
+const NAV = [
+  { to: "/", label: "Hjem", end: true },
+  { to: "/tjenester", label: "Tjenester" },
+  { to: "/galleri", label: "Galleri" },
+  { to: "/om-oss", label: "Om oss" },
+  { to: "/kontakt", label: "Kontakt" },
+];
+
+export function Header() {
+  const [open, setOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    setOpen(false);
+  }, [pathname]);
+
+  useEffect(() => {
+    document.body.style.overflow = open ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [open]);
+
+  return (
+    <header
+      className={cn(
+        "sticky top-0 z-40 w-full transition-all duration-300",
+        scrolled
+          ? "border-b border-border bg-background/85 backdrop-blur-md"
+          : "bg-transparent",
+      )}
+    >
+      <div className="container-wide flex h-16 items-center justify-between md:h-20">
+        <Link
+          to="/"
+          className="group inline-flex items-baseline gap-2 font-display text-xl uppercase tracking-wide text-foreground md:text-2xl"
+          aria-label="Ararat Skredderi — til forsiden"
+        >
+          <span className="text-navy">Ararat</span>
+          <span className="text-accent">Skredderi</span>
+        </Link>
+
+        <nav className="hidden items-center gap-1 md:flex" aria-label="Hovedmeny">
+          {NAV.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              end={item.end}
+              className={({ isActive }) =>
+                cn(
+                  "rounded-full px-4 py-2 text-sm font-medium transition-colors",
+                  isActive
+                    ? "bg-navy text-white"
+                    : "text-foreground/70 hover:bg-muted hover:text-foreground",
+                )
+              }
+            >
+              {item.label}
+            </NavLink>
+          ))}
+          <a
+            href={`tel:${BUSINESS.contact.phoneE164}`}
+            className="ml-3 inline-flex items-center gap-2 rounded-full bg-accent px-4 py-2 text-sm font-semibold text-accent-foreground shadow-lg shadow-accent/20 transition-transform hover:scale-105"
+          >
+            <Phone className="h-4 w-4" />
+            {BUSINESS.contact.phone}
+          </a>
+        </nav>
+
+        <button
+          type="button"
+          aria-label={open ? "Lukk meny" : "Åpne meny"}
+          aria-expanded={open}
+          aria-controls="mobile-nav"
+          onClick={() => setOpen((v) => !v)}
+          className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-navy text-white md:hidden"
+        >
+          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+        </button>
+      </div>
+
+      <div
+        id="mobile-nav"
+        className={cn(
+          "fixed inset-x-0 top-16 bottom-0 z-40 bg-background transition-all duration-300 md:hidden",
+          open ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0",
+        )}
+      >
+        <nav className="container-wide flex flex-col gap-1 pt-6" aria-label="Mobilmeny">
+          {NAV.map((item) => (
+            <NavLink
+              key={item.to}
+              to={item.to}
+              end={item.end}
+              className={({ isActive }) =>
+                cn(
+                  "rounded-2xl px-5 py-4 text-lg font-medium transition-colors",
+                  isActive
+                    ? "bg-navy text-white"
+                    : "text-foreground hover:bg-muted",
+                )
+              }
+            >
+              {item.label}
+            </NavLink>
+          ))}
+          <a
+            href={`tel:${BUSINESS.contact.phoneE164}`}
+            className="mt-4 inline-flex items-center justify-center gap-2 rounded-2xl bg-accent px-5 py-4 text-lg font-semibold text-accent-foreground shadow-lg shadow-accent/20"
+          >
+            <Phone className="h-5 w-5" />
+            Ring {BUSINESS.contact.phone}
+          </a>
+        </nav>
+      </div>
+    </header>
+  );
+}
