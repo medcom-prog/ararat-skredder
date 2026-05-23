@@ -81,17 +81,16 @@ The contact form at `/kontakt` POSTs to `api/contact.ts` (Vercel
 serverless function) which sends the email via Resend. Required env
 vars on the Vercel project:
 
-| Variable           | Required | Default                                       |
-|--------------------|----------|-----------------------------------------------|
-| `RESEND_API_KEY`   | **yes**  | —                                             |
-| `CONTACT_TO_EMAIL` | no       | `ararat_skredder@hotmail.com`                 |
-| `CONTACT_FROM_EMAIL` | no     | `Ararat Skredderi <noreply@medcom.no>`        |
+| Variable             | Required | Default                                                |
+|----------------------|----------|--------------------------------------------------------|
+| `RESEND_API_KEY`     | **yes**  | —                                                      |
+| `CONTACT_TO_EMAIL`   | no       | `ararat_skredder@hotmail.com`                          |
+| `CONTACT_FROM_EMAIL` | no       | `Ararat Skredderi <noreply@araratskredderi.no>`        |
 
 The `from` domain must be verified in the Resend account that owns
-`RESEND_API_KEY`. Medcom's central Resend account already has
-`medcom.no` verified, so `noreply@medcom.no` works out of the box
-when using the shared key. Customer's email is set as `Reply-To` so
-Ararat can answer the customer directly without forwarding.
+`RESEND_API_KEY`. `araratskredderi.no` is verified in Medcom's Resend
+account, so the default works. Customer's email is set as `Reply-To`
+so Ararat can answer the customer directly without forwarding.
 
 If `RESEND_API_KEY` is missing, the form returns 503 with a clear
 error and the frontend tells the user to ring instead.

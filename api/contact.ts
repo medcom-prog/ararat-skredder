@@ -7,11 +7,12 @@
  * directly without forwarding.
  *
  * Required env vars (set in Vercel project settings):
- *   RESEND_API_KEY          Medcom's Resend API key (re_...)
- *   CONTACT_TO_EMAIL        Recipient (default: ararat_skredder@hotmail.com)
+ *   RESEND_API_KEY          Resend API key (re_...) — Ararat-scoped, Sending access
  *
  * Optional:
- *   CONTACT_FROM_EMAIL      Sender (default: "Ararat Skredderi <noreply@medcom.no>")
+ *   CONTACT_TO_EMAIL        Recipient (default: ararat_skredder@hotmail.com)
+ *   CONTACT_FROM_EMAIL      Sender (default: "Ararat Skredderi <noreply@araratskredderi.no>")
+ *                           Requires the `from` domain to be verified in Resend.
  *
  * If RESEND_API_KEY is missing, the route returns 503 with a clear
  * error so the frontend can show "Ring oss direkte"-fallback.
@@ -41,7 +42,8 @@ interface VercelResponse {
 
 const TO_EMAIL = process.env.CONTACT_TO_EMAIL ?? "ararat_skredder@hotmail.com";
 const FROM_EMAIL =
-  process.env.CONTACT_FROM_EMAIL ?? "Ararat Skredderi <noreply@medcom.no>";
+  process.env.CONTACT_FROM_EMAIL ??
+  "Ararat Skredderi <noreply@araratskredderi.no>";
 
 function escapeHtml(s: string): string {
   return s
