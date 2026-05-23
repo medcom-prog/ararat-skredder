@@ -37,6 +37,19 @@ export function Reveal({
       return;
     }
 
+    // Race-condition fallback: if the element is already in (or near) the
+    // viewport on mount, show it immediately. IntersectionObserver does
+    // fire a callback after observe(), but the timing isn't deterministic
+    // and some environments skip the initial fire for elements that don't
+    // move. Without this, above-the-fold Reveal-wrapped elements can stay
+    // invisible forever.
+    const rect = el.getBoundingClientRect();
+    const vh = window.innerHeight || document.documentElement.clientHeight;
+    if (rect.top < vh && rect.bottom > 0) {
+      setShown(true);
+      return;
+    }
+
     const io = new IntersectionObserver(
       (entries) => {
         for (const e of entries) {
@@ -50,7 +63,15 @@ export function Reveal({
       { rootMargin: "0px 0px -10% 0px", threshold: 0.05 },
     );
     io.observe(el);
-    return () => io.disconnect();
+
+    // Safety net: if IO never fires (some browsers/contexts), force show
+    // after 1.2s so content is never permanently hidden.
+    const timeout = window.setTimeout(() => setShown(true), 1200);
+
+    return () => {
+      io.disconnect();
+      window.clearTimeout(timeout);
+    };
   }, []);
 
   const Component = Tag as any;
