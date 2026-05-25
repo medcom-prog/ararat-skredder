@@ -36,7 +36,7 @@ export const services: Service[] = [
     shortDescription:
       "Eleganse skreddersydd etter dine mål. Klassisk håndverk for en perfekt passform.",
     fullDescription:
-      "Vi skreddersyr elegante dresser etter dine mål og preferanser. En grundig prosess gir perfekt passform og en stil som matcher både personlighet og anledning — fra konsultasjon og måltaking til prøving og finjustering.",
+      "Vi skreddersyr elegante dresser etter dine mål og preferanser. En grundig prosess gir perfekt passform og en stil som matcher både personlighet og anledning, fra konsultasjon og måltaking til prøving og finjustering.",
     features: [
       "Nøyaktig måltaking og personlig konsultasjon",
       "Premium stoffvalg: ull, lin, silke",
@@ -64,7 +64,7 @@ export const services: Service[] = [
     shortDescription:
       "Plaggene dine fortjener et lengre liv. Vi gjør dem som nye.",
     fullDescription:
-      "Vi utfører endringer og reparasjoner som får plaggene til å sitte bedre og vare lenger — fra enkle justeringer til komplekse jobber. Bukser, skjørt, ermer, knapper, glidelåser og alt der imellom.",
+      "Vi utfører endringer og reparasjoner som får plaggene til å sitte bedre og vare lenger, fra enkle justeringer til komplekse jobber. Bukser, skjørt, ermer, knapper, glidelåser og alt der imellom.",
     features: [
       "Lengdejustering av bukser, skjørt og ermer",
       "Inn- og uttak for justert passform",
@@ -72,14 +72,14 @@ export const services: Service[] = [
       "Glidelåser og knapper byttes raskt",
     ],
     process: [
-      { step: "Innlevering", description: "Kom innom Torggata 8 — vi vurderer plagget på stedet." },
+      { step: "Innlevering", description: "Kom innom Torggata 8. Vi vurderer plagget på stedet." },
       { step: "Prisoverslag", description: "Konkret pris og leveringstid før vi setter i gang." },
       { step: "Håndverk", description: "Erfarne skreddere utfører arbeidet med presisjon." },
-      { step: "Henting", description: "Plagget klart til avtalt tid — pakket og pent." },
+      { step: "Henting", description: "Plagget klart til avtalt tid, pakket og pent." },
     ],
     pricing: { from: 200, label: "Fra 200 kr", note: "Pris settes etter vurdering på stedet" },
     quickAnswerPoints: [
-      { name: "Drop-in-vurdering på stedet", description: "Kom innom uten avtale — vi gir prisoverslag mens du venter." },
+      { name: "Drop-in-vurdering på stedet", description: "Kom innom uten avtale. Vi gir prisoverslag mens du venter." },
       { name: "Lengdejustering 200 – 400 kr", description: "Bukser, skjørt og ermer." },
       { name: "Glidelås og knapper byttes raskt", description: "Vanligvis ferdig innen 1 – 3 dager." },
       { name: "Større reparasjoner får eget prisoverslag", description: "Komplekse jobber prises individuelt." },
@@ -92,7 +92,7 @@ export const services: Service[] = [
     shortDescription:
       "Gi gamle favoritter et nytt liv. Vi gjør om snitt, fasong og detaljer.",
     fullDescription:
-      "Har du et plagg du elsker som ikke lenger passer eller føles utdatert? Vi gir det nytt liv — oppgradering av snitt, fasong eller detaljer for et moderne uttrykk uten å miste det som gjorde plagget spesielt i utgangspunktet.",
+      "Har du et plagg du elsker som ikke lenger passer eller føles utdatert? Vi gir det nytt liv: oppgradering av snitt, fasong eller detaljer for et moderne uttrykk uten å miste det som gjorde plagget spesielt i utgangspunktet.",
     features: [
       "Gammel dress → moderne blazer",
       "Lang kjole → tidløs midikjole",
@@ -119,15 +119,15 @@ export const services: Service[] = [
     shortDescription:
       "Skreddersydde skjorter med perfekt passform. Velg stoff, krage og detaljer.",
     fullDescription:
-      "Skreddersydde skjorter og bluser med perfekt passform. Du velger stoff, krage, mansjett og alle detaljer — fra premium bomull til silke, sateng, lin og tekniske stoffer.",
+      "Skreddersydde skjorter og bluser med perfekt passform. Du velger stoff, krage, mansjett og alle detaljer, fra premium bomull til silke, sateng, lin og tekniske stoffer.",
     features: [
       "Premium bomull, silke, sateng, lin",
       "Klassisk og moderne kragesnitt",
-      "Måltatt passform — ikke standardstørrelser",
+      "Måltatt passform, ikke standardstørrelser",
       "Skreddersydde for kontor, fest eller hverdag",
     ],
     process: [
-      { step: "Stoffvalg", description: "Vi viser deg utvalget — fra hverdagsbomull til premiumsilke." },
+      { step: "Stoffvalg", description: "Vi viser deg utvalget, fra hverdagsbomull til premiumsilke." },
       { step: "Måltaking", description: "Nøyaktige mål for skuldre, bryst, midje og lengde." },
       { step: "Søm", description: "Skjorten/blusen sys på bestilling i vårt verksted." },
       { step: "Prøving", description: "Endelig prøving for perfekt passform." },
@@ -147,7 +147,7 @@ export const services: Service[] = [
     shortDescription:
       "Sko som varer lenger. Reparasjon av såler, hæler, skinn og glidelåser.",
     fullDescription:
-      "Vi utfører alle typer skoreparasjoner — skinn, tekstil og syntet. Kom innom for vurdering. Spesialitet på reparasjon av arvede sko og høykvalitetsmodeller som fortjener et nytt liv.",
+      "Vi utfører alle typer skoreparasjoner i skinn, tekstil og syntet. Kom innom for vurdering. Spesialitet på reparasjon av arvede sko og høykvalitetsmodeller som fortjener et nytt liv.",
     features: [
       "Sålereparasjon og utskifting",
       "Hælreparasjon og utskifting",
@@ -175,7 +175,7 @@ export const services: Service[] = [
     shortDescription:
       "Brudeplagg, kostymer, uniformer og designsamarbeid. Vi tar utfordrende prosjekter.",
     fullDescription:
-      "Har du en idé eller et spesielt behov? Vi tar utfordrende prosjekter og spesialbestillinger — brudekjoler og brudgomsdresser, kostymer for teater og film, profesjonelle uniformer og samarbeid med merker og designere.",
+      "Har du en idé eller et spesielt behov? Vi tar utfordrende prosjekter og spesialbestillinger: brudekjoler og brudgomsdresser, kostymer for teater og film, profesjonelle uniformer og samarbeid med merker og designere.",
     features: [
       "Brudekjoler og brudgomsdresser",
       "Kostymer for teater, film og event",

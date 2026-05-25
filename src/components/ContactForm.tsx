@@ -101,7 +101,7 @@ export function ContactForm() {
           Takk for meldingen!
         </h3>
         <p className="mx-auto mt-3 max-w-sm text-base leading-relaxed text-muted-foreground">
-          Vi tar kontakt så snart vi kan — vanligvis innen samme arbeidsdag.
+          Vi tar kontakt så snart vi kan, vanligvis innen samme arbeidsdag.
           Trenger du raskere svar, ring oss på{" "}
           <a
             href={`tel:${BUSINESS.contact.phoneE164}`}

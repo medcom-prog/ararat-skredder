@@ -38,7 +38,7 @@ export default function Tjenester() {
   return (
     <>
       <SEO
-        title="Tjenester — Skreddersøm, reparasjon og skomakeri"
+        title="Tjenester · Skreddersøm, reparasjon og skomakeri"
         description="Målsøm av dresser fra 8 000 kr, reparasjon fra 200 kr, skreddersydde skjorter fra 2 500 kr og skomakeri. Detaljert prosess og pris per tjeneste."
         canonical={BUSINESS.domain + "/tjenester"}
         jsonLd={[

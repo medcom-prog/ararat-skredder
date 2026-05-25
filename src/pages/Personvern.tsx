@@ -51,13 +51,13 @@ export default function Personvern() {
             </p>
             <ul className="list-disc space-y-2 pl-6">
               <li>
-                <strong>Kundeopplysninger:</strong> navn, telefonnummer,
-                e-postadresse — innhentet i forbindelse med
+                <strong>Kundeopplysninger:</strong> navn, telefonnummer og
+                e-postadresse, innhentet i forbindelse med
                 måltaking, prosjekt eller hjemmebesøk.
               </li>
               <li>
                 <strong>Måltaking og preferanser:</strong> kroppsmål,
-                stoffvalg og designnotater — kun lagret så lenge det er
+                stoffvalg og designnotater, kun lagret så lenge det er
                 nødvendig for å levere oppdraget.
               </li>
               <li>
@@ -80,7 +80,7 @@ export default function Personvern() {
           <Section title="Lagring og sletting">
             <p>
               Vi lagrer personopplysninger så lenge det er nødvendig for å
-              oppfylle formålet — typisk inntil oppdraget er fullført og
+              oppfylle formålet, typisk inntil oppdraget er fullført og
               dokumentert. Bokføringspliktige opplysninger lagres i 5 år i
               henhold til bokføringsloven. Etter dette slettes opplysningene.
             </p>

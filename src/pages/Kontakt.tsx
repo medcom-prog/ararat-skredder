@@ -16,8 +16,8 @@ export default function Kontakt() {
   return (
     <>
       <SEO
-        title={`Kontakt — Torggata 8, Oslo · Ring ${BUSINESS.contact.phone}`}
-        description={`Kontakt Ararat Skredderi i Torggata 8, 0181 Oslo. Drop-in mandag–lørdag. Ring ${BUSINESS.contact.phone} eller send e-post.`}
+        title={`Kontakt · Torggata 8, Oslo · Ring ${BUSINESS.contact.phone}`}
+        description={`Kontakt Ararat Skredderi i Torggata 8, 0181 Oslo. Drop-in mandag til lørdag. Ring ${BUSINESS.contact.phone} eller send e-post.`}
         canonical={BUSINESS.domain + "/kontakt"}
         jsonLd={[
           {
@@ -45,7 +45,7 @@ export default function Kontakt() {
             </span>
           </h1>
           <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-            Drop-in mandag til lørdag — ingen avtale nødvendig. Vi gir alltid
+            Drop-in mandag til lørdag. Ingen avtale nødvendig. Vi gir alltid
             en ærlig vurdering og bindende prisoverslag før vi starter på
             plagget ditt.
           </p>
@@ -63,7 +63,7 @@ export default function Kontakt() {
                 Skriv til oss
               </h2>
               <p className="mt-2 max-w-md text-sm leading-relaxed text-muted-foreground">
-                Fyll ut skjemaet — vi svarer som regel innen samme arbeidsdag.
+                Fyll ut skjemaet. Vi svarer som regel innen samme arbeidsdag.
               </p>
               <div className="mt-5">
                 <ContactForm />
@@ -94,7 +94,7 @@ export default function Kontakt() {
                     {BUSINESS.address.postalCode} {BUSINESS.address.city}
                   </>
                 }
-                secondary="Drop-in mandag til lørdag — ingen avtale nødvendig."
+                secondary="Drop-in mandag til lørdag. Ingen avtale nødvendig."
                 cta={{
                   href: BUSINESS.address.googleMapsUrl,
                   label: "Veibeskrivelse",

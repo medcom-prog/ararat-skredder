@@ -40,7 +40,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     src: `${BASE}/araratsowingwithmachine-2.jpg`,
-    alt: "Sysøm i nærbilde — presisjon på symaskin",
+    alt: "Sysøm i nærbilde, presisjon på symaskin",
     category: "skreddersom",
     width: 1200,
     height: 1600,
@@ -61,7 +61,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     src: `${BASE}/araratworkingwithmachine-2.jpg`,
-    alt: "Symaskin i bruk — kontroll over stinglengde",
+    alt: "Symaskin i bruk, kontroll over stinglengde",
     category: "verksted",
     width: 1200,
     height: 1600,
@@ -75,7 +75,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     src: `${BASE}/araratmeasuringcustomerpants-2.jpg`,
-    alt: "Måltaking — målbånd langs siden",
+    alt: "Måltaking med målbånd langs siden",
     category: "kunde",
     width: 1200,
     height: 1600,
@@ -103,7 +103,7 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     src: `${BASE}/pointingatfabric-2.jpg`,
-    alt: "Stoffvalg — gjennomgang av materialer",
+    alt: "Stoffvalg, gjennomgang av materialer",
     category: "kunde",
     width: 1200,
     height: 1600,
@@ -124,14 +124,14 @@ export const galleryImages: GalleryImage[] = [
   },
   {
     src: `${BASE}/sittingarea.jpg`,
-    alt: "Sittegruppen i Ararat Skredderi — Torggata 8",
+    alt: "Sittegruppen i Ararat Skredderi, Torggata 8",
     category: "lokaler",
     width: 1200,
     height: 1600,
   },
   {
     src: `${BASE}/sittingarea2.jpg`,
-    alt: "Interiør — venteområde med klassisk møblement",
+    alt: "Interiør, venteområde med klassisk møblement",
     category: "lokaler",
     width: 1200,
     height: 1600,

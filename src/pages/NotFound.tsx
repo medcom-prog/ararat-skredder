@@ -9,7 +9,7 @@ export default function NotFound() {
     <>
       <SEO
         title="Siden finnes ikke (404)"
-        description="Beklager — denne siden finnes ikke. Gå tilbake til forsiden eller utforsk tjenestene våre."
+        description="Beklager, denne siden finnes ikke. Gå tilbake til forsiden eller utforsk tjenestene våre."
         canonical={BUSINESS.domain + "/404"}
       />
 

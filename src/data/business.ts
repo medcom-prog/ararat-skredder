@@ -10,7 +10,7 @@
 
 export const BUSINESS = {
   name: "Ararat Skredderi",
-  legalName: "Ararat Skredder, Renseri, Skomaker, Nøkkel Filling — Ahmad Abdulhamid",
+  legalName: "Ararat Skredder, Renseri, Skomaker, Nøkkel Filling, Ahmad Abdulhamid",
   shortDescription:
     "Profesjonell skreddersøm, reparasjon, omforming og skomakeri i Oslo sentrum.",
   longDescription:

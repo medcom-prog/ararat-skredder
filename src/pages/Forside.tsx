@@ -56,7 +56,7 @@ export default function Forside() {
             <Reveal delay={160}>
               <p className="mt-5 max-w-xl text-base leading-relaxed text-white/85 md:text-lg">
                 Fra målsøm av dresser til reparasjon, omforming og skomakeri.
-                Vi gir plaggene dine perfekt passform — og et lengre liv. I
+                Vi gir plaggene dine perfekt passform og et lengre liv. I
                 hjertet av Oslo siden første sting.
               </p>
             </Reveal>
@@ -131,7 +131,7 @@ export default function Forside() {
               },
               {
                 name: "Omforming og skomakeri",
-                description: "Gi gamle favoritter nytt liv — også skinn, hæler og såler.",
+                description: "Gi gamle favoritter nytt liv. Også skinn, hæler og såler.",
               },
               {
                 name: "Sentralt i Oslo sentrum",
@@ -238,7 +238,8 @@ export default function Forside() {
                   <img
                     src={img.src}
                     alt={img.alt}
-                    loading="lazy"
+                    loading={i < 4 ? "eager" : "lazy"}
+                    fetchPriority={i < 4 ? "high" : undefined}
                     decoding="async"
                     width={img.width}
                     height={img.height}
@@ -293,7 +294,7 @@ export default function Forside() {
                 håndverket.
               </p>
               <p className="mt-4 text-base leading-relaxed text-white/80 md:text-lg">
-                Hver kunde får individuell oppmerksomhet — fra brudekjole til
+                Hver kunde får individuell oppmerksomhet, fra brudekjole til
                 hverdagsbukse. Skreddermester Ahmad Abdulhamid tar hver
                 oppgave personlig.
               </p>
@@ -321,7 +322,7 @@ export default function Forside() {
               ))}
             </div>
             <blockquote className="font-serif text-xl italic leading-relaxed text-foreground md:text-2xl">
-              «Vi tar stolthet i håndverket vårt — detaljer som varer.»
+              «Vi tar stolthet i håndverket vårt. Detaljer som varer.»
             </blockquote>
             <p className="mt-5 text-xs uppercase tracking-wider text-muted-foreground tabular">
               5,0 / 5 på Google · Ahmad Abdulhamid, skreddermester

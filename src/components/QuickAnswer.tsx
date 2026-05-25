@@ -67,7 +67,7 @@ export function QuickAnswer({
             <span className="text-foreground/90">
               <strong className="font-semibold text-foreground">{p.name}</strong>
               {p.description ? (
-                <span className="text-muted-foreground"> — {p.description}</span>
+                <span className="text-muted-foreground">. {p.description}</span>
               ) : null}
             </span>
           </li>

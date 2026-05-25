@@ -32,14 +32,14 @@ export default function Galleri() {
   return (
     <>
       <SEO
-        title="Galleri — Verkstedet og lokalene"
+        title="Galleri · Verkstedet og lokalene"
         description="Bilder fra verkstedet og lokalene i Torggata 8: skreddersøm, sysøm, kundemøter, stoffvalg og fasaden. Bak håndverket hos Ararat Skredderi."
         canonical={BUSINESS.domain + "/galleri"}
         jsonLd={[
           {
             "@context": "https://schema.org",
             "@type": "ImageGallery",
-            name: "Galleri — Ararat Skredderi",
+            name: "Galleri · Ararat Skredderi",
             description: "Bilder fra verkstedet, kundemøter og lokalene i Torggata 8.",
             image: galleryImages.slice(0, 12).map((img) => ({
               "@type": "ImageObject",
@@ -108,7 +108,8 @@ export default function Galleri() {
               <img
                 src={img.src}
                 alt={img.alt}
-                loading="lazy"
+                loading={i < 4 ? "eager" : "lazy"}
+                fetchPriority={i < 4 ? "high" : undefined}
                 decoding="async"
                 width={img.width}
                 height={img.height}

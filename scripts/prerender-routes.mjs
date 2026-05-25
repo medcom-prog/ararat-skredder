@@ -49,7 +49,7 @@ const SERVICES = [
   {
     slug: "endringer-reparasjon",
     name: "Endringer & reparasjon",
-    description: "Lengdejustering, reparasjon, glidelåser og knapper. Fra 200 kr — drop-in-vurdering på stedet.",
+    description: "Lengdejustering, reparasjon, glidelåser og knapper. Fra 200 kr. Drop-in-vurdering på stedet.",
     priceFrom: 200,
   },
   {
@@ -81,7 +81,7 @@ const SERVICES = [
 const HOME_FAQS = [
   {
     q: "Hvor finner jeg dere?",
-    a: "Vi holder til i Torggata 8, 0181 Oslo — midt i Oslo sentrum. Vi ligger nær flere bussholdeplasser og T-bane-stasjoner og er enkle å nå med offentlig transport.",
+    a: "Vi holder til i Torggata 8, 0181 Oslo, midt i Oslo sentrum. Vi ligger nær flere bussholdeplasser og T-bane-stasjoner og er enkle å nå med offentlig transport.",
   },
   {
     q: "Må jeg bestille time?",
@@ -97,7 +97,7 @@ const HOME_FAQS = [
   },
   {
     q: "Kan dere reparere alle typer klær og sko?",
-    a: "Vi tar de fleste plagg og skotyper — fra hverdagsklær til premium og arvestykker. For helt spesielle materialer eller designerklær gir vi alltid en ærlig vurdering før vi tar oppdraget.",
+    a: "Vi tar de fleste plagg og skotyper, fra hverdagsklær til premium og arvestykker. For helt spesielle materialer eller designerklær gir vi alltid en ærlig vurdering før vi tar oppdraget.",
   },
 ];
 
@@ -224,7 +224,7 @@ function galleriLd() {
       {
         "@type": "ImageGallery",
         "@id": `${url}#gallery`,
-        name: "Galleri — Ararat Skredderi",
+        name: "Galleri · Ararat Skredderi",
         description: "Bilder fra verkstedet, kundemøter og lokalene i Torggata 8.",
         url,
       },
@@ -385,7 +385,7 @@ function writeRouteHtml(routePath, html) {
 const ROUTES = [
   {
     path: "tjenester",
-    title: "Tjenester — Skreddersøm, reparasjon og skomakeri",
+    title: "Tjenester · Skreddersøm, reparasjon og skomakeri",
     description:
       "Målsøm av dresser fra 8 000 kr, reparasjon fra 200 kr, skreddersydde skjorter fra 2 500 kr og skomakeri. Detaljert prosess og pris per tjeneste.",
     h1: "Skreddersøm, reparasjon og mer",
@@ -395,7 +395,7 @@ const ROUTES = [
   },
   {
     path: "galleri",
-    title: "Galleri — Verkstedet og lokalene",
+    title: "Galleri · Verkstedet og lokalene",
     description:
       "Bilder fra verkstedet og lokalene i Torggata 8: skreddersøm, sysøm, kundemøter, stoffvalg og fasaden. Bak håndverket hos Ararat Skredderi.",
     h1: "Bak håndverket",
@@ -405,7 +405,7 @@ const ROUTES = [
   },
   {
     path: "om-oss",
-    title: "Om oss — Skreddermester med 50+ års erfaring",
+    title: "Om oss · Skreddermester med 50+ års erfaring",
     description:
       "Ararat Skredderi har levert kvalitetshåndverk i over 50 år. Skreddermester Ahmad Abdulhamid i Torggata 8, Oslo sentrum.",
     h1: "50+ år med håndverkstradisjon",
@@ -415,12 +415,12 @@ const ROUTES = [
   },
   {
     path: "kontakt",
-    title: "Kontakt — Torggata 8, Oslo · Ring 91 92 19 08",
+    title: "Kontakt · Torggata 8, Oslo · Ring +47 91 92 19 08",
     description:
       "Kontakt Ararat Skredderi i Torggata 8, 0181 Oslo. Drop-in mandag–lørdag. Ring 91 92 19 08 eller send e-post.",
     h1: "Kom innom eller ring oss",
     intro:
-      "Drop-in mandag til lørdag — ingen avtale nødvendig. Vi gir alltid en ærlig vurdering og bindende prisoverslag før vi starter på plagget ditt.",
+      "Drop-in mandag til lørdag. Ingen avtale nødvendig. Vi gir alltid en ærlig vurdering og bindende prisoverslag før vi starter på plagget ditt.",
     schema: kontaktLd(),
   },
   {

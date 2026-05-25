@@ -16,7 +16,7 @@ const values = [
   {
     icon: Award,
     title: "Kvalitet i fokus",
-    body: "Beste materialer og presisjonsteknikker — vi velger ikke snarveier som går utover holdbarheten.",
+    body: "Beste materialer og presisjonsteknikker. Vi velger ikke snarveier som går utover holdbarheten.",
   },
   {
     icon: Users,
@@ -29,7 +29,7 @@ export default function OmOss() {
   return (
     <>
       <SEO
-        title="Om oss — Skreddermester med 50+ års erfaring"
+        title="Om oss · Skreddermester med 50+ års erfaring"
         description={`Ararat Skredderi har levert kvalitetshåndverk i ${yearsExperience}+ år. Skreddermester Ahmad Abdulhamid i Torggata 8, Oslo sentrum.`}
         canonical={BUSINESS.domain + "/om-oss"}
         jsonLd={[
@@ -90,7 +90,7 @@ export default function OmOss() {
             },
             {
               name: "Skreddermester Ahmad Abdulhamid",
-              description: "Hver oppgave tas personlig — fra brudekjole til hverdagsbukse.",
+              description: "Hver oppgave tas personlig, fra brudekjole til hverdagsbukse.",
             },
             {
               name: "Torggata 8 i Oslo sentrum",
@@ -108,26 +108,26 @@ export default function OmOss() {
       <section className="section bg-surface">
         <div className="container-narrow space-y-6 text-base leading-relaxed text-foreground md:text-lg">
           <p className="font-serif text-2xl italic leading-snug text-foreground md:text-3xl">
-            «Vi tar stolthet i håndverket vårt — detaljer som varer.»
+            «Vi tar stolthet i håndverket vårt. Detaljer som varer.»
           </p>
           <p>
             Skreddersøm er ikke bare et yrke. Det er en disiplin som krever
             tålmodighet, presisjon og en dyp respekt for materialene.
             Skreddermester Ahmad Abdulhamid har øvd dette håndverket i over
-            50 år — fra første lærdom hos en eldre mester til daglig drift
+            50 år, fra første lærdom hos en eldre mester til daglig drift
             av Ararat Skredderi i Torggata 8.
           </p>
           <p>
             Vår filosofi er enkel: hvert plagg fortjener oppmerksomhet, og
             hver kunde fortjener et resultat de er stolte av. Det betyr at vi
-            tar tiden vi trenger på konsultasjon, måltaking og prøving — og
+            tar tiden vi trenger på konsultasjon, måltaking og prøving, og
             at vi sier ifra hvis et plagg ikke kan reddes, fremfor å fakturere
             for et arbeid som ikke gir verdi.
           </p>
           <p>
             Vi tar imot alt fra de minste reparasjonene til kompliserte
             brudekjoler. Vi snakker norsk, engelsk og arabisk. Og vi har holdt
-            til samme sted i hjertet av Oslo siden butikken åpnet — fordi
+            til samme sted i hjertet av Oslo siden butikken åpnet, fordi
             stedet, kundene og håndverket henger sammen.
           </p>
         </div>

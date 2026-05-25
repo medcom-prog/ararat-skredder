@@ -8,7 +8,7 @@ export const generalFaqs: FAQ[] = [
   {
     question: "Hvor finner jeg dere?",
     answer:
-      "Vi holder til i Torggata 8, 0181 Oslo — midt i Oslo sentrum. Vi ligger nær flere bussholdeplasser og T-bane-stasjoner og er enkle å nå med offentlig transport.",
+      "Vi holder til i Torggata 8, 0181 Oslo, midt i Oslo sentrum. Vi ligger nær flere bussholdeplasser og T-bane-stasjoner og er enkle å nå med offentlig transport.",
   },
   {
     question: "Må jeg bestille time?",
@@ -23,12 +23,12 @@ export const generalFaqs: FAQ[] = [
   {
     question: "Hva koster det?",
     answer:
-      "Reparasjoner starter fra 200 kr. Skreddersydde skjorter fra 2 500 kr. Målsøm av dress fra 8 000 kr. Vi gir alltid bindende prisoverslag før vi setter i gang — kom innom for vurdering.",
+      "Reparasjoner starter fra 200 kr. Skreddersydde skjorter fra 2 500 kr. Målsøm av dress fra 8 000 kr. Vi gir alltid bindende prisoverslag før vi setter i gang. Kom innom for vurdering.",
   },
   {
     question: "Kan dere reparere alle typer klær og sko?",
     answer:
-      "Vi tar de fleste plagg og skotyper — fra hverdagsklær til premium og arvestykker. For helt spesielle materialer eller designerklær gir vi alltid en ærlig vurdering før vi tar oppdraget.",
+      "Vi tar de fleste plagg og skotyper, fra hverdagsklær til premium og arvestykker. For helt spesielle materialer eller designerklær gir vi alltid en ærlig vurdering før vi tar oppdraget.",
   },
   {
     question: "Tilbyr dere hjemmebesøk?",

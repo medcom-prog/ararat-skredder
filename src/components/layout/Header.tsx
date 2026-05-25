@@ -35,6 +35,13 @@ export function Header() {
     };
   }, [open]);
 
+  // On the home route we sit on top of a dark hero. Until the user
+  // scrolls, the header is transparent, so the default dark navy logo
+  // and nav-link colors are invisible against the hero. Flip to a
+  // light palette when overHero, back to dark once the user has
+  // scrolled and the white backdrop is showing.
+  const overHero = pathname === "/" && !scrolled;
+
   return (
     <header
       className={cn(
@@ -47,11 +54,13 @@ export function Header() {
       <div className="container-wide flex h-16 items-center justify-between md:h-20">
         <Link
           to="/"
-          className="group inline-flex items-baseline gap-2 font-display text-xl uppercase tracking-wide text-foreground md:text-2xl"
-          aria-label="Ararat Skredderi — til forsiden"
+          className="group inline-flex items-baseline gap-2 font-display text-xl uppercase tracking-wide md:text-2xl"
+          aria-label="Ararat Skredderi, til forsiden"
         >
-          <span className="text-navy">Ararat</span>
-          <span className="text-accent">Skredderi</span>
+          <span className={overHero ? "text-white" : "text-navy"}>Ararat</span>
+          <span className={overHero ? "text-accent-soft" : "text-accent"}>
+            Skredderi
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex" aria-label="Hovedmeny">
@@ -65,7 +74,9 @@ export function Header() {
                   "rounded-full px-4 py-2 text-sm font-medium transition-colors",
                   isActive
                     ? "bg-navy text-white"
-                    : "text-foreground/70 hover:bg-muted hover:text-foreground",
+                    : overHero
+                      ? "text-white/85 hover:bg-white/10 hover:text-white"
+                      : "text-foreground/70 hover:bg-muted hover:text-foreground",
                 )
               }
             >
@@ -87,7 +98,10 @@ export function Header() {
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-navy text-white md:hidden"
+          className={cn(
+            "inline-flex h-10 w-10 items-center justify-center rounded-full md:hidden",
+            overHero ? "bg-white text-navy" : "bg-navy text-white",
+          )}
         >
           {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
         </button>
