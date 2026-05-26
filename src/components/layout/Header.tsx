@@ -9,6 +9,7 @@ const NAV = [
   { to: "/tjenester", label: "Tjenester" },
   { to: "/galleri", label: "Galleri" },
   { to: "/om-oss", label: "Om oss" },
+  { to: "/blog", label: "Blogg" },
   { to: "/kontakt", label: "Kontakt" },
 ];
 
@@ -35,24 +36,21 @@ export function Header() {
     };
   }, [open]);
 
-  // On the home route we sit on top of the dark hero. Until the user
-  // scrolls we flip the logo + nav to a light palette so they read
-  // against the navy photo. We also paint a subtle dark gradient
-  // BEHIND the header (not over the hero) so the white text stays
-  // readable even in light-mode browsers where the body background
-  // would otherwise be white — the gradient gives the brand a tinted
-  // backdrop without changing how the hero photo looks.
+  // On the home route, before scroll, sit on a solid frosted dark
+  // backdrop. The brand reads cleanly regardless of body bg (light or
+  // dark mode), without the gradient fade that looked muddy. After
+  // scroll we transition to the light backdrop used on other routes.
   const overHero = pathname === "/" && !scrolled;
 
   return (
     <header
       className={cn(
-        "sticky top-0 z-40 w-full transition-[background-color,border-color,backdrop-filter] duration-300",
+        "sticky top-0 z-40 w-full border-b transition-[background-color,border-color,backdrop-filter] duration-300 backdrop-blur-md",
         scrolled
-          ? "border-b border-border bg-background/85 backdrop-blur-md"
+          ? "border-border bg-background/85"
           : overHero
-            ? "bg-gradient-to-b from-navy-dark/90 via-navy-dark/60 to-transparent"
-            : "bg-transparent",
+            ? "border-white/10 bg-navy-dark/80"
+            : "border-transparent bg-transparent",
       )}
     >
       <div className="container-wide flex h-16 items-center justify-between md:h-20">
