@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Brand: navy + electric blue (Ararat existing palette, modernized) */
+    --background: 0 0% 100%;
+    --foreground: 220 71% 13%; /* near-black with navy bias */
+    --surface: 220 36% 98%;
+
+    --navy: 220 80% 13%; /* #0a1a3a */
+    --navy-dark: 222 78% 10%; /* deeper for hero overlays */
+
+    --accent: 221 100% 52%; /* #0b5fff electric royal blue */
+    --accent-soft: 200 100% 50%; /* #00b3ff sky blue */
+    --accent-foreground: 0 0% 100%;
+
+    --primary: 220 80% 13%;
+    --primary-foreground: 0 0% 100%;
+
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+
+    --border: 220 13% 91%;
+
+    --radius: 0.875rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    color-scheme: light;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans;
+    font-feature-settings: "rlig" 1, "calt" 1, "ss01" 1;
+    /* Prevent iOS double-tap zoom delays on tappable elements */
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  /* All interactive elements get touch-action: manipulation to remove
+     300ms tap delay on iOS Safari without breaking pinch-zoom. */
+  button, a, [role="button"], summary, label {
+    touch-action: manipulation;
+  }
+
+  /* Number columns and price tags read straighter with tabular-nums */
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Display headings — Bebas Neue for hero impact, Playfair Display for elegance */
+  h1, h2, h3 {
+    @apply font-sans tracking-tight;
+  }
+
+  /* Quick Answer block — referenced by WebPage Speakable schema.
+     Same aria-label as KortFortalt/QuickAnswer pattern used across
+     medcom-prog repos. AI engines preferentially cite first-block
+     answer content (~74% citation rate). */
+  .quick-answer {
+    @apply my-6 border-l-2 border-accent pl-5 max-w-3xl;
+  }
+
+  .quick-answer p {
+    @apply text-base md:text-lg italic leading-relaxed text-muted-foreground;
+  }
+
+  .quick-answer strong {
+    @apply not-italic font-semibold text-foreground;
+  }
+
+  /* Focus ring matching brand */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-background;
+  }
+
+  /* Selection — accent-tinted */
+  ::selection {
+    background-color: hsl(var(--accent) / 0.2);
+    color: hsl(var(--foreground));
+  }
+}
+
+@layer components {
+  /* Display heading variants — use these classes for hero/section
+     headings to get consistent type scale across pages */
+  .text-display-1 {
+    @apply font-display uppercase tracking-wide text-hero font-normal;
+  }
+
+  .text-display-2 {
+    @apply font-serif italic font-medium text-display;
+  }
+
+  /* Section spacing — consistent rhythm. Reduced from py-32 max to
+     py-24 max so sections feel less "in your face". */
+  .section {
+    @apply py-14 md:py-20 lg:py-24;
+  }
+
+  .section-tight {
+    @apply py-10 md:py-14;
+  }
+
+  /* Container wrapper */
+  .container-wide {
+    @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-8;
+  }
+
+  .container-narrow {
+    @apply mx-auto max-w-4xl px-4 sm:px-6 lg:px-8;
+  }
+
+  /* Eyebrow label — small uppercase tag above headings */
+  .eyebrow {
+    @apply font-sans text-xs font-medium uppercase tracking-[0.18em] text-accent;
+  }
+
+  /* Headings auto-balance to avoid orphans/widows */
+  .text-display-1, .text-display-2 {
+    text-wrap: balance;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────
+   Floating call-button pulse — subtle ring expanding outward
+   ────────────────────────────────────────────────────────── */
+@keyframes floating-pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  80%, 100% {
+    transform: scale(1.45);
+    opacity: 0;
+  }
+}
+
+.floating-pulse {
+  animation: floating-pulse 2.4s cubic-bezier(0.16, 1, 0.3, 1) infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .floating-pulse {
+    animation: none;
+    opacity: 0;
+  }
+}
+
+/* ──────────────────────────────────────────────────────────
+   Animation primitives — scroll-reveal with reduced-motion
+   ────────────────────────────────────────────────────────── */
+@layer utilities {
+  .reveal-init {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1), transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+    will-change: opacity, transform;
+  }
+
+  .reveal-show {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-init,
+    .reveal-show {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+    html {
+      scroll-behavior: auto;
+    }
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
