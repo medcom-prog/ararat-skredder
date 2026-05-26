@@ -1,10 +1,9 @@
 /**
  * medcom-seo-managed — /blog listing page.
- * Wraps content in the site's Header + Footer so layout matches the rest.
+ * Ararat-specific: App.tsx already renders Header + Footer globally,
+ * so this page only renders the article-list content.
  */
 import { Link } from 'react-router-dom';
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
 import { articles } from './articles';
 import { MetaHead } from './MetaHead';
 
@@ -18,8 +17,7 @@ export function BlogIndex() {
         description="Artikler, råd og perspektiver fra teamet."
         canonical={canonical}
       />
-      <Header />
-      <main className="min-h-screen bg-background pt-20 md:pt-24">
+      <section className="bg-background">
         <div className="container mx-auto max-w-5xl px-4 py-12 md:py-20">
           <header className="mb-10 md:mb-16 space-y-3">
             <h1 className="text-4xl md:text-6xl font-semibold tracking-tight text-foreground">
@@ -71,8 +69,7 @@ export function BlogIndex() {
             </div>
           )}
         </div>
-      </main>
-      <Footer />
+      </section>
     </>
   );
 }

@@ -10,8 +10,6 @@
 import { useMemo } from 'react';
 import { useParams, Link, Navigate } from 'react-router-dom';
 import DOMPurify from 'isomorphic-dompurify';
-import { Header } from '@/components/layout/Header';
-import { Footer } from '@/components/layout/Footer';
 import { getArticleBySlug } from './articles';
 import { MetaHead } from './MetaHead';
 import { renderMarkdown } from './renderer';
@@ -66,8 +64,7 @@ export function BlogPost() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <Header />
-      <main className="min-h-screen bg-background pt-20 md:pt-24">
+      <section className="bg-background">
         <div className="container mx-auto max-w-6xl px-4 py-8 md:py-16 lg:grid lg:grid-cols-[minmax(0,1fr)_240px] lg:gap-12">
           <article className="lg:max-w-3xl min-w-0">
             <nav className="mb-6 md:mb-8">
@@ -117,8 +114,7 @@ export function BlogPost() {
             </div>
           </aside>
         </div>
-      </main>
-      <Footer />
+      </section>
     </>
   );
 }
