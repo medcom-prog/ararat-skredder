@@ -3,13 +3,14 @@
  * Generates dist/sitemap.xml from a static list of routes.
  * Runs as part of `npm run build` after vite build.
  */
-import { writeFileSync, mkdirSync } from "node:fs";
+import { writeFileSync, mkdirSync, existsSync, readdirSync, readFileSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const OUT_FILE = join(ROOT, "dist", "sitemap.xml");
+const BLOG_CONTENT_DIR = join(ROOT, "content", "blog");
 const SITE = "https://www.araratskredderi.no";
 const TODAY = new Date().toISOString().slice(0, 10);
 
@@ -20,14 +21,32 @@ const ROUTES = [
   { path: "/om-oss", changefreq: "monthly", priority: "0.7" },
   { path: "/kontakt", changefreq: "yearly", priority: "0.8" },
   { path: "/personvern", changefreq: "yearly", priority: "0.3" },
+  { path: "/blog", changefreq: "weekly", priority: "0.7" },
 ];
+
+// Auto-discover blog articles from content/blog/*.md
+if (existsSync(BLOG_CONTENT_DIR)) {
+  for (const file of readdirSync(BLOG_CONTENT_DIR).filter((f) => f.endsWith(".md"))) {
+    const raw = readFileSync(join(BLOG_CONTENT_DIR, file), "utf8");
+    const slugMatch = raw.match(/^slug:\s*["']?([^"'\n]+)["']?\s*$/m);
+    const dateMatch = raw.match(/^(?:published_at|updated_at):\s*["']?(\d{4}-\d{2}-\d{2})["']?\s*$/m);
+    if (slugMatch) {
+      ROUTES.push({
+        path: `/blog/${slugMatch[1].trim()}`,
+        changefreq: "monthly",
+        priority: "0.6",
+        lastmod: dateMatch ? dateMatch[1] : TODAY,
+      });
+    }
+  }
+}
 
 const xml =
   `<?xml version="1.0" encoding="UTF-8"?>\n` +
   `<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n` +
   ROUTES.map(
     (r) =>
-      `  <url>\n    <loc>${SITE}${r.path}</loc>\n    <lastmod>${TODAY}</lastmod>\n    <changefreq>${r.changefreq}</changefreq>\n    <priority>${r.priority}</priority>\n  </url>`,
+      `  <url>\n    <loc>${SITE}${r.path}</loc>\n    <lastmod>${r.lastmod ?? TODAY}</lastmod>\n    <changefreq>${r.changefreq}</changefreq>\n    <priority>${r.priority}</priority>\n  </url>`,
   ).join("\n") +
   `\n</urlset>\n`;
 

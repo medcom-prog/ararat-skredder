@@ -16,7 +16,7 @@
  * Also injects FAQPage schema into dist/index.html (forsiden) so the
  * runtime React FAQ has a static schema-mirror.
  */
-import { readFileSync, writeFileSync, mkdirSync, existsSync } from "node:fs";
+import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 
@@ -24,6 +24,7 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
 const DIST = join(ROOT, "dist");
 const SHELL_PATH = join(DIST, "index.html");
+const BLOG_CONTENT_DIR = join(ROOT, "content", "blog");
 const SITE = "https://www.araratskredderi.no";
 
 if (!existsSync(SHELL_PATH)) {
@@ -480,6 +481,105 @@ for (const r of ROUTES) {
   );
   writeRouteHtml(r.path, html);
   count++;
+}
+
+// ────────────────────────────────────────────────────────────
+// Blog articles — for every content/blog/*.md, prerender a static
+// HTML at dist/blog/<slug>/index.html so /blog/<slug> serves a real
+// document instead of 404'ing. Vercel SPA-rewriten har vist seg
+// upålitelig på dette prosjektet (regex matcher /tjenester via
+// prerender, men ikke /blog/x via fallback). Prerender løser både
+// 404-en og SEO/AEO (hver artikkel får riktig title, meta, canonical
+// og BlogPosting-schema fra dag én).
+// ────────────────────────────────────────────────────────────
+
+function parseFrontmatter(raw) {
+  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/);
+  if (!match) return null;
+  const [, block, body] = match;
+  const data = {};
+  for (const line of block.split(/\r?\n/)) {
+    const kv = line.match(/^(\w+):\s*(.*)$/);
+    if (!kv) continue;
+    const [, key, rawValue] = kv;
+    let value = rawValue.trim();
+    if (
+      (value.startsWith('"') && value.endsWith('"')) ||
+      (value.startsWith("'") && value.endsWith("'"))
+    ) {
+      try {
+        value = value.startsWith('"') ? JSON.parse(value) : value.slice(1, -1);
+      } catch {
+        value = value.slice(1, -1);
+      }
+    }
+    data[key] = value;
+  }
+  return { data, body };
+}
+
+function buildExcerpt(body, maxChars = 200) {
+  const stripped = body
+    .replace(/^>\s*\*\*.*?\*\*:?\s*/m, "")
+    .replace(/^#+\s.*$/gm, "")
+    .replace(/[*_`#[\]>]/g, "")
+    .replace(/\n+/g, " ")
+    .trim();
+  if (stripped.length <= maxChars) return stripped;
+  const cut = stripped.slice(0, maxChars);
+  return cut.slice(0, cut.lastIndexOf(" ")) + "…";
+}
+
+function blogPostingLd(article, url) {
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BlogPosting",
+        "@id": `${url}#article`,
+        headline: article.title,
+        description: article.meta_description ?? "",
+        image: article.hero_image ? `${SITE}${article.hero_image}` : undefined,
+        datePublished: article.published_at,
+        dateModified: article.updated_at ?? article.published_at,
+        url,
+        author: { "@id": `${SITE}/#organization` },
+        publisher: { "@id": `${SITE}/#organization` },
+        mainEntityOfPage: { "@type": "WebPage", "@id": url },
+        keywords: article.keyword,
+      },
+      breadcrumbLd([
+        { name: "Hjem", url: `${SITE}/` },
+        { name: "Blogg", url: `${SITE}/blog` },
+        { name: article.title, url },
+      ]),
+      webPageSpeakableLd(url, article.title),
+    ],
+  };
+}
+
+if (existsSync(BLOG_CONTENT_DIR)) {
+  const mdFiles = readdirSync(BLOG_CONTENT_DIR).filter((f) => f.endsWith(".md"));
+  for (const file of mdFiles) {
+    const raw = readFileSync(join(BLOG_CONTENT_DIR, file), "utf8");
+    const parsed = parseFrontmatter(raw);
+    if (!parsed?.data?.slug || !parsed?.data?.title) continue;
+    const article = parsed.data;
+    const url = `${SITE}/blog/${article.slug}`;
+    const excerpt = buildExcerpt(parsed.body);
+    const html = injectSchema(
+      injectMeta(SHELL, {
+        title: article.meta_title ?? article.title,
+        description: article.meta_description ?? excerpt,
+        url,
+        h1: article.title,
+        intro: excerpt,
+      }),
+      blogPostingLd(article, url),
+    );
+    writeRouteHtml(`blog/${article.slug}`, html);
+    count++;
+  }
 }
 
 // Forsiden — inject FAQ schema directly into dist/index.html
