@@ -11,6 +11,9 @@ const OmOss = lazy(() => import("@/pages/OmOss"));
 const Kontakt = lazy(() => import("@/pages/Kontakt"));
 const Personvern = lazy(() => import("@/pages/Personvern"));
 const NotFound = lazy(() => import("@/pages/NotFound"));
+const BlogRouter = lazy(() =>
+  import("./blog/BlogRouter").then((m) => ({ default: m.BlogRouter })),
+);
 
 function ScrollToTop() {
   const { pathname } = useLocation();
@@ -40,6 +43,7 @@ export default function App() {
             <Route path="/om-oss" element={<OmOss />} />
             <Route path="/kontakt" element={<Kontakt />} />
             <Route path="/personvern" element={<Personvern />} />
+            <Route path="/blog/*" element={<BlogRouter />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Suspense>
