@@ -35,11 +35,13 @@ export function Header() {
     };
   }, [open]);
 
-  // On the home route we sit on top of a dark hero. Until the user
-  // scrolls, the header is transparent, so the default dark navy logo
-  // and nav-link colors are invisible against the hero. Flip to a
-  // light palette when overHero, back to dark once the user has
-  // scrolled and the white backdrop is showing.
+  // On the home route we sit on top of the dark hero. Until the user
+  // scrolls we flip the logo + nav to a light palette so they read
+  // against the navy photo. We also paint a subtle dark gradient
+  // BEHIND the header (not over the hero) so the white text stays
+  // readable even in light-mode browsers where the body background
+  // would otherwise be white — the gradient gives the brand a tinted
+  // backdrop without changing how the hero photo looks.
   const overHero = pathname === "/" && !scrolled;
 
   return (
@@ -48,7 +50,9 @@ export function Header() {
         "sticky top-0 z-40 w-full transition-[background-color,border-color,backdrop-filter] duration-300",
         scrolled
           ? "border-b border-border bg-background/85 backdrop-blur-md"
-          : "bg-transparent",
+          : overHero
+            ? "bg-gradient-to-b from-navy-dark/90 via-navy-dark/60 to-transparent"
+            : "bg-transparent",
       )}
     >
       <div className="container-wide flex h-16 items-center justify-between md:h-20">
