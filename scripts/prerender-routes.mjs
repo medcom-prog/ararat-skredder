@@ -432,6 +432,36 @@ const ROUTES = [
     intro: "Hvordan vi behandler personopplysninger og dine rettigheter etter GDPR.",
     schema: personvernLd(),
   },
+  {
+    // Workaround: Vercel SPA-rewrite trigger inkonsistent for /blog,
+    // så vi prerender en blogg-index så filesystem-presedensen alltid
+    // finner noe. Reell artikkelliste lastes klient-side fra
+    // content/blog/*.md når React mounter.
+    path: "blog",
+    title: "Blogg · Råd og innsikt fra verkstedet",
+    description:
+      "Artikler og råd fra Ararat Skredderi i Torggata 8, Oslo. Skreddersøm, reparasjon, omforming og skomakeri.",
+    h1: "Blogg",
+    intro:
+      "Tanker, praktiske råd og konkrete eksempler fra verkstedet i Torggata 8.",
+    schema: {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Blog",
+          "@id": `${SITE}/blog#blog`,
+          url: `${SITE}/blog`,
+          name: "Ararat Skredderi blogg",
+          publisher: { "@id": `${SITE}/#organization` },
+        },
+        breadcrumbLd([
+          { name: "Hjem", url: `${SITE}/` },
+          { name: "Blogg", url: `${SITE}/blog` },
+        ]),
+        webPageSpeakableLd(`${SITE}/blog`, "Blogg"),
+      ],
+    },
+  },
 ];
 
 let count = 0;
