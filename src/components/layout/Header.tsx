@@ -43,17 +43,26 @@ export function Header() {
   const overHero = pathname === "/" && !scrolled;
 
   return (
-    <header
-      className={cn(
-        "sticky top-0 z-40 w-full border-b transition-[background-color,border-color,backdrop-filter] duration-300 backdrop-blur-md",
-        scrolled
-          ? "border-border bg-background/85"
-          : overHero
-            ? "border-white/10 bg-navy-dark/80"
-            : "border-transparent bg-transparent",
-      )}
-    >
-      <div className="container-wide flex h-16 items-center justify-between md:h-20">
+    <header className="sticky top-0 z-40 w-full">
+      {/* Visual header bar. backdrop-filter lives on this inner div,
+          NOT on the <header>, because backdrop-filter creates a
+          containing block for descendant position:fixed elements.
+          With it on the header, the mobile-nav below would resolve
+          its top/bottom relative to the header (h-16), collapsing
+          to a tiny height and letting page content show around it.
+          As an inner div sibling of the mobile-nav, the containing
+          block is scoped to itself only. */}
+      <div
+        className={cn(
+          "border-b transition-[background-color,border-color,backdrop-filter] duration-300 backdrop-blur-md",
+          scrolled
+            ? "border-border bg-background/85"
+            : overHero
+              ? "border-white/10 bg-navy-dark/80"
+              : "border-transparent bg-transparent",
+        )}
+      >
+        <div className="container-wide flex h-16 items-center justify-between md:h-20">
         <Link
           to="/"
           className="group inline-flex items-baseline gap-2 font-display text-xl uppercase tracking-wide md:text-2xl"
@@ -94,27 +103,36 @@ export function Header() {
           </a>
         </nav>
 
-        <button
-          type="button"
-          aria-label={open ? "Lukk meny" : "Åpne meny"}
-          aria-expanded={open}
-          aria-controls="mobile-nav"
-          onClick={() => setOpen((v) => !v)}
-          className={cn(
-            "inline-flex h-10 w-10 items-center justify-center rounded-full md:hidden",
-            overHero ? "bg-white text-navy" : "bg-navy text-white",
-          )}
-        >
-          {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-        </button>
+          <button
+            type="button"
+            aria-label={open ? "Lukk meny" : "Åpne meny"}
+            aria-expanded={open}
+            aria-controls="mobile-nav"
+            onClick={() => setOpen((v) => !v)}
+            className={cn(
+              "inline-flex h-10 w-10 items-center justify-center rounded-full md:hidden",
+              overHero ? "bg-white text-navy" : "bg-navy text-white",
+            )}
+          >
+            {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          </button>
+        </div>
       </div>
 
+      {/* Mobile menu — sibling of the visual header bar above, NOT a
+          descendant of any backdrop-filter element. Solid bg-background
+          covers the page content beneath. z-50 keeps it above the
+          floating call button (z-30). overflow-y-auto handles tiny
+          screens where the items + CTA exceed viewport height. */}
       <div
         id="mobile-nav"
         className={cn(
-          "fixed inset-x-0 top-16 bottom-0 z-40 bg-background transition-[opacity,transform] duration-300 md:hidden",
+          "fixed inset-x-0 top-16 bottom-0 z-50 overflow-y-auto bg-background transition-[opacity,transform] duration-300 md:hidden",
           open ? "translate-y-0 opacity-100" : "pointer-events-none -translate-y-2 opacity-0",
         )}
+        style={{
+          paddingBottom: "max(1rem, env(safe-area-inset-bottom))",
+        }}
       >
         <nav className="container-wide flex flex-col gap-1 pt-6" aria-label="Mobilmeny">
           {NAV.map((item) => (
