@@ -3,8 +3,11 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { FloatingCallButton } from "@/components/FloatingCallButton";
+// Forside is the landing page and owns the LCP hero. Eager-import it (not
+// lazy) so the hero <img> renders in React's first commit instead of after
+// a second chunk round-trip — the render delay was 51% of homepage LCP.
+import Forside from "@/pages/Forside";
 
-const Forside = lazy(() => import("@/pages/Forside"));
 const Tjenester = lazy(() => import("@/pages/Tjenester"));
 const Galleri = lazy(() => import("@/pages/Galleri"));
 const OmOss = lazy(() => import("@/pages/OmOss"));
