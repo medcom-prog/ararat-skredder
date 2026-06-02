@@ -183,7 +183,9 @@ export default function Kontakt() {
             </h2>
           </div>
           <div className="mt-10">
-            <FAQAccordion items={generalFaqs} />
+            {/* emitSchema={false}: prerender-routes.mjs owns the canonical
+                /kontakt FAQPage in <head>; emitting here too duplicates it. */}
+            <FAQAccordion items={generalFaqs} emitSchema={false} />
           </div>
         </div>
       </section>

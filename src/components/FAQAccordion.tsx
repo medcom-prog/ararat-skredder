@@ -4,8 +4,17 @@ import type { FAQ } from "@/data/faqs";
 
 interface FAQAccordionProps {
   items: FAQ[];
-  /** Optional schema name — set when this is the only FAQ on the page so
-   *  it doesn't double-emit with other FAQ schemas. */
+  /**
+   * Whether this component should emit FAQPage JSON-LD at runtime.
+   *
+   * On prerendered routes (see scripts/prerender-routes.mjs) the canonical
+   * FAQPage is already injected into the static <head>, which is what no-JS
+   * AI crawlers and Google read. React's createRoot wipes #root but NOT
+   * <head>, so a runtime FAQPage emitted here would survive alongside the
+   * prerendered one — Google then rejects the page with "Duplicate field
+   * FAQPage". Pass emitSchema={false} on every prerendered page. Leave the
+   * default true only for a FAQ that lives on a route with no prerender.
+   */
   emitSchema?: boolean;
 }
 

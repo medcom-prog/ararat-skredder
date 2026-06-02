@@ -345,7 +345,9 @@ export default function Forside() {
           </Reveal>
           <Reveal delay={80}>
             <div className="mt-8">
-              <FAQAccordion items={homeFaqs} />
+              {/* emitSchema={false}: prerender-routes.mjs owns the canonical
+                  homepage FAQPage in <head>; emitting here too duplicates it. */}
+              <FAQAccordion items={homeFaqs} emitSchema={false} />
             </div>
           </Reveal>
           <Reveal>
