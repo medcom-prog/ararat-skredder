@@ -15,19 +15,15 @@ export default function Kontakt() {
 
   return (
     <>
+      {/* Per-route schema (ContactPage + BreadcrumbList + WebPage +
+          Speakable + FAQPage) is injected into <head> by
+          scripts/prerender-routes.mjs, which is what crawlers read.
+          Re-emitting it here would duplicate the node in the rendered
+          DOM, so SEO only manages title/meta/canonical. */}
       <SEO
         title={`Kontakt · Torggata 8, Oslo · Ring ${BUSINESS.contact.phone}`}
         description={`Kontakt Ararat Skredderi i Torggata 8, 0181 Oslo. Drop-in mandag til lørdag. Ring ${BUSINESS.contact.phone} eller send e-post.`}
         canonical={BUSINESS.domain + "/kontakt"}
-        jsonLd={[
-          {
-            "@context": "https://schema.org",
-            "@type": "ContactPage",
-            url: `${BUSINESS.domain}/kontakt`,
-            name: "Kontakt Ararat Skredderi",
-            mainEntity: { "@id": `${BUSINESS.domain}/#localbusiness` },
-          },
-        ]}
       />
 
       <div className="container-wide pt-6">

@@ -36,20 +36,6 @@ export function BlogPost() {
 
   const html = DOMPurify.sanitize(renderMarkdown(article.content));
   const canonical = `${SITE_URL}/blog/${article.slug}`;
-  const siteName = (typeof document !== 'undefined' ? document.title.split('—')[0]?.split('-')[0]?.trim() : '') || 'Medcom';
-
-  const jsonLd = {
-    '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    headline: article.title,
-    description: article.meta_description ?? '',
-    image: article.hero_image ?? undefined,
-    datePublished: article.published_at,
-    dateModified: article.updated_at ?? article.published_at,
-    author: { '@type': 'Organization', name: siteName },
-    publisher: { '@type': 'Organization', name: siteName },
-    mainEntityOfPage: { '@type': 'WebPage', '@id': canonical },
-  };
 
   return (
     <>
@@ -60,10 +46,12 @@ export function BlogPost() {
         canonical={canonical}
         type="article"
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
-      />
+      {/* BlogPosting JSON-LD is injected into <head> by
+          scripts/prerender-routes.mjs (blogPostingLd), which is what
+          no-JS AI crawlers read. It attributes authorship to the
+          #owner Person (Ahmad Abdulhamid) for E-E-A-T. Re-emitting it
+          here would duplicate the node in the rendered DOM and use a
+          weaker Organization author, so the runtime copy is omitted. */}
       <section className="bg-background">
         <div className="container mx-auto max-w-6xl px-4 py-8 md:py-16 lg:grid lg:grid-cols-[minmax(0,1fr)_240px] lg:gap-12">
           <article className="lg:max-w-3xl min-w-0">

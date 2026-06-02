@@ -37,26 +37,16 @@ export default function Tjenester() {
 
   return (
     <>
+      {/* Per-route schema (a rich ItemList of Service nodes with Offer
+          pricing, plus BreadcrumbList, WebPage+Speakable and FAQPage) is
+          injected into <head> by scripts/prerender-routes.mjs, which is
+          what crawlers read. Re-emitting a thinner ItemList here would
+          duplicate the node in the rendered DOM, so SEO only manages
+          title/meta/canonical. */}
       <SEO
         title="Tjenester · Skreddersøm, reparasjon og skomakeri"
         description="Målsøm av dresser fra 8 000 kr, reparasjon fra 200 kr, skreddersydde skjorter fra 2 500 kr og skomakeri. Detaljert prosess og pris per tjeneste."
         canonical={BUSINESS.domain + "/tjenester"}
-        jsonLd={[
-          {
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            name: "Tjenester hos Ararat Skredderi",
-            itemListOrder: "https://schema.org/ItemListOrderAscending",
-            numberOfItems: services.length,
-            itemListElement: services.map((svc, i) => ({
-              "@type": "ListItem",
-              position: i + 1,
-              name: svc.title,
-              url: `${BUSINESS.domain}/tjenester#${svc.slug}`,
-              description: svc.shortDescription,
-            })),
-          },
-        ]}
       />
 
       <div className="container-wide pt-6">

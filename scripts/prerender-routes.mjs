@@ -546,7 +546,7 @@ function blogPostingLd(article, url) {
         datePublished: article.published_at,
         dateModified: article.updated_at ?? article.published_at,
         url,
-        author: { "@id": `${SITE}/#organization` },
+        author: { "@id": `${SITE}/#owner` },
         publisher: { "@id": `${SITE}/#organization` },
         mainEntityOfPage: { "@type": "WebPage", "@id": url },
         keywords: article.keyword,

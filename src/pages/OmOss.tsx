@@ -28,19 +28,16 @@ const values = [
 export default function OmOss() {
   return (
     <>
+      {/* Per-route schema (AboutPage linking #organization + #owner, plus
+          BreadcrumbList and WebPage) is injected into <head> by
+          scripts/prerender-routes.mjs, which is what crawlers read and is
+          richer than this runtime copy. Re-emitting it here would
+          duplicate the node in the rendered DOM, so SEO only manages
+          title/meta/canonical. */}
       <SEO
         title="Om oss · Skreddermester med 50+ års erfaring"
         description={`Ararat Skredderi har levert kvalitetshåndverk i ${yearsExperience}+ år. Skreddermester Ahmad Abdulhamid i Torggata 8, Oslo sentrum.`}
         canonical={BUSINESS.domain + "/om-oss"}
-        jsonLd={[
-          {
-            "@context": "https://schema.org",
-            "@type": "AboutPage",
-            url: `${BUSINESS.domain}/om-oss`,
-            name: "Om Ararat Skredderi",
-            mainEntity: { "@id": `${BUSINESS.domain}/#organization` },
-          },
-        ]}
       />
 
       <div className="container-wide pt-6">
