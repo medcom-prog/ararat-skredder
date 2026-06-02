@@ -359,10 +359,13 @@ function injectMeta(html, { title, description, url, h1, intro }) {
     `<link rel="alternate" hreflang="nb-NO" href="${safeUrl}" />`,
   );
 
-  // Inject minimal H1 + intro into <div id="root"> for non-JS crawlers
+  // Inject minimal H1 + Quick Answer intro into <div id="root"> for non-JS
+  // crawlers. aria-label="Kort fortalt:" matches the speakable cssSelector in
+  // webPageSpeakableLd so voice-assistant / AI extraction resolves to this
+  // summary paragraph instead of finding nothing.
   out = out.replace(
     /<div id="root"><\/div>/,
-    `<div id="root"><h1>${safeH1}</h1><p>${safeIntro}</p></div>`,
+    `<div id="root"><h1>${safeH1}</h1><p aria-label="Kort fortalt:">${safeIntro}</p></div>`,
   );
 
   return out;
@@ -582,18 +585,85 @@ if (existsSync(BLOG_CONTENT_DIR)) {
   }
 }
 
-// Forsiden — inject FAQ schema directly into dist/index.html
+// ────────────────────────────────────────────────────────────
+// Forsiden (homepage) — the homepage IS dist/index.html (the SPA shell),
+// so vite leaves <div id="root"></div> empty. Unlike the sub-routes above,
+// nothing injected crawler-visible content here, so a no-JS AI crawler
+// (GPTBot, ClaudeBot, CCBot, PerplexityBot — none execute JS) saw an empty
+// body on the single most important URL. Inject the same kind of static
+// H1 + Quick Answer + services + NAP + FAQ we give every sub-route, plus a
+// WebPage(+Speakable) node. React's createRoot replaces #root on mount, so
+// real users still get the full SPA; only no-JS crawlers see this fallback.
+// ────────────────────────────────────────────────────────────
+
+function homeWebPageLd() {
+  const url = `${SITE}/`;
+  return {
+    "@type": "WebPage",
+    "@id": `${url}#webpage`,
+    url,
+    name: "Ararat Skredderi · skreddersøm, reparasjon og skomakeri i Oslo",
+    isPartOf: { "@id": `${SITE}/#website` },
+    about: { "@id": `${SITE}/#localbusiness` },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "[aria-label='Kort fortalt:']"],
+    },
+    mainContentOfPage: {
+      "@type": "WebPageElement",
+      cssSelector: "main",
+    },
+  };
+}
+
+function homeContentHtml() {
+  const services = SERVICES.map(
+    (s) => `<li><strong>${htmlEscape(s.name)}:</strong> ${htmlEscape(s.description)}</li>`,
+  ).join("");
+  const faqs = HOME_FAQS.map(
+    (f) => `<dt>${htmlEscape(f.q)}</dt><dd>${htmlEscape(f.a)}</dd>`,
+  ).join("");
+  return (
+    `<div id="root">` +
+    `<h1>Ararat Skredderi, skredder i Oslo sentrum</h1>` +
+    `<p aria-label="Kort fortalt:"><strong>Kort fortalt:</strong> ` +
+    `Ararat Skredderi i Torggata 8, 0181 Oslo, tilbyr skreddersøm, reparasjon, ` +
+    `omforming og skomakeri. Skreddermester Ahmad Abdulhamid har over 50 års ` +
+    `erfaring. Drop-in mandag til lørdag, ingen timeavtale nødvendig.</p>` +
+    `<p>Vi syr nye plagg etter mål, endrer og reparerer klær, former om gamle ` +
+    `favoritter og reparerer sko. Alt håndverk skjer i verkstedet vårt midt i ` +
+    `Oslo sentrum.</p>` +
+    `<h2>Tjenester og priser</h2>` +
+    `<ul>${services}</ul>` +
+    `<h2>Kontakt og åpningstider</h2>` +
+    `<p>Adresse: Torggata 8, 0181 Oslo. Telefon: +47 91 92 19 08. ` +
+    `E-post: ararat_skredder@hotmail.com.</p>` +
+    `<p>Åpningstider: mandag til fredag 10:00–19:00, lørdag 10:00–18:00, ` +
+    `søndag stengt.</p>` +
+    `<h2>Ofte stilte spørsmål</h2>` +
+    `<dl>${faqs}</dl>` +
+    `</div>`
+  );
+}
+
 {
+  let homeHtml = readFileSync(SHELL_PATH, "utf8");
+
+  // 1) Crawler-visible content into the (otherwise empty) React root.
+  homeHtml = homeHtml.replace(/<div id="root"><\/div>/, homeContentHtml());
+
+  // 2) Homepage schema: WebPage(+Speakable) + FAQPage in one @graph.
+  const homeGraph = [homeWebPageLd()];
   const homeFaq = faqLd(HOME_FAQS);
-  if (homeFaq) {
-    const homeHtml = readFileSync(SHELL_PATH, "utf8");
-    const tag = `<script type="application/ld+json" data-prerender-home-faq>${JSON.stringify({
-      "@context": "https://schema.org",
-      ...homeFaq,
-    })}</script>\n  </head>`;
-    writeFileSync(SHELL_PATH, homeHtml.replace("</head>", tag), "utf8");
-    count++;
-  }
+  if (homeFaq) homeGraph.push(homeFaq);
+  const tag = `<script type="application/ld+json" data-prerender-home>${JSON.stringify({
+    "@context": "https://schema.org",
+    "@graph": homeGraph,
+  })}</script>\n  </head>`;
+  homeHtml = homeHtml.replace("</head>", tag);
+
+  writeFileSync(SHELL_PATH, homeHtml, "utf8");
+  count++;
 }
 
 console.log(
