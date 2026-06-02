@@ -617,31 +617,25 @@ function homeWebPageLd() {
 }
 
 function homeContentHtml() {
-  const services = SERVICES.map(
-    (s) => `<li><strong>${htmlEscape(s.name)}:</strong> ${htmlEscape(s.description)}</li>`,
-  ).join("");
-  const faqs = HOME_FAQS.map(
-    (f) => `<dt>${htmlEscape(f.q)}</dt><dd>${htmlEscape(f.a)}</dd>`,
-  ).join("");
+  // Keep this DELIBERATELY minimal: h1 + a single Quick Answer paragraph,
+  // matching the CLS-safe shape used by every sub-route. React's createRoot
+  // wipes #root on mount and renders the full SPA, so anything injected here
+  // is paint-then-replace. A large block (services <ul>, NAP, FAQ <dl>) made
+  // the homepage shift CLS 0.759 vs CLS 0 on the small sub-route injections.
+  // The detailed content lives in (a) the static <head> @graph
+  // (Organization/LocalBusiness/Person — full NAP, geo, hours, sameAs) and
+  // (b) the FAQPage + WebPage schema injected just below — so no-JS crawlers
+  // still get the structured facts without the layout-shift penalty.
+  const h1 = "Ararat Skredderi, skredder i Oslo sentrum";
+  const qa =
+    "Ararat Skredderi i Torggata 8, 0181 Oslo, tilbyr skreddersøm, " +
+    "reparasjon, omforming og skomakeri. Skreddermester Ahmad Abdulhamid " +
+    "har over 50 års erfaring. Drop-in mandag til lørdag, ingen timeavtale " +
+    "nødvendig.";
   return (
     `<div id="root">` +
-    `<h1>Ararat Skredderi, skredder i Oslo sentrum</h1>` +
-    `<p aria-label="Kort fortalt:"><strong>Kort fortalt:</strong> ` +
-    `Ararat Skredderi i Torggata 8, 0181 Oslo, tilbyr skreddersøm, reparasjon, ` +
-    `omforming og skomakeri. Skreddermester Ahmad Abdulhamid har over 50 års ` +
-    `erfaring. Drop-in mandag til lørdag, ingen timeavtale nødvendig.</p>` +
-    `<p>Vi syr nye plagg etter mål, endrer og reparerer klær, former om gamle ` +
-    `favoritter og reparerer sko. Alt håndverk skjer i verkstedet vårt midt i ` +
-    `Oslo sentrum.</p>` +
-    `<h2>Tjenester og priser</h2>` +
-    `<ul>${services}</ul>` +
-    `<h2>Kontakt og åpningstider</h2>` +
-    `<p>Adresse: Torggata 8, 0181 Oslo. Telefon: +47 91 92 19 08. ` +
-    `E-post: ararat_skredder@hotmail.com.</p>` +
-    `<p>Åpningstider: mandag til fredag 10:00–19:00, lørdag 10:00–18:00, ` +
-    `søndag stengt.</p>` +
-    `<h2>Ofte stilte spørsmål</h2>` +
-    `<dl>${faqs}</dl>` +
+    `<h1>${htmlEscape(h1)}</h1>` +
+    `<p aria-label="Kort fortalt:"><strong>Kort fortalt:</strong> ${htmlEscape(qa)}</p>` +
     `</div>`
   );
 }
