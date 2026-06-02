@@ -11,7 +11,7 @@ interface FAQAccordionProps {
    * FAQPage is already injected into the static <head>, which is what no-JS
    * AI crawlers and Google read. React's createRoot wipes #root but NOT
    * <head>, so a runtime FAQPage emitted here would survive alongside the
-   * prerendered one — Google then rejects the page with "Duplicate field
+   * prerendered one. Google then rejects the page with "Duplicate field
    * FAQPage". Pass emitSchema={false} on every prerendered page. Leave the
    * default true only for a FAQ that lives on a route with no prerender.
    */
