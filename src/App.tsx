@@ -31,7 +31,7 @@ export default function App() {
       <main className="flex-1">
         <Suspense
           fallback={
-            <div className="container-narrow section">
+            <div className="container-narrow section min-h-screen">
               <div className="h-6 w-32 animate-pulse rounded bg-muted" />
             </div>
           }
