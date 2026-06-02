@@ -39,6 +39,13 @@ export default function Galleri() {
           {
             "@context": "https://schema.org",
             "@type": "ImageGallery",
+            // Same @id as the prerendered ImageGallery in <head>
+            // (scripts/prerender-routes.mjs galleriLd) so Google merges
+            // the two nodes into one entity. The prerender copy is bare
+            // (no image[]) for no-JS crawlers; this richer runtime copy
+            // adds the 12 ImageObjects and augments the merged node.
+            "@id": `${BUSINESS.domain}/galleri#gallery`,
+            url: `${BUSINESS.domain}/galleri`,
             name: "Galleri · Ararat Skredderi",
             description: "Bilder fra verkstedet, kundemøter og lokalene i Torggata 8.",
             image: galleryImages.slice(0, 12).map((img) => ({
