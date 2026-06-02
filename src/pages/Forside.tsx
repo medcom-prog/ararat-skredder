@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Award, Clock, MapPin, Phone, Star } from "lucide-react";
+import { ArrowRight, Award, Clock, MapPin, Phone, Scissors } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { QuickAnswer } from "@/components/QuickAnswer";
@@ -93,11 +93,9 @@ export default function Forside() {
                 value={`${yearsExperience}+ år`}
               />
               <StatItem
-                icon={
-                  <Star className="h-4 w-4 fill-current text-accent-soft" />
-                }
-                label="Google-vurdering"
-                value="5,0 / 5"
+                icon={<Scissors className="h-4 w-4" />}
+                label="Komplett verksted"
+                value="6 tjenester"
               />
               <StatItem
                 icon={<MapPin className="h-4 w-4" />}
@@ -309,23 +307,15 @@ export default function Forside() {
         </div>
       </section>
 
-      {/* Trust / single review highlight */}
+      {/* Craft motto — owner statement */}
       <section className="section-tight">
         <Reveal>
           <div className="container-narrow text-center">
-            <div
-              className="mb-4 inline-flex items-center gap-1 text-accent"
-              aria-hidden="true"
-            >
-              {[...Array(5)].map((_, i) => (
-                <Star key={i} className="h-5 w-5 fill-current" />
-              ))}
-            </div>
             <blockquote className="font-serif text-xl italic leading-relaxed text-foreground md:text-2xl">
               «Vi tar stolthet i håndverket vårt. Detaljer som varer.»
             </blockquote>
             <p className="mt-5 text-xs uppercase tracking-wider text-muted-foreground tabular">
-              5,0 / 5 på Google · Ahmad Abdulhamid, skreddermester
+              Ahmad Abdulhamid, skreddermester
             </p>
           </div>
         </Reveal>

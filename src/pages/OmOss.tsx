@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { ArrowRight, Award, Heart, Sparkles, Users } from "lucide-react";
+import { ArrowRight, Award, Heart, Users } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/Breadcrumbs";
@@ -167,11 +167,7 @@ export default function OmOss() {
         <div className="container-wide grid grid-cols-2 gap-6 text-center md:grid-cols-3">
           <Stat value={`${yearsExperience}+`} label="års erfaring" />
           <Stat value="6" label="kjernetjenester" />
-          <Stat
-            value="5,0★"
-            label="på Google"
-            extra={<Sparkles className="h-4 w-4 text-accent-soft" />}
-          />
+          <Stat value="3" label="språk" />
         </div>
       </section>
 
