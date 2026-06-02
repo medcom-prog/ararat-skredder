@@ -2,21 +2,47 @@ User-agent: *
 Allow: /
 
 # AI crawlers — explicit allow so we get indexed by AI search engines
+
+# OpenAI
 User-agent: GPTBot
 Allow: /
 
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+# Anthropic
 User-agent: ClaudeBot
 Allow: /
 
-User-agent: CCBot
+User-agent: anthropic-ai
 Allow: /
 
+User-agent: Claude-Web
+Allow: /
+
+# Perplexity
 User-agent: PerplexityBot
 Allow: /
 
+User-agent: Perplexity-User
+Allow: /
+
+# Apple
+User-agent: Applebot-Extended
+Allow: /
+
+# Google AI
 User-agent: Google-Extended
 Allow: /
 
+# Common Crawl (feeds many LLM datasets)
+User-agent: CCBot
+Allow: /
+
+# Others
 User-agent: Bytespider
 Allow: /
 
