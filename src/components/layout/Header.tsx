@@ -66,12 +66,23 @@ export function Header() {
         <div className="container-wide flex h-16 items-center justify-between md:h-20">
         <Link
           to="/"
-          className="group inline-flex items-baseline gap-2 font-display text-xl uppercase tracking-wide md:text-2xl"
+          className="group inline-flex items-center gap-2.5 font-display text-xl uppercase tracking-wide md:gap-3 md:text-2xl"
           aria-label="Ararat Skredderi, til forsiden"
         >
-          <span className={overHero ? "text-white" : "text-navy"}>Ararat</span>
-          <span className={overHero ? "text-accent-soft" : "text-accent"}>
-            Skredderi
+          <img
+            src={overHero ? "/logo-white.png" : "/logo.png"}
+            alt=""
+            aria-hidden="true"
+            width={44}
+            height={44}
+            decoding="async"
+            className="h-9 w-9 shrink-0 md:h-11 md:w-11"
+          />
+          <span className="inline-flex items-baseline gap-2">
+            <span className={overHero ? "text-white" : "text-navy"}>Ararat</span>
+            <span className={overHero ? "text-accent-soft" : "text-accent"}>
+              Skredderi
+            </span>
           </span>
         </Link>
 

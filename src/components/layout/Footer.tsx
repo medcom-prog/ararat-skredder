@@ -36,10 +36,23 @@ export function Footer() {
           <div className="md:col-span-4">
             <Link
               to="/"
-              className="inline-flex items-baseline gap-2 font-display text-2xl uppercase tracking-wide"
+              className="inline-flex items-center gap-3 font-display text-2xl uppercase tracking-wide"
+              aria-label="Ararat Skredderi, til forsiden"
             >
-              <span className="text-white">Ararat</span>
-              <span className="text-accent-soft">Skredderi</span>
+              <img
+                src="/logo-white.png"
+                alt=""
+                aria-hidden="true"
+                width={48}
+                height={48}
+                loading="lazy"
+                decoding="async"
+                className="h-11 w-11 shrink-0"
+              />
+              <span className="inline-flex items-baseline gap-2">
+                <span className="text-white">Ararat</span>
+                <span className="text-accent-soft">Skredderi</span>
+              </span>
             </Link>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-white/70">
               Profesjonell skreddersøm, reparasjon, omforming og skomakeri i
