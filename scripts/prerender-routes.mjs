@@ -110,6 +110,59 @@ const TJENESTER_FAQS = [
   },
 ];
 
+// Mirror of priserFaqs in src/pages/Priser.tsx (kept in sync by hand —
+// the prerender script is plain ESM and cannot import the .tsx source).
+const PRISER_FAQS = [
+  {
+    q: "Hva koster det å legge opp bukser?",
+    a: "Å legge opp bukser eller justere lengde koster vanligvis mellom 200 og 400 kr, avhengig av plagg, fald og hvor mye som skal endres. Kom innom Torggata 8 for en rask vurdering, så får du bindende pris før vi starter.",
+  },
+  {
+    q: "Hva koster en skreddersydd dress?",
+    a: "Målsøm av dress starter fra 8 000 kr eks. mva. Endelig pris avhenger av stoff, fôr og kompleksitet, og inkluderer konsultasjon, måltaking og prøvinger. Leveringstid er normalt 2 – 4 uker.",
+  },
+  {
+    q: "Hva koster det å bytte glidelås?",
+    a: "Pris for å bytte glidelås avhenger av plagget, om det er bukse, jakke eller kjole, og typen glidelås. Enkle bytter starter fra 200 kr. Vi vurderer plagget på stedet og gir deg en konkret pris.",
+  },
+  {
+    q: "Får jeg vite prisen før arbeidet starter?",
+    a: "Ja. Vi gir alltid et bindende prisoverslag før vi setter i gang, slik at du vet hva det koster på forhånd. Drop-in mandag til lørdag, ingen timeavtale nødvendig.",
+  },
+  {
+    q: "Er prisene veiledende?",
+    a: "Prisene her er veiledende startpriser. Endelig pris settes etter at vi har sett plagget, fordi tilstand, materiale og omfang varierer. Du betaler aldri mer enn det avtalte overslaget uten at vi har avklart det med deg først.",
+  },
+];
+
+// Mirror of skomakerFaqs in src/pages/SkomakerOslo.tsx.
+const SKOMAKER_FAQS = [
+  {
+    q: "Hva koster en skoreparasjon?",
+    a: "Skomakertjenester starter fra 300 kr, og sålereparasjon fra 400 kr. Endelig pris avhenger av skotype og hva som skal gjøres. Kom innom Torggata 8 for en rask vurdering, så får du bindende pris før vi starter.",
+  },
+  {
+    q: "Hvor lang tid tar en skoreparasjon?",
+    a: "De fleste skoreparasjoner er ferdig innen 3 til 7 dager, avhengig av reservedeler og kompleksitet. Enkle hæl- og sålejobber går ofte raskere.",
+  },
+  {
+    q: "Reparerer dere alle typer sko?",
+    a: "Vi tar de fleste sko i skinn, tekstil og syntet, fra hverdagssko til premium og arvede modeller. For helt spesielle materialer gir vi en ærlig vurdering før vi tar oppdraget.",
+  },
+  {
+    q: "Kan dere bytte glidelås i støvler?",
+    a: "Ja. Vi reparerer og bytter glidelåser på støvler og annet skotøy. Ta med skoene innom, så vurderer vi om glidelåsen kan repareres eller bør byttes.",
+  },
+  {
+    q: "Er dere både skomaker og skredder?",
+    a: "Ja. I Torggata 8 har vi både skomaker og skredder under samme tak. Du kan levere sko til reparasjon og samtidig få ordnet endringer på klær, i ett og samme besøk.",
+  },
+  {
+    q: "Hvor i Oslo holder dere til?",
+    a: "Vi holder til i Torggata 8, 0181 Oslo, midt i sentrum. Det er kort vei fra Jernbanetorget og Stortinget, og enkelt å nå med buss og T-bane.",
+  },
+];
+
 // ────────────────────────────────────────────────────────────
 // Schema fragment builders
 // ────────────────────────────────────────────────────────────
@@ -302,6 +355,93 @@ function personvernLd() {
   };
 }
 
+// One Offer node for the /priser OfferCatalog. minPrice mirrors the
+// veiledende floor shown on the page; maxPrice only set where the page
+// quotes a range (e.g. legge opp 200–400). All prices eks. mva.
+function priceOffer({ name, minPrice, maxPrice }) {
+  const spec = {
+    "@type": "PriceSpecification",
+    priceCurrency: "NOK",
+    minPrice: String(minPrice),
+    valueAddedTaxIncluded: false,
+  };
+  if (maxPrice != null) spec.maxPrice = String(maxPrice);
+  return {
+    "@type": "Offer",
+    itemOffered: { "@type": "Service", name },
+    priceCurrency: "NOK",
+    priceSpecification: spec,
+    availability: "https://schema.org/InStock",
+    areaServed: { "@type": "City", name: "Oslo" },
+  };
+}
+
+function priserLd() {
+  const url = `${SITE}/priser`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "OfferCatalog",
+        "@id": `${url}#prisliste`,
+        name: "Prisliste hos Ararat Skredderi",
+        url,
+        provider: { "@id": `${SITE}/#localbusiness` },
+        itemListElement: [
+          priceOffer({ name: "Legge opp bukser, skjørt eller ermer", minPrice: 200, maxPrice: 400 }),
+          priceOffer({ name: "Endring og reparasjon", minPrice: 200 }),
+          priceOffer({ name: "Skreddersydd skjorte eller bluse", minPrice: 2500 }),
+          priceOffer({ name: "Målsøm av dress", minPrice: 8000 }),
+          priceOffer({ name: "Skomakeri", minPrice: 300 }),
+          priceOffer({ name: "Sålereparasjon", minPrice: 400 }),
+        ],
+      },
+      breadcrumbLd([
+        { name: "Hjem", url: `${SITE}/` },
+        { name: "Priser", url },
+      ]),
+      webPageSpeakableLd(url, "Priser hos Ararat Skredderi"),
+      faqLd(PRISER_FAQS),
+    ],
+  };
+}
+
+function skomakerLd() {
+  const url = `${SITE}/skomaker-oslo`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${url}#service`,
+        name: "Skomaker i Oslo sentrum",
+        serviceType: "Skomakeri",
+        description:
+          "Skomaker i Torggata 8, midt i Oslo sentrum: sålereparasjon, hæler, skinn og glidelåser fra 300 kr. Både skomaker og skredder under ett tak.",
+        provider: { "@id": `${SITE}/#localbusiness` },
+        areaServed: { "@type": "City", name: "Oslo" },
+        offers: {
+          "@type": "Offer",
+          priceCurrency: "NOK",
+          availability: "https://schema.org/InStock",
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            minPrice: "300",
+            priceCurrency: "NOK",
+            valueAddedTaxIncluded: false,
+          },
+        },
+      },
+      breadcrumbLd([
+        { name: "Hjem", url: `${SITE}/` },
+        { name: "Skomaker i Oslo", url },
+      ]),
+      webPageSpeakableLd(url, "Skomaker i Oslo sentrum"),
+      faqLd(SKOMAKER_FAQS),
+    ],
+  };
+}
+
 // ────────────────────────────────────────────────────────────
 // HTML mutation helpers
 // ────────────────────────────────────────────────────────────
@@ -396,6 +536,26 @@ const ROUTES = [
     intro:
       "Vi tar oppdrag fra de minste justeringene til komplette skreddersydde plagg. Alle priser er veiledende og settes endelig etter vurdering på stedet.",
     schema: tjenesterLd(),
+  },
+  {
+    path: "priser",
+    title: "Priser · Hva koster skredder og reparasjon i Oslo?",
+    description:
+      "Veiledende prisliste for skreddersøm, reparasjon og skomakeri i Oslo sentrum. Legge opp bukser 200–400 kr, skreddersydd skjorte fra 2 500 kr, målsøm av dress fra 8 000 kr, skomakeri fra 300 kr.",
+    h1: "Priser på skreddersøm og reparasjon",
+    intro:
+      "Veiledende startpriser for skreddersøm, reparasjon, omforming og skomakeri i Oslo sentrum. Du får alltid et bindende prisoverslag før vi starter.",
+    schema: priserLd(),
+  },
+  {
+    path: "skomaker-oslo",
+    title: "Skomaker i Oslo sentrum · Skredder på samme sted",
+    description:
+      "Skomaker i Torggata 8, midt i Oslo sentrum: sålereparasjon, hæler, skinn og glidelåser fra 300 kr. Det eneste stedet i sentrum med både skomaker og skredder under ett tak.",
+    h1: "Skomaker i Oslo sentrum",
+    intro:
+      "I Torggata 8 finner du både skomaker og skredder under ett tak. Vi reparerer såler, hæler, skinn og glidelåser, og kan samtidig ta endringen på klærne mens du er her.",
+    schema: skomakerLd(),
   },
   {
     path: "galleri",

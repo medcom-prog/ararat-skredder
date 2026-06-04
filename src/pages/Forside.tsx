@@ -188,10 +188,16 @@ export default function Forside() {
           </div>
 
           <Reveal>
-            <div className="mt-10 text-center">
+            <div className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
               <Button asChild variant="navy" size="lg">
                 <Link to="/tjenester">
                   Se alle tjenester i detalj
+                  <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                </Link>
+              </Button>
+              <Button asChild variant="outline" size="lg">
+                <Link to="/priser">
+                  Se priser
                   <ArrowRight className="h-4 w-4" aria-hidden="true" />
                 </Link>
               </Button>

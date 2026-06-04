@@ -7,6 +7,7 @@ import { BUSINESS } from "@/data/business";
 const NAV = [
   { to: "/", label: "Hjem", end: true },
   { to: "/tjenester", label: "Tjenester" },
+  { to: "/priser", label: "Priser" },
   { to: "/galleri", label: "Galleri" },
   { to: "/om-oss", label: "Om oss" },
   { to: "/blog", label: "Blogg" },

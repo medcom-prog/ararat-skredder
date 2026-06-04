@@ -15,6 +15,16 @@ function TikTokIcon({ className }: { className?: string }) {
   );
 }
 
+const FOOTER_LINKS = [
+  { to: "/tjenester", label: "Tjenester" },
+  { to: "/priser", label: "Priser" },
+  { to: "/skomaker-oslo", label: "Skomaker i Oslo" },
+  { to: "/galleri", label: "Galleri" },
+  { to: "/om-oss", label: "Om oss" },
+  { to: "/blog", label: "Blogg" },
+  { to: "/kontakt", label: "Kontakt" },
+];
+
 export function Footer() {
   const year = new Date().getFullYear();
 
@@ -23,7 +33,7 @@ export function Footer() {
       <div className="container-wide section-tight">
         <div className="grid gap-12 md:grid-cols-12">
           {/* Brand + about */}
-          <div className="md:col-span-5">
+          <div className="md:col-span-4">
             <Link
               to="/"
               className="inline-flex items-baseline gap-2 font-display text-2xl uppercase tracking-wide"
@@ -58,8 +68,24 @@ export function Footer() {
             </div>
           </div>
 
+          {/* Quick links */}
+          <nav className="md:col-span-2" aria-label="Bunnmeny">
+            <h2 className="font-display text-lg uppercase tracking-wide text-white">
+              Snarveier
+            </h2>
+            <ul className="mt-4 space-y-3 text-sm text-white/80">
+              {FOOTER_LINKS.map((l) => (
+                <li key={l.to}>
+                  <Link to={l.to} className="hover:text-white">
+                    {l.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
           {/* Contact */}
-          <div className="md:col-span-4">
+          <div className="md:col-span-3">
             <h2 className="font-display text-lg uppercase tracking-wide text-white">
               Kontakt
             </h2>

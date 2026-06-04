@@ -9,6 +9,8 @@ import { FloatingCallButton } from "@/components/FloatingCallButton";
 import Forside from "@/pages/Forside";
 
 const Tjenester = lazy(() => import("@/pages/Tjenester"));
+const Priser = lazy(() => import("@/pages/Priser"));
+const SkomakerOslo = lazy(() => import("@/pages/SkomakerOslo"));
 const Galleri = lazy(() => import("@/pages/Galleri"));
 const OmOss = lazy(() => import("@/pages/OmOss"));
 const Kontakt = lazy(() => import("@/pages/Kontakt"));
@@ -42,6 +44,8 @@ export default function App() {
           <Routes>
             <Route path="/" element={<Forside />} />
             <Route path="/tjenester" element={<Tjenester />} />
+            <Route path="/priser" element={<Priser />} />
+            <Route path="/skomaker-oslo" element={<SkomakerOslo />} />
             <Route path="/galleri" element={<Galleri />} />
             <Route path="/om-oss" element={<OmOss />} />
             <Route path="/kontakt" element={<Kontakt />} />

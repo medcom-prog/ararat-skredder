@@ -85,6 +85,17 @@ export default function Tjenester() {
             ]}
           />
         </Reveal>
+
+        <Reveal delay={200}>
+          <div className="mt-8">
+            <Button asChild variant="outline" size="md">
+              <Link to="/priser">
+                Se full prisliste
+                <ArrowRight className="h-4 w-4" aria-hidden="true" />
+              </Link>
+            </Button>
+          </div>
+        </Reveal>
       </section>
 
       {/* Service blocks — alternating layout */}
@@ -187,6 +198,16 @@ export default function Tjenester() {
                       </a>
                     </Button>
                   </div>
+
+                  {svc.slug === "skomakeri" ? (
+                    <Link
+                      to="/skomaker-oslo"
+                      className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-soft"
+                    >
+                      Les mer om skomaker i Oslo sentrum
+                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                    </Link>
+                  ) : null}
                 </div>
               </div>
               </Reveal>
