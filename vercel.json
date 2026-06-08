@@ -5,6 +5,14 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/:path*",
+      "has": [{ "type": "host", "value": "araratskredderi.no" }],
+      "destination": "https://www.araratskredderi.no/:path*",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/((?!api/|assets/|.*\\.).*)", "destination": "/index.html" }
   ],
