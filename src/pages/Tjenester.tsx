@@ -199,6 +199,25 @@ export default function Tjenester() {
                     </Button>
                   </div>
 
+                  {svc.slug === "malsom-dresser" ? (
+                    <div className="mt-4 flex flex-col gap-2">
+                      <Link
+                        to="/blog/skreddersydd-dress-oslo"
+                        className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-soft"
+                      >
+                        Les mer: 5 ting du bør vite før du bestiller dress
+                        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                      </Link>
+                      <Link
+                        to="/blog/hva-koster-skreddersydd-dress"
+                        className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-soft"
+                      >
+                        Les mer: Hva koster en skreddersydd dress?
+                        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                      </Link>
+                    </div>
+                  ) : null}
+
                   {svc.slug === "skomakeri" ? (
                     <Link
                       to="/skomaker-oslo"

@@ -35,6 +35,7 @@ interface PriceGroup {
   title: string;
   intro: string;
   rows: PriceRow[];
+  readMore?: { label: string; href: string };
 }
 
 const priceGroups: PriceGroup[] = [
@@ -69,6 +70,10 @@ const priceGroups: PriceGroup[] = [
         note: "Større skader får eget prisoverslag.",
       },
     ],
+    readMore: {
+      label: "Les mer: Sy om dressen i stedet for å kjøpe ny",
+      href: "/blog/sy-om-dress-oslo",
+    },
   },
   {
     title: "Skreddersøm og målsøm",
@@ -95,6 +100,10 @@ const priceGroups: PriceGroup[] = [
         note: "Konsept-møte er kostnadsfritt.",
       },
     ],
+    readMore: {
+      label: "Les mer: Hva koster en skreddersydd dress?",
+      href: "/blog/hva-koster-skreddersydd-dress",
+    },
   },
   {
     title: "Skomakeri",
@@ -241,6 +250,15 @@ export default function Priser() {
                     ))}
                   </tbody>
                 </table>
+                {group.readMore ? (
+                  <Link
+                    to={group.readMore.href}
+                    className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-medium text-accent hover:text-accent-soft"
+                  >
+                    {group.readMore.label}
+                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                  </Link>
+                ) : null}
               </div>
             </Reveal>
           ))}

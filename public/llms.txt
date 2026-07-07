@@ -48,9 +48,22 @@ Drop-in mandag til lørdag for vurdering og reparasjon. For målsøm av dress el
 
 - [Forside](https://www.araratskredderi.no/): Oversikt over tjenester og kontakt
 - [Tjenester](https://www.araratskredderi.no/tjenester): Detaljert beskrivelse av alle tjenester, prosess og pris
+- [Priser](https://www.araratskredderi.no/priser): Veiledende prisliste for skreddersøm, reparasjon og skomakeri
+- [Skomaker i Oslo](https://www.araratskredderi.no/skomaker-oslo): Skomaker og skredder under ett tak i Torggata 8
 - [Galleri](https://www.araratskredderi.no/galleri): Bilder fra verkstedet, kundemøter og lokalene
 - [Om oss](https://www.araratskredderi.no/om-oss): Historikk, verdier og skreddermesterens bakgrunn
 - [Kontakt](https://www.araratskredderi.no/kontakt): Adresse, åpningstider, kart og kontaktinformasjon
+- [Blogg](https://www.araratskredderi.no/blog): Artikler og råd fra verkstedet
+
+## Artikler
+
+- [Skreddersydd dress i Oslo](https://www.araratskredderi.no/blog/skreddersydd-dress-oslo): 5 ting du bør vite før du bestiller målsydd dress
+- [Hva koster en skreddersydd dress?](https://www.araratskredderi.no/blog/hva-koster-skreddersydd-dress): Prisguide for målsøm av dress, fra 8 000 kr
+- [Skredder i Oslo](https://www.araratskredderi.no/blog/skredder-oslo): Slik velger du riktig skredder i Oslo
+- [Skreddersøm i Oslo](https://www.araratskredderi.no/blog/skreddersom-oslo): Tjenester, priser og leveringstid for skreddersøm
+- [Tilpasning av dress](https://www.araratskredderi.no/blog/tilpasning-dress-oslo): Justering av hyllevare vs. full skreddersøm
+- [Sy om dress](https://www.araratskredderi.no/blog/sy-om-dress-oslo): Når det lønner seg å sy om dressen i stedet for å kjøpe ny
+- [Sy om brudekjole](https://www.araratskredderi.no/blog/sy-om-brudekjole-oslo): Tilpasning og omsøm av brudekjole
 
 ## Autoritet
 

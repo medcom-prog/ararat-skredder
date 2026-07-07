@@ -31,13 +31,14 @@ if (existsSync(BLOG_CONTENT_DIR)) {
   for (const file of readdirSync(BLOG_CONTENT_DIR).filter((f) => f.endsWith(".md"))) {
     const raw = readFileSync(join(BLOG_CONTENT_DIR, file), "utf8");
     const slugMatch = raw.match(/^slug:\s*["']?([^"'\n]+)["']?\s*$/m);
-    const dateMatch = raw.match(/^(?:published_at|updated_at):\s*["']?(\d{4}-\d{2}-\d{2})["']?\s*$/m);
+    const updatedMatch = raw.match(/^updated_at:\s*["']?(\d{4}-\d{2}-\d{2})["']?\s*$/m);
+    const publishedMatch = raw.match(/^published_at:\s*["']?(\d{4}-\d{2}-\d{2})["']?\s*$/m);
     if (slugMatch) {
       ROUTES.push({
         path: `/blog/${slugMatch[1].trim()}`,
         changefreq: "monthly",
         priority: "0.6",
-        lastmod: dateMatch ? dateMatch[1] : TODAY,
+        lastmod: updatedMatch?.[1] ?? publishedMatch?.[1] ?? TODAY,
       });
     }
   }

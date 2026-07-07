@@ -8,6 +8,7 @@
  *   - Route-specific og:* / twitter:* tags
  *   - Route-specific JSON-LD (Service / FAQ / WebPage+Speakable / Breadcrumb)
  *   - Minimal H1 + intro inside <div id="root"> for non-JS crawlers
+ *     (blog posts additionally get their full rendered article body)
  *
  * Vercel filesystem precedence serves these files before falling back
  * to the SPA rewrite, so AI crawlers (GPTBot, ClaudeBot, CCBot) see
@@ -19,6 +20,14 @@
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from "node:fs";
 import { join, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
+// Same markdown renderer as the runtime (src/blog/renderer.ts +
+// src/blog/BlogPost.tsx) so prerendered article bodies match what React
+// renders. Content is first-party markdown, so marked runs alone here
+// (no sanitizer — mirrors borz-athletes; isomorphic-dompurify does not
+// load on the Node 18 build). Only the Tailwind class decoration is
+// skipped — crawlers don't need it, and React replaces #root on mount
+// anyway.
+import { marked } from "marked";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -455,7 +464,7 @@ function htmlEscape(s) {
     .replace(/'/g, "&#39;");
 }
 
-function injectMeta(html, { title, description, url, h1, intro }) {
+function injectMeta(html, { title, description, url, h1, intro, ogType, ogImage, bodyHtml }) {
   const fullTitle = `${title} | Ararat Skredderi`;
   const safeTitle = htmlEscape(fullTitle);
   const safeDesc = htmlEscape(description);
@@ -482,6 +491,27 @@ function injectMeta(html, { title, description, url, h1, intro }) {
     /<meta\s+property="og:url"\s+content="[^"]*"\s*\/?>/,
     `<meta property="og:url" content="${safeUrl}" />`,
   );
+  // og:type only overridden when the route asks for it (blog posts →
+  // "article"); static routes keep the shell's default value.
+  if (ogType) {
+    out = out.replace(
+      /<meta\s+property="og:type"\s+content="[^"]*"\s*\/?>/,
+      `<meta property="og:type" content="${htmlEscape(ogType)}" />`,
+    );
+  }
+  // og:image only overridden when the route has its own image (blog posts
+  // with a hero_image); everything else keeps the default og-image.jpg.
+  // twitter:image mirrors it so both card types show the same picture.
+  if (ogImage) {
+    out = out.replace(
+      /<meta\s+property="og:image"\s+content="[^"]*"\s*\/?>/,
+      `<meta property="og:image" content="${htmlEscape(ogImage)}" />`,
+    );
+    out = out.replace(
+      /<meta\s+name="twitter:image"\s+content="[^"]*"\s*\/?>/,
+      `<meta name="twitter:image" content="${htmlEscape(ogImage)}" />`,
+    );
+  }
   out = out.replace(
     /<meta\s+name="twitter:title"\s+content="[^"]*"\s*\/?>/,
     `<meta name="twitter:title" content="${safeTitle}" />`,
@@ -502,10 +532,16 @@ function injectMeta(html, { title, description, url, h1, intro }) {
   // Inject minimal H1 + Quick Answer intro into <div id="root"> for non-JS
   // crawlers. aria-label="Kort fortalt:" matches the speakable cssSelector in
   // webPageSpeakableLd so voice-assistant / AI extraction resolves to this
-  // summary paragraph instead of finding nothing.
+  // summary paragraph instead of finding nothing. Blog posts additionally
+  // append their full rendered article body (bodyHtml) so no-JS AI
+  // crawlers read the whole article, not just a 200-char excerpt. The
+  // CLS caveat documented for the homepage does not apply here: sub-route
+  // injections measured CLS 0, and React still replaces #root on mount.
+  // Replacer FUNCTION (not string) so `$&`/`$'` patterns in the injected
+  // content can't expand into the replacement.
   out = out.replace(
     /<div id="root"><\/div>/,
-    `<div id="root"><h1>${safeH1}</h1><p aria-label="Kort fortalt:">${safeIntro}</p></div>`,
+    () => `<div id="root"><h1>${safeH1}</h1><p aria-label="Kort fortalt:">${safeIntro}</p>${bodyHtml ?? ""}</div>`,
   );
 
   return out;
@@ -730,6 +766,9 @@ if (existsSync(BLOG_CONTENT_DIR)) {
     const article = parsed.data;
     const url = `${SITE}/blog/${article.slug}`;
     const excerpt = buildExcerpt(parsed.body);
+    // Full article body — same marked renderer as the runtime
+    // (src/blog/BlogPost.tsx), so crawlers get the complete text.
+    const bodyHtml = marked.parse(parsed.body);
     const html = injectSchema(
       injectMeta(SHELL, {
         title: article.meta_title ?? article.title,
@@ -737,6 +776,9 @@ if (existsSync(BLOG_CONTENT_DIR)) {
         url,
         h1: article.title,
         intro: excerpt,
+        ogType: "article",
+        ogImage: article.hero_image ? `${SITE}${article.hero_image}` : undefined,
+        bodyHtml,
       }),
       blogPostingLd(article, url),
     );
