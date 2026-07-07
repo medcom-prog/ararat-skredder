@@ -5,12 +5,13 @@ meta_title: "Hva koster en skreddersydd dress · Prisguide 2026"
 meta_description: "En skreddersydd dress i Oslo koster fra 8 000 kr. Her er hva som styrer prisen, konkrete priseksempler, og hva du faktisk får for pengene."
 keyword: "skreddersydd dress pris"
 published_at: "2026-05-26"
+updated_at: "2026-07-07"
 hero_image: "/images/gallery/sittingwithcustomer.jpg"
 ---
 
 > **Kort forklart**: En skreddersydd dress i Oslo koster fra 8 000 kr. Prisen avhenger først og fremst av stoffet, deretter av detaljgraden. En klassisk ulldress ligger på 8 000 til 12 000 kr. Premium ull, silkeblandinger og kashmir går opp mot 18 000 til 25 000 kr.
 
-Det første spørsmålet vi får på telefonen er nesten alltid om pris. Det skjønner vi godt. En skreddersydd dress er sjelden et impulskjøp, og folk vil vite hva de går til.
+Det første spørsmålet vi får på telefonen er nesten alltid om pris. Det skjønner vi godt. En [skreddersydd dress](/blog/skreddersydd-dress-oslo) er sjelden et impulskjøp, og folk vil vite hva de går til.
 
 Det vanskelige svaret er at det varierer. Det ærlige svaret er at det varierer på en oversiktlig måte, og vi prøver å forklare den her.
 
@@ -35,7 +36,7 @@ For å gjøre det mindre abstrakt:
 - **Smoking eller seremoniell dress** med satengrevers, satengstripe på buksa, vest: 15 000 til 22 000 kr
 - **Sommerdress** i lin eller lett ull, ofte uten fôr eller med halvfôr: 7 000 til 10 000 kr
 
-Vi gir alltid bindende prisoverslag etter konsultasjonen. Ingen overraskelser når du henter dressen.
+Vi gir alltid bindende prisoverslag etter konsultasjonen. Ingen overraskelser når du henter dressen. Veiledende startpriser for alle tjenestene ligger i [prislisten](/priser).
 
 ## Hvorfor koster det ikke 3 000 kr?
 
@@ -43,7 +44,7 @@ Av og til får vi spørsmålet, spesielt fra folk som har sett annonser fra nett
 
 Det korte svaret: et plagg som er sydd etter mål, av et menneske som har holdt på i flere tiår, krever tid. En dress hos oss tar 25 til 40 arbeidstimer fordelt på flere uker. Klipp, søm, fôr, knapphull, prøvinger, justeringer.
 
-Nettbestillere sender målene dine til Vietnam eller Bangladesh, hvor en fabrikkarbeider på ti minutter setter sammen dressen din etter et standardmønster justert med tre tall. Det er ikke det samme som målsøm, selv om ordet brukes likt.
+Nettbestillere sender målene dine til Vietnam eller Bangladesh, hvor en fabrikkarbeider på ti minutter setter sammen dressen din etter et standardmønster justert med tre tall. Det er ikke det samme som [målsøm](/blog/skreddersom-oslo), selv om ordet brukes likt.
 
 Vi sier dette ikke for å snakke ned andre, men fordi mange er forvirret over hva "skreddersydd" faktisk betyr. Spør alltid om dressen sys i Norge eller sendes til utlandet. Spør om antall prøvinger. Spør hvor mange mål som tas.
 
