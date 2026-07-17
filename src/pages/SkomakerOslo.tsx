@@ -58,6 +58,21 @@ const skomakerFaqs: FAQ[] = [
     answer:
       "Vi holder til i Torggata 8, 0181 Oslo, midt i sentrum. Det er kort vei fra Jernbanetorget og Stortinget, og enkelt å nå med buss og T-bane.",
   },
+  {
+    question: "Lønner det seg å reparere sko i stedet for å kjøpe nye?",
+    answer:
+      "Ofte, ja, spesielt for sko i godt skinn. Sålereparasjon fra 400 kr koster som regel langt mindre enn et nytt par i tilsvarende kvalitet, og gode sko tåler flere runder med reparasjon. For rimelige sko med slitt overdel er svaret ikke alltid ja. Ta dem med til Torggata 8, så får du en ærlig vurdering og bindende pris før du bestemmer deg.",
+  },
+  {
+    question: "Må jeg bestille time hos skomakeren?",
+    answer:
+      "Nei. Vi har drop-in mandag til lørdag i Torggata 8, og du trenger ingen avtale. Kom innom med skoene, så vurderer vi dem mens du venter og gir deg bindende pris før vi starter. Vil du sjekke noe på forhånd, kan du ringe oss på 91 92 19 08.",
+  },
+  {
+    question: "Hva skjer hvis skoen ikke kan repareres?",
+    answer:
+      "Da sier vi det før du bruker penger. Ved vurderingen får du et ærlig svar på om reparasjon er mulig og om det lønner seg, og vi starter aldri uten at du har godkjent en bindende pris. Du bestemmer selv om vi skal gå videre.",
+  },
 ];
 
 export default function SkomakerOslo() {
@@ -208,6 +223,84 @@ export default function SkomakerOslo() {
               gå til prislisten
             </Link>
             .
+          </p>
+        </div>
+      </section>
+
+      {/* Praktisk dybde: hælbytte/såler, glidelås, levering og pris.
+          Kanontall: fra 300 kr skomakerarbeid, fra 400 kr sålereparasjon,
+          3-7 dager, bindende pris ved vurdering. Ingen detaljpriser
+          utover kanon uten Ahmads bekreftelse. */}
+      <section className="section">
+        <div className="container-narrow space-y-6 text-base leading-relaxed text-foreground md:text-lg">
+          <p className="eyebrow">Hælbytte og såler</p>
+          <h2 className="text-display-2 text-foreground">
+            Hælbytte og nye såler,
+            <span className="font-serif italic"> i praksis</span>
+          </h2>
+          <p>
+            En slitt hæl eller såle betyr sjelden at skoen er ferdig. Prosessen
+            er enkel: du kommer innom Torggata 8 med skoene, vi vurderer dem på
+            stedet og gir bindende pris før vi starter. Deretter velger vi hæl
+            eller såle etter skoens kvalitet og hvordan du bruker den, utfører
+            arbeidet på verkstedet og har skoene klare til avtalt tid.
+          </p>
+          <p>
+            Om det lønner seg, handler om utgangspunktet. Sko i godt skinn tåler
+            gjerne flere runder med nye hæler og såler, og med sålereparasjon
+            fra 400 kr blir regnestykket ofte bedre enn å kjøpe nytt i samme
+            kvalitet. For rimelige sko med slitt overdel er svaret ikke alltid
+            ja, og da sier vi det. Du får en ærlig vurdering, ikke et
+            salgsargument.
+          </p>
+        </div>
+      </section>
+
+      <section className="section bg-surface">
+        <div className="container-narrow space-y-6 text-base leading-relaxed text-foreground md:text-lg">
+          <p className="eyebrow">Glidelås</p>
+          <h2 className="text-display-2 text-foreground">
+            Glidelås i støvler
+            <span className="font-serif italic"> og annet skotøy</span>
+          </h2>
+          <p>
+            En ødelagt glidelås betyr ikke at støvelen må kastes. Vurderingen
+            kommer alltid først: kan glidelåsen repareres, eller må den byttes
+            helt? Svaret får du på stedet, sammen med bindende pris før vi gjør
+            noe som helst.
+          </p>
+          <p>
+            Skinnet rundt glidelåsen får samme omtanke som resten av skoen.
+            Rifter og slitasje i skinn lapper og fikser vi i samme jobb, slik at
+            støvelen er hel når du henter den. Vi jobber i skinn, tekstil og
+            syntet, og arvede eller kostbare modeller behandles med ekstra
+            varsomhet. Trenger jakka eller buksa også ny glidelås, ordner
+            skredderen det i samme lokale.
+          </p>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container-narrow space-y-6 text-base leading-relaxed text-foreground md:text-lg">
+          <p className="eyebrow">Levering og pris</p>
+          <h2 className="text-display-2 text-foreground">
+            Dette kan du
+            <span className="font-serif italic"> forvente</span>
+          </h2>
+          <p>
+            De fleste skoreparasjoner er klare innen 3–7 dager. En enkel hæljobb
+            kan gå raskere, mens reparasjoner som venter på spesielle
+            reservedeler ligger i den øvre enden av spennet. Hentetidspunktet
+            avtaler vi ved innlevering, så du vet når skoene er klare.
+          </p>
+          <p>
+            Prisen settes ved vurderingen, og den er bindende: fra 300 kr for
+            skomakerarbeid og fra 400 kr for sålereparasjon. Hvor den endelige
+            prisen lander, avhenger av skotypen og hva som faktisk skal gjøres,
+            og derfor priser vi ingenting usett. Kom innom i åpningstiden,
+            mandag til lørdag, uten avtale. Vi vurderer skoene mens du venter,
+            og du bestemmer deg etterpå, med prisen i hånden. Ingen
+            overraskelser når du kommer for å hente.
           </p>
         </div>
       </section>

@@ -170,6 +170,18 @@ const SKOMAKER_FAQS = [
     q: "Hvor i Oslo holder dere til?",
     a: "Vi holder til i Torggata 8, 0181 Oslo, midt i sentrum. Det er kort vei fra Jernbanetorget og Stortinget, og enkelt å nå med buss og T-bane.",
   },
+  {
+    q: "Lønner det seg å reparere sko i stedet for å kjøpe nye?",
+    a: "Ofte, ja, spesielt for sko i godt skinn. Sålereparasjon fra 400 kr koster som regel langt mindre enn et nytt par i tilsvarende kvalitet, og gode sko tåler flere runder med reparasjon. For rimelige sko med slitt overdel er svaret ikke alltid ja. Ta dem med til Torggata 8, så får du en ærlig vurdering og bindende pris før du bestemmer deg.",
+  },
+  {
+    q: "Må jeg bestille time hos skomakeren?",
+    a: "Nei. Vi har drop-in mandag til lørdag i Torggata 8, og du trenger ingen avtale. Kom innom med skoene, så vurderer vi dem mens du venter og gir deg bindende pris før vi starter. Vil du sjekke noe på forhånd, kan du ringe oss på 91 92 19 08.",
+  },
+  {
+    q: "Hva skjer hvis skoen ikke kan repareres?",
+    a: "Da sier vi det før du bruker penger. Ved vurderingen får du et ærlig svar på om reparasjon er mulig og om det lønner seg, og vi starter aldri uten at du har godkjent en bindende pris. Du bestemmer selv om vi skal gå videre.",
+  },
 ];
 
 // ────────────────────────────────────────────────────────────
@@ -664,6 +676,24 @@ const ROUTES = [
   },
 ];
 
+// Artikkel-lenkeliste for den prerendrede /blog-indexen. Uten denne så
+// no-JS-crawlere bare H1+intro på /blog og kunne ikke OPPDAGE artiklene
+// derfra (de reelle kortene lastes klient-side). Bygges fra samme
+// content/blog/*.md som artikkel-prerenderen lenger ned.
+function blogIndexBodyHtml() {
+  if (!existsSync(BLOG_CONTENT_DIR)) return "";
+  const items = readdirSync(BLOG_CONTENT_DIR)
+    .filter((f) => f.endsWith(".md"))
+    .map((f) => parseFrontmatter(readFileSync(join(BLOG_CONTENT_DIR, f), "utf8"))?.data)
+    .filter((d) => d?.slug && d?.title)
+    .sort((a, b) => String(b.published_at ?? "").localeCompare(String(a.published_at ?? "")));
+  if (items.length === 0) return "";
+  const lis = items
+    .map((d) => `<li><a href="/blog/${htmlEscape(d.slug)}">${htmlEscape(d.title)}</a></li>`)
+    .join("");
+  return `<h2>Artikler</h2><ul>${lis}</ul>`;
+}
+
 let count = 0;
 
 for (const r of ROUTES) {
@@ -675,6 +705,7 @@ for (const r of ROUTES) {
       url,
       h1: r.h1,
       intro: r.intro,
+      bodyHtml: r.path === "blog" ? blogIndexBodyHtml() : undefined,
     }),
     r.schema,
   );

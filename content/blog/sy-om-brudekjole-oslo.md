@@ -1,9 +1,9 @@
 ---
 title: "Sy om brudekjole i Oslo: slik fungerer det"
 slug: "sy-om-brudekjole-oslo"
-meta_title: "Sy inn brudekjole i Oslo · Slik fungerer det"
-meta_description: "Skal du sy inn brudekjolen? Slik foregår tilpasning av brudekjole i Oslo: hva som kan endres, når du bør bestille prøving, og hvordan prisen settes."
-keyword: "sy inn brudekjole"
+meta_title: "Sy om brudekjole i Oslo · Slik fungerer det"
+meta_description: "Skal du sy om brudekjolen? Slik foregår tilpasning av brudekjole i Oslo: hva som kan endres, når du bør bestille prøving, og hvordan prisen settes."
+keyword: "sy om brudekjole"
 published_at: "2026-07-07"
 hero_image: "/images/gallery/araratsowingwithmachine.jpg"
 ---
@@ -48,7 +48,7 @@ Vi gir heller en ærlig vurdering enn å ta på oss arbeid som ikke gir verdi. H
 
 Er du fortsatt i valgfasen, hjelper det å vite [hva du bør se etter når du velger skredder](/blog/skredder-oslo) til et plagg du bare får én sjanse på.
 
-Kom innom Torggata 8 for vurdering, eller ring 91 92 19 08. Drop-in mandag til lørdag.
+Vi gjør også [andre tilpasninger og reparasjoner](/tjenester) om flere plagg skal klargjøres til dagen. Kom innom Torggata 8 for vurdering, eller ring 91 92 19 08. Drop-in mandag til lørdag.
 
 ---
 

@@ -47,7 +47,7 @@ En enkel målsydd dress i klassisk ull ligger på 8 000–12 000 kr. En ferdigkj
 
 Usikker på hva dressen din trenger? En konsultasjon avgjør det på minutter. Skulder, bryst, liv, lengde og balanse sjekkes mens du har dressen på, og du får et bindende prisoverslag før noe sys. Vent bare ikke til uken før arrangementet, for i bryllupssesongen fra mai til august er pågangen størst, og større omforminger trenger tid til prøving.
 
-Veiledende startpriser ligger på [prissiden](/priser). Kom innom Torggata 8 for vurdering, eller ring 91 92 19 08. Drop-in mandag til lørdag.
+Veiledende startpriser ligger på [prissiden](/priser), og hele tjenestespekteret på [tjenestesiden](/tjenester). Kom innom Torggata 8 for vurdering, [avtal tid](/kontakt), eller ring 91 92 19 08. Drop-in mandag til lørdag.
 
 ---
 

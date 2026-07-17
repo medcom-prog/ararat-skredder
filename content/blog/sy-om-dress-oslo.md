@@ -49,7 +49,7 @@ Leveringstiden avhenger av jobben. Enkle justeringer tar 1–3 dager, komplekse 
 
 Du trenger ikke avtale for en vurdering. Butikken er åpen mandag til fredag 10–19 og lørdag 10–18, og drop-in fungerer fint for alt av justeringer. For større prosjekter er det lurt å avtale tid på forhånd, så det er satt av nok tid til konsultasjon.
 
-Kom innom Torggata 8 for vurdering, eller ring 91 92 19 08. Drop-in mandag til lørdag.
+Omsying er én av flere ting vi gjør; hele bredden står på [tjenestesiden](/tjenester). Og skal dresskoene friskes opp samtidig, har vi [skomaker under samme tak](/skomaker-oslo). Kom innom Torggata 8 for vurdering, eller ring 91 92 19 08. Drop-in mandag til lørdag.
 
 ---
 

@@ -2,10 +2,10 @@
 title: "Skreddersydd dress i Oslo: 5 ting du bør vite før du bestiller"
 slug: "skreddersydd-dress-oslo"
 meta_title: "Skreddersydd dress i Oslo · Slik bestiller du"
-meta_description: "En målsydd dress i Oslo koster fra 8 000 kr og tar 2-4 uker. Slik foregår prosessen hos en skredder i Torggata 8, og når det lønner seg å gå skreddersydd."
+meta_description: "Slik bestiller du skreddersydd dress i Oslo: prosessen steg for steg hos skredderen i Torggata 8, leveringstid 2-4 uker, og når målsøm lønner seg."
 keyword: "skreddersydd dress oslo"
 published_at: "2026-05-26"
-updated_at: "2026-07-07"
+updated_at: "2026-07-17"
 hero_image: "/images/gallery/araratstandingbehindcounter.jpg"
 ---
 
@@ -55,7 +55,7 @@ Tredje besøk, henting: Etter to uker til er dressen ferdig presset, fôret og k
 
 Total leveringstid: 2 til 4 uker. I bryllupssesongen, mai til august, anbefaler vi å bestille minst 6 uker før dato. Vi har sagt nei til kunder som kom for sent, og det føles aldri bra.
 
-Vil du komme innom og diskutere muligheter? Torggata 8 er åpen mandag til lørdag, drop-in for vurdering. Ring 91 92 19 08 hvis du vil avtale tid for konsultasjon.
+Hva målsøm og resten av håndverket koster, ser du på [prissiden](/priser), og alle tjenestene står på [tjenestesiden](/tjenester). Vil du komme innom og diskutere muligheter? Torggata 8 er åpen mandag til lørdag, drop-in for vurdering. Ring 91 92 19 08 eller [avtal tid for konsultasjon](/kontakt).
 
 ---
 

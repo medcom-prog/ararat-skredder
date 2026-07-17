@@ -1,10 +1,11 @@
 ---
-title: "Skredder i Oslo: 5 faktorer som avgjør om du får verdi for pengene"
+title: "Billig skredder i Oslo? 5 faktorer som avgjør om du får verdi for pengene"
 slug: "skredder-oslo"
-meta_title: "Skredder i Oslo: 5 faktorer for å velge riktig verksted"
-meta_description: "Hva skiller en god skredder fra en billig? Fem ting du bør sjekke før du leverer plagget, fra prøving og pris til spesialisering og språk."
-keyword: "skredder oslo"
+meta_title: "Billig skredder i Oslo? 5 ting du bør sjekke først"
+meta_description: "Leter du etter en billig skredder i Oslo? Fem ting som avgjør om lavpris blir god verdi, fra bindende prisoverslag til prøving og spesialisering."
+keyword: "billig skredder oslo"
 published_at: "2026-07-07"
+updated_at: "2026-07-17"
 hero_image: "/images/gallery/pointingatfabric.jpg"
 ---
 
@@ -50,7 +51,7 @@ Mange av Oslos mest erfarne skreddere har bakgrunn fra land med lang håndverkst
 
 Les gjerne anmeldelser før du velger, men les dem som en logg over hva verkstedet prioriterer: fart, pris, presisjon eller tilgjengelighet. Skriver flere kunder at skredderen sa nei til en jobb og heller anbefalte noe annet, er det et tegn på ærlighet.
 
-Og husk skillet mellom drop-in og avtale. Drop-in fungerer for raske jobber som forkorting, glidelås og knapper. Målsøm og kompliserte omforminger krever avtale, fordi konsultasjon, måltaking og prøving tar tid. Det du egentlig velger er ikke en skredder, men et verksted som tar ansvar for plagget ditt fra det legges på disken til du går ut døren med det på. Kom innom Torggata 8 for vurdering, eller ring 91 92 19 08. Drop-in mandag til lørdag.
+Og husk skillet mellom drop-in og avtale. Drop-in fungerer for raske jobber som forkorting, glidelås og knapper. Målsøm og kompliserte omforminger krever avtale, fordi konsultasjon, måltaking og prøving tar tid. Det du egentlig velger er ikke en skredder, men et verksted som tar ansvar for plagget ditt fra det legges på disken til du går ut døren med det på. En oversikt over alt vi gjør finner du på [tjenestesiden](/tjenester), og trenger skoene samme behandling har vi [skomaker i samme lokale](/skomaker-oslo). Kom innom Torggata 8 for vurdering, eller ring 91 92 19 08. Drop-in mandag til lørdag.
 
 ---
 

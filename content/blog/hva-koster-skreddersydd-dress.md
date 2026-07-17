@@ -5,7 +5,7 @@ meta_title: "Hva koster en skreddersydd dress · Prisguide 2026"
 meta_description: "En skreddersydd dress i Oslo koster fra 8 000 kr. Her er hva som styrer prisen, konkrete priseksempler, og hva du faktisk får for pengene."
 keyword: "skreddersydd dress pris"
 published_at: "2026-05-26"
-updated_at: "2026-07-07"
+updated_at: "2026-07-17"
 hero_image: "/images/gallery/sittingwithcustomer.jpg"
 ---
 
@@ -48,7 +48,9 @@ Nettbestillere sender målene dine til Vietnam eller Bangladesh, hvor en fabrikk
 
 Vi sier dette ikke for å snakke ned andre, men fordi mange er forvirret over hva "skreddersydd" faktisk betyr. Spør alltid om dressen sys i Norge eller sendes til utlandet. Spør om antall prøvinger. Spør hvor mange mål som tas.
 
-Vil du ha et konkret prisoverslag på en dress du har i tankene? Kom innom Torggata 8, eller ring 91 92 19 08. Drop-in mandag til lørdag, gratis konsultasjon.
+Prisen henger også sammen med tiden: regn med 2 til 4 uker fra første måltaking til ferdig dress, med prøvinger underveis. Hvordan bestillingen foregår steg for steg har vi beskrevet i [guiden om skreddersydd dress i Oslo](/blog/skreddersydd-dress-oslo).
+
+Vil du ha et konkret prisoverslag på en dress du har i tankene? Se [alle tjenestene](/tjenester), kom innom Torggata 8, eller ring 91 92 19 08. Drop-in mandag til lørdag, gratis konsultasjon.
 
 ---
 

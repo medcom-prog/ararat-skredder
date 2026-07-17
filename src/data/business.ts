@@ -15,7 +15,7 @@ export const BUSINESS = {
     "Profesjonell skreddersøm, reparasjon, omforming og skomakeri i Oslo sentrum.",
   longDescription:
     "Ararat Skredderi i Torggata 8 har levert profesjonell skreddersøm og reparasjon i Oslo i over 50 år. Vi tar målsøm av dresser, endringer og reparasjon, omforming av plagg, skjorter og bluser, samt skomakeri og spesialbestillinger til bryllup, scene og uniform.",
-  established: 1974, // 50+ års erfaring per nettsiden
+  established: 2006, // bedriften i nåværende form (llms.txt-kanon); Ahmads personlige erfaring er 50+ år
   orgNumber: "989361244",
   orgType: "ENK" as const,
   founder: {
@@ -62,9 +62,14 @@ export const BUSINESS = {
       "https://www.proff.no/selskap/ararat-skredder-renseri-skomaker-n%C3%B8kkel-filling-ahmad-abdulhamid/oslo/skreddere/IFW7L9D02J9",
     nr1881: "https://www.1881.no/Ararat-Skredder/E6F94AAB7E994B26ABE0EAEAFA02D9DD/",
   },
-  priceRange: "500-15000 NOK",
+  priceRange: "200-15000 NOK",
   domain: "https://www.araratskredderi.no",
   languages: ["Norwegian", "English", "Arabic"],
 };
 
-export const yearsExperience = new Date().getFullYear() - BUSINESS.established;
+// Statisk "50" — IKKE beregnet fra established. Kanon: Ahmads personlige
+// håndverkserfaring omtales som "50+ år" overalt (statisk HTML, prerender,
+// llms.txt). En beregnet verdi ga "52+" etter hydrering mens rå HTML sa
+// "50+" — samme side viste to ulike tall, et AI-tillitsproblem. Oppdater
+// manuelt ved milepæler.
+export const yearsExperience = 50;

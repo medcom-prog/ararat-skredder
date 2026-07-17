@@ -18,7 +18,7 @@ export default function Forside() {
   return (
     <>
       <SEO
-        title="Profesjonell skreddersøm i Oslo"
+        title="Skredder i Oslo sentrum"
         description={`${BUSINESS.shortDescription} Over ${yearsExperience} års erfaring i Torggata 8, Oslo sentrum.`}
         canonical={BUSINESS.domain + "/"}
       />
@@ -47,9 +47,9 @@ export default function Forside() {
             </Reveal>
             <Reveal delay={80}>
               <h1 className="mt-4 text-display-1 text-white">
-                Skreddersøm med{" "}
+                Skredder i{" "}
                 <span className="font-serif font-medium italic text-accent-soft">
-                  håndverk
+                  Oslo sentrum
                 </span>
               </h1>
             </Reveal>

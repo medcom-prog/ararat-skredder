@@ -52,7 +52,7 @@ Selve vurderingen krever ingen timeavtale. Ta med plagget, så får du svar på 
 
 Lurer du på hvordan du skiller et godt verksted fra et middelmådig? Det er et eget tema, med prøving, spesialisering og kommunikasjon som de viktigste faktorene, og hele vurderingsguiden finner du i [artikkelen om å velge skredder i Oslo](/blog/skredder-oslo).
 
-Har du plagget klart, er veien kort. Kom innom Torggata 8 for vurdering, eller ring 91 92 19 08. Drop-in mandag til lørdag.
+Har du plagget klart, er veien kort. Se [alle tjenestene våre](/tjenester), kom innom Torggata 8 for vurdering, eller ring 91 92 19 08. Drop-in mandag til lørdag.
 
 ---
 
