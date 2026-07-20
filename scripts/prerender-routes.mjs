@@ -694,6 +694,24 @@ function blogIndexBodyHtml() {
   return `<h2>Artikler</h2><ul>${lis}</ul>`;
 }
 
+// Skomaker-dybden (hælbytte/glidelås/levering) lå kun i React (SkomakerOslo.tsx)
+// og var usynlig for no-JS AI-crawlere — kun FAQ-en fantes i rå HTML (som
+// JSON-LD). Speiler seksjonene ordrett inn i #root så «skomaker oslo»-dybden
+// (1000/mnd) faktisk leses av GPTBot/ClaudeBot. HOLD I SYNC med SkomakerOslo.tsx.
+function skomakerBodyHtml() {
+  return (
+    "<h2>Hælbytte og nye såler, i praksis</h2>" +
+    "<p>En slitt hæl eller såle betyr sjelden at skoen er ferdig. Prosessen er enkel: du kommer innom Torggata 8 med skoene, vi vurderer dem på stedet og gir bindende pris før vi starter. Deretter velger vi hæl eller såle etter skoens kvalitet og hvordan du bruker den, utfører arbeidet på verkstedet og har skoene klare til avtalt tid.</p>" +
+    "<p>Om det lønner seg, handler om utgangspunktet. Sko i godt skinn tåler gjerne flere runder med nye hæler og såler, og med sålereparasjon fra 400 kr blir regnestykket ofte bedre enn å kjøpe nytt i samme kvalitet. For rimelige sko med slitt overdel er svaret ikke alltid ja, og da sier vi det.</p>" +
+    "<h2>Glidelås i støvler og annet skotøy</h2>" +
+    "<p>En ødelagt glidelås betyr ikke at støvelen må kastes. Vurderingen kommer alltid først: kan glidelåsen repareres, eller må den byttes helt? Svaret får du på stedet, sammen med bindende pris før vi gjør noe som helst.</p>" +
+    "<p>Skinnet rundt glidelåsen får samme omtanke som resten av skoen. Vi jobber i skinn, tekstil og syntet, og arvede eller kostbare modeller behandles med ekstra varsomhet. Trenger jakka eller buksa også ny glidelås, ordner skredderen det i samme lokale.</p>" +
+    "<h2>Levering og pris</h2>" +
+    "<p>De fleste skoreparasjoner er klare innen 3-7 dager. En enkel hæljobb kan gå raskere, mens reparasjoner som venter på spesielle reservedeler ligger i den øvre enden av spennet. Prisen settes ved vurderingen, og den er bindende: fra 300 kr for skomakerarbeid og fra 400 kr for sålereparasjon. Kom innom i åpningstiden, mandag til lørdag, uten avtale.</p>" +
+    `<h2>Vanlige spørsmål</h2>${SKOMAKER_FAQS.map((f) => `<h3>${htmlEscape(f.q)}</h3><p>${htmlEscape(f.a)}</p>`).join("")}`
+  );
+}
+
 let count = 0;
 
 for (const r of ROUTES) {
@@ -705,7 +723,12 @@ for (const r of ROUTES) {
       url,
       h1: r.h1,
       intro: r.intro,
-      bodyHtml: r.path === "blog" ? blogIndexBodyHtml() : undefined,
+      bodyHtml:
+        r.path === "blog"
+          ? blogIndexBodyHtml()
+          : r.path === "skomaker-oslo"
+            ? skomakerBodyHtml()
+            : undefined,
     }),
     r.schema,
   );
