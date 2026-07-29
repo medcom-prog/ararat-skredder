@@ -916,6 +916,24 @@ function homeContentHtml() {
   count++;
 }
 
+// 404.html — Vercel serverer denne med ekte HTTP 404 for stier som ikke
+// matcher noe. Uten den fikk brukere Vercels bare standard-404 (målt
+// 2026-07-29: 79 tegn, ingen branding, ingen vei videre), fordi SPA-
+// rewriten aldri rakk å laste React-NotFound-siden. noindex + ingen
+// canonical, så en soft-404 aldri kan indekseres.
+{
+  let nf = SHELL
+    .replace(/<title>[^<]*<\/title>/, "<title>Siden finnes ikke | Ararat Skredderi</title>")
+    .replace(/<link[^>]+rel="canonical"[^>]*>\s*/g, "")
+    .replace(/<meta[^>]+name="robots"[^>]*>\s*/g, "");
+  nf = nf.replace("</head>", `<meta name="robots" content="noindex, nofollow">\n  </head>`);
+  nf = nf.replace(
+    /<div id="root">[\s\S]*?<\/div>/,
+    () => `<div id="root"><h1>Siden finnes ikke</h1><p>Vi finner ikke siden du leter etter. Den er kanskje flyttet eller fjernet. <a href="/">Gå til forsiden</a>, se <a href="/tjenester">tjenestene våre</a> eller <a href="/kontakt">ta kontakt</a>.</p></div>`,
+  );
+  writeFileSync(join(DIST, "404.html"), nf, "utf8");
+}
+
 console.log(
   `[prerender] Wrote ${count} per-route HTML files with route-specific title, meta, canonical, JSON-LD and H1+intro body content`,
 );

@@ -15,7 +15,7 @@ export default function Personvern() {
         <Breadcrumbs items={[{ label: "Personvern", href: "/personvern" }]} />
       </div>
 
-      <article className="container-narrow py-10 md:py-16 prose-base">
+      <article className="container-narrow py-10 md:py-16">
         <p className="eyebrow">Personvern</p>
         <h1 className="mt-4 text-display-1 text-foreground">
           Personvern-
