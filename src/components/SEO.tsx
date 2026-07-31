@@ -11,6 +11,9 @@ interface SEOProps {
   jsonLd?: Record<string, unknown> | Array<Record<string, unknown>>;
   /** Optional og:image override; defaults to brand og-image */
   ogImage?: string;
+  /** true på 404/NotFound — soft-404 skal aldri indekseres. Dropper også
+   *  canonical: en side som ikke finnes skal ikke peke på seg selv. */
+  noindex?: boolean;
 }
 
 /**
@@ -21,13 +24,17 @@ interface SEOProps {
  * crawlers see it without executing React. Both pathways emit identical
  * shapes — runtime is the fallback / dev-mode source of truth.
  */
-export function SEO({ title, description, canonical, jsonLd, ogImage }: SEOProps) {
+export function SEO({ title, description, canonical, jsonLd, ogImage, noindex = false }: SEOProps) {
   useEffect(() => {
     const fullTitle = `${title} | Ararat Skredderi`;
     document.title = fullTitle;
 
     setMeta("name", "description", description);
-    setLink("canonical", canonical);
+    setMeta("name", "robots", noindex ? "noindex, nofollow" : "index, follow");
+    // Ingen canonical på noindex-sider — en side som ikke finnes skal ikke
+    // peke på seg selv (fjerner også en evt. arvet canonical fra forrige rute).
+    if (noindex) document.querySelector('link[rel="canonical"]')?.remove();
+    else if (canonical) setLink("canonical", canonical);
 
     setMeta("property", "og:title", fullTitle);
     setMeta("property", "og:description", description);
@@ -67,7 +74,7 @@ export function SEO({ title, description, canonical, jsonLd, ogImage }: SEOProps
         .querySelectorAll('script[data-runtime-jsonld="true"]')
         .forEach((el) => el.remove());
     };
-  }, [title, description, canonical, jsonLd, ogImage]);
+  }, [title, description, canonical, jsonLd, ogImage, noindex]);
 
   return null;
 }

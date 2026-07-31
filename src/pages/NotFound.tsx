@@ -2,7 +2,6 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Home } from "lucide-react";
 import { SEO } from "@/components/SEO";
 import { Button } from "@/components/ui/button";
-import { BUSINESS } from "@/data/business";
 
 export default function NotFound() {
   return (
@@ -10,7 +9,7 @@ export default function NotFound() {
       <SEO
         title="Siden finnes ikke (404)"
         description="Beklager, denne siden finnes ikke. Gå tilbake til forsiden eller utforsk tjenestene våre."
-        canonical={BUSINESS.domain + "/404"}
+        noindex
       />
 
       <section className="section">
