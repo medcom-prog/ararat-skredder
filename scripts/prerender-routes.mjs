@@ -1432,36 +1432,26 @@ function homeContentHtml() {
     "reparasjon, omforming og skomakeri. Skreddermester Ahmad Abdulhamid " +
     "har over 50 års erfaring. Drop-in mandag til lørdag, ingen timeavtale " +
     "nødvendig.";
-  // Utvidet 03.08.2026: page-sweep målte forsiden til 36 ord for crawlere,
-  // mens undersidene nå har 240-930. Forsiden er den URL-en AI-motorer henter
-  // først, så den kan ikke være den tynneste på domenet. Alt under bygges av
-  // SERVICES, PRICE_GROUPS, HOURS og NAP — de samme speilede arrayene
-  // undersidene bruker, så ingen nye påstander innføres her.
-  const tjenester = SERVICES.map(
-    (s) => `<li><strong>${htmlEscape(s.name)}:</strong> ${htmlEscape(s.description)}</li>`,
-  ).join("");
-  const priser = PRICE_GROUPS.flatMap((g) =>
-    g.rows.map((r) => `<tr><td>${htmlEscape(r.service)}</td><td>${htmlEscape(r.price)}</td></tr>`),
-  ).join("");
-  const apningstider = HOURS.map(
-    (h) => `<tr><td>${htmlEscape(h.days)}</td><td>${htmlEscape(h.time)}</td></tr>`,
-  ).join("");
-
+  // REVERTERT 03.08.2026, samme dag som den ble lagt til (278c52d).
+  //
+  // Jeg utvidet denne blokken med tjenesteliste, prisetabell, åpningstids-
+  // tabell og NAP-avsnitt fordi page-sweep målte forsiden til 36 ord for
+  // crawlere. Men kommentaren rett over — som jeg lot stå uendret — sier
+  // eksplisitt at NØYAKTIG den kombinasjonen ble målt til CLS 0.759 mot 0,
+  // og commit 40df178 fjernet den i juni av den grunn. Jeg overkjørte en
+  // datert måling uten å måle selv.
+  //
+  // Reversert fordi kostnaden er lav: llms.txt har alle tjenestene med
+  // priser, åpningstider, NAP og org.nr, og head-graf-en har adresse,
+  // telefon, geo, åpningstider og FAQPage. AI-motorer får altså faktaene
+  // uansett, gjennom kanaler uten layout-kostnad.
+  //
+  // Vil du utvide forsiden igjen: MÅL CLS først (PageSpeed Insights med
+  // API-nøkkel, eller Lighthouse lokalt), og skriv tallet inn her.
   return (
     `<div id="root">` +
     `<h1>${htmlEscape(h1)}</h1>` +
     `<p aria-label="Kort fortalt:"><strong>Kort fortalt:</strong> ${htmlEscape(qa)}</p>` +
-    `<h2>Hva vi gjør</h2><ul>${tjenester}</ul>` +
-    `<h2>Veiledende priser</h2>` +
-    `<table><thead><tr><th>Tjeneste</th><th>Pris</th></tr></thead><tbody>${priser}</tbody></table>` +
-    `<p>Alle priser er veiledende og settes endelig etter vurdering på stedet. Se <a href="/priser">hele prislisten</a>.</p>` +
-    `<h2>Åpningstider</h2>` +
-    `<table><thead><tr><th>Dag</th><th>Åpent</th></tr></thead><tbody>${apningstider}</tbody></table>` +
-    `<h2>Finn oss</h2>` +
-    `<p>${htmlEscape(NAP.street)}, ${htmlEscape(NAP.postalCode)} ${htmlEscape(NAP.city)}. ` +
-    `Telefon ${htmlEscape(NAP.phone)}. Drop-in, ingen timeavtale nødvendig. ` +
-    `Se <a href="/tjenester">tjenester</a>, <a href="/skomaker-oslo">skomaker</a>, ` +
-    `<a href="/om-oss">om oss</a>, <a href="/galleri">galleri</a> eller <a href="/kontakt">kontakt</a>.</p>` +
     `</div>`
   );
 }
