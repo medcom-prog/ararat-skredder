@@ -49,43 +49,301 @@ const SHELL = readFileSync(SHELL_PATH, "utf8");
 // is plain ESM and cannot import .ts.
 // ────────────────────────────────────────────────────────────
 
+// Speiling av src/data/services.ts (title → name). `description` og
+// `priceFrom` mater Service/Offer-schemaet; `fullDescription`, `features`,
+// `process` og `pricing*` mater den crawler-synlige /tjenester-bodyen, slik
+// at en no-JS-crawler leser det samme som en bruker ser i React.
+// HOLD I SYNC med src/data/services.ts.
 const SERVICES = [
   {
     slug: "malsom-dresser",
     name: "Målsøm av dresser",
     description: "Skreddersydde dresser etter dine mål, fra 8 000 kr eks. mva. Leveringstid 2–4 uker.",
     priceFrom: 8000,
+    fullDescription:
+      "Vi skreddersyr elegante dresser etter dine mål og preferanser. En grundig prosess gir perfekt passform og en stil som matcher både personlighet og anledning, fra konsultasjon og måltaking til prøving og finjustering.",
+    features: [
+      "Nøyaktig måltaking og personlig konsultasjon",
+      "Premium stoffvalg: ull, lin, silke",
+      "Klassisk og moderne snitt",
+      "Prøving og tilpasning underveis",
+    ],
+    process: [
+      { step: "Konsultasjon", description: "Diskuter preferanser og behov med en erfaren skredder." },
+      { step: "Måltaking", description: "Nøyaktige kroppsmål for skreddersydd passform." },
+      { step: "Designvalg", description: "Stoff, snitt og detaljer som passer din stil." },
+      { step: "Prøving og tilpasning", description: "Finjustering for maksimal komfort." },
+    ],
+    pricingLabel: "Fra 8 000 kr",
+    pricingNote: "Avhenger av stoff og kompleksitet",
+    readMore: [
+      { href: "/blog/skreddersydd-dress-oslo", label: "5 ting du bør vite før du bestiller dress" },
+      { href: "/blog/hva-koster-skreddersydd-dress", label: "Hva koster en skreddersydd dress?" },
+    ],
   },
   {
     slug: "endringer-reparasjon",
     name: "Endringer & reparasjon",
     description: "Lengdejustering, reparasjon, glidelåser og knapper. Fra 200 kr. Drop-in-vurdering på stedet.",
     priceFrom: 200,
+    fullDescription:
+      "Vi utfører endringer og reparasjoner som får plaggene til å sitte bedre og vare lenger, fra enkle justeringer til komplekse jobber. Bukser, skjørt, ermer, knapper, glidelåser og alt der imellom.",
+    features: [
+      "Lengdejustering av bukser, skjørt og ermer",
+      "Inn- og uttak for justert passform",
+      "Reparasjon av rifter, hull og slitasje",
+      "Glidelåser og knapper byttes raskt",
+    ],
+    process: [
+      { step: "Innlevering", description: "Kom innom Torggata 8. Vi vurderer plagget på stedet." },
+      { step: "Prisoverslag", description: "Konkret pris og leveringstid før vi setter i gang." },
+      { step: "Håndverk", description: "Erfarne skreddere utfører arbeidet med presisjon." },
+      { step: "Henting", description: "Plagget klart til avtalt tid, pakket og pent." },
+    ],
+    pricingLabel: "Fra 200 kr",
+    pricingNote: "Pris settes etter vurdering på stedet",
+    readMore: [{ href: "/blog/sy-om-dress-oslo", label: "Sy om dressen i stedet for å kjøpe ny" }],
   },
   {
     slug: "omforming",
     name: "Omforming av plagg",
     description: "Gi gamle plagg nytt liv med moderne snitt. Pris etter individuell vurdering.",
     priceFrom: null,
+    fullDescription:
+      "Har du et plagg du elsker som ikke lenger passer eller føles utdatert? Vi gir det nytt liv: oppgradering av snitt, fasong eller detaljer for et moderne uttrykk uten å miste det som gjorde plagget spesielt i utgangspunktet.",
+    features: [
+      "Gammel dress blir moderne blazer",
+      "Lang kjole blir tidløs midikjole",
+      "For stor skjorte blir skreddersydd passform",
+      "Arvestykker fornyet med varsomhet",
+    ],
+    process: [
+      { step: "Konsept", description: "Vi diskuterer hva plagget skal bli." },
+      { step: "Skisse og pris", description: "Forslag på endringer og bindende prisoverslag." },
+      { step: "Omforming", description: "Håndverket utføres med respekt for originalstoffet." },
+      { step: "Tilpasning", description: "Endelig prøving for perfekt passform." },
+    ],
+    pricingLabel: "Pris etter vurdering",
+    pricingNote: "Vurderes individuelt etter kompleksitet",
+    readMore: [{ href: "/blog/tilpasning-dress-oslo", label: "Tilpasning av dress: justering eller skreddersøm?" }],
   },
   {
     slug: "skjorter-bluser",
     name: "Skjorter & bluser",
     description: "Skreddersydde skjorter med valg av stoff, krage og detaljer. Fra 2 500 kr.",
     priceFrom: 2500,
+    fullDescription:
+      "Skreddersydde skjorter og bluser med perfekt passform. Du velger stoff, krage, mansjett og alle detaljer, fra premium bomull til silke, sateng, lin og tekniske stoffer.",
+    features: [
+      "Premium bomull, silke, sateng, lin",
+      "Klassisk og moderne kragesnitt",
+      "Måltatt passform, ikke standardstørrelser",
+      "Skreddersydde for kontor, fest eller hverdag",
+    ],
+    process: [
+      { step: "Stoffvalg", description: "Vi viser deg utvalget, fra hverdagsbomull til premiumsilke." },
+      { step: "Måltaking", description: "Nøyaktige mål for skuldre, bryst, midje og lengde." },
+      { step: "Søm", description: "Skjorten eller blusen sys på bestilling i vårt verksted." },
+      { step: "Prøving", description: "Endelig prøving for perfekt passform." },
+    ],
+    pricingLabel: "Fra 2 500 kr",
+    pricingNote: "Avhenger av stoff og design",
+    readMore: [],
   },
   {
     slug: "skomakeri",
     name: "Skomakeri",
     description: "Reparasjon av såler, hæler, skinn og glidelåser. Fra 300 kr.",
     priceFrom: 300,
+    fullDescription:
+      "Vi utfører alle typer skoreparasjoner i skinn, tekstil og syntet. Kom innom for vurdering. Spesialitet på reparasjon av arvede sko og høykvalitetsmodeller som fortjener et nytt liv.",
+    features: [
+      "Sålereparasjon og utskifting",
+      "Hælreparasjon og utskifting",
+      "Lapping og fiks av rifter i skinn",
+      "Reparasjon og utskifting av glidelåser på støvler",
+    ],
+    process: [
+      { step: "Vurdering", description: "Drop-in for vurdering og prisoverslag." },
+      { step: "Materialvalg", description: "Riktig såle eller hæl etter skoens kvalitet og bruk." },
+      { step: "Reparasjon", description: "Utføres på verkstedet vårt." },
+      { step: "Henting", description: "Klart på avtalt tid." },
+    ],
+    pricingLabel: "Fra 300 kr",
+    pricingNote: "Avhenger av skotype og reparasjon",
+    readMore: [{ href: "/skomaker-oslo", label: "Les mer om skomaker i Oslo sentrum" }],
   },
   {
     slug: "spesialbestillinger",
     name: "Spesialbestillinger",
     description: "Brudeplagg, kostymer, uniformer og designsamarbeid. Pris etter prosjekt.",
     priceFrom: null,
+    fullDescription:
+      "Har du en idé eller et spesielt behov? Vi tar utfordrende prosjekter og spesialbestillinger: brudekjoler og brudgomsdresser, kostymer for teater og film, profesjonelle uniformer og samarbeid med merker og designere.",
+    features: [
+      "Brudekjoler og brudgomsdresser",
+      "Kostymer for teater, film og event",
+      "Profesjonelle og seremonielle uniformer",
+      "Samarbeid med merker og designere",
+    ],
+    process: [
+      { step: "Konsept-møte", description: "Vi diskuterer visjon, budsjett og tidsramme." },
+      { step: "Skisse og tilbud", description: "Konkret forslag med pris og leveringsplan." },
+      { step: "Produksjon", description: "Iterativ produksjon med prøvinger underveis." },
+      { step: "Levering", description: "Endelig prøving før overlevering." },
+    ],
+    pricingLabel: "Etter avtale",
+    pricingNote: "Vurderes individuelt etter prosjekt",
+    readMore: [{ href: "/blog/sy-om-brudekjole-oslo", label: "Sy om brudekjole i Oslo: slik fungerer det" }],
   },
+];
+
+// Speiling av priceGroups i src/pages/Priser.tsx. Hvert kr-tall er hentet
+// ordrett fra kilden — ingen avrunding, ingen gjetting.
+const PRICE_GROUPS = [
+  {
+    title: "Endringer og reparasjon",
+    intro:
+      "De vanligste oppdragene. Vi vurderer plagget på stedet mens du venter og gir bindende pris før vi starter.",
+    rows: [
+      {
+        service: "Legge opp bukser, skjørt eller ermer",
+        price: "200 – 400 kr",
+        note: "Lengdejustering. Avhenger av plagg og om fald skal beholdes.",
+      },
+      {
+        service: "Ta inn eller ut i livet",
+        price: "Fra 200 kr",
+        note: "Justert passform på bukser, skjørt og jakker.",
+      },
+      {
+        service: "Bytte glidelås",
+        price: "Fra 200 kr",
+        note: "Bukse, jakke eller kjole. Endelig pris etter type glidelås.",
+      },
+      {
+        service: "Sy i knapper og mindre reparasjon",
+        price: "Fra 200 kr",
+        note: "Knapper, hekter og enkle sømmer.",
+      },
+      {
+        service: "Reparere rifter, hull og slitasje",
+        price: "Fra 200 kr",
+        note: "Større skader får eget prisoverslag.",
+      },
+    ],
+    readMore: { label: "Sy om dressen i stedet for å kjøpe ny", href: "/blog/sy-om-dress-oslo" },
+  },
+  {
+    title: "Skreddersøm og målsøm",
+    intro: "Plagg sydd eller formet etter dine mål, fra første sting.",
+    rows: [
+      {
+        service: "Skreddersydd skjorte eller bluse",
+        price: "Fra 2 500 kr",
+        note: "Stoff, krage og mansjett etter eget valg.",
+      },
+      {
+        service: "Målsøm av dress",
+        price: "Fra 8 000 kr",
+        note: "Eks. mva. Leveringstid normalt 2 – 4 uker.",
+      },
+      {
+        service: "Omforming av plagg",
+        price: "Etter vurdering",
+        note: "Snitt, fasong og detaljer fornyes med respekt for originalen.",
+      },
+      {
+        service: "Brudeplagg og spesialbestillinger",
+        price: "Etter prosjekt",
+        note: "Konsept-møte er kostnadsfritt.",
+      },
+    ],
+    readMore: { label: "Hva koster en skreddersydd dress?", href: "/blog/hva-koster-skreddersydd-dress" },
+  },
+  {
+    title: "Skomakeri",
+    intro:
+      "Sko som varer lenger. Reparasjon i skinn, tekstil og syntet, på samme sted som skredderen.",
+    rows: [
+      {
+        service: "Sålereparasjon og utskifting",
+        price: "Fra 400 kr",
+        note: "Halv eller hel såle etter skoens kvalitet.",
+      },
+      {
+        service: "Hæler, skinn og glidelåser i sko",
+        price: "Fra 300 kr",
+        note: "Vurderes etter skotype og omfang.",
+      },
+      {
+        service: "Arvede og premiumsko",
+        price: "Etter vurdering",
+        note: "Håndteres varsomt. Vi forstår verdien av kvalitetssko.",
+      },
+    ],
+    readMore: null,
+  },
+];
+
+// Speiling av BUSINESS.hours i src/data/business.ts.
+const HOURS = [
+  { days: "Mandag – fredag", time: "10:00–19:00" },
+  { days: "Lørdag", time: "10:00–18:00" },
+  { days: "Søndag", time: "Stengt" },
+];
+
+// Speiling av BUSINESS.contact + BUSINESS.address i src/data/business.ts.
+const NAP = {
+  street: "Torggata 8",
+  postalCode: "0181",
+  city: "Oslo",
+  phone: "+47 91 92 19 08",
+  email: "ararat_skredder@hotmail.com",
+};
+
+// Speiling av galleryCategories + galleryImages i src/data/gallery.ts.
+// Alt-tekstene er kundens egne bildebeskrivelser og er det eneste tekstlige
+// innholdet /galleri faktisk har.
+const GALLERY_CATEGORIES = [
+  { id: "skreddersom", label: "Skreddersøm" },
+  { id: "verksted", label: "Verksted" },
+  { id: "kunde", label: "Kundemøte" },
+  { id: "lokaler", label: "Lokaler" },
+  { id: "skomakeri", label: "Skomakeri" },
+];
+
+const GALLERY_IMAGES = [
+  { alt: "Ahmad presser en skjorte med dampjern på verkstedet", category: "skreddersom" },
+  { alt: "Detalj av Ahmad som presser kragen på en skjorte", category: "skreddersom" },
+  { alt: "Ahmad syr på industri-symaskinen", category: "skreddersom" },
+  { alt: "Sysøm i nærbilde, presisjon på symaskin", category: "skreddersom" },
+  { alt: "Ahmad konsentrert ved symaskinen", category: "skreddersom" },
+  { alt: "Ahmad arbeider på en sykkelfabrikk-symaskin", category: "verksted" },
+  { alt: "Symaskin i bruk, kontroll over stinglengde", category: "verksted" },
+  { alt: "Ahmad måler buksebein på en kunde", category: "kunde" },
+  { alt: "Måltaking med målbånd langs siden", category: "kunde" },
+  { alt: "Konsultasjon med kunde i sittegruppe", category: "kunde" },
+  { alt: "Personlig kundekonsultasjon ved bordet", category: "kunde" },
+  { alt: "Ahmad viser stoffvalg til en kunde", category: "kunde" },
+  { alt: "Stoffvalg, gjennomgang av materialer", category: "kunde" },
+  { alt: "Ahmad bak disken i butikken", category: "lokaler" },
+  { alt: "Ahmad i sittegruppen i butikken", category: "lokaler" },
+  { alt: "Sittegruppen i Ararat Skredderi, Torggata 8", category: "lokaler" },
+  { alt: "Interiør, venteområde med klassisk møblement", category: "lokaler" },
+  { alt: "Fasaden på Ararat Skredderi i Torggata 8", category: "lokaler" },
+  { alt: "Inngangen til Ararat Skredderi fra gateplan", category: "lokaler" },
+  { alt: "Skiltet til Ararat Skredderi", category: "lokaler" },
+  { alt: "Skredderens arbeidsstasjon med verktøy", category: "verksted" },
+  { alt: "Trådhylle med fargesortiment", category: "verksted" },
+  { alt: "Skredderutstyr og tråd på verkstedet", category: "verksted" },
+  { alt: "Spoler og tråd organisert på hylle", category: "verksted" },
+  { alt: "Stoff lagt pent ut for syinspeksjon", category: "verksted" },
+  { alt: "Stoff klargjort på arbeidsbordet", category: "verksted" },
+  { alt: "Flere stoffer lagt ut for valg", category: "verksted" },
+  { alt: "Klesstativ med ferdige plagg til henting", category: "verksted" },
+  { alt: "Ahmad arbeider med skoreparasjon", category: "skomakeri" },
+  { alt: "Skomakermaskin i bruk på verkstedet", category: "skomakeri" },
 ];
 
 const HOME_FAQS = [
@@ -571,6 +829,270 @@ function writeRouteHtml(routePath, html) {
 }
 
 // ────────────────────────────────────────────────────────────
+// Crawler-synlig body per rute.
+//
+// Uten dette så en no-JS-crawler (GPTBot, ClaudeBot, PerplexityBot — ingen
+// av dem kjører JS) bare H1 + én intro-setning på de kommersielle sidene:
+// målt live var /tjenester 26 ord, /priser 25 og /kontakt 27, mot 1129 for
+// en bloggartikkel. Alt under er ordrett speiling av de tilsvarende
+// React-sidene i src/pages/, slik at crawleren leser det samme som en
+// bruker ser. Interne lenker peker kun til URL-er som finnes i sitemap.xml.
+// HOLD I SYNC med src/pages/.
+// ────────────────────────────────────────────────────────────
+
+const p = (t) => `<p>${t}</p>`;
+const esc = htmlEscape;
+
+function listHtml(items) {
+  return `<ul>${items.map((i) => `<li>${esc(i)}</li>`).join("")}</ul>`;
+}
+
+function faqBodyHtml(faqs, heading = "Vanlige spørsmål") {
+  return (
+    `<h2>${esc(heading)}</h2>` +
+    faqs.map((f) => `<h3>${esc(f.q)}</h3><p>${esc(f.a)}</p>`).join("")
+  );
+}
+
+function linksBodyHtml(heading, links) {
+  return (
+    `<h2>${esc(heading)}</h2><ul>` +
+    links.map((l) => `<li><a href="${l.href}">${esc(l.label)}</a></li>`).join("") +
+    "</ul>"
+  );
+}
+
+function hoursTableHtml() {
+  return (
+    "<table><caption>Åpningstider</caption>" +
+    "<thead><tr><th>Dag</th><th>Åpent</th></tr></thead><tbody>" +
+    HOURS.map((h) => `<tr><td>${esc(h.days)}</td><td>${esc(h.time)}</td></tr>`).join("") +
+    "</tbody></table>"
+  );
+}
+
+// /tjenester — speiler hero, QuickAnswer, alle seks tjenesteblokker
+// (fullDescription, features, prosess og pris), FAQ og sluttseksjon fra
+// src/pages/Tjenester.tsx + src/data/services.ts.
+function tjenesterBodyHtml() {
+  const quick = listHtml([
+    "Målsøm fra 8 000 kr: dresser, skjorter og bluser etter dine mål.",
+    "Reparasjon fra 200 kr: lengdejustering, glidelås, knapper og rifter.",
+    "Omforming etter avtale: gi gamle plagg nytt liv med moderne snitt.",
+    "Skomakeri fra 300 kr: såler, hæler, skinn og glidelåser.",
+  ]);
+
+  const blocks = SERVICES.map((svc) => {
+    const steps = svc.process
+      .map((s) => `<li><strong>${esc(s.step)}:</strong> ${esc(s.description)}</li>`)
+      .join("");
+    const more = svc.readMore.length
+      ? `<ul>${svc.readMore.map((m) => `<li><a href="${m.href}">${esc(m.label)}</a></li>`).join("")}</ul>`
+      : "";
+    return (
+      `<h2 id="${esc(svc.slug)}">${esc(svc.name)}</h2>` +
+      p(esc(svc.fullDescription)) +
+      `<h3>Dette inngår</h3>${listHtml(svc.features)}` +
+      `<h3>Vår prosess</h3><ol>${steps}</ol>` +
+      p(`Pris: ${esc(svc.pricingLabel)}. ${esc(svc.pricingNote)}.`) +
+      more
+    );
+  }).join("");
+
+  return (
+    "<h2>Kort fortalt</h2>" +
+    quick +
+    blocks +
+    "<h2>Slik får du prisoverslag</h2>" +
+    p(
+      "Alle priser er veiledende og settes endelig etter vurdering på stedet. Kom innom Torggata 8 for vurdering på stedet, eller ring oss på 91 92 19 08 for en uforpliktende samtale.",
+    ) +
+    faqBodyHtml(TJENESTER_FAQS) +
+    linksBodyHtml("Les mer", [
+      { href: "/priser", label: "Se full prisliste" },
+      { href: "/skomaker-oslo", label: "Skomaker i Oslo sentrum" },
+      { href: "/om-oss", label: "Om Ararat Skredderi" },
+      { href: "/kontakt", label: "Kontakt og åpningstider" },
+      { href: "/blog/skreddersom-oslo", label: "Skreddersøm i Oslo: pris og leveringstid" },
+    ])
+  );
+}
+
+// /priser — speiler de tre prisgruppene fra src/pages/Priser.tsx som ekte
+// tabeller. Hvert kr-tall er ordrett fra kilden.
+function priserBodyHtml() {
+  const quick = listHtml([
+    "Reparasjon og endring fra 200 kr: legge opp bukser, glidelås, knapper og rifter.",
+    "Skreddersydd skjorte fra 2 500 kr, dress etter mål fra 8 000 kr eks. mva.",
+    "Skomakeri fra 300 kr: såler, hæler, skinn og glidelåser.",
+    "Alltid bindende overslag på stedet. Drop-in mandag til lørdag, ingen timeavtale.",
+  ]);
+
+  const groups = PRICE_GROUPS.map((g) => {
+    const rows = g.rows
+      .map(
+        (r) =>
+          `<tr><td>${esc(r.service)}</td><td>${esc(r.price)}</td><td>${esc(r.note ?? "")}</td></tr>`,
+      )
+      .join("");
+    const more = g.readMore
+      ? `<p><a href="${g.readMore.href}">${esc(g.readMore.label)}</a></p>`
+      : "";
+    return (
+      `<h2>${esc(g.title)}</h2>` +
+      p(esc(g.intro)) +
+      `<table><caption>${esc(g.title)}</caption>` +
+      "<thead><tr><th>Tjeneste</th><th>Pris</th><th>Merknad</th></tr></thead>" +
+      `<tbody>${rows}</tbody></table>` +
+      more
+    );
+  }).join("");
+
+  return (
+    "<h2>Kort fortalt</h2>" +
+    quick +
+    groups +
+    "<h2>Om prisene</h2>" +
+    p(
+      'Alle priser er veiledende startpriser eks. mva. der ikke annet er oppgitt. Endelig pris settes etter vurdering av plagget. <a href="/tjenester">Se hva som inngår i hver tjeneste</a>.',
+    ) +
+    faqBodyHtml(PRISER_FAQS, "Vanlige spørsmål om pris") +
+    linksBodyHtml("Les mer", [
+      { href: "/tjenester", label: "Alle tjenester i detalj" },
+      { href: "/skomaker-oslo", label: "Priser på skomakerarbeid" },
+      { href: "/kontakt", label: "Kom innom Torggata 8" },
+      { href: "/blog/skreddersom-oslo", label: "Skreddersøm i Oslo: priser og leveringstid" },
+      { href: "/blog/tilpasning-dress-oslo", label: "Tilpasning av dress: justering eller skreddersøm?" },
+    ])
+  );
+}
+
+// /om-oss — speiler hero, QuickAnswer, historie-seksjonen, verdiene og
+// nøkkeltallene fra src/pages/OmOss.tsx.
+function omOssBodyHtml() {
+  const quick = listHtml([
+    "Etablert håndverk siden første sting: over 50 års erfaring innen skreddersøm og reparasjon.",
+    "Skreddermester Ahmad Abdulhamid tar hver oppgave personlig, fra brudekjole til hverdagsbukse.",
+    "Torggata 8 i Oslo sentrum, lett tilgjengelig med buss og T-bane. Drop-in mandag til lørdag.",
+    "Norsk, engelsk og arabisk: vi snakker språket ditt og forstår plagget ditt.",
+  ]);
+
+  const values = [
+    {
+      title: "Lidenskap for håndverk",
+      body: "Vi brenner for skreddersøm og tar stolthet i hver eneste detalj. Hver søm fortjener oppmerksomhet.",
+    },
+    {
+      title: "Kvalitet i fokus",
+      body: "Beste materialer og presisjonsteknikker. Vi velger ikke snarveier som går utover holdbarheten.",
+    },
+    {
+      title: "Personlig service",
+      body: "Hver kunde får individuell oppmerksomhet og skreddersydde løsninger som passer akkurat deg.",
+    },
+  ]
+    .map((v) => `<h3>${esc(v.title)}</h3><p>${esc(v.body)}</p>`)
+    .join("");
+
+  return (
+    "<h2>Kort fortalt</h2>" +
+    quick +
+    "<h2>Håndverket bak butikken</h2>" +
+    p("«Vi tar stolthet i håndverket vårt. Detaljer som varer.»") +
+    p(
+      "Skreddersøm er ikke bare et yrke. Det er en disiplin som krever tålmodighet, presisjon og en dyp respekt for materialene. Skreddermester Ahmad Abdulhamid har øvd dette håndverket i over 50 år, fra første lærdom hos en eldre mester til daglig drift av Ararat Skredderi i Torggata 8.",
+    ) +
+    p(
+      "Vår filosofi er enkel: hvert plagg fortjener oppmerksomhet, og hver kunde fortjener et resultat de er stolte av. Det betyr at vi tar tiden vi trenger på konsultasjon, måltaking og prøving, og at vi sier ifra hvis et plagg ikke kan reddes, fremfor å fakturere for et arbeid som ikke gir verdi.",
+    ) +
+    p(
+      "Vi tar imot alt fra de minste reparasjonene til kompliserte brudekjoler. Vi snakker norsk, engelsk og arabisk. Og vi har holdt til samme sted i hjertet av Oslo siden butikken åpnet, fordi stedet, kundene og håndverket henger sammen.",
+    ) +
+    "<h2>Hva vi står for</h2>" +
+    values +
+    "<h2>Ararat Skredderi i tall</h2>" +
+    listHtml([
+      "50+ års erfaring",
+      "6 kjernetjenester",
+      "3 språk: norsk, engelsk og arabisk",
+    ]) +
+    "<h2>Vil du møte oss?</h2>" +
+    p(
+      "Kom innom Torggata 8 for en uforpliktende prat. Vi tar gjerne en kaffekopp og diskuterer hva vi kan gjøre for plagget ditt.",
+    ) +
+    linksBodyHtml("Les mer", [
+      { href: "/tjenester", label: "Se tjenester" },
+      { href: "/priser", label: "Veiledende prisliste" },
+      { href: "/galleri", label: "Bilder fra verkstedet" },
+      { href: "/kontakt", label: "Kontakt oss" },
+      { href: "/blog", label: "Råd og innsikt fra verkstedet" },
+    ])
+  );
+}
+
+// /kontakt — speiler kontaktkortene, åpningstidene og notatet om større
+// prosjekter fra src/pages/Kontakt.tsx + src/data/business.ts.
+function kontaktBodyHtml() {
+  return (
+    "<h2>Slik når du oss</h2>" +
+    "<h3>Ring oss</h3>" +
+    p(
+      `${esc(NAP.phone)}. Raskest når du har konkret spørsmål eller trenger pris med en gang.`,
+    ) +
+    "<h3>Besøk oss</h3>" +
+    p(
+      `${esc(NAP.street)}, ${esc(NAP.postalCode)} ${esc(NAP.city)}. Drop-in mandag til lørdag. Ingen avtale nødvendig.`,
+    ) +
+    "<h3>E-post</h3>" +
+    p(
+      `${esc(NAP.email)}. For større prosjekter eller meldinger utenom åpningstid.`,
+    ) +
+    "<h3>Skriv til oss</h3>" +
+    p("Fyll ut skjemaet på siden. Vi svarer som regel innen samme arbeidsdag.") +
+    "<h2>Når vi har åpent</h2>" +
+    hoursTableHtml() +
+    p(
+      "For større prosjekter og brudeplagg anbefaler vi å avtale tid så vi setter av nok tid til konsultasjon. Drop-in fungerer fint for vurdering, reparasjoner og spørsmål.",
+    ) +
+    faqBodyHtml(TJENESTER_FAQS, "Før du kommer innom") +
+    linksBodyHtml("Les mer", [
+      { href: "/tjenester", label: "Alle tjenester" },
+      { href: "/priser", label: "Veiledende prisliste" },
+      { href: "/skomaker-oslo", label: "Skomaker i Oslo sentrum" },
+      { href: "/om-oss", label: "Om Ararat Skredderi" },
+    ])
+  );
+}
+
+// /galleri — bildene er sidens eneste reelle innhold, og alt-tekstene er
+// kundens egne beskrivelser (src/data/gallery.ts). Uten dem så en
+// no-JS-crawler ingenting av hva galleriet faktisk viser.
+function galleriBodyHtml() {
+  const groups = GALLERY_CATEGORIES.map((cat) => {
+    const imgs = GALLERY_IMAGES.filter((i) => i.category === cat.id);
+    if (!imgs.length) return "";
+    return (
+      `<h2>${esc(cat.label)} (${imgs.length} bilder)</h2>` +
+      listHtml(imgs.map((i) => i.alt))
+    );
+  }).join("");
+
+  return (
+    "<h2>Hva galleriet viser</h2>" +
+    p(
+      `Bilder fra verkstedet og lokalene i Torggata 8: skreddersøm, sysøm, kundemøter, stoffvalg og fasaden. Galleriet inneholder ${GALLERY_IMAGES.length} bilder fordelt på ${GALLERY_CATEGORIES.length} kategorier, og hvert bilde er beskrevet under.`,
+    ) +
+    groups +
+    linksBodyHtml("Les mer", [
+      { href: "/tjenester", label: "Tjenestene bak bildene" },
+      { href: "/om-oss", label: "Om skreddermesteren" },
+      { href: "/skomaker-oslo", label: "Skomaker i Oslo sentrum" },
+      { href: "/kontakt", label: "Kom innom Torggata 8" },
+    ])
+  );
+}
+
+// ────────────────────────────────────────────────────────────
 // Render + write
 // ────────────────────────────────────────────────────────────
 
@@ -583,6 +1105,7 @@ const ROUTES = [
     h1: "Skreddersøm, reparasjon og mer",
     intro:
       "Vi tar oppdrag fra de minste justeringene til komplette skreddersydde plagg. Alle priser er veiledende og settes endelig etter vurdering på stedet.",
+    bodyHtml: tjenesterBodyHtml(),
     schema: tjenesterLd(),
   },
   {
@@ -593,6 +1116,7 @@ const ROUTES = [
     h1: "Priser på skreddersøm og reparasjon",
     intro:
       "Veiledende startpriser for skreddersøm, reparasjon, omforming og skomakeri i Oslo sentrum. Du får alltid et bindende prisoverslag før vi starter.",
+    bodyHtml: priserBodyHtml(),
     schema: priserLd(),
   },
   {
@@ -603,6 +1127,7 @@ const ROUTES = [
     h1: "Skomaker i Oslo sentrum",
     intro:
       "I Torggata 8 finner du både skomaker og skredder under ett tak. Vi reparerer såler, hæler, skinn og glidelåser, og kan samtidig ta endringen på klærne mens du er her.",
+    bodyHtml: skomakerBodyHtml(),
     schema: skomakerLd(),
   },
   {
@@ -613,6 +1138,7 @@ const ROUTES = [
     h1: "Bak håndverket",
     intro:
       "Bilder fra verkstedet, kundemøter og lokalene i Torggata 8. Klikk på et bilde for å se det i full størrelse.",
+    bodyHtml: galleriBodyHtml(),
     schema: galleriLd(),
   },
   {
@@ -623,6 +1149,7 @@ const ROUTES = [
     h1: "50+ år med håndverkstradisjon",
     intro:
       "Vår skredderbutikk i Oslo har i mer enn 50 år levert kvalitetsarbeid innen reparasjon, tilpasning og søm av nye klær.",
+    bodyHtml: omOssBodyHtml(),
     schema: omOssLd(),
   },
   {
@@ -633,6 +1160,7 @@ const ROUTES = [
     h1: "Kom innom eller ring oss",
     intro:
       "Drop-in mandag til lørdag. Ingen avtale nødvendig. Vi gir alltid en ærlig vurdering og bindende prisoverslag før vi starter på plagget ditt.",
+    bodyHtml: kontaktBodyHtml(),
     schema: kontaktLd(),
   },
   {
@@ -656,6 +1184,7 @@ const ROUTES = [
     h1: "Blogg",
     intro:
       "Tanker, praktiske råd og konkrete eksempler fra verkstedet i Torggata 8.",
+    bodyHtml: blogIndexBodyHtml(),
     schema: {
       "@context": "https://schema.org",
       "@graph": [
@@ -700,6 +1229,17 @@ function blogIndexBodyHtml() {
 // (1000/mnd) faktisk leses av GPTBot/ClaudeBot. HOLD I SYNC med SkomakerOslo.tsx.
 function skomakerBodyHtml() {
   return (
+    "<h2>Hva vi reparerer</h2>" +
+    "<p>Vi utfører alle typer skoreparasjoner i skinn, tekstil og syntet, med spesialitet på arvede sko og høykvalitetsmodeller som fortjener et nytt liv. Kom innom for vurdering og prisoverslag.</p>" +
+    listHtml([
+      "Sålereparasjon og utskifting av hele såler",
+      "Hælreparasjon og nye hæler",
+      "Lapping og fiks av rifter i skinn",
+      "Reparasjon og bytte av glidelåser på støvler",
+    ]) +
+    "<h2>Både skomaker og skredder, på samme adresse</h2>" +
+    "<p>De fleste i Oslo må til én butikk for skoen og en annen for klærne. Hos Ararat Skredderi gjør vi begge deler på samme sted. Skreddermester Ahmad Abdulhamid har drevet verkstedet i Torggata 8 i over 50 år, og kombinasjonen av skomakeri og skreddersøm gjør at du kan levere både sko og plagg i ett og samme besøk.</p>" +
+    "<p>Skal hælene fikses og buksa legges opp før en anledning, ordner vi det samtidig. Det sparer deg en tur, og du forholder deg til ett verksted som kjenner både skinn og stoff.</p>" +
     "<h2>Hælbytte og nye såler, i praksis</h2>" +
     "<p>En slitt hæl eller såle betyr sjelden at skoen er ferdig. Prosessen er enkel: du kommer innom Torggata 8 med skoene, vi vurderer dem på stedet og gir bindende pris før vi starter. Deretter velger vi hæl eller såle etter skoens kvalitet og hvordan du bruker den, utfører arbeidet på verkstedet og har skoene klare til avtalt tid.</p>" +
     "<p>Om det lønner seg, handler om utgangspunktet. Sko i godt skinn tåler gjerne flere runder med nye hæler og såler, og med sålereparasjon fra 400 kr blir regnestykket ofte bedre enn å kjøpe nytt i samme kvalitet. For rimelige sko med slitt overdel er svaret ikke alltid ja, og da sier vi det.</p>" +
@@ -708,7 +1248,16 @@ function skomakerBodyHtml() {
     "<p>Skinnet rundt glidelåsen får samme omtanke som resten av skoen. Vi jobber i skinn, tekstil og syntet, og arvede eller kostbare modeller behandles med ekstra varsomhet. Trenger jakka eller buksa også ny glidelås, ordner skredderen det i samme lokale.</p>" +
     "<h2>Levering og pris</h2>" +
     "<p>De fleste skoreparasjoner er klare innen 3-7 dager. En enkel hæljobb kan gå raskere, mens reparasjoner som venter på spesielle reservedeler ligger i den øvre enden av spennet. Prisen settes ved vurderingen, og den er bindende: fra 300 kr for skomakerarbeid og fra 400 kr for sålereparasjon. Kom innom i åpningstiden, mandag til lørdag, uten avtale.</p>" +
-    `<h2>Vanlige spørsmål</h2>${SKOMAKER_FAQS.map((f) => `<h3>${htmlEscape(f.q)}</h3><p>${htmlEscape(f.a)}</p>`).join("")}`
+    "<h2>Midt i Oslo sentrum</h2>" +
+    "<p>Vi holder til i Torggata 8, 0181 Oslo, kort vei fra Jernbanetorget og Stortinget. Enkelt å nå med buss og T-bane, og rett ved Oslo City.</p>" +
+    hoursTableHtml() +
+    faqBodyHtml(SKOMAKER_FAQS) +
+    linksBodyHtml("Les mer", [
+      { href: "/tjenester", label: "Se alle skreddertjenestene våre" },
+      { href: "/priser", label: "Gå til prislisten" },
+      { href: "/kontakt", label: "Kontakt og åpningstider" },
+      { href: "/om-oss", label: "Om skreddermesteren" },
+    ])
   );
 }
 
@@ -723,12 +1272,7 @@ for (const r of ROUTES) {
       url,
       h1: r.h1,
       intro: r.intro,
-      bodyHtml:
-        r.path === "blog"
-          ? blogIndexBodyHtml()
-          : r.path === "skomaker-oslo"
-            ? skomakerBodyHtml()
-            : undefined,
+      bodyHtml: r.bodyHtml,
     }),
     r.schema,
   );
