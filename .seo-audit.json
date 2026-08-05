@@ -1,0 +1,6 @@
+{
+  "_om": "Bevisste unntak fra scripts/seo-audit/page-sweep.mjs. Sweepen rapporterer disse som KJENT UNNTAK i stedet for kritisk funn, slik at en avgjørelse som allerede er tatt ikke blir «fikset» på nytt ved hver revisjon. Fjern en oppføring bare hvis forutsetningen faktisk er endret — og mål på nytt før du gjør det.",
+  "tomForCrawler": {
+    "/": "Forsiden er BEVISST minimal: h1 + ett «Kort fortalt»-avsnitt. En større blokk (tjenesteliste, pristabell, åpningstider, NAP) ble målt til CLS 0.759 mot 0 på undersidene, og fjernet i commit 40df178. Den ble lagt inn igjen 03.08.2026 nettopp fordi denne sweepen flagget 36 ord, og måtte reverteres samme dag. Faktaene når AI-crawlere uansett gjennom public/llms.txt (tjenester, priser, åpningstider, NAP, org.nr) og head-grafen (Organization/LocalBusiness/Person + FAQPage). Vil du utvide: MÅL CLS først og skriv tallet inn i scripts/prerender-routes.mjs."
+  }
+}
