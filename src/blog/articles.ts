@@ -69,8 +69,14 @@ function parseFrontmatter(raw: string): { data: Record<string, string>; content:
 
 function buildExcerpt(body: string, maxChars = 180): string {
   const stripped = body
+    // Hver artikkel åpner med «> **Kort forklart**: …». Uten de to første
+    // reglene arvet teaseren både sitatpilen og etiketten, så samtlige kort
+    // begynte med «> Kort forklart:» — og Google plukket den teksten som
+    // meta-beskrivelse på tvers av sider den ikke hørte hjemme på.
+    .replace(/^>\s*\*\*.*?\*\*:?\s*/m, '')
     .replace(/^#+\s.*$/gm, '')
-    .replace(/[*_`#\[\]]/g, '')
+    .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+    .replace(/[*_`#\[\]>]/g, '')
     .replace(/\n+/g, ' ')
     .trim();
   if (stripped.length <= maxChars) return stripped;
