@@ -1171,6 +1171,35 @@ const ROUTES = [
     h1: "Personvernerklæring",
     intro: "Hvordan vi behandler personopplysninger og dine rettigheter etter GDPR.",
     schema: personvernLd(),
+    // Ruten var 10 ord for crawlere uten JS — page-sweep flagget den som
+    // tom-for-crawler. Selve erklæringen er hardkodet JSX i
+    // src/pages/Personvern.tsx, og å kopiere den hit ville gitt to kilder for
+    // samme juridiske tekst. Derfor gjengis KUN strukturen (overskriftene) og
+    // de faktiske opplysningene som allerede finnes i NAP-speilingen over.
+    // Paragrafteksten står ett sted, i komponenten.
+    //
+    // Vil du at også brødteksten skal prerendres: trekk de åtte <Section>-ene
+    // ut til src/data/personvern.data.mjs og la BÅDE komponenten og dette
+    // skriptet lese den. Ikke dupliser.
+    body:
+      "<h2>Hva denne erklæringen dekker</h2>" +
+      "<p>Ararat Skredderi (org.nr. 989361244) ved Ahmad Abdulhamid er behandlingsansvarlig for personopplysninger som behandles via nettsiden og i den daglige driften av butikken i " +
+      `${NAP.street}, ${NAP.postalCode} ${NAP.city}.</p>` +
+      `<p>Kontakt i personvernsaker: ${NAP.email}, telefon ${NAP.phone}.</p>` +
+      "<h2>Innhold</h2><ul>" +
+      [
+        "Behandlingsansvarlig",
+        "Hvilke opplysninger vi behandler",
+        "Rettslig grunnlag",
+        "Lagring og sletting",
+        "Deling med tredjeparter",
+        "Informasjonskapsler (cookies)",
+        "Dine rettigheter",
+        "Kontakt for spørsmål om personvern",
+      ]
+        .map((t) => `<li>${t}</li>`)
+        .join("") +
+      "</ul>",
   },
   {
     // Workaround: Vercel SPA-rewrite trigger inkonsistent for /blog,
