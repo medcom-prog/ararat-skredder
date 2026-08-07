@@ -1181,7 +1181,12 @@ const ROUTES = [
     // Vil du at også brødteksten skal prerendres: trekk de åtte <Section>-ene
     // ut til src/data/personvern.data.mjs og la BÅDE komponenten og dette
     // skriptet lese den. Ikke dupliser.
-    body:
+    // Feltet heter bodyHtml i dette repoet, ikke body (som i medcom-as). Første
+    // forsøk brukte body: og ble stille ignorert — siden så ut til å ha 268 ord,
+    // men det var nav, footer og meta. #root inneholdt fortsatt bare H1 og
+    // ingress. page-sweep hadde rett; jeg antok feltnavnet i stedet for å lese
+    // injectMeta-signaturen på linje 737.
+    bodyHtml:
       "<h2>Hva denne erklæringen dekker</h2>" +
       "<p>Ararat Skredderi (org.nr. 989361244) ved Ahmad Abdulhamid er behandlingsansvarlig for personopplysninger som behandles via nettsiden og i den daglige driften av butikken i " +
       `${NAP.street}, ${NAP.postalCode} ${NAP.city}.</p>` +
