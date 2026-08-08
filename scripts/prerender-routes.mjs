@@ -734,8 +734,23 @@ function htmlEscape(s) {
     .replace(/'/g, "&#39;");
 }
 
+const BRAND_SUFFIX = "Ararat Skredderi";
+
+// Idempotent suffiks-påføring. Artikler som allerede har «| Ararat Skredderi»
+// i sin egen frontmatter fikk den påført en gang til, og fire artikler lå live
+// med «… | Ararat Skredderi | Ararat Skredderi». Samme feil traff medcom.no på
+// tre bransjesider 29.07.2026, og fiksen ble aldri båret hit.
+// Strip alltid en eksisterende suffiks før du legger på.
+function withBrandSuffix(title) {
+  const stripped = String(title).replace(
+    new RegExp(`(\\s*\\|\\s*${BRAND_SUFFIX})+\\s*$`, "i"),
+    "",
+  );
+  return `${stripped} | ${BRAND_SUFFIX}`;
+}
+
 function injectMeta(html, { title, description, url, h1, intro, ogType, ogImage, bodyHtml }) {
-  const fullTitle = `${title} | Ararat Skredderi`;
+  const fullTitle = withBrandSuffix(title);
   const safeTitle = htmlEscape(fullTitle);
   const safeDesc = htmlEscape(description);
   const safeUrl = htmlEscape(url);
