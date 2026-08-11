@@ -986,7 +986,7 @@ function priserBodyHtml() {
 // nøkkeltallene fra src/pages/OmOss.tsx.
 function omOssBodyHtml() {
   const quick = listHtml([
-    "Etablert håndverk siden første sting: over 50 års erfaring innen skreddersøm og reparasjon.",
+    "Håndverk siden første sting: skreddermesteren har over 50 års erfaring innen skreddersøm og reparasjon.",
     "Skreddermester Ahmad Abdulhamid tar hver oppgave personlig, fra brudekjole til hverdagsbukse.",
     "Torggata 8 i Oslo sentrum, lett tilgjengelig med buss og T-bane. Drop-in mandag til lørdag.",
     "Norsk, engelsk og arabisk: vi snakker språket ditt og forstår plagget ditt.",
@@ -1027,7 +1027,7 @@ function omOssBodyHtml() {
     values +
     "<h2>Ararat Skredderi i tall</h2>" +
     listHtml([
-      "50+ års erfaring",
+      "50+ års erfaring hos skreddermesteren",
       "6 kjernetjenester",
       "3 språk: norsk, engelsk og arabisk",
     ]) +
@@ -1160,10 +1160,10 @@ const ROUTES = [
     path: "om-oss",
     title: "Om oss · Skreddermester med 50+ års erfaring",
     description:
-      "Ararat Skredderi har levert kvalitetshåndverk i over 50 år. Skreddermester Ahmad Abdulhamid i Torggata 8, Oslo sentrum.",
+      "Skreddermester Ahmad Abdulhamid har 50+ års erfaring med håndverket. Ararat Skredderi i Torggata 8, Oslo sentrum.",
     h1: "50+ år med håndverkstradisjon",
     intro:
-      "Vår skredderbutikk i Oslo har i mer enn 50 år levert kvalitetsarbeid innen reparasjon, tilpasning og søm av nye klær.",
+      "Skreddermester Ahmad Abdulhamid har i mer enn 50 år levert kvalitetsarbeid innen reparasjon, tilpasning og søm av nye klær.",
     bodyHtml: omOssBodyHtml(),
     schema: omOssLd(),
   },
@@ -1287,7 +1287,7 @@ function skomakerBodyHtml() {
       "Reparasjon og bytte av glidelåser på støvler",
     ]) +
     "<h2>Både skomaker og skredder, på samme adresse</h2>" +
-    "<p>De fleste i Oslo må til én butikk for skoen og en annen for klærne. Hos Ararat Skredderi gjør vi begge deler på samme sted. Skreddermester Ahmad Abdulhamid har drevet verkstedet i Torggata 8 i over 50 år, og kombinasjonen av skomakeri og skreddersøm gjør at du kan levere både sko og plagg i ett og samme besøk.</p>" +
+    "<p>De fleste i Oslo må til én butikk for skoen og en annen for klærne. Hos Ararat Skredderi gjør vi begge deler på samme sted. Skreddermester Ahmad Abdulhamid har over 50 års erfaring med håndverket, og kombinasjonen av skomakeri og skreddersøm gjør at du kan levere både sko og plagg i ett og samme besøk.</p>" +
     "<p>Skal hælene fikses og buksa legges opp før en anledning, ordner vi det samtidig. Det sparer deg en tur, og du forholder deg til ett verksted som kjenner både skinn og stoff.</p>" +
     "<h2>Hælbytte og nye såler, i praksis</h2>" +
     "<p>En slitt hæl eller såle betyr sjelden at skoen er ferdig. Prosessen er enkel: du kommer innom Torggata 8 med skoene, vi vurderer dem på stedet og gir bindende pris før vi starter. Deretter velger vi hæl eller såle etter skoens kvalitet og hvordan du bruker den, utfører arbeidet på verkstedet og har skoene klare til avtalt tid.</p>" +

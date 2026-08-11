@@ -36,7 +36,7 @@ export default function OmOss() {
           title/meta/canonical. */}
       <SEO
         title="Om oss · Skreddermester med 50+ års erfaring"
-        description={`Ararat Skredderi har levert kvalitetshåndverk i ${yearsExperience}+ år. Skreddermester Ahmad Abdulhamid i Torggata 8, Oslo sentrum.`}
+        description={`Skreddermester Ahmad Abdulhamid har ${yearsExperience}+ års erfaring med håndverket. Ararat Skredderi i Torggata 8, Oslo sentrum.`}
         canonical={BUSINESS.domain + "/om-oss"}
       />
 
@@ -56,7 +56,7 @@ export default function OmOss() {
               </span>
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
-              Vår skredderbutikk i Oslo har i mer enn 50 år levert
+              Skreddermester Ahmad Abdulhamid har i mer enn 50 år levert
               kvalitetsarbeid innen reparasjon, tilpasning og søm av nye klær.
               Vi tar stolthet i håndverket og fokuserer på detaljer som varer.
             </p>
@@ -82,8 +82,8 @@ export default function OmOss() {
           className="mt-16"
           points={[
             {
-              name: "Etablert håndverk siden første sting",
-              description: `Over ${yearsExperience} års erfaring innen skreddersøm og reparasjon.`,
+              name: "Håndverk siden første sting",
+              description: `Skreddermesteren har over ${yearsExperience} års erfaring innen skreddersøm og reparasjon.`,
             },
             {
               name: "Skreddermester Ahmad Abdulhamid",

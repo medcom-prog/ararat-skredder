@@ -42,7 +42,7 @@ export default function Forside() {
           <div className="max-w-2xl">
             <Reveal>
               <p className="eyebrow text-accent-soft">
-                Oslo sentrum · Etablert med 50+ års håndverk
+                Oslo sentrum · Skreddermester med 50+ års håndverk
               </p>
             </Reveal>
             <Reveal delay={80}>

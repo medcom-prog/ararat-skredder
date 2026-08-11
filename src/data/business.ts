@@ -14,7 +14,7 @@ export const BUSINESS = {
   shortDescription:
     "Profesjonell skreddersøm, reparasjon, omforming og skomakeri i Oslo sentrum.",
   longDescription:
-    "Ararat Skredderi i Torggata 8 har levert profesjonell skreddersøm og reparasjon i Oslo i over 50 år. Vi tar målsøm av dresser, endringer og reparasjon, omforming av plagg, skjorter og bluser, samt skomakeri og spesialbestillinger til bryllup, scene og uniform.",
+    "Ararat Skredderi i Torggata 8 drives av skreddermester Ahmad Abdulhamid, som har over 50 års erfaring med håndverket. Vi tar målsøm av dresser, endringer og reparasjon, omforming av plagg, skjorter og bluser, samt skomakeri og spesialbestillinger til bryllup, scene og uniform.",
   established: 2006, // bedriften i nåværende form (llms.txt-kanon); Ahmads personlige erfaring er 50+ år
   orgNumber: "989361244",
   orgType: "ENK" as const,
