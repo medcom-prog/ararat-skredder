@@ -80,7 +80,7 @@ export default function SkomakerOslo() {
     <>
       <SEO
         title="Skomaker i Oslo sentrum · Skredder på samme sted"
-        description="Skomaker i Torggata 8, midt i Oslo sentrum: sålereparasjon, hæler, skinn og glidelåser fra 300 kr. Det eneste stedet i sentrum med både skomaker og skredder under ett tak."
+        description="Skomaker i Torggata 8, midt i Oslo sentrum: sålereparasjon, hæler, skinn og glidelåser fra 300 kr. Skomaker og skredder under ett tak, så sko og plagg leveres i samme besøk."
         canonical={BUSINESS.domain + "/skomaker-oslo"}
       />
 
@@ -205,9 +205,9 @@ export default function SkomakerOslo() {
           <p>
             De fleste i Oslo må til én butikk for skoen og en annen for klærne.
             Hos Ararat Skredderi gjør vi begge deler på samme sted. Skreddermester
-            Ahmad Abdulhamid har drevet verkstedet i Torggata 8 i over{" "}
-            {yearsExperience} år, og kombinasjonen av skomakeri og skreddersøm gjør
-            at du kan levere både sko og plagg i ett og samme besøk.
+            Ahmad Abdulhamid har over {yearsExperience} års erfaring med
+            håndverket, og kombinasjonen av skomakeri og skreddersøm gjør at du
+            kan levere både sko og plagg i ett og samme besøk.
           </p>
           <p>
             Skal hælene fikses og buksa legges opp før en anledning, ordner vi det

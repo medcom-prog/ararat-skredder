@@ -1138,7 +1138,7 @@ const ROUTES = [
     path: "skomaker-oslo",
     title: "Skomaker i Oslo sentrum · Skredder på samme sted",
     description:
-      "Skomaker i Torggata 8, midt i Oslo sentrum: sålereparasjon, hæler, skinn og glidelåser fra 300 kr. Det eneste stedet i sentrum med både skomaker og skredder under ett tak.",
+      "Skomaker i Torggata 8, midt i Oslo sentrum: sålereparasjon, hæler, skinn og glidelåser fra 300 kr. Skomaker og skredder under ett tak, så sko og plagg leveres i samme besøk.",
     h1: "Skomaker i Oslo sentrum",
     intro:
       "I Torggata 8 finner du både skomaker og skredder under ett tak. Vi reparerer såler, hæler, skinn og glidelåser, og kan samtidig ta endringen på klærne mens du er her.",

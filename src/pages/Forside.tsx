@@ -89,7 +89,7 @@ export default function Forside() {
             <div className="mt-10 grid grid-cols-2 gap-4 border-t border-white/15 pt-5 md:mt-0 md:grid-cols-4 md:gap-8">
               <StatItem
                 icon={<Award className="h-4 w-4" />}
-                label="Etablert håndverk"
+                label="Skreddermesterens erfaring"
                 value={`${yearsExperience}+ år`}
               />
               <StatItem

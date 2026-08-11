@@ -56,8 +56,8 @@ export function Footer() {
             </Link>
             <p className="mt-4 max-w-md text-sm leading-relaxed text-white/70">
               Profesjonell skreddersøm, reparasjon, omforming og skomakeri i
-              hjertet av Oslo. Over {yearsExperience} års erfaring med
-              kvalitetshåndverk.
+              hjertet av Oslo. Skreddermester Ahmad Abdulhamid har over{" "}
+              {yearsExperience} års erfaring med kvalitetshåndverk.
             </p>
             <div className="mt-6 flex gap-3">
               <a
