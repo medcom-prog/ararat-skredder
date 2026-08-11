@@ -19,7 +19,7 @@ export default function Forside() {
     <>
       <SEO
         title="Skredder i Oslo sentrum"
-        description={`${BUSINESS.shortDescription} Over ${yearsExperience} års erfaring i Torggata 8, Oslo sentrum.`}
+        description={`${BUSINESS.shortDescription} Skreddermester Ahmad Abdulhamid har over ${yearsExperience} års erfaring. Torggata 8, Oslo sentrum.`}
         canonical={BUSINESS.domain + "/"}
       />
 
@@ -288,7 +288,7 @@ export default function Forside() {
             <div>
               <p className="eyebrow text-accent-soft">Om Ararat Skredderi</p>
               <h2 className="mt-3 text-display-2 text-white">
-                Over {yearsExperience} år med{" "}
+                Skreddermesteren har over {yearsExperience} år med{" "}
                 <span className="font-serif italic">personlig håndverk</span>
               </h2>
               <p className="mt-5 text-base leading-relaxed text-white/80 md:text-lg">
