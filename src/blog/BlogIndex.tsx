@@ -12,9 +12,12 @@ export function BlogIndex() {
 
   return (
     <>
+      {/* Title/description must equal the prerendered /blog route in
+          scripts/prerender-routes.mjs — MetaHead appends the brand suffix
+          itself, mirroring the prerenderer's withBrandSuffix. */}
       <MetaHead
-        title="Blogg"
-        description="Artikler, råd og perspektiver fra teamet."
+        title="Blogg · Råd og innsikt fra verkstedet"
+        description="Artikler og råd fra Ararat Skredderi i Torggata 8, Oslo. Skreddersøm, reparasjon, omforming og skomakeri."
         canonical={canonical}
       />
       <section className="bg-background">
@@ -24,7 +27,7 @@ export function BlogIndex() {
               Blogg
             </h1>
             <p className="text-lg text-muted-foreground max-w-2xl">
-              Tanker, praktiske råd og konkrete eksempler.
+              Tanker, praktiske råd og konkrete eksempler fra verkstedet i Torggata 8.
             </p>
           </header>
 

@@ -17,9 +17,13 @@ export default function Forside() {
 
   return (
     <>
+      {/* Title/description must equal the static shell (index.html) — the
+          prerenderer leaves the shell untouched for "/", so any difference
+          here shows up as hydration drift. SEO appends the
+          " | Ararat Skredderi" suffix itself. */}
       <SEO
-        title="Skredder i Oslo sentrum"
-        description={`${BUSINESS.shortDescription} Skreddermester Ahmad Abdulhamid har over ${yearsExperience} års erfaring. Torggata 8, Oslo sentrum.`}
+        title="Skredder og skomaker i Oslo sentrum"
+        description={`Ararat Skredderi i Torggata 8, Oslo sentrum. Skreddersøm, reparasjon, omforming og skomakeri. Skreddermester med ${yearsExperience}+ års erfaring. Ring 91 92 19 08.`}
         canonical={BUSINESS.domain + "/"}
       />
 

@@ -52,7 +52,7 @@ export default function OmOss() {
             <h1 className="mt-4 text-display-1 text-foreground break-words">
               <span className="block">{yearsExperience}+ år med</span>
               <span className="block font-serif font-medium italic text-accent">
-                håndverk
+                håndverkstradisjon
               </span>
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">
@@ -165,7 +165,9 @@ export default function OmOss() {
       {/* Stats strip */}
       <section className="bg-navy py-16 text-white">
         <div className="container-wide grid grid-cols-2 gap-6 text-center md:grid-cols-3">
-          <Stat value={`${yearsExperience}+`} label="års erfaring" />
+          {/* Same attribution as the Forside stat strip: the 50+ years are
+              the master tailor's, not the shop's (Brreg: 2006). */}
+          <Stat value={`${yearsExperience}+ år`} label="Skreddermesterens erfaring" />
           <Stat value="6" label="kjernetjenester" />
           <Stat value="3" label="språk" />
         </div>

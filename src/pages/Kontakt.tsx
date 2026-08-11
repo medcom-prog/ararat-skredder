@@ -22,7 +22,7 @@ export default function Kontakt() {
           DOM, so SEO only manages title/meta/canonical. */}
       <SEO
         title={`Kontakt · Torggata 8, Oslo · Ring ${BUSINESS.contact.phone}`}
-        description={`Kontakt Ararat Skredderi i Torggata 8, 0181 Oslo. Drop-in mandag til lørdag. Ring ${BUSINESS.contact.phone} eller send e-post.`}
+        description="Kontakt Ararat Skredderi i Torggata 8, 0181 Oslo. Drop-in mandag–lørdag. Ring 91 92 19 08 eller send e-post."
         canonical={BUSINESS.domain + "/kontakt"}
       />
 
