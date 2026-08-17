@@ -77,8 +77,9 @@ const SERVICES = [
     pricingLabel: "Fra 8 000 kr",
     pricingNote: "Avhenger av stoff og kompleksitet",
     readMore: [
-      { href: "/blog/skreddersydd-dress-oslo", label: "5 ting du bør vite før du bestiller dress" },
-      { href: "/blog/hva-koster-skreddersydd-dress", label: "Hva koster en skreddersydd dress?" },
+      { href: "/blog/skreddersydd-dress-oslo", label: "Skreddersydd dress i Oslo: 5 ting du bør vite før du bestiller" },
+      { href: "/blog/hva-koster-skreddersydd-dress", label: "Hva koster en skreddersydd dress i Oslo?" },
+      { href: "/blog/velge-skredder-malsydd-dress", label: "Hvordan velger du riktig skredder til målsydd dress?" },
     ],
   },
   {
@@ -102,7 +103,13 @@ const SERVICES = [
     ],
     pricingLabel: "Fra 200 kr",
     pricingNote: "Pris settes etter vurdering på stedet",
-    readMore: [{ href: "/blog/sy-om-dress-oslo", label: "Sy om dressen i stedet for å kjøpe ny" }],
+    readMore: [
+      { href: "/blog/legge-opp-bukse-oslo", label: "Legge opp bukse i Oslo på 1–3 dager" },
+      { href: "/blog/sy-inn-bukse-oslo", label: "Sy inn bukse som er for stor i livet eller setet" },
+      { href: "/blog/legge-opp-kjole-oslo", label: "Legge opp kjole i Oslo uten at fallet blir feil" },
+      { href: "/blog/sy-inn-kjole-oslo", label: "Sy inn kjole som er for stor uten å miste fasongen" },
+      { href: "/blog/sy-om-dress-oslo", label: "Sy om dressen i stedet for å kjøpe ny" },
+    ],
   },
   {
     slug: "omforming",
@@ -125,7 +132,7 @@ const SERVICES = [
     ],
     pricingLabel: "Pris etter vurdering",
     pricingNote: "Vurderes individuelt etter kompleksitet",
-    readMore: [{ href: "/blog/tilpasning-dress-oslo", label: "Tilpasning av dress: justering eller skreddersøm?" }],
+    readMore: [{ href: "/blog/tilpasning-dress-oslo", label: "Tilpasning av dress i Oslo: justering eller skreddersøm?" }],
   },
   {
     slug: "skjorter-bluser",
@@ -148,7 +155,9 @@ const SERVICES = [
     ],
     pricingLabel: "Fra 2 500 kr",
     pricingNote: "Avhenger av stoff og design",
-    readMore: [],
+    readMore: [
+      { href: "/blog/skreddersydd-skjorte-oslo", label: "Skreddersydd skjorte i Oslo: hva koster det, og hva får du?" },
+    ],
   },
   {
     slug: "skomakeri",
@@ -171,7 +180,10 @@ const SERVICES = [
     ],
     pricingLabel: "Fra 300 kr",
     pricingNote: "Avhenger av skotype og reparasjon",
-    readMore: [{ href: "/skomaker-oslo", label: "Les mer om skomaker i Oslo sentrum" }],
+    readMore: [
+      { href: "/skomaker-oslo", label: "Les mer om skomaker i Oslo sentrum" },
+      { href: "/blog/skoreparasjon-oslo", label: "Skoreparasjon i Oslo: når bør du levere skoene inn?" },
+    ],
   },
   {
     slug: "spesialbestillinger",
@@ -232,7 +244,10 @@ const PRICE_GROUPS = [
         note: "Større skader får eget prisoverslag.",
       },
     ],
-    readMore: { label: "Sy om dressen i stedet for å kjøpe ny", href: "/blog/sy-om-dress-oslo" },
+    readMore: [
+      { label: "Sy om dressen i stedet for å kjøpe ny", href: "/blog/sy-om-dress-oslo" },
+      { label: "Bytte glidelås, eller kan den repareres?", href: "/blog/reparere-bytte-glidelas-oslo" },
+    ],
   },
   {
     title: "Skreddersøm og målsøm",
@@ -259,7 +274,10 @@ const PRICE_GROUPS = [
         note: "Konsept-møte er kostnadsfritt.",
       },
     ],
-    readMore: { label: "Hva koster en skreddersydd dress?", href: "/blog/hva-koster-skreddersydd-dress" },
+    readMore: [
+      { label: "Hva koster en skreddersydd dress?", href: "/blog/hva-koster-skreddersydd-dress" },
+      { label: "Billig skredder i Oslo? 5 faktorer som avgjør", href: "/blog/skredder-oslo" },
+    ],
   },
   {
     title: "Skomakeri",
@@ -282,7 +300,9 @@ const PRICE_GROUPS = [
         note: "Håndteres varsomt. Vi forstår verdien av kvalitetssko.",
       },
     ],
-    readMore: null,
+    readMore: [
+      { label: "Når bør du levere skoene til reparasjon?", href: "/blog/skoreparasjon-oslo" },
+    ],
   },
 ];
 
@@ -928,7 +948,9 @@ function tjenesterBodyHtml() {
       { href: "/skomaker-oslo", label: "Skomaker i Oslo sentrum" },
       { href: "/om-oss", label: "Om Ararat Skredderi" },
       { href: "/kontakt", label: "Kontakt og åpningstider" },
-      { href: "/blog/skreddersom-oslo", label: "Skreddersøm i Oslo: pris og leveringstid" },
+      { href: "/blog/skreddersom-oslo", label: "Skreddersøm i Oslo: hva det koster og hvor lang tid det tar" },
+      { href: "/blog/skredder-majorstuen", label: "Skredder på Majorstuen? Derfor er turen til Torggata verdt et kvarter" },
+      { href: "/blog/skredder-eller-fikse-selv", label: "Skredder eller fikse selv? Slik avgjør du" },
     ])
   );
 }
@@ -950,8 +972,8 @@ function priserBodyHtml() {
           `<tr><td>${esc(r.service)}</td><td>${esc(r.price)}</td><td>${esc(r.note ?? "")}</td></tr>`,
       )
       .join("");
-    const more = g.readMore
-      ? `<p><a href="${g.readMore.href}">${esc(g.readMore.label)}</a></p>`
+    const more = g.readMore?.length
+      ? g.readMore.map((m) => `<p><a href="${m.href}">${esc(m.label)}</a></p>`).join("")
       : "";
     return (
       `<h2>${esc(g.title)}</h2>` +
@@ -1302,6 +1324,9 @@ function skomakerBodyHtml() {
     hoursTableHtml() +
     faqBodyHtml(SKOMAKER_FAQS) +
     linksBodyHtml("Les mer", [
+      { href: "/blog/skoreparasjon-oslo", label: "Skoreparasjon i Oslo: når bør du levere skoene inn?" },
+      { href: "/blog/reparere-bytte-glidelas-oslo", label: "Bytte glidelås i Oslo: kan den repareres, eller må hele skiftes?" },
+      { href: "/blog/skomaker-majorstuen", label: "Skomaker på Majorstuen? Verkstedet ligger i Torggata" },
       { href: "/tjenester", label: "Se alle skreddertjenestene våre" },
       { href: "/priser", label: "Gå til prislisten" },
       { href: "/kontakt", label: "Kontakt og åpningstider" },

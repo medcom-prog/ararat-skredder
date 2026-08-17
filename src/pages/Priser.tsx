@@ -35,7 +35,7 @@ interface PriceGroup {
   title: string;
   intro: string;
   rows: PriceRow[];
-  readMore?: { label: string; href: string };
+  readMore?: { label: string; href: string }[];
 }
 
 const priceGroups: PriceGroup[] = [
@@ -70,10 +70,16 @@ const priceGroups: PriceGroup[] = [
         note: "Større skader får eget prisoverslag.",
       },
     ],
-    readMore: {
-      label: "Les mer: Sy om dressen i stedet for å kjøpe ny",
-      href: "/blog/sy-om-dress-oslo",
-    },
+    readMore: [
+      {
+        label: "Les mer: Sy om dressen i stedet for å kjøpe ny",
+        href: "/blog/sy-om-dress-oslo",
+      },
+      {
+        label: "Les mer: Bytte glidelås, eller kan den repareres?",
+        href: "/blog/reparere-bytte-glidelas-oslo",
+      },
+    ],
   },
   {
     title: "Skreddersøm og målsøm",
@@ -100,10 +106,16 @@ const priceGroups: PriceGroup[] = [
         note: "Konsept-møte er kostnadsfritt.",
       },
     ],
-    readMore: {
-      label: "Les mer: Hva koster en skreddersydd dress?",
-      href: "/blog/hva-koster-skreddersydd-dress",
-    },
+    readMore: [
+      {
+        label: "Les mer: Hva koster en skreddersydd dress?",
+        href: "/blog/hva-koster-skreddersydd-dress",
+      },
+      {
+        label: "Les mer: Billig skredder i Oslo? 5 faktorer som avgjør",
+        href: "/blog/skredder-oslo",
+      },
+    ],
   },
   {
     title: "Skomakeri",
@@ -124,6 +136,12 @@ const priceGroups: PriceGroup[] = [
         service: "Arvede og premiumsko",
         price: "Etter vurdering",
         note: "Håndteres varsomt. Vi forstår verdien av kvalitetssko.",
+      },
+    ],
+    readMore: [
+      {
+        label: "Les mer: Når bør du levere skoene til reparasjon?",
+        href: "/blog/skoreparasjon-oslo",
       },
     ],
   },
@@ -250,14 +268,19 @@ export default function Priser() {
                     ))}
                   </tbody>
                 </table>
-                {group.readMore ? (
-                  <Link
-                    to={group.readMore.href}
-                    className="mt-auto inline-flex items-center gap-1.5 pt-5 text-sm font-medium text-accent hover:text-accent-soft"
-                  >
-                    {group.readMore.label}
-                    <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                  </Link>
+                {group.readMore?.length ? (
+                  <div className="mt-auto flex flex-col gap-2 pt-5">
+                    {group.readMore.map((link) => (
+                      <Link
+                        key={link.href}
+                        to={link.href}
+                        className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-soft"
+                      >
+                        {link.label}
+                        <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                      </Link>
+                    ))}
+                  </div>
                 ) : null}
               </div>
             </Reveal>

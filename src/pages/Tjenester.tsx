@@ -199,33 +199,19 @@ export default function Tjenester() {
                     </Button>
                   </div>
 
-                  {svc.slug === "malsom-dresser" ? (
+                  {svc.readMore?.length ? (
                     <div className="mt-4 flex flex-col gap-2">
-                      <Link
-                        to="/blog/skreddersydd-dress-oslo"
-                        className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-soft"
-                      >
-                        Les mer: 5 ting du bør vite før du bestiller dress
-                        <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                      </Link>
-                      <Link
-                        to="/blog/hva-koster-skreddersydd-dress"
-                        className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-soft"
-                      >
-                        Les mer: Hva koster en skreddersydd dress?
-                        <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                      </Link>
+                      {svc.readMore.map((link) => (
+                        <Link
+                          key={link.href}
+                          to={link.href}
+                          className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-soft"
+                        >
+                          {link.label}
+                          <ArrowRight className="h-4 w-4" aria-hidden="true" />
+                        </Link>
+                      ))}
                     </div>
-                  ) : null}
-
-                  {svc.slug === "skomakeri" ? (
-                    <Link
-                      to="/skomaker-oslo"
-                      className="mt-4 inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-soft"
-                    >
-                      Les mer om skomaker i Oslo sentrum
-                      <ArrowRight className="h-4 w-4" aria-hidden="true" />
-                    </Link>
                   ) : null}
                 </div>
               </div>
@@ -233,6 +219,34 @@ export default function Tjenester() {
             </article>
           );
         })}
+      </section>
+
+      {/* Cluster links down to general skredder articles (handoff § 3.3) */}
+      <section className="container-narrow pb-16">
+        <p className="eyebrow">Fra verkstedet</p>
+        <div className="mt-4 flex flex-col gap-2">
+          <Link
+            to="/blog/skreddersom-oslo"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-soft"
+          >
+            Skreddersøm i Oslo: hva det koster og hvor lang tid det tar
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
+          <Link
+            to="/blog/skredder-majorstuen"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-soft"
+          >
+            Skredder på Majorstuen? Derfor er turen til Torggata verdt et kvarter
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
+          <Link
+            to="/blog/skredder-eller-fikse-selv"
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-soft"
+          >
+            Skredder eller fikse selv? Slik avgjør du
+            <ArrowRight className="h-4 w-4" aria-hidden="true" />
+          </Link>
+        </div>
       </section>
 
       {/* FAQ */}

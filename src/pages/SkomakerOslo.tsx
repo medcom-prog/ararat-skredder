@@ -302,6 +302,30 @@ export default function SkomakerOslo() {
             og du bestemmer deg etterpå, med prisen i hånden. Ingen
             overraskelser når du kommer for å hente.
           </p>
+          {/* Cluster links down to supporting articles (handoff § 3.3) */}
+          <div className="flex flex-col gap-2 pt-2">
+            <Link
+              to="/blog/skoreparasjon-oslo"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-soft"
+            >
+              Skoreparasjon i Oslo: når bør du levere skoene inn?
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+            <Link
+              to="/blog/reparere-bytte-glidelas-oslo"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-soft"
+            >
+              Bytte glidelås i Oslo: kan den repareres, eller må hele skiftes?
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+            <Link
+              to="/blog/skomaker-majorstuen"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-soft"
+            >
+              Skomaker på Majorstuen? Verkstedet ligger i Torggata
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+          </div>
         </div>
       </section>
 

@@ -15,6 +15,11 @@ export interface ServicePricing {
   note?: string;
 }
 
+export interface ServiceReadMoreLink {
+  href: string;
+  label: string;
+}
+
 export interface Service {
   slug: string;
   icon: LucideIcon;
@@ -26,6 +31,8 @@ export interface Service {
   pricing: ServicePricing;
   /** Used by ItemList schema for "Top N" quick answer */
   quickAnswerPoints: { name: string; description?: string }[];
+  /** Cluster links down to supporting articles (handoff § 3.3). */
+  readMore?: ServiceReadMoreLink[];
 }
 
 export const services: Service[] = [
@@ -56,6 +63,11 @@ export const services: Service[] = [
       { name: "Prøving og finjustering inkludert", description: "Vi tar deg gjennom en eller flere prøvinger til passformen er perfekt." },
       { name: "Leveringstid 2 – 4 uker", description: "Avhenger av kompleksitet og stoffvalg." },
     ],
+    readMore: [
+      { href: "/blog/skreddersydd-dress-oslo", label: "Skreddersydd dress i Oslo: 5 ting du bør vite før du bestiller" },
+      { href: "/blog/hva-koster-skreddersydd-dress", label: "Hva koster en skreddersydd dress i Oslo?" },
+      { href: "/blog/velge-skredder-malsydd-dress", label: "Hvordan velger du riktig skredder til målsydd dress?" },
+    ],
   },
   {
     slug: "endringer-reparasjon",
@@ -84,6 +96,13 @@ export const services: Service[] = [
       { name: "Glidelås og knapper byttes raskt", description: "Vanligvis ferdig innen 1 – 3 dager." },
       { name: "Større reparasjoner får eget prisoverslag", description: "Komplekse jobber prises individuelt." },
     ],
+    readMore: [
+      { href: "/blog/legge-opp-bukse-oslo", label: "Legge opp bukse i Oslo på 1–3 dager" },
+      { href: "/blog/sy-inn-bukse-oslo", label: "Sy inn bukse som er for stor i livet eller setet" },
+      { href: "/blog/legge-opp-kjole-oslo", label: "Legge opp kjole i Oslo uten at fallet blir feil" },
+      { href: "/blog/sy-inn-kjole-oslo", label: "Sy inn kjole som er for stor uten å miste fasongen" },
+      { href: "/blog/sy-om-dress-oslo", label: "Sy om dressen i stedet for å kjøpe ny" },
+    ],
   },
   {
     slug: "omforming",
@@ -110,6 +129,9 @@ export const services: Service[] = [
       { name: "Arvestykker håndteres varsomt", description: "Vi forstår sentimental verdi og jobber deretter." },
       { name: "Skisse + bindende pris før vi starter", description: "Ingen overraskelser." },
       { name: "Typisk leveringstid 2 – 5 uker", description: "Avhenger av kompleksitet og stofftype." },
+    ],
+    readMore: [
+      { href: "/blog/tilpasning-dress-oslo", label: "Tilpasning av dress i Oslo: justering eller skreddersøm?" },
     ],
   },
   {
@@ -139,6 +161,9 @@ export const services: Service[] = [
       { name: "Måltatt passform, ingen S/M/L-kompromiss", description: "Skjorten sitter slik den skal." },
       { name: "Leveringstid 2 – 3 uker", description: "Raskere ved enkel design." },
     ],
+    readMore: [
+      { href: "/blog/skreddersydd-skjorte-oslo", label: "Skreddersydd skjorte i Oslo: hva koster det, og hva får du?" },
+    ],
   },
   {
     slug: "skomakeri",
@@ -167,6 +192,10 @@ export const services: Service[] = [
       { name: "Arvede og premiumsko håndteres varsomt", description: "Vi forstår verdien av kvalitetssko." },
       { name: "Vanligvis ferdig innen 3 – 7 dager", description: "Avhenger av reservedeler og kompleksitet." },
     ],
+    readMore: [
+      { href: "/skomaker-oslo", label: "Les mer om skomaker i Oslo sentrum" },
+      { href: "/blog/skoreparasjon-oslo", label: "Skoreparasjon i Oslo: når bør du levere skoene inn?" },
+    ],
   },
   {
     slug: "spesialbestillinger",
@@ -194,6 +223,9 @@ export const services: Service[] = [
       { name: "Teater og film-kostymer", description: "Erfaring med produksjons-deadlines." },
       { name: "Designsamarbeid for merker", description: "Vi tar tekniske, materielle og kreative utfordringer." },
       { name: "Konsept-møte er kostnadsfritt", description: "Vi prises kun bindende etter klare spesifikasjoner." },
+    ],
+    readMore: [
+      { href: "/blog/sy-om-brudekjole-oslo", label: "Sy om brudekjole i Oslo: slik fungerer det" },
     ],
   },
 ] satisfies Service[];
