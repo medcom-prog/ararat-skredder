@@ -1,4 +1,4 @@
-import { lazy, Suspense, useEffect } from "react";
+import { lazy, Suspense, useLayoutEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
@@ -21,10 +21,29 @@ const BlogRouter = lazy(() =>
 );
 
 function ScrollToTop() {
-  const { pathname } = useLocation();
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "instant" as ScrollBehavior });
-  }, [pathname]);
+  const { pathname, hash } = useLocation();
+  useLayoutEffect(() => {
+    try {
+      window.history.scrollRestoration = "manual";
+    } catch {
+      // ignore
+    }
+    if (hash) {
+      // Defer until route content has mounted, then scroll to anchor.
+      const id = hash.replace(/^#/, "");
+      const tryScroll = (attempt = 0) => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        } else if (attempt < 20) {
+          setTimeout(() => tryScroll(attempt + 1), 50);
+        }
+      };
+      tryScroll();
+      return;
+    }
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+  }, [pathname, hash]);
   return null;
 }
 
