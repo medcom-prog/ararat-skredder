@@ -1154,9 +1154,9 @@ const ROUTES = [
   },
   {
     path: "priser",
-    title: "Priser · Hva koster skredder og reparasjon i Oslo?",
+    title: "Priser · Skredder og reparasjon i Oslo",
     description:
-      "Veiledende prisliste for skreddersøm, reparasjon og skomakeri i Oslo sentrum. Legge opp bukser 200–400 kr, skreddersydd skjorte fra 2 500 kr, målsøm av dress fra 8 000 kr, skomakeri fra 300 kr.",
+      "Priser i Oslo sentrum: legge opp bukser 200–400 kr, glidelås fra 200 kr, skjorte fra 2 500 kr, dress fra 8 000 kr, skomaker fra 300 kr. Bindende overslag.",
     h1: "Priser på skreddersøm og reparasjon",
     intro:
       "Veiledende startpriser for skreddersøm, reparasjon, omforming og skomakeri i Oslo sentrum. Du får alltid et bindende prisoverslag før vi starter.",
@@ -1165,9 +1165,9 @@ const ROUTES = [
   },
   {
     path: "skomaker-oslo",
-    title: "Skomaker i Oslo sentrum · Skredder på samme sted",
+    title: "Skomaker i Oslo sentrum · Torggata 8",
     description:
-      "Skomaker i Torggata 8, midt i Oslo sentrum: sålereparasjon, hæler, skinn og glidelåser fra 300 kr. Skomaker og skredder under ett tak, så sko og plagg leveres i samme besøk.",
+      "Skomaker i Torggata 8, Oslo sentrum: såler, hæler, skinn og glidelåser fra 300 kr. Bindende pris, drop-in mandag til lørdag. Skredder på samme sted.",
     h1: "Skomaker i Oslo sentrum",
     intro:
       "I Torggata 8 finner du både skomaker og skredder under ett tak. Vi reparerer såler, hæler, skinn og glidelåser, og kan samtidig ta endringen på klærne mens du er her.",
