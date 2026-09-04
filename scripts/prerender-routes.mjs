@@ -19,7 +19,7 @@
  */
 import { readFileSync, writeFileSync, mkdirSync, existsSync, readdirSync } from "node:fs";
 import { join, dirname } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 // Same markdown renderer as the runtime (src/blog/renderer.ts +
 // src/blog/BlogPost.tsx) so prerendered article bodies match what React
 // renders. Content is first-party markdown, so marked runs alone here
@@ -28,6 +28,13 @@ import { fileURLToPath } from "node:url";
 // skipped — crawlers don't need it, and React replaces #root on mount
 // anyway.
 import { marked } from "marked";
+
+// react / react-router are externalized in the SSR bundle and pick their
+// development or production build from NODE_ENV at load time. The build runs
+// this script with NODE_ENV unset, which would render the homepage through the
+// development builds (slower, prints dev-only warnings). Markup is identical
+// either way; this just makes the build render like production does.
+process.env.NODE_ENV ??= "production";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = join(__dirname, "..");
@@ -1490,51 +1497,47 @@ function homeWebPageLd() {
   };
 }
 
-function homeContentHtml() {
-  // Keep this DELIBERATELY minimal: h1 + a single Quick Answer paragraph,
-  // matching the CLS-safe shape used by every sub-route. React's createRoot
-  // wipes #root on mount and renders the full SPA, so anything injected here
-  // is paint-then-replace. A large block (services <ul>, NAP, FAQ <dl>) made
-  // the homepage shift CLS 0.759 vs CLS 0 on the small sub-route injections.
-  // The detailed content lives in (a) the static <head> @graph
-  // (Organization/LocalBusiness/Person — full NAP, geo, hours, sameAs) and
-  // (b) the FAQPage + WebPage schema injected just below — so no-JS crawlers
-  // still get the structured facts without the layout-shift penalty.
-  const h1 = "Ararat Skredderi, skredder i Oslo sentrum";
-  const qa =
-    "Ararat Skredderi i Torggata 8, 0181 Oslo, tilbyr skreddersøm, " +
-    "reparasjon, omforming og skomakeri. Skreddermester Ahmad Abdulhamid " +
-    "har over 50 års erfaring. Drop-in mandag til lørdag, ingen timeavtale " +
-    "nødvendig.";
-  // REVERTERT 03.08.2026, samme dag som den ble lagt til (278c52d).
+async function homeContentHtml() {
+  // History, so nobody re-fights it: the homepage shipped with an h1 + one
+  // Quick Answer paragraph (36 words for no-JS crawlers, while /tjenester gave
+  // them 1 032). Two attempts to hand-write more content into #root (c6edade
+  // in June, 278c52d on 03.08.2026) were reverted (40df178, cd2c3f2) because
+  // React's createRoot wiped #root on mount and repainted the page:
+  // paint-then-replace, CLS 0.759 measured in June.
   //
-  // Jeg utvidet denne blokken med tjenesteliste, prisetabell, åpningstids-
-  // tabell og NAP-avsnitt fordi page-sweep målte forsiden til 36 ord for
-  // crawlere. Men kommentaren rett over — som jeg lot stå uendret — sier
-  // eksplisitt at NØYAKTIG den kombinasjonen ble målt til CLS 0.759 mot 0,
-  // og commit 40df178 fjernet den i juni av den grunn. Jeg overkjørte en
-  // datert måling uten å måle selv.
-  //
-  // Reversert fordi kostnaden er lav: llms.txt har alle tjenestene med
-  // priser, åpningstider, NAP og org.nr, og head-graf-en har adresse,
-  // telefon, geo, åpningstider og FAQPage. AI-motorer får altså faktaene
-  // uansett, gjennom kanaler uten layout-kostnad.
-  //
-  // Vil du utvide forsiden igjen: MÅL CLS først (PageSpeed Insights med
-  // API-nøkkel, eller Lighthouse lokalt), og skriv tallet inn her.
-  return (
-    `<div id="root">` +
-    `<h1>${htmlEscape(h1)}</h1>` +
-    `<p aria-label="Kort fortalt:"><strong>Kort fortalt:</strong> ${htmlEscape(qa)}</p>` +
-    `</div>`
-  );
+  // 04.09.2026: the homepage is now rendered by react-dom/server at build
+  // time (src/entry-server.tsx, built to dist-ssr/ by `vite build --ssr`), and
+  // src/main.tsx hydrates the marked root instead of replacing it. Crawlers
+  // and users get the same DOM from the same components and data modules; no
+  // hand-written copy lives here any more. CLS measured on the vite preview
+  // build after this change is recorded in the PR that introduced it.
+  const entry = join(ROOT, "dist-ssr", "entry-server.js");
+  if (!existsSync(entry)) {
+    console.error("[prerender] dist-ssr/entry-server.js not found — run `vite build --ssr src/entry-server.tsx --outDir dist-ssr` first");
+    process.exit(1);
+  }
+  const mod = await import(pathToFileURL(entry).href);
+  const render = mod.render ?? mod.default?.render;
+  if (typeof render !== "function") {
+    console.error("[prerender] dist-ssr/entry-server.js does not export render()");
+    process.exit(1);
+  }
+  const appHtml = render("/");
+  if (!/<h1[\s>]/.test(appHtml)) {
+    console.error("[prerender] server-rendered homepage has no <h1> — refusing to write an empty root");
+    process.exit(1);
+  }
+  // data-ssr="1" is the hydration switch read by src/main.tsx.
+  return `<div id="root" data-ssr="1">${appHtml}</div>`;
 }
 
 {
   let homeHtml = readFileSync(SHELL_PATH, "utf8");
 
-  // 1) Crawler-visible content into the (otherwise empty) React root.
-  homeHtml = homeHtml.replace(/<div id="root"><\/div>/, homeContentHtml());
+  // 1) The real homepage markup into the React root (hydrated, not replaced).
+  // Replacer FUNCTION so `$&`-style patterns in the markup cannot expand.
+  const homeRoot = await homeContentHtml();
+  homeHtml = homeHtml.replace(/<div id="root"><\/div>/, () => homeRoot);
 
   // 2) Homepage schema: WebPage(+Speakable) + FAQPage in one @graph.
   const homeGraph = [homeWebPageLd()];
