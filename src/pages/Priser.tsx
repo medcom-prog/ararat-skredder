@@ -179,8 +179,8 @@ export default function Priser() {
   return (
     <>
       <SEO
-        title="Priser · Hva koster skredder og reparasjon i Oslo?"
-        description="Veiledende prisliste for skreddersøm, reparasjon og skomakeri i Oslo sentrum. Legge opp bukser 200–400 kr, skreddersydd skjorte fra 2 500 kr, målsøm av dress fra 8 000 kr, skomakeri fra 300 kr."
+        title="Priser · Skredder og reparasjon i Oslo"
+        description="Priser i Oslo sentrum: legge opp bukser 200–400 kr, glidelås fra 200 kr, skjorte fra 2 500 kr, dress fra 8 000 kr, skomaker fra 300 kr. Bindende overslag."
         canonical={BUSINESS.domain + "/priser"}
       />
 

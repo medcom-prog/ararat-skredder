@@ -79,8 +79,8 @@ export default function SkomakerOslo() {
   return (
     <>
       <SEO
-        title="Skomaker i Oslo sentrum · Skredder på samme sted"
-        description="Skomaker i Torggata 8, midt i Oslo sentrum: sålereparasjon, hæler, skinn og glidelåser fra 300 kr. Skomaker og skredder under ett tak, så sko og plagg leveres i samme besøk."
+        title="Skomaker i Oslo sentrum · Torggata 8"
+        description="Skomaker i Torggata 8, Oslo sentrum: såler, hæler, skinn og glidelåser fra 300 kr. Bindende pris, drop-in mandag til lørdag. Skredder på samme sted."
         canonical={BUSINESS.domain + "/skomaker-oslo"}
       />
 
