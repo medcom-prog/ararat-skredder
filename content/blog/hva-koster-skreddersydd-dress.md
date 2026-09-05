@@ -1,8 +1,8 @@
 ---
 title: "Hva koster en skreddersydd dress i Oslo?"
 slug: "hva-koster-skreddersydd-dress"
-meta_title: "Hva koster en skreddersydd dress · Prisguide 2026"
-meta_description: "En skreddersydd dress i Oslo koster fra 8 000 kr. Her er hva som styrer prisen, konkrete priseksempler, og hva du faktisk får for pengene."
+meta_title: "Hva koster en skreddersydd dress i Oslo?"
+meta_description: "En skreddersydd dress i Oslo koster fra 8 000 kr, og opp mot 25 000 kr i premium ull. Se priseksempler for forretningsdress, bryllupsdress og smoking."
 keyword: "skreddersydd dress pris"
 published_at: "2026-05-26"
 updated_at: "2026-07-17"
