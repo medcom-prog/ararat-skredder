@@ -48,7 +48,7 @@ Falden er den brettede og fastsydde kanten nederst på buksebeinet. Et oppbrett 
 
 **Ny fald.** Den vanlige varianten. Buksen kortes nedenfra, kanten brettes opp på nytt, sys og presses. På en dressbukse i ull sys falden vanligvis med sting som ikke skal synes på retten. På en chinos eller arbeidsbukse går det raskere, og resultatet er en kant som ligner den som var der.
 
-**Original fald beholdes.** Dette gjelder oftest jeans. Kanten er sydd med industrimaskin og har vasket seg sammen med resten av buksen, med en slitt farge langs brettet som ikke lar seg gjenskape. Skal den kanten være med videre, løsnes den, buksen kortes ovenfra og kanten festes tilbake. Mer arbeid, men buksen ser fortsatt ut som seg selv.
+**Original fald beholdes.** Dette gjelder oftest jeans. Kanten er sydd med industrimaskin og har vasket seg sammen med resten av buksen, med en slitt farge langs brettet som ikke lar seg gjenskape. Skal den kanten være med videre, løsnes den, buksen kortes ovenfra og kanten festes tilbake. Mer arbeid, men buksen ser fortsatt ut som seg selv. Har jeansen i tillegg hull eller slitasje i skrittet, står det i [reparere jeans i Oslo](/blog/reparere-jeans-oslo).
 
 Har buksen oppbrett, tas oppbrettet fra hverandre og bygges opp igjen i ny lengde. Hvor bredt oppbrettet skal være, avgjøres best med buksen på.
 

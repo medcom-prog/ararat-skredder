@@ -83,7 +83,7 @@ Det avhenger helt av sømmonnet, altså stoffet som ligger igjen innenfor sømme
 **Bør jeg vaske plagget før innlevering?**
 Ja, rent tøy er en fordel for alle parter. Er plagget skittent på grunn av skaden, si fra i stedet for å prøve å fjerne flekken selv. Feil middel kan gjøre skaden permanent.
 
-Er du i tvil om hvilken kategori plagget faller i, koster det ingenting å få det vurdert. Ta med plagget til et verksted og be om en ærlig vurdering, også av om det bør repareres i det hele tatt. [Ta kontakt](/kontakt) hvis du vil høre hva som er mulig med akkurat ditt plagg.
+Er du i tvil om hvilken kategori plagget faller i, koster det ingenting å få det vurdert. Ta med plagget til et verksted og be om en ærlig vurdering, også av om det bør repareres i det hele tatt. En oversikt over [hva som kan repareres, hva det koster og hvor lang tid det tar](/blog/reparere-klaer-oslo), står i egen artikkel. [Ta kontakt](/kontakt) hvis du vil høre hva som er mulig med akkurat ditt plagg.
 
 ---
 

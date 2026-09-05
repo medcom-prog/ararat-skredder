@@ -17,7 +17,7 @@ Skoene sier alltid fra i god tid. Problemet er at signalene kommer stille, og at
 Fem ting er verdt å sjekke, og det tar under et minutt.
 
 1. **Hælen slites skjevt.** De fleste går litt skjevt, og hælen viser det først. Når kanten er slipt bort på den ene siden, står hele skoen skjevt, og slitasjen begynner å flytte seg oppover i overdelen. En ny hæl på dette stadiet er en liten jobb.
-2. **Sålen er tynn under trinnpunktet.** Trykk med tommelen der foten lander. Kjennes underlaget gjennom, eller bøyer sålen seg mykt der den før var fast, er det tid for såle.
+2. **Sålen er tynn under trinnpunktet.** Trykk med tommelen der foten lander. Kjennes underlaget gjennom, eller bøyer sålen seg mykt der den før var fast, er det tid for [å bytte såle](/blog/bytte-sale-pa-sko).
 3. **Sømmen eller limkanten mellom såle og overdel har sluppet.** Selv en kort åpning slipper inn vann, og vann er det som ødelegger innsiden av en sko.
 4. **Riften i skinnet er fortsatt liten.** Skinn lappes og fikses, men jobben blir enklere og penere mens skaden er på noen millimeter.
 5. **Glidelåsen i støvelen hopper av eller går tregt.** Den kan repareres eller byttes, og det er sjelden en grunn til å pensjonere et par støvler.

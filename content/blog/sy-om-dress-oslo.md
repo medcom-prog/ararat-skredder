@@ -22,7 +22,7 @@ Denne guiden går gjennom begge deler.
 
 Ermer og bukseben er enkel matematikk. For lange ermer kortes nedenfra, eller fra skulderen hvis mansjetten har knapphull som skal bevares. Bukseben legges opp med eller uten oppbrett, og falden kan ofte beholdes. Flytting av knapper er den minste jobben av alle, men ofte den som merkes best. To centimeter på jakkeknappen kan være forskjellen på en jakke som strammer og en som faller riktig.
 
-Skuldrene er unntaket. De er dressens fundament, og en skulderjustering krever at store deler av jakken demonteres. Det kan gjøres, men det er den dyreste operasjonen på plagget. Sitter skuldrene helt feil, er det ofte bedre å bytte dress enn å sy om.
+Skuldrene er unntaket. De er dressens fundament, og en skulderjustering krever at store deler av jakken demonteres. Det kan gjøres, men det er den dyreste operasjonen på plagget. Sitter skuldrene helt feil, er det ofte bedre å bytte dress enn å sy om. Vil du sjekke plagget selv før du leverer det, står punktene i [hvordan en dress skal sitte](/blog/hvordan-skal-en-dress-sitte).
 
 ## Hva koster det å sy om en dress i Oslo?
 

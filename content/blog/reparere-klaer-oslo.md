@@ -1,8 +1,8 @@
 ---
 title: "Reparere klær i Oslo: hva kan fikses, hva koster det og hvor lang tid tar det?"
 slug: "reparere-klaer-oslo"
-meta_title: "Reparere klær i Oslo – pris, tid og hva som kan fikses"
-meta_description: "Rifter, hull, glidelås og knapper kan ofte reddes. Her er hva et skredderverksted kan fikse, hva det koster og hvor lang tid det tar."
+meta_title: "Reparere klær i Oslo: pris, tid og hva som kan fikses"
+meta_description: "Rifter, hull, glidelås og knapper kan ofte reddes. Her er hva et skredderverksted i Oslo kan fikse, hva det koster fra 200 kr, og hvor lang tid det tar."
 published_at: "2026-09-05"
 updated_at: "2026-09-05"
 keyword: "reparere klær oslo"

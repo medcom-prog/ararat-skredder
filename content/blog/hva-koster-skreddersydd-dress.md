@@ -32,7 +32,7 @@ Det er fire faktorer som bestemmer hva en skreddersydd dress hos oss faktisk kos
 For å gjøre det mindre abstrakt:
 
 - **Klassisk forretningsdress** i god mellomklasse-ull, to-knapps, klassiske detaljer: 8 000 til 11 000 kr
-- **Bryllupsdress** i premium ull eller silkeblanding, ett-knapps eller tre-knapps, finere fôr og knapper: 12 000 til 18 000 kr
+- **[Bryllupsdress](/blog/dress-til-bryllup-oslo)** i premium ull eller silkeblanding, ett-knapps eller tre-knapps, finere fôr og knapper: 12 000 til 18 000 kr
 - **Smoking eller seremoniell dress** med satengrevers, satengstripe på buksa, vest: 15 000 til 22 000 kr
 - **Sommerdress** i lin eller lett ull, ofte uten fôr eller med halvfôr: 7 000 til 10 000 kr
 

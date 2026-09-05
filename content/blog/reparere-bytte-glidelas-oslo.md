@@ -65,7 +65,7 @@ En billig glidelås i et plagg du er glad i, er dårlig butikk. Skal jobben gjø
 
 **Jakke.** Den mest krevende av de tre, og den folk oftest undervurderer. Er jakken fôret, må fôret åpnes for å komme til sømmen, og lukkes igjen etterpå slik at det ikke synes. Frontglidelåsen i en jakke er som regel delbar, det vil si at den kan deles helt i bunnen. Den må erstattes med riktig type og riktig lengde, og på en delbar glidelås justeres lengden vanligvis fra toppen.
 
-**Bukse.** Kortere glidelås, mindre plagg, og som regel den raskeste jobben av de tre. Jeans ligger i den tyngre enden, fordi stoffet er kraftig og det blir flere lag å sy gjennom enn i en tynn bukse. Enkle bytter er vanligvis ferdige innen 1–3 dager.
+**Bukse.** Kortere glidelås, mindre plagg, og som regel den raskeste jobben av de tre. Jeans ligger i den tyngre enden, fordi stoffet er kraftig og det blir flere lag å sy gjennom enn i en tynn bukse. Enkle bytter er vanligvis ferdige innen 1–3 dager. Skal jeansen i tillegg repareres for hull eller slitasje, står det i [reparere jeans i Oslo](/blog/reparere-jeans-oslo).
 
 **Kjole.** Glidelåsen sitter gjerne i ryggen eller siden, ofte skjult i sømmen, og skal ligge flatt når den er lukket uten at stoffet trekker seg. Kjole er priset sammen med bukse og jakke i prislisten, altså fra 200 kr eks. mva.
 

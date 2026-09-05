@@ -14,7 +14,7 @@ Skreddersøm brukes om alt fra å feste en knapp til å bygge en dress fra bunne
 
 ## Hva er forskjellen på reparasjon, omforming og målsøm?
 
-Reparasjon handler om å fikse det som er ødelagt: bytte glidelås, sy i knapper, reparere rifter og slitasje. Dette er de vanligste oppdragene, de går raskest, og de starter på 200 kr. En glidelås i en bukse er riktignok en annen jobb enn en glidelås i en fôret vinterjakke, men begge hører hjemme i samme kategori.
+Reparasjon handler om å fikse det som er ødelagt: bytte glidelås, sy i knapper, [reparere rifter og slitasje](/blog/reparere-klaer-oslo). Dette er de vanligste oppdragene, de går raskest, og de starter på 200 kr. En glidelås i en bukse er riktignok en annen jobb enn en glidelås i en fôret vinterjakke, men begge hører hjemme i samme kategori.
 
 Omforming betyr at plagget finnes, men skal endres. Bukser som skal inn i livet, en jakke som skal smalnes, en kjole som skal forkortes, eller et arvet plagg som skal fornyes med respekt for originalen. Her trengs erfaring med passform og konstruksjon, og prisen settes etter vurdering av plagget. Ingen seriøs skredder priser en omforming uten å ha sett plagget først.
 
@@ -40,7 +40,7 @@ Hele den oppdaterte listen ligger på [prissiden](/priser). Hva som avgjør om e
 
 Materialet forklarer mye av spennet. Silke, tynn ull og tyll krever varsommere hender og mer tid enn bomull og kraftig ull, og et plagg med fôr betyr at hver justering skal sys i flere lag. Derfor kan samme operasjon koste ulikt på to forskjellige plagg.
 
-Skomakeri hører også hjemme i en komplett prisliste. Sålereparasjon starter på 400 kr, og mindre skoreparasjoner som hæler og glidelåser i sko starter på 300 kr. Mer om det står på siden om [skomakertjenester i Oslo](/skomaker-oslo).
+Skomakeri hører også hjemme i en komplett prisliste. [Sålereparasjon](/blog/bytte-sale-pa-sko) starter på 400 kr, og mindre skoreparasjoner som hæler og glidelåser i sko starter på 300 kr. Mer om det står på siden om [skomakertjenester i Oslo](/skomaker-oslo).
 
 ## Hvor lang tid tar leveringen?
 

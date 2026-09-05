@@ -48,7 +48,7 @@ Vi gir heller en ærlig vurdering enn å ta på oss arbeid som ikke gir verdi. H
 
 Er du fortsatt i valgfasen, hjelper det å vite [hva du bør se etter når du velger skredder](/blog/skredder-oslo) til et plagg du bare får én sjanse på.
 
-Vi gjør også [andre tilpasninger og reparasjoner](/tjenester) om flere plagg skal klargjøres til dagen. Kom innom Torggata 8 for vurdering, eller ring 91 92 19 08. Drop-in mandag til lørdag.
+Vi gjør også [andre tilpasninger og reparasjoner](/tjenester) om flere plagg skal klargjøres til dagen, og skal brudgommen eller forloverne ha [dress til bryllup](/blog/dress-til-bryllup-oslo), er den planleggingen beskrevet for seg. Kom innom Torggata 8 for vurdering, eller ring 91 92 19 08. Drop-in mandag til lørdag.
 
 ---
 

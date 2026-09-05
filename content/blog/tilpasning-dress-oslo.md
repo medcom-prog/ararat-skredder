@@ -26,7 +26,7 @@ Den vanligste misforståelsen er å tro at et stort passformproblem kan løses m
 
 ## Når holder justering, og når må dressen bygges om?
 
-Justering holder når dressen sitter riktig på de store linjene. Bukselengden er for lang, ermene skal opp et par centimeter, eller livet skal inn litt. Som rettesnor bør buksebeina ligge midt på skoen bak og vise et lite brudd foran, og jakkeermene skal vise omtrent én centimeter av skjortemansjetten når armen henger naturlig.
+Justering holder når dressen sitter riktig på de store linjene. Bukselengden er for lang, ermene skal opp et par centimeter, eller livet skal inn litt. Som rettesnor bør buksebeina ligge midt på skoen bak og vise et lite brudd foran, og jakkeermene skal vise omtrent én centimeter av skjortemansjetten når armen henger naturlig. Hele sjekklisten for [hvordan en dress skal sitte](/blog/hvordan-skal-en-dress-sitte) står i egen artikkel.
 
 Omforming trengs når grunnstrukturen ikke stemmer:
 
