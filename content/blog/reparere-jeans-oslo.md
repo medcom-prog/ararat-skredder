@@ -2,7 +2,7 @@
 title: "Reparere jeans i Oslo: hull, slitasje og rifter"
 slug: "reparere-jeans-oslo"
 meta_title: "Reparere jeans i Oslo: hull, slitasje og rifter"
-meta_description: "Kan jeans med hull i skrittet, slitasje eller rifter repareres? Hva det koster, hva som kan gjøres, og når det ikke lenger går. Ærlig vurdering, drop-in."
+meta_description: "Kan jeans med hull i skrittet, slitasje eller rifter repareres? Hva det koster fra 200 kr, hva som kan gjøres, og når det ikke lenger går. Drop-in i Oslo."
 published_at: "2026-09-05"
 updated_at: "2026-09-05"
 keyword: "reparere jeans oslo"
