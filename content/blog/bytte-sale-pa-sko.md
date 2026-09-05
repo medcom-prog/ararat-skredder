@@ -1,8 +1,8 @@
 ---
 title: "Bytte såle på sko: hva det koster og når det lønner seg"
 slug: "bytte-sale-pa-sko"
-meta_title: "Bytte såle på sko: hva det koster og når det lønner seg"
-meta_description: "Å bytte såle på sko koster fra 400 kr i Oslo. Prisen avhenger av halv eller hel såle, skinntype og tilstand. Her er hva du bør vite før du leverer inn."
+meta_title: "Bytte såle på sko: pris og når det lønner seg"
+meta_description: "Å bytte såle på sko starter på 400 kr i Oslo. Halv eller hel såle, hva som avgjør prisen, og når det lønner seg fremfor å kjøpe nye. Ferdig på 3–7 dager."
 published_at: "2026-09-05"
 updated_at: "2026-09-05"
 keyword: "bytte såle på sko pris"
