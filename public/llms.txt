@@ -50,6 +50,7 @@ Drop-in mandag til lørdag for vurdering og reparasjon. For målsøm av dress el
 - [Tjenester](https://www.araratskredderi.no/tjenester): Detaljert beskrivelse av alle tjenester, prosess og pris
 - [Priser](https://www.araratskredderi.no/priser): Veiledende prisliste for skreddersøm, reparasjon og skomakeri
 - [Skomaker i Oslo](https://www.araratskredderi.no/skomaker-oslo): Skomaker og skredder under ett tak i Torggata 8
+- [Skreddersydd dress i Oslo](https://www.araratskredderi.no/skreddersydd-dress-oslo): Målsøm av dress fra 8 000 kr, 2–4 uker, prøving inkludert, kostnadsfri konsultasjon
 - [Galleri](https://www.araratskredderi.no/galleri): Bilder fra verkstedet, kundemøter og lokalene
 - [Om oss](https://www.araratskredderi.no/om-oss): Historikk, verdier og skreddermesterens bakgrunn
 - [Kontakt](https://www.araratskredderi.no/kontakt): Adresse, åpningstider, kart og kontaktinformasjon
@@ -57,8 +58,13 @@ Drop-in mandag til lørdag for vurdering og reparasjon. For målsøm av dress el
 
 ## Artikler
 
-Artikler og råd fra verkstedet. 18 artikler, nyeste først.
+Artikler og råd fra verkstedet. 23 artikler, nyeste først.
 
+- [Bytte såle på sko: hva det koster og når det lønner seg](https://www.araratskredderi.no/blog/bytte-sale-pa-sko): Å bytte såle på sko starter på 400 kr i Oslo. Halv eller hel såle, hva som avgjør prisen, og når det lønner seg fremfor å kjøpe nye. Ferdig på 3–7 dager.
+- [Dress til bryllup for brudgom og forlover](https://www.araratskredderi.no/blog/dress-til-bryllup-oslo): Dress til bryllup sydd etter mål for brudgom og forlover. Fra 8 000 kr eks. mva., normalt 2 til 4 ukers leveringstid. Torggata 8 i Oslo, drop-in.
+- [Hvordan skal en dress sitte?](https://www.araratskredderi.no/blog/hvordan-skal-en-dress-sitte): Hvordan skal en dress sitte? Slik sjekker du skuldre, ermer, jakkelengde og buksefall selv, og hva en skredder i Oslo kan justere etterpå.
+- [Reparere jeans i Oslo: hull, slitasje og rifter](https://www.araratskredderi.no/blog/reparere-jeans-oslo): Kan jeans med hull i skrittet, slitasje eller rifter repareres? Hva det koster fra 200 kr, hva som kan gjøres, og når det ikke lenger går. Drop-in i Oslo.
+- [Reparere klær i Oslo: hva kan fikses, hva koster det og hvor lang tid tar det?](https://www.araratskredderi.no/blog/reparere-klaer-oslo): Rifter, hull, glidelås og knapper kan ofte reddes. Her er hva et skredderverksted i Oslo kan fikse, hva det koster fra 200 kr, og hvor lang tid det tar.
 - [Legge opp kjole i Oslo uten at fallet blir feil](https://www.araratskredderi.no/blog/legge-opp-kjole-oslo): Slik legges en kjole opp hos skredder i Oslo: drop-in i Torggata 8, måltaking med skoene dine, hvert lag kortes for seg og du får konkret pris først.
 - [Sy inn bukse som er for stor i livet eller setet](https://www.araratskredderi.no/blog/sy-inn-bukse-oslo): Slik sys en bukse inn hos skredder i Oslo: hvor den tas inn, hvor mye som er mulig, drop-in i Torggata 8 og konkret pris før arbeidet starter.
 - [Sy inn kjole som er for stor uten å miste fasongen](https://www.araratskredderi.no/blog/sy-inn-kjole-oslo): Slik sys en kjole inn hos skredder i Oslo: hvor den tas inn, hva glidelås og fôr betyr for jobben, drop-in i Torggata 8 og konkret pris før arbeidet starter.
@@ -75,7 +81,7 @@ Artikler og råd fra verkstedet. 18 artikler, nyeste først.
 - [Sy om brudekjole i Oslo: slik fungerer det](https://www.araratskredderi.no/blog/sy-om-brudekjole-oslo): Skal du sy om brudekjolen? Slik foregår tilpasning av brudekjole i Oslo: hva som kan endres, når du bør bestille prøving, og hvordan prisen settes.
 - [Sy om dress i Oslo: hva som er mulig og hva det koster](https://www.araratskredderi.no/blog/sy-om-dress-oslo): Å sy inn en dress i Oslo starter på 200 kr per justering. Se hva som kan endres, hva det koster, hvor lang tid det tar, og når omsying ikke lønner seg.
 - [Tilpasning av dress i Oslo: justering eller skreddersøm?](https://www.araratskredderi.no/blog/tilpasning-dress-oslo): Justering av dress koster fra 200 kr, omforming prises etter vurdering. Her er hva som kan fikses, og når målsøm til 8 000–12 000 kr lønner seg mer.
-- [Hva koster en skreddersydd dress i Oslo?](https://www.araratskredderi.no/blog/hva-koster-skreddersydd-dress): En skreddersydd dress i Oslo koster fra 8 000 kr. Her er hva som styrer prisen, konkrete priseksempler, og hva du faktisk får for pengene.
+- [Hva koster en skreddersydd dress i Oslo?](https://www.araratskredderi.no/blog/hva-koster-skreddersydd-dress): En skreddersydd dress i Oslo koster fra 8 000 kr, og opp mot 25 000 kr i premium ull. Se priseksempler for forretningsdress, bryllupsdress og smoking.
 - [Skreddersydd dress i Oslo: 5 ting du bør vite før du bestiller](https://www.araratskredderi.no/blog/skreddersydd-dress-oslo): Slik bestiller du skreddersydd dress i Oslo: prosessen steg for steg hos skredderen i Torggata 8, leveringstid 2-4 uker, og når målsøm lønner seg.
 
 <!-- /artikler -->

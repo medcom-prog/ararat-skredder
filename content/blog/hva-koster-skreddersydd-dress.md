@@ -50,7 +50,7 @@ Vi sier dette ikke for å snakke ned andre, men fordi mange er forvirret over hv
 
 Prisen henger også sammen med tiden: regn med 2 til 4 uker fra første måltaking til ferdig dress, med prøvinger underveis. Hvordan bestillingen foregår steg for steg har vi beskrevet i [guiden om skreddersydd dress i Oslo](/blog/skreddersydd-dress-oslo).
 
-Vil du ha et konkret prisoverslag på en dress du har i tankene? Se [alle tjenestene](/tjenester), kom innom Torggata 8, eller ring 91 92 19 08. Drop-in mandag til lørdag, gratis konsultasjon.
+Vil du ha et konkret prisoverslag på en dress du har i tankene? Se [siden om skreddersydd dress](/skreddersydd-dress-oslo), [alle tjenestene](/tjenester), kom innom Torggata 8, eller ring 91 92 19 08. Drop-in mandag til lørdag, gratis konsultasjon.
 
 ---
 

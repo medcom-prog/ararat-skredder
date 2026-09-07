@@ -19,6 +19,7 @@ const FOOTER_LINKS = [
   { to: "/tjenester", label: "Tjenester" },
   { to: "/priser", label: "Priser" },
   { to: "/skomaker-oslo", label: "Skomaker i Oslo" },
+  { to: "/skreddersydd-dress-oslo", label: "Skreddersydd dress" },
   { to: "/galleri", label: "Galleri" },
   { to: "/om-oss", label: "Om oss" },
   { to: "/blog", label: "Blogg" },

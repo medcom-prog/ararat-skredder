@@ -55,7 +55,7 @@ Tredje besøk, henting: Etter to uker til er dressen ferdig presset, fôret og k
 
 Total leveringstid: 2 til 4 uker. I bryllupssesongen, mai til august, anbefaler vi å bestille minst 6 uker før dato. Vi har sagt nei til kunder som kom for sent, og det føles aldri bra.
 
-Hva målsøm og resten av håndverket koster, ser du på [prissiden](/priser), og alle tjenestene står på [tjenestesiden](/tjenester). Vil du komme innom og diskutere muligheter? Torggata 8 er åpen mandag til lørdag, drop-in for vurdering. Ring 91 92 19 08 eller [avtal tid for konsultasjon](/kontakt).
+Tjenesten er beskrevet samlet på siden om [skreddersydd dress i Oslo](/skreddersydd-dress-oslo). Hva målsøm og resten av håndverket koster, ser du på [prissiden](/priser), og alle tjenestene står på [tjenestesiden](/tjenester). Vil du komme innom og diskutere muligheter? Torggata 8 er åpen mandag til lørdag, drop-in for vurdering. Ring 91 92 19 08 eller [avtal tid for konsultasjon](/kontakt).
 
 ---
 

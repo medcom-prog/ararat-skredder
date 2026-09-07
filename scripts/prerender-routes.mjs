@@ -84,6 +84,7 @@ const SERVICES = [
     pricingLabel: "Fra 8 000 kr",
     pricingNote: "Avhenger av stoff og kompleksitet",
     readMore: [
+      { href: "/skreddersydd-dress-oslo", label: "Skreddersydd dress i Oslo: pris, prosess og leveringstid" },
       { href: "/blog/skreddersydd-dress-oslo", label: "Skreddersydd dress i Oslo: 5 ting du bør vite før du bestiller" },
       { href: "/blog/hva-koster-skreddersydd-dress", label: "Hva koster en skreddersydd dress i Oslo?" },
       { href: "/blog/velge-skredder-malsydd-dress", label: "Hvordan velger du riktig skredder til målsydd dress?" },
@@ -748,6 +749,125 @@ function skomakerLd() {
   };
 }
 
+
+// /skreddersydd-dress-oslo — speiler src/pages/SkreddersyddDressOslo.tsx.
+// Samme faktapolicy som React-siden: bare tall som allerede står på
+// nettstedet (fra 8 000 kr, 2–4 uker, skjorte fra 2 500 kr, tilpasning fra
+// 200 kr). HOLD I SYNC med komponenten.
+const DRESS_FAQS = [
+  {
+    q: "Hva koster en skreddersydd dress i Oslo?",
+    a: "Målsøm av dress hos Ararat Skredderi starter på 8 000 kr. Stoffet avgjør mest, deretter snitt og detaljer. Du får bindende pris etter konsultasjonen, før arbeidet starter.",
+  },
+  {
+    q: "Hvor lang tid tar det å få sydd en dress?",
+    a: "Normalt 2 til 4 uker fra første måltaking til ferdig dress. Det dekker konsultasjon, måltaking, prøving og ferdigsying. Skal dressen brukes i bryllup i mai til august, anbefaler vi å bestille minst 6 uker før.",
+  },
+  {
+    q: "Må jeg bestille time?",
+    a: "Nei. Vi har drop-in mandag til lørdag i Torggata 8, og konsultasjonen er kostnadsfri. Vil du være sikker på at skreddermesteren er ledig, kan du ringe 91 92 19 08 på forhånd.",
+  },
+  {
+    q: "Hvor mange prøvinger inngår?",
+    a: "Én eller flere prøvinger er inkludert i prisen. De fleste trenger to besøk etter måltakingen: én prøving i grovsøm og henting med eventuelle småjusteringer på stedet.",
+  },
+  {
+    q: "Kan jeg velge stoff selv?",
+    a: "Ja. Du velger stoff fra prøvene i verkstedet, i ull, lin eller silkeblanding. Vi forklarer hva som passer til anledning, sesong og hvordan du planlegger å bruke dressen etterpå.",
+  },
+  {
+    q: "Hva er forskjellen på skreddersydd og tilpasset dress?",
+    a: "En skreddersydd dress sys fra grunnen etter dine mål. En tilpasset dress er en hyllevare som justeres. Tilpasning starter på 200 kr og passer når kroppen ligger nær standardstørrelsene og dressen skal brukes få ganger.",
+  },
+  {
+    q: "Syr dere dress til bryllup?",
+    a: "Ja, både til brudgom og forlovere. Vi anbefaler å komme innom et par måneder før, så det er tid til prøving og eventuelt stoffbytte uten tidspress.",
+  },
+  {
+    q: "Kan jeg få skjorte i samme besøk?",
+    a: "Ja. Skreddersydd skjorte starter på 2 500 kr, med valg av stoff, krage og detaljer, og kan bestilles sammen med dressen.",
+  },
+];
+
+function dressLd() {
+  const url = `${SITE}/skreddersydd-dress-oslo`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${url}#service`,
+        name: "Skreddersydd dress i Oslo",
+        serviceType: "Skreddersøm",
+        description:
+          "Målsøm av dress i Torggata 8, Oslo sentrum: fra 8 000 kr, 2 til 4 ukers leveringstid, prøving inkludert og kostnadsfri konsultasjon.",
+        provider: { "@id": `${SITE}/#localbusiness` },
+        areaServed: { "@type": "City", name: "Oslo" },
+        offers: {
+          "@type": "Offer",
+          priceCurrency: "NOK",
+          availability: "https://schema.org/InStock",
+          priceSpecification: {
+            "@type": "PriceSpecification",
+            minPrice: "8000",
+            priceCurrency: "NOK",
+            valueAddedTaxIncluded: false,
+          },
+        },
+      },
+      breadcrumbLd([
+        { name: "Hjem", url: `${SITE}/` },
+        { name: "Skreddersydd dress i Oslo", url },
+      ]),
+      webPageSpeakableLd(url, "Skreddersydd dress i Oslo"),
+      faqLd(DRESS_FAQS),
+    ],
+  };
+}
+
+function dressBodyHtml() {
+  return (
+    "<h2>Hva du får i en dress sydd etter mål</h2>" +
+    "<p>Skredderen tar 25 til 30 mål, ikke bare brystmål og lengde. Skulderhelning, hoftebredde, armlengde og hvordan ryggen krummer. Mønsteret tegnes etter disse målene, og stoffet kuttes på nytt for hver kunde. Det er forskjellen på skreddersydd og justert hyllevare.</p>" +
+    listHtml([
+      "Stoff: ull, lin og silke, valgt etter sesong og bruk",
+      "Snitt: klassisk to-knapps, ett-knapps til bryllup, tre-knapps for høy statur",
+      "Detaljer: lommer, knapper, fôrfarge og knapphull",
+      "Prøving og finjustering til passformen sitter",
+    ]) +
+    "<h2>Tre besøk, 2 til 4 uker</h2>" +
+    "<p><strong>Første besøk, konsultasjon og måltaking.</strong> Du forteller om anledning, stil og budsjett, og velger stoff fra prøvene i verkstedet. Målene tas, og du får bindende pris før arbeidet starter. Besøket tar omtrent en time og er kostnadsfritt.</p>" +
+    "<p><strong>Andre besøk, prøving.</strong> Etter omtrent to uker prøver du dressen i grovsøm. Ta gjerne med skoene og skjorten du planlegger å bruke, så vurderes helheten. Alt som ikke sitter, justeres.</p>" +
+    "<p><strong>Tredje besøk, henting.</strong> Dressen er ferdig presset, fôret og kontrollert. Små justeringer gjøres på stedet.</p>" +
+    "<p>Hele løpet tar normalt 2 til 4 uker. I bryllupssesongen, mai til august, anbefaler vi å bestille minst 6 uker før datoen.</p>" +
+    "<h2>Hva koster en skreddersydd dress?</h2>" +
+    "<p>Målsøm av dress starter på 8 000 kr. Stoffet er den største faktoren, deretter kommer snitt og detaljer. En klassisk to-knapps i ull er enklere å bygge enn en tre-delers smoking med vest, og prisen følger arbeidet. Ekstra prøvinger koster ikke ekstra.</p>" +
+    "<p>Du får bindende pris etter konsultasjonen, før vi klipper i stoffet. Vil du forstå hva som driver prisen før du kommer innom, har vi skrevet en egen <a href=\"/blog/hva-koster-skreddersydd-dress\">prisguide for skreddersydd dress</a>. Startpriser for alt vi gjør står i <a href=\"/priser\">prislisten</a>.</p>" +
+    "<h2>Bryllup, jobb eller fest</h2>" +
+    "<p>Til bryllup syr vi dress til både brudgom og forlovere. Brudgommen velger som regel snitt, stoff og detaljer først, og forloverne legger seg etter det, enten med samme dress eller bare samme stoff. En vanlig løsning er målsøm til brudgommen og tilpasning av kjøpte dresser til forloverne. Les mer om <a href=\"/blog/dress-til-bryllup-oslo\">dress til bryllup</a>.</p>" +
+    "<p>Til jobb er en klassisk forretningsdress i ull det vanligste valget: to-knapps, klassiske detaljer, et stoff som holder fasongen gjennom en lang dag. Til fest og kveldsarrangement er smoking et alternativ, med satengrevers og andre krav til passform enn en vanlig dress.</p>" +
+    "<h2>Skreddersydd, eller tilpasset hyllevare?</h2>" +
+    "<p>Skreddersydd lønner seg når kroppen ikke matcher standardstørrelsene, når dressen skal brukes mye, eller når anledningen krever et plagg som faktisk er ditt. Trenger du en dress raskt, til én anledning, og har en standardkropp, er en justert hyllevare ofte det fornuftige valget. Tilpasning starter på 200 kr, og vi gjør det gjerne.</p>" +
+    "<p>Vi sier det som det er, også når svaret er at du ikke trenger målsøm. Les mer om <a href=\"/blog/tilpasning-dress-oslo\">tilpasning av dress</a> eller <a href=\"/blog/skreddersydd-dress-oslo\">fem ting du bør vite før du bestiller</a>.</p>" +
+    "<h2>Skreddermester Ahmad Abdulhamid</h2>" +
+    "<p>Skreddermester Ahmad Abdulhamid har over 50 års erfaring med håndverket, og tar hver dress personlig fra måltaking til siste prøving. Vi snakker norsk, engelsk og arabisk, og verkstedet i Torggata 8 tar også <a href=\"/tjenester\">endringer, reparasjon og skjorter etter mål</a>, så dressen og resten av garderoben kan ordnes på ett sted.</p>" +
+    "<h2>Midt i Oslo sentrum</h2>" +
+    "<p>Vi holder til i Torggata 8, 0181 Oslo, kort vei fra Jernbanetorget og Stortinget. Enkelt å nå med buss og T-bane, og rett ved Oslo City.</p>" +
+    hoursTableHtml() +
+    faqBodyHtml(DRESS_FAQS) +
+    linksBodyHtml("Les mer", [
+      { href: "/blog/skreddersydd-dress-oslo", label: "Skreddersydd dress i Oslo: 5 ting du bør vite før du bestiller" },
+      { href: "/blog/hva-koster-skreddersydd-dress", label: "Hva koster en skreddersydd dress i Oslo?" },
+      { href: "/blog/dress-til-bryllup-oslo", label: "Dress til bryllup for brudgom og forlover" },
+      { href: "/blog/tilpasning-dress-oslo", label: "Tilpasning av dress: justering eller skreddersøm?" },
+      { href: "/blog/velge-skredder-malsydd-dress", label: "Hvordan velger du riktig skredder til målsydd dress?" },
+      { href: "/tjenester", label: "Se alle skreddertjenestene våre" },
+      { href: "/priser", label: "Gå til prislisten" },
+      { href: "/kontakt", label: "Kontakt og åpningstider" },
+    ])
+  );
+}
+
 // ────────────────────────────────────────────────────────────
 // HTML mutation helpers
 // ────────────────────────────────────────────────────────────
@@ -952,6 +1072,7 @@ function tjenesterBodyHtml() {
     faqBodyHtml(TJENESTER_FAQS) +
     linksBodyHtml("Les mer", [
       { href: "/priser", label: "Se full prisliste" },
+      { href: "/skreddersydd-dress-oslo", label: "Skreddersydd dress i Oslo" },
       { href: "/skomaker-oslo", label: "Skomaker i Oslo sentrum" },
       { href: "/om-oss", label: "Om Ararat Skredderi" },
       { href: "/kontakt", label: "Kontakt og åpningstider" },
@@ -1003,6 +1124,7 @@ function priserBodyHtml() {
     faqBodyHtml(PRISER_FAQS, "Vanlige spørsmål om pris") +
     linksBodyHtml("Les mer", [
       { href: "/tjenester", label: "Alle tjenester i detalj" },
+      { href: "/skreddersydd-dress-oslo", label: "Skreddersydd dress: pris og prosess" },
       { href: "/skomaker-oslo", label: "Priser på skomakerarbeid" },
       { href: "/kontakt", label: "Kom innom Torggata 8" },
       { href: "/blog/skreddersom-oslo", label: "Skreddersøm i Oslo: priser og leveringstid" },
@@ -1173,6 +1295,17 @@ const ROUTES = [
       "I Torggata 8 finner du både skomaker og skredder under ett tak. Vi reparerer såler, hæler, skinn og glidelåser, og kan samtidig ta endringen på klærne mens du er her.",
     bodyHtml: skomakerBodyHtml(),
     schema: skomakerLd(),
+  },
+  {
+    path: "skreddersydd-dress-oslo",
+    title: "Skreddersydd dress i Oslo · Torggata 8",
+    description:
+      "Skreddersydd dress i Oslo sentrum: målsøm fra 8 000 kr, 2 til 4 ukers leveringstid, prøving inkludert. Kostnadsfri konsultasjon i Torggata 8, drop-in mandag til lørdag.",
+    h1: "Skreddersydd dress i Oslo",
+    intro:
+      "En dress sydd etter mål starter med kroppen din, ikke med en standardstørrelse. Hos Ararat Skredderi i Oslo sentrum tar vi målene, du velger stoff og snitt, og dressen prøves underveis til den sitter. Fra 8 000 kr, ferdig på 2 til 4 uker.",
+    bodyHtml: dressBodyHtml(),
+    schema: dressLd(),
   },
   {
     path: "galleri",

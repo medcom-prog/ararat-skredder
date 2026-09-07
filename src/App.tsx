@@ -11,6 +11,7 @@ import Forside from "@/pages/Forside";
 const Tjenester = lazy(() => import("@/pages/Tjenester"));
 const Priser = lazy(() => import("@/pages/Priser"));
 const SkomakerOslo = lazy(() => import("@/pages/SkomakerOslo"));
+const SkreddersyddDressOslo = lazy(() => import("@/pages/SkreddersyddDressOslo"));
 const Galleri = lazy(() => import("@/pages/Galleri"));
 const OmOss = lazy(() => import("@/pages/OmOss"));
 const Kontakt = lazy(() => import("@/pages/Kontakt"));
@@ -65,6 +66,7 @@ export default function App() {
             <Route path="/tjenester" element={<Tjenester />} />
             <Route path="/priser" element={<Priser />} />
             <Route path="/skomaker-oslo" element={<SkomakerOslo />} />
+            <Route path="/skreddersydd-dress-oslo" element={<SkreddersyddDressOslo />} />
             <Route path="/galleri" element={<Galleri />} />
             <Route path="/om-oss" element={<OmOss />} />
             <Route path="/kontakt" element={<Kontakt />} />

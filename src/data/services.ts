@@ -64,6 +64,7 @@ export const services: Service[] = [
       { name: "Leveringstid 2 – 4 uker", description: "Avhenger av kompleksitet og stoffvalg." },
     ],
     readMore: [
+      { href: "/skreddersydd-dress-oslo", label: "Skreddersydd dress i Oslo: pris, prosess og leveringstid" },
       { href: "/blog/skreddersydd-dress-oslo", label: "Skreddersydd dress i Oslo: 5 ting du bør vite før du bestiller" },
       { href: "/blog/hva-koster-skreddersydd-dress", label: "Hva koster en skreddersydd dress i Oslo?" },
       { href: "/blog/velge-skredder-malsydd-dress", label: "Hvordan velger du riktig skredder til målsydd dress?" },

@@ -14,7 +14,7 @@ De fleste kjøper en dress av stangen og prøver å få den til å sitte i siste
 
 ## Hva koster en dress til bryllup sydd etter mål?
 
-[Målsøm av dress](/tjenester#malsom-dresser) starter på 8 000 kr eks. mva. Hvor prisen lander, avhenger først og fremst av stoffet, deretter av detaljgraden. En bryllupsdress i premium ull eller silkeblanding, med finere fôr og knapper, ligger typisk på 12 000 til 18 000 kr.
+[Målsøm av dress](/skreddersydd-dress-oslo) starter på 8 000 kr eks. mva. Hvor prisen lander, avhenger først og fremst av stoffet, deretter av detaljgraden. En bryllupsdress i premium ull eller silkeblanding, med finere fôr og knapper, ligger typisk på 12 000 til 18 000 kr.
 
 Stoffet betyr mer enn de fleste tror. Ull gir skarpe linjer og holder fasongen. Silkeblanding gir glans og mykt fall, og er populært til sommerbryllup. Lin puster godt, men krøller lett. Vi går gjennom stoffprøver i konsultasjonsmøtet, som er kostnadsfritt, og forklarer hva som passer til sesong, tidspunkt på døgnet og hvordan du tenker å bruke dressen etterpå.
 

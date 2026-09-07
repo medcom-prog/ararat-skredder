@@ -42,6 +42,7 @@ const ROUTES = [
   { path: "/tjenester", changefreq: "monthly", priority: "0.9" },
   { path: "/priser", changefreq: "monthly", priority: "0.9" },
   { path: "/skomaker-oslo", changefreq: "monthly", priority: "0.8" },
+  { path: "/skreddersydd-dress-oslo", changefreq: "monthly", priority: "0.8" },
   { path: "/galleri", changefreq: "monthly", priority: "0.8" },
   { path: "/om-oss", changefreq: "monthly", priority: "0.7" },
   { path: "/kontakt", changefreq: "yearly", priority: "0.8" },
