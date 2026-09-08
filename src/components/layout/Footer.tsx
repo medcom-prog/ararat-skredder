@@ -18,6 +18,7 @@ function TikTokIcon({ className }: { className?: string }) {
 const FOOTER_LINKS = [
   { to: "/tjenester", label: "Tjenester" },
   { to: "/priser", label: "Priser" },
+  { to: "/skredder-oslo", label: "Skredder i Oslo" },
   { to: "/skomaker-oslo", label: "Skomaker i Oslo" },
   { to: "/skreddersydd-dress-oslo", label: "Skreddersydd dress" },
   { to: "/galleri", label: "Galleri" },

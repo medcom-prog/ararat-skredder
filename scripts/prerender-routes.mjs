@@ -431,6 +431,49 @@ const PRISER_FAQS = [
 ];
 
 // Mirror of skomakerFaqs in src/pages/SkomakerOslo.tsx.
+// /skredder-oslo — speiler src/pages/SkredderOslo.tsx. Samme faktapolicy:
+// bare tall som allerede står publisert (fra 200 kr, 200-400 kr, fra 2 500 kr,
+// fra 8 000 kr, fra 300 kr, 1-3 dager, 2-5 uker, 2-4 uker).
+// HOLD I SYNC med komponenten.
+const SKREDDER_FAQS = [
+  {
+    q: "Hva koster en skredder i Oslo?",
+    a: "Hos Ararat Skredderi starter reparasjon og endring på 200 kr. Å legge opp bukser, skjørt eller ermer koster 200-400 kr, og glidelås starter på 200 kr. Skreddersydd skjorte starter på 2 500 kr og målsøm av dress på 8 000 kr eks. mva. Du får alltid bindende pris etter at vi har sett plagget, aldri et anslag over telefon.",
+  },
+  {
+    q: "Må jeg bestille time hos skredderen?",
+    a: "Nei. Vi har drop-in mandag til lørdag i Torggata 8, og du trenger ingen avtale. Ta med plagget, så vurderer vi det mens du venter og gir deg bindende pris før vi starter. Vil du sjekke noe på forhånd, kan du ringe oss på 91 92 19 08.",
+  },
+  {
+    q: "Hvor lang tid tar det?",
+    a: "Enkle endringer som lengdejustering, glidelås eller knapper er vanligvis ferdig innen 1-3 dager. Omforming og mer omfattende arbeid tar 2-5 uker. Målsøm av dress tar normalt 2-4 uker fra måltaking til ferdig plagg. Vi avtaler hentetidspunkt ved innlevering.",
+  },
+  {
+    q: "Hvor i Oslo holder skredderen til?",
+    a: "Vi holder til i Torggata 8, 0181 Oslo, midt i sentrum. Det er kort vei fra Jernbanetorget og Stortinget, og enkelt å nå med buss og T-bane.",
+  },
+  {
+    q: "Syr dere for både dame og herre?",
+    a: "Ja. Vi tar endringer, reparasjon og omforming av både dame- og herreklær, og syr skjorter, bluser og dresser etter mål. Brudeplagg, kostymer og uniformer tar vi som spesialbestillinger.",
+  },
+  {
+    q: "Finnes det en billig skredder i Oslo sentrum?",
+    a: "Prisen avhenger av jobben, ikke av adressen. Hos oss starter de vanligste endringene på 200 kr, og du får bindende pris før arbeidet begynner, slik at du kan si nei hvis det ikke er verdt det. Vi priser ingenting usett, nettopp fordi et lavt telefonanslag som vokser underveis ikke er billig for noen.",
+  },
+  {
+    q: "Kan dere fikse plagget mens jeg venter?",
+    a: "Vi vurderer plagget mens du venter og gir deg pris med en gang, men selve arbeidet legges i køen på verkstedet. Enkle jobber er som regel klare innen 1-3 dager.",
+  },
+  {
+    q: "Er dere både skredder og skomaker?",
+    a: "Ja. I Torggata 8 har vi skredder og skomaker under samme tak. Du kan levere både klær og sko i ett og samme besøk, og slipper å oppsøke to verksteder.",
+  },
+  {
+    q: "Hvilke språk snakker dere?",
+    a: "Vi snakker norsk, engelsk og arabisk i butikken.",
+  },
+];
+
 const SKOMAKER_FAQS = [
   {
     q: "Hva koster en skoreparasjon?",
@@ -709,6 +752,43 @@ function priserLd() {
       ]),
       webPageSpeakableLd(url, "Priser hos Ararat Skredderi"),
       faqLd(PRISER_FAQS),
+    ],
+  };
+}
+
+function skredderLd() {
+  const url = `${SITE}/skredder-oslo`;
+  return {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": `${url}#service`,
+        name: "Skredder i Oslo sentrum",
+        serviceType: "Skreddertjenester",
+        description:
+          "Skredder i Torggata 8, midt i Oslo sentrum: endringer og reparasjon fra 200 kr, omforming, og skreddersøm etter mål. Bindende pris før arbeidet starter, drop-in mandag til lørdag.",
+        provider: { "@id": `${SITE}/#localbusiness` },
+        areaServed: { "@type": "City", name: "Oslo" },
+        availableLanguage: ["no", "en", "ar"],
+        hasOfferCatalog: {
+          "@type": "OfferCatalog",
+          name: "Skreddertjenester i Oslo sentrum",
+          itemListElement: [
+            priceOffer({ name: "Endring og reparasjon", minPrice: 200 }),
+            priceOffer({ name: "Legge opp bukser, skjørt eller ermer", minPrice: 200, maxPrice: 400 }),
+            priceOffer({ name: "Bytte glidelås", minPrice: 200 }),
+            priceOffer({ name: "Skreddersydd skjorte eller bluse", minPrice: 2500 }),
+            priceOffer({ name: "Målsøm av dress", minPrice: 8000 }),
+          ],
+        },
+      },
+      breadcrumbLd([
+        { name: "Hjem", url: `${SITE}/` },
+        { name: "Skredder i Oslo", url },
+      ]),
+      webPageSpeakableLd(url, "Skredder i Oslo sentrum"),
+      faqLd(SKREDDER_FAQS),
     ],
   };
 }
@@ -1072,6 +1152,7 @@ function tjenesterBodyHtml() {
     faqBodyHtml(TJENESTER_FAQS) +
     linksBodyHtml("Les mer", [
       { href: "/priser", label: "Se full prisliste" },
+      { href: "/skredder-oslo", label: "Skredder i Oslo sentrum" },
       { href: "/skreddersydd-dress-oslo", label: "Skreddersydd dress i Oslo" },
       { href: "/skomaker-oslo", label: "Skomaker i Oslo sentrum" },
       { href: "/om-oss", label: "Om Ararat Skredderi" },
@@ -1125,6 +1206,7 @@ function priserBodyHtml() {
     linksBodyHtml("Les mer", [
       { href: "/tjenester", label: "Alle tjenester i detalj" },
       { href: "/skreddersydd-dress-oslo", label: "Skreddersydd dress: pris og prosess" },
+      { href: "/skredder-oslo", label: "Skredder i Oslo sentrum" },
       { href: "/skomaker-oslo", label: "Priser på skomakerarbeid" },
       { href: "/kontakt", label: "Kom innom Torggata 8" },
       { href: "/blog/skreddersom-oslo", label: "Skreddersøm i Oslo: priser og leveringstid" },
@@ -1286,6 +1368,17 @@ const ROUTES = [
     schema: priserLd(),
   },
   {
+    path: "skredder-oslo",
+    title: "Skredder i Oslo sentrum · Torggata 8",
+    description:
+      "Skredder i Torggata 8, Oslo sentrum: endringer og reparasjon fra 200 kr, skjorte fra 2 500 kr, dress etter mål fra 8 000 kr. Bindende pris, drop-in mandag til lørdag.",
+    h1: "Skredder i Oslo sentrum",
+    intro:
+      "Torggata 8 ligger noen minutter fra Jernbanetorget. Ta med plagget uten avtale, så ser vi på det mens du venter og sier hva det koster. Endringer og reparasjon starter på 200 kr, og skredderen og skomakeren holder til i samme lokale.",
+    bodyHtml: skredderBodyHtml(),
+    schema: skredderLd(),
+  },
+  {
     path: "skomaker-oslo",
     title: "Skomaker i Oslo sentrum · Torggata 8",
     description:
@@ -1438,6 +1531,46 @@ function blogIndexBodyHtml() {
 // og var usynlig for no-JS AI-crawlere — kun FAQ-en fantes i rå HTML (som
 // JSON-LD). Speiler seksjonene ordrett inn i #root så «skomaker oslo»-dybden
 // (1000/mnd) faktisk leses av GPTBot/ClaudeBot. HOLD I SYNC med SkomakerOslo.tsx.
+function skredderBodyHtml() {
+  return (
+    "<h2>Hva skredderen gjør</h2>" +
+    "<p>Mesteparten av det som kommer inn døra er endringer: noe er for langt, for vidt eller har røket. Vi tar også omforming av plagg du allerede eier, og syr skjorter, bluser og dresser etter mål.</p>" +
+    listHtml([
+      "Legge opp bukser, skjørt og ermer",
+      "Ta inn eller ut i livet for bedre passform",
+      "Bytte glidelås i bukser, jakker og kjoler",
+      "Reparere rifter, sømmer, knapper og fôr",
+      "Omforming og tilpasning av plagg du allerede eier",
+      "Skreddersydde skjorter, bluser og dresser etter mål",
+    ]) +
+    "<h2>Det folk oftest kommer med</h2>" +
+    "<p>En bukse som er for lang, en jakke som er for vid over ryggen, en glidelås som har røket midt i sesongen. Dette er jobbene vi gjør flest av, og de fleste av dem er ferdig innen 1-3 dager.</p>" +
+    "<p>Lengdejustering av bukser, skjørt og ermer koster 200-400 kr, avhengig av plagget og om falden skal beholdes. Å ta inn eller ut i livet starter på 200 kr. Bytte av glidelås starter også på 200 kr, men prisen avhenger av om det er bukse, jakke eller kjole, og hvilken type glidelås som må inn. Derfor ser vi på plagget først.</p>" +
+    "<h2>Nye plagg etter mål</h2>" +
+    "<p>Skreddermester Ahmad Abdulhamid har over 50 års erfaring med håndverket, og tar plagg fra måltaking til ferdig resultat. En skreddersydd skjorte eller bluse starter på 2 500 kr og tar normalt 2-3 uker. Målsøm av dress starter på 8 000 kr eks. mva. og tar 2-4 uker, med prøvinger underveis.</p>" +
+    "<p>Omforming er det andre sporet: et arvet plagg som skal passe deg, en kjole som skal moderniseres, en jakke som skal få nytt liv. Slike oppdrag tar 2-5 uker, avhengig av hva som skal gjøres. Brudeplagg, kostymer og uniformer tar vi som spesialbestillinger, priset etter prosjekt.</p>" +
+    "<h2>Pris og tid</h2>" +
+    "<p>Vi priser ingenting usett. Du kommer innom med plagget, vi ser på det mens du venter, og du får en bindende pris før arbeidet starter. Da kan du også si nei, uten at det har kostet deg noe. Full prisliste ligger på prissiden.</p>" +
+    "<p>Leveringstiden avhenger av jobben. Enkle endringer 1-3 dager, omforming 2-5 uker, dress etter mål 2-4 uker. Hentetidspunkt avtaler vi ved innlevering. Vi har drop-in mandag til lørdag og snakker norsk, engelsk og arabisk.</p>" +
+    "<h2>Skredder og skomaker i samme lokale</h2>" +
+    "<p>I Torggata 8 sitter skredderen og skomakeren sammen. Har du en jakke som skal tas inn og et par sko som trenger nye såler, leverer du begge deler i samme besøk. Skomakerarbeid starter på 300 kr og sålereparasjon på 400 kr.</p>" +
+    "<h2>Midt i Oslo sentrum</h2>" +
+    "<p>Vi holder til i Torggata 8, 0181 Oslo, kort vei fra Jernbanetorget og Stortinget. Enkelt å nå med buss og T-bane, og rett ved Oslo City.</p>" +
+    hoursTableHtml() +
+    faqBodyHtml(SKREDDER_FAQS) +
+    linksBodyHtml("Les mer", [
+      { href: "/priser", label: "Se full prisliste" },
+      { href: "/skreddersydd-dress-oslo", label: "Skreddersydd dress i Oslo" },
+      { href: "/skomaker-oslo", label: "Skomaker i Oslo sentrum" },
+      { href: "/tjenester", label: "Alle skreddertjenestene våre" },
+      { href: "/blog/skreddersom-oslo", label: "Skreddersøm i Oslo: hva det koster og hvor lang tid det tar" },
+      { href: "/blog/legge-opp-bukse-oslo", label: "Legge opp bukse i Oslo på 1-3 dager" },
+      { href: "/blog/skreddersydd-skjorte-oslo", label: "Skreddersydd skjorte i Oslo" },
+      { href: "/kontakt", label: "Kontakt og åpningstider" },
+    ])
+  );
+}
+
 function skomakerBodyHtml() {
   return (
     "<h2>Hva vi reparerer</h2>" +

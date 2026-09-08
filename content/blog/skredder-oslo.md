@@ -31,7 +31,7 @@ Hva som styrer dressprisen derfra kan du lese i [prisguiden for skreddersydd dre
 
 Hvis noen tilbyr forkorting av silkekjole til 100 kr, går arbeidet på samlebånd, og kvalitetskontrollen forsvinner på veien. Omvendt: den som tar 1 200 kr for å forkorte en vanlig bomullsbukse, tar betalt for beliggenhet eller merkevare, ikke nødvendigvis for håndverk.
 
-Et ærlig verksted setter prisen etter å ha sett plagget, ikke over telefon. Stoffer oppfører seg forskjellig, og noen ganger er plagget allerede skadet på innsiden. Veiledende startpriser ligger på [prissiden](/priser).
+Et ærlig verksted setter prisen etter å ha sett plagget, ikke over telefon. Stoffer oppfører seg forskjellig, og noen ganger er plagget allerede skadet på innsiden. Veiledende startpriser ligger på [prissiden](/priser), og hva vi gjør i Torggata 8 står samlet på siden om [skredder i Oslo sentrum](/skredder-oslo).
 
 ## Hvordan vet du om verkstedet passer deg?
 

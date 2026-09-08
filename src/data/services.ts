@@ -98,6 +98,7 @@ export const services: Service[] = [
       { name: "Større reparasjoner får eget prisoverslag", description: "Komplekse jobber prises individuelt." },
     ],
     readMore: [
+      { href: "/skredder-oslo", label: "Skredder i Oslo sentrum: priser og leveringstid" },
       { href: "/blog/legge-opp-bukse-oslo", label: "Legge opp bukse i Oslo på 1–3 dager" },
       { href: "/blog/sy-inn-bukse-oslo", label: "Sy inn bukse som er for stor i livet eller setet" },
       { href: "/blog/legge-opp-kjole-oslo", label: "Legge opp kjole i Oslo uten at fallet blir feil" },
