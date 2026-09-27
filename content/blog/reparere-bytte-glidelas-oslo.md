@@ -1,11 +1,11 @@
 ---
 title: "Bytte glidelås i Oslo: kan den repareres, eller må hele skiftes?"
 slug: "reparere-bytte-glidelas-oslo"
-meta_title: "Bytte glidelås i Oslo: pris og tid | Ararat Skredderi"
-meta_description: "Bytte av glidelås i bukse, jakke eller kjole starter på 200 kr eks. mva. i Oslo sentrum, og er vanligvis ferdig på 1–3 dager. Drop-in i Torggata 8."
+meta_title: "Reparere eller bytte glidelås i Oslo: pris og tid | Ararat Skredderi"
+meta_description: "En glidelås som låser seg kan ofte repareres; er båndet revet, byttes hele. Reparasjon og bytte av glidelås i bukse, jakke eller kjole fra 200 kr eks. mva. i Torggata 8, Oslo sentrum, vanligvis ferdig på 1–3 dager."
 keyword: "bytte glidelås oslo"
 published_at: "2026-08-04"
-updated_at: "2026-08-04"
+updated_at: "2026-09-27"
 hero_image: "/images/gallery/araratworkingwithmachine.jpg"
 ---
 
