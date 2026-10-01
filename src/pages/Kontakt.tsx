@@ -11,7 +11,12 @@ import { generalFaqs } from "@/data/faqs";
 export default function Kontakt() {
   // OpenStreetMap embed — no API key, no tracking. Same view as Google Maps
   // for the casual user. Direct "Åpne i Google Maps" link sits next to it.
-  const osmEmbed = `https://www.openstreetmap.org/export/embed.html?bbox=10.7475%2C59.9153%2C10.7519%2C59.9183&layer=mapnik&marker=${BUSINESS.address.geo.lat}%2C${BUSINESS.address.geo.lng}`;
+  // The bounding box is centred on the marker so the shop is always in view.
+  const { lat, lng } = BUSINESS.address.geo;
+  const bbox = [lng - 0.0022, lat - 0.0015, lng + 0.0022, lat + 0.0015]
+    .map((n) => n.toFixed(4))
+    .join("%2C");
+  const osmEmbed = `https://www.openstreetmap.org/export/embed.html?bbox=${bbox}&layer=mapnik&marker=${lat}%2C${lng}`;
 
   return (
     <>

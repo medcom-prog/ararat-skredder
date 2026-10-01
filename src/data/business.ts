@@ -38,7 +38,10 @@ export const BUSINESS = {
     region: "Oslo",
     country: "Norge",
     countryCode: "NO" as const,
-    geo: { lat: 59.9168, lng: 10.7497 },
+    // Kartverket address register (ws.geonorge.no/adresser), Torggata 8,
+    // 0181 Oslo: 59.914076, 10.747739. The old 59.9168/10.7497 sat ~320 m
+    // north. Keep index.html's LocalBusiness geo in sync with this value.
+    geo: { lat: 59.9141, lng: 10.7477 },
     googleMapsUrl: "https://www.google.com/maps/search/?api=1&query=Ararat+Skredderi+Torggata+8+Oslo",
   },
   contact: {
