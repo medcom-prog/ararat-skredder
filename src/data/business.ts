@@ -60,10 +60,10 @@ export const BUSINESS = {
     tiktok: "https://www.tiktok.com/@ararat.skredderof",
   },
   authority: {
-    brreg: "https://www.brreg.no/enhet/989361244",
+    brreg: "https://virksomhet.brreg.no/nb/oppslag/enheter/989361244",
     proff:
-      "https://www.proff.no/selskap/ararat-skredder-renseri-skomaker-n%C3%B8kkel-filling-ahmad-abdulhamid/oslo/skreddere/IFW7L9D02J9",
-    nr1881: "https://www.1881.no/Ararat-Skredder/E6F94AAB7E994B26ABE0EAEAFA02D9DD/",
+      "https://www.proff.no/selskap/ararat-skredderi-abdulhamid-ahmad/oslo/tekstiler-og-tilbeh%C3%B8r/IGD1G0S07R0",
+    nr1881: "https://www.1881.no/skreddere-og-systuer/skreddere-og-systuer-oslo/skreddere-og-systuer-oslo-sentrum/ararat-skredderi-renseri-skomaker-noekkel-filling_101168837S10/",
   },
   priceRange: "200-15000 NOK",
   domain: "https://www.araratskredderi.no",

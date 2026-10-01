@@ -76,7 +76,7 @@ Bedriften har vært drevet i nåværende form siden 2006. Skreddermester Ahmad A
 - Ararat Skredderi, åpningstider, adresse og kontakt: https://www.araratskredderi.no/kontakt
 - Ararat Skredderi, veiledende prisliste: https://www.araratskredderi.no/priser
 - Ararat Skredderi, maskinlesbart faktaark: https://www.araratskredderi.no/llms.txt
-- Brønnøysundregistrene, org.nr. 989361244: https://www.brreg.no/enhet/989361244
+- Brønnøysundregistrene, org.nr. 989361244: https://virksomhet.brreg.no/nb/oppslag/enheter/989361244
 - Ruter, reiseplanlegger for Oslo: https://ruter.no
 
 ---

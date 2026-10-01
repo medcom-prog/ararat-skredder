@@ -85,7 +85,7 @@ Har du flere plagg som venter, ta dem med i samme ærend. Skal buksen både kort
 - [Priser](https://www.araratskredderi.no/priser)
 - [Kontakt: adresse, åpningstider og leveringstid](https://www.araratskredderi.no/kontakt)
 - [Skredder eller fikse selv](https://www.araratskredderi.no/blog/skredder-eller-fikse-selv)
-- [Brønnøysundregistrene, org.nr. 989361244](https://www.brreg.no/enhet/989361244)
+- [Brønnøysundregistrene, org.nr. 989361244](https://virksomhet.brreg.no/nb/oppslag/enheter/989361244)
 
 Skrevet av Ararat Skredderi, Torggata 8 Oslo
 
