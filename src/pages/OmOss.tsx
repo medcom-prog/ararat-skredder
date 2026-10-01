@@ -50,9 +50,11 @@ export default function OmOss() {
           <Reveal as="div" className="md:col-span-7 min-w-0">
             <p className="eyebrow">Om oss</p>
             <h1 className="mt-4 text-display-1 text-foreground break-words">
-              <span className="block">{yearsExperience}+ år med</span>
+              {/* The 50+ years are Ahmad's own, not the shop's (Brreg: 2006),
+                  so the heading names the master tailor as its subject. */}
+              <span className="block">Skreddermester med</span>
               <span className="block font-serif font-medium italic text-accent">
-                håndverkstradisjon
+                {yearsExperience}+ års erfaring
               </span>
             </h1>
             <p className="mt-5 max-w-xl text-base leading-relaxed text-muted-foreground md:text-lg">

@@ -1416,7 +1416,7 @@ const ROUTES = [
     title: "Om oss · Skreddermester med 50+ års erfaring",
     description:
       "Skreddermester Ahmad Abdulhamid har 50+ års erfaring med håndverket. Ararat Skredderi i Torggata 8, Oslo sentrum.",
-    h1: "50+ år med håndverkstradisjon",
+    h1: "Skreddermester med 50+ års erfaring",
     intro:
       "Skreddermester Ahmad Abdulhamid har i mer enn 50 år levert kvalitetsarbeid innen reparasjon, tilpasning og søm av nye klær.",
     bodyHtml: omOssBodyHtml(),
