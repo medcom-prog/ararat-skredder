@@ -1,10 +1,11 @@
 ---
 title: "Sy om brudekjole i Oslo: slik fungerer det"
 slug: "sy-om-brudekjole-oslo"
-meta_title: "Sy om brudekjole i Oslo · Slik fungerer det"
-meta_description: "Skal du sy om brudekjolen? Slik foregår tilpasning av brudekjole i Oslo: hva som kan endres, når du bør bestille prøving, og hvordan prisen settes."
+meta_title: "Sy om brudekjole hos skredder i Oslo"
+meta_description: "Skredder for brudekjole i Torggata 8, Oslo: ta inn i livet, korte hvert lag og justere stropper. Første prøving 4–6 uker før bryllupet, bindende pris først."
 keyword: "sy om brudekjole"
 published_at: "2026-07-07"
+updated_at: "2026-10-01"
 hero_image: "/images/gallery/araratsowingwithmachine.jpg"
 ---
 
