@@ -18,7 +18,7 @@ Reparasjon handler om å fikse det som er ødelagt: bytte glidelås, sy i knappe
 
 Omforming betyr at plagget finnes, men skal endres. Bukser som skal inn i livet, en jakke som skal smalnes, en kjole som skal forkortes, eller et arvet plagg som skal fornyes med respekt for originalen. Her trengs erfaring med passform og konstruksjon, og prisen settes etter vurdering av plagget. Ingen seriøs skredder priser en omforming uten å ha sett plagget først.
 
-Målsøm er når skredderen bygger plagget fra bunnen av, etter mål tatt av kroppen din. Det gjelder dresser, skjorter, brudeplagg og spesialbestillinger, og prosessen går fra konsultasjon og måltaking til prøvinger og ferdigstilling. En skreddersydd skjorte starter på 2 500 kr, og målsøm av dress starter på 8 000 kr.
+Målsøm er når skredderen bygger plagget fra bunnen av, etter mål tatt av kroppen din. Det gjelder dresser, skjorter, brudeplagg og spesialbestillinger, og prosessen går fra konsultasjon og måltaking til prøvinger og ferdigstilling. En [skreddersydd skjorte](/blog/skreddersydd-skjorte-oslo) starter på 2 500 kr, og målsøm av dress starter på 8 000 kr.
 
 Skillet er verdt å lære seg. Ber du om «å sy om» en dress når du egentlig trenger målsøm, eller omvendt, får du feil forventninger til både pris og resultat.
 
