@@ -1,8 +1,8 @@
 ---
 title: "Skomaker på Majorstuen? Verkstedet ligger i Torggata"
 slug: "skomaker-majorstuen"
-meta_title: "Skomaker på Majorstuen? Verkstedet ligger i Torggata"
-meta_description: "Leter du etter skomaker på Majorstuen? Ararat Skredderi ligger i Torggata 8 i Oslo sentrum. Skomaker og skredder under samme tak, drop-in seks dager i uken."
+meta_title: "Skomaker Majorstuen: et kvarter unna i sentrum"
+meta_description: "Skomaker på Majorstuen? Ararat Skredderi i Torggata 8 er et kvarter unna med T-bane. Såler, hæler og glidelås fra 300 kr, bindende pris, drop-in seks dager i uken."
 keyword: "skomaker majorstuen"
 published_at: "2026-08-08"
 hero_image: "/images/gallery/araratdoingshoework.jpg"
