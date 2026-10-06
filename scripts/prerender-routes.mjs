@@ -255,6 +255,8 @@ const PRICE_GROUPS = [
     readMore: [
       { label: "Sy om dressen i stedet for å kjøpe ny", href: "/blog/sy-om-dress-oslo" },
       { label: "Bytte glidelås, eller kan den repareres?", href: "/blog/reparere-bytte-glidelas-oslo" },
+      { label: "Reparere klær i Oslo: hva kan fikses, og hva koster det?", href: "/blog/reparere-klaer-oslo" },
+      { label: "Reparere jeans: hull, slitasje og rifter", href: "/blog/reparere-jeans-oslo" },
     ],
   },
   {
@@ -310,6 +312,7 @@ const PRICE_GROUPS = [
     ],
     readMore: [
       { label: "Når bør du levere skoene til reparasjon?", href: "/blog/skoreparasjon-oslo" },
+      { label: "Bytte såle på sko: hva det koster og når det lønner seg", href: "/blog/bytte-sale-pa-sko" },
     ],
   },
 ];
@@ -1599,6 +1602,7 @@ function skomakerBodyHtml() {
     linksBodyHtml("Les mer", [
       { href: "/blog/skoreparasjon-oslo", label: "Skoreparasjon i Oslo: når bør du levere skoene inn?" },
       { href: "/blog/reparere-bytte-glidelas-oslo", label: "Bytte glidelås i Oslo: kan den repareres, eller må hele skiftes?" },
+      { href: "/blog/bytte-sale-pa-sko", label: "Bytte såle på sko: hva det koster og når det lønner seg" },
       { href: "/blog/skomaker-majorstuen", label: "Skomaker på Majorstuen? Verkstedet ligger i Torggata" },
       { href: "/tjenester", label: "Se alle skreddertjenestene våre" },
       { href: "/priser", label: "Gå til prislisten" },

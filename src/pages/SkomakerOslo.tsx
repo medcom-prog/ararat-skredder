@@ -319,6 +319,13 @@ export default function SkomakerOslo() {
               <ArrowRight className="h-4 w-4" aria-hidden="true" />
             </Link>
             <Link
+              to="/blog/bytte-sale-pa-sko"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-soft"
+            >
+              Bytte såle på sko: hva det koster og når det lønner seg
+              <ArrowRight className="h-4 w-4" aria-hidden="true" />
+            </Link>
+            <Link
               to="/blog/skomaker-majorstuen"
               className="inline-flex items-center gap-1.5 text-sm font-medium text-accent hover:text-accent-soft"
             >

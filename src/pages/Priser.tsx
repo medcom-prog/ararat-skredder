@@ -79,6 +79,14 @@ const priceGroups: PriceGroup[] = [
         label: "Les mer: Bytte glidelås, eller kan den repareres?",
         href: "/blog/reparere-bytte-glidelas-oslo",
       },
+      {
+        label: "Les mer: Reparere klær i Oslo: hva kan fikses, og hva koster det?",
+        href: "/blog/reparere-klaer-oslo",
+      },
+      {
+        label: "Les mer: Reparere jeans: hull, slitasje og rifter",
+        href: "/blog/reparere-jeans-oslo",
+      },
     ],
   },
   {
@@ -142,6 +150,10 @@ const priceGroups: PriceGroup[] = [
       {
         label: "Les mer: Når bør du levere skoene til reparasjon?",
         href: "/blog/skoreparasjon-oslo",
+      },
+      {
+        label: "Les mer: Bytte såle på sko: hva det koster og når det lønner seg",
+        href: "/blog/bytte-sale-pa-sko",
       },
     ],
   },
