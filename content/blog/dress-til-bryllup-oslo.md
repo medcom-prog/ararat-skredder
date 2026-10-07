@@ -4,7 +4,7 @@ slug: "dress-til-bryllup-oslo"
 meta_title: "Dress til bryllup for brudgom og forlover | Ararat Oslo"
 meta_description: "Dress til bryllup sydd etter mål for brudgom og forlover. Fra 8 000 kr eks. mva., normalt 2 til 4 ukers leveringstid. Torggata 8 i Oslo, drop-in."
 published_at: "2026-09-05"
-updated_at: "2026-09-05"
+updated_at: "2026-10-07"
 keyword: "dress til bryllup"
 author_byline: "Ararat Skredderi, Torggata 8 Oslo"
 ---
@@ -14,7 +14,7 @@ De fleste kjøper en dress av stangen og prøver å få den til å sitte i siste
 
 ## Hva koster en dress til bryllup sydd etter mål?
 
-[Målsøm av dress](/skreddersydd-dress-oslo) starter på 8 000 kr eks. mva. Hvor prisen lander, avhenger først og fremst av stoffet, deretter av detaljgraden. En bryllupsdress i premium ull eller silkeblanding, med finere fôr og knapper, ligger typisk på 12 000 til 18 000 kr.
+[Målsøm av dress](/skreddersydd-dress-oslo) starter på 8 000 kr eks. mva. Hvor prisen lander, avhenger først og fremst av stoffet, deretter av detaljgraden. En bryllupsdress i premium ull eller silkeblanding, med finere fôr og knapper, ligger over startprisen, og hvor mye avgjøres av stoffvalget i konsultasjonen.
 
 Stoffet betyr mer enn de fleste tror. Ull gir skarpe linjer og holder fasongen. Silkeblanding gir glans og mykt fall, og er populært til sommerbryllup. Lin puster godt, men krøller lett. Vi går gjennom stoffprøver i konsultasjonsmøtet, som er kostnadsfritt, og forklarer hva som passer til sesong, tidspunkt på døgnet og hvordan du tenker å bruke dressen etterpå.
 
@@ -32,7 +32,7 @@ Brudgommen velger som regel snitt, stoff og detaljer først, og forloverne legge
 
 En vanlig løsning er at brudgommen får dress etter mål, mens forloverne kjøper dress av stangen og får den [tilpasset](/blog/tilpasning-dress-oslo). Tilpasning starter på 200 kr, og å legge opp buksebein koster 200 til 400 kr. Det gir et enhetlig uttrykk uten at alle må betale for målsøm.
 
-Smoking er et alternativ til kveldsbryllup, og stiller andre krav til passform og detaljer enn en vanlig dress. En tre-delers smoking med vest og satengrevers er mer arbeid enn en klassisk to-knapps dress, og forskjellen ligger som regel på 2 000 til 4 000 kr. Er du usikker på om smoking passer anledningen, tar vi det i konsultasjonsmøtet.
+Smoking er et alternativ til kveldsbryllup, og stiller andre krav til passform og detaljer enn en vanlig dress. En tre-delers smoking med vest og satengrevers er mer arbeid enn en klassisk to-knapps dress, og prisen følger arbeidet. Er du usikker på om smoking passer anledningen, tar vi det i konsultasjonsmøtet.
 
 ### Hva skjer i konsultasjonsmøtet?
 

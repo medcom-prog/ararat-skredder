@@ -2,13 +2,14 @@
 title: "Tilpasning av dress i Oslo: justering eller skreddersøm?"
 slug: "tilpasning-dress-oslo"
 meta_title: "Tilpasning av dress i Oslo: justering eller skreddersøm?"
-meta_description: "Justering av dress koster fra 200 kr, omforming prises etter vurdering. Her er hva som kan fikses, og når målsøm til 8 000–12 000 kr lønner seg mer."
+meta_description: "Justering av dress koster fra 200 kr, omforming prises etter vurdering. Her er hva som kan fikses, og når målsøm fra 8 000 kr lønner seg mer."
 keyword: "tilpasning dress oslo"
 published_at: "2026-07-07"
+updated_at: "2026-10-07"
 hero_image: "/images/gallery/araratmeasuringcustomerpants-2.jpg"
 ---
 
-> **Kort forklart**: Tilpasning av dress spenner fra å legge opp buksebein for 200–400 kr til full omforming av jakke og bukse. Sitter skuldrene feil, hjelper det ikke å justere ermene. Og koster omformingen mer enn halvparten av det dressen er verdt, lønner det seg ofte å gå rett på målsøm til 8 000–12 000 kr.
+> **Kort forklart**: Tilpasning av dress spenner fra å legge opp buksebein for 200–400 kr til full omforming av jakke og bukse. Sitter skuldrene feil, hjelper det ikke å justere ermene. Og koster omformingen mer enn halvparten av det dressen er verdt, lønner det seg ofte å gå rett på målsøm fra 8 000 kr eks. mva.
 
 Mange kjøper en dress som nesten passer. Skuldrene sitter omtrent der de skal, jakken kan knappes uten å stramme, og buksene henger greit. Men «nesten» er ikke godt nok til bryllup, jobbintervju eller en anledning der førsteinntrykket teller.
 
@@ -43,7 +44,7 @@ Derfor et råd til deg som skal kjøpe ny dress: velg etter skuldrene. Livet kan
 
 Tommelfingerregelen er enkel. Koster omformingen mer enn halvparten av det dressen er verdt, sier vi det rett ut, for da er den sjelden verdt pengene. Da er det bedre å selge dressen videre og heller kjøpe riktig størrelse, eller gå for en [skreddersydd dress](/blog/skreddersydd-dress-oslo) som bygges rundt kroppen din fra første måltaking.
 
-En enkel målsydd dress i klassisk ull ligger på 8 000–12 000 kr. En ferdigkjøpt dress pluss flere runder med omforming kan fort nærme seg det samme, uten at resultatet blir like godt. Den målsydde passer fra dag én, og alle detaljer kan velges. Hva som styrer prisen står i [prisguiden for skreddersydd dress](/blog/hva-koster-skreddersydd-dress).
+En målsydd dress i klassisk ull starter på 8 000 kr eks. mva., og stoffet avgjør hvor prisen lander. En ferdigkjøpt dress pluss flere runder med omforming kan fort nærme seg det samme, uten at resultatet blir like godt. Den målsydde passer fra dag én, og alle detaljer kan velges. Hva som styrer prisen står i [prisguiden for skreddersydd dress](/blog/hva-koster-skreddersydd-dress).
 
 Usikker på hva dressen din trenger? En konsultasjon avgjør det på minutter. Skulder, bryst, liv, lengde og balanse sjekkes mens du har dressen på, og du får et bindende prisoverslag før noe sys. Vent bare ikke til uken før arrangementet, for i bryllupssesongen fra mai til august er pågangen størst, og større omforminger trenger tid til prøving.
 
