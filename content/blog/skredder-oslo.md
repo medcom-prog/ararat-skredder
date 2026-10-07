@@ -5,7 +5,7 @@ meta_title: "Billig skredder i Oslo? 5 ting du bør sjekke først"
 meta_description: "Leter du etter en billig skredder i Oslo? Fem ting som avgjør om lavpris blir god verdi, fra bindende prisoverslag til prøving og spesialisering."
 keyword: "billig skredder oslo"
 published_at: "2026-07-07"
-updated_at: "2026-07-17"
+updated_at: "2026-10-08"
 hero_image: "/images/gallery/pointingatfabric.jpg"
 ---
 
@@ -29,7 +29,7 @@ Spør alltid: «Hva må du gjøre for å få dette til å passe?» Ikke bare: «
 
 Hva som styrer dressprisen derfra kan du lese i [prisguiden for skreddersydd dress](/blog/hva-koster-skreddersydd-dress). En full gjennomgang av tjenestene, med priser og leveringstider, finner du i [oversikten over skreddersøm i Oslo](/blog/skreddersom-oslo).
 
-Hvis noen tilbyr forkorting av silkekjole til 100 kr, går arbeidet på samlebånd, og kvalitetskontrollen forsvinner på veien. Omvendt: den som tar 1 200 kr for å forkorte en vanlig bomullsbukse, tar betalt for beliggenhet eller merkevare, ikke nødvendigvis for håndverk.
+Hvis noen tilbyr forkorting av silkekjole til en pris som knapt dekker tråden, går arbeidet på samlebånd, og kvalitetskontrollen forsvinner på veien. Omvendt: den som tar flere ganger vanlig pris for å forkorte en enkel bomullsbukse, tar betalt for beliggenhet eller merkevare, ikke nødvendigvis for håndverk.
 
 Et ærlig verksted setter prisen etter å ha sett plagget, ikke over telefon. Stoffer oppfører seg forskjellig, og noen ganger er plagget allerede skadet på innsiden. Veiledende startpriser ligger på [prissiden](/priser), og hva vi gjør i Torggata 8 står samlet på siden om [skredder i Oslo sentrum](/skredder-oslo).
 

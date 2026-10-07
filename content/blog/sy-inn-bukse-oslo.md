@@ -1,15 +1,15 @@
 ---
 title: "Sy inn bukse som er for stor i livet eller setet"
 slug: "sy-inn-bukse-oslo"
-meta_title: "Sy inn bukse i Oslo | Ararat Skredderi"
-meta_description: "Slik sys en bukse inn hos skredder i Oslo: hvor den tas inn, hvor mye som er mulig, drop-in i Torggata 8 og konkret pris før arbeidet starter."
+meta_title: "Sy inn bukse i livet eller setet: fra 200 kr i Oslo"
+meta_description: "Sy inn bukse hos skredder i Oslo: tas inn i livet, setet eller beina fra 200 kr, enkle jobber ferdige på 1–3 dager. Drop-in i Torggata 8, bindende pris før vi syr."
 keyword: "sy inn bukse"
 published_at: "2026-08-17"
-updated_at: "2026-08-17"
+updated_at: "2026-10-08"
 hero_image: "/images/gallery/araratmeasuringcustomerpants-2.jpg"
 ---
 
-> **Kort forklart**: En bukse som glipper i livet eller poser i setet, kan som regel tas inn en til to størrelser uten at snittet endres. Buksen tas inn der den er for stor, i livet bak, i sidesømmene eller i beina. Hos Ararat Skredderi i Torggata 8 vurderes buksen på stedet, og du får konkret pris og leveringstid før noe sys.
+> **Kort forklart**: En bukse som glipper i livet eller poser i setet, kan som regel tas inn en til to størrelser uten at snittet endres. Buksen tas inn der den er for stor, i livet bak, i sidesømmene eller i beina. Å ta inn i livet starter på 200 kr, og enkle jobber er vanligvis ferdige på 1–3 dager. Hos Ararat Skredderi i Torggata 8 vurderes buksen på stedet, og du får konkret pris og leveringstid før noe sys.
 
 Buksen passer perfekt i lengden og i låret, men glipper i livet så beltet gjør hele jobben. Eller den satt riktig da den ble kjøpt, og nå gjør den ikke det lenger. Begge deler er blant de vanligste grunnene til at bukser leveres inn til skredder.
 
@@ -40,7 +40,7 @@ Stoffet spiller inn på samme måte som ved lengdejustering. Ull i en dressbukse
 
 Hos Ararat Skredderi i Torggata 8 kommer du innom uten avtale, og buksen vurderes på stedet mens du venter. Du prøver buksen, og det markeres med nåler hvor mye den skal inn, mens du står og sitter. En bukse som strammes for mye i livet i stående stilling, blir ubehagelig i det øyeblikket du setter deg, så begge deler sjekkes før noe sys.
 
-Deretter får du konkret pris og leveringstid før arbeidet settes i gang. Veiledende startpriser står på [prissiden](/priser), og endelig pris settes etter vurderingen, siden antall sømmer som skal åpnes avgjør arbeidsmengden. Enkle jobber er vanligvis ferdige på 1–3 dager, mer komplekse endringer tar lengre tid, og trenger du buksen til en bestemt dato, si fra ved innlevering.
+Deretter får du konkret pris og leveringstid før arbeidet settes i gang. Å ta inn eller ut i livet starter på 200 kr, resten av startprisene står på [prissiden](/priser), og endelig pris settes etter vurderingen, siden antall sømmer som skal åpnes avgjør arbeidsmengden. Enkle jobber er vanligvis ferdige på 1–3 dager, mer komplekse endringer tar lengre tid, og trenger du buksen til en bestemt dato, si fra ved innlevering.
 
 Ta med et belte hvis du bruker det til buksen, og skoene hvis buksen også skal legges opp i samme ærend. Har du en bukse som allerede sitter riktig, er den det enkleste referansepunktet for hvordan du vil at denne skal sitte.
 

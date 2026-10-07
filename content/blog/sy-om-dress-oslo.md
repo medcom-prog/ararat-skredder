@@ -5,6 +5,7 @@ meta_title: "Sy om dress i Oslo · Pris og muligheter 2026"
 meta_description: "Å sy inn en dress i Oslo starter på 200 kr per justering. Se hva som kan endres, hva det koster, hvor lang tid det tar, og når omsying ikke lønner seg."
 keyword: "sy om dress oslo"
 published_at: "2026-07-07"
+updated_at: "2026-10-08"
 hero_image: "/images/gallery/araratmeasuringcustomerpants.jpg"
 ---
 
@@ -39,7 +40,7 @@ Og hvis dressen egentlig aldri har passet? Da er spørsmålet om du skal justere
 
 ## Når lønner det seg ikke å sy om dressen?
 
-**En enkel tommelfingerregel: koster omsyingen mer enn halvparten av det en tilsvarende dress koster ny, bør du tenke deg om.** En dress til 1 500 kr som trenger 800 kr i justeringer, er sjelden verdt det. En dress til 12 000 kr som trenger de samme 800 kr, er det åpenbart.
+**En enkel tommelfingerregel: koster omsyingen mer enn halvparten av det en tilsvarende dress koster ny, bør du tenke deg om.** En billig dress som trenger justeringer flere steder, er sjelden verdt det. En dress til flere tusen kroner som trenger de samme justeringene, er det åpenbart.
 
 Tre situasjoner taler mot omsying. Dressen skal mer enn to størrelser inn eller ut, da endres proporsjonene og resultatet blir sjelden pent. Skuldrene sitter feil, som nevnt den dyreste jobben på plagget. Eller stoffet er limt i stedet for sydd, noe som er vanlig i de billigste dressene og tåler få inngrep.
 

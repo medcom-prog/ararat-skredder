@@ -5,7 +5,7 @@ meta_title: "Skreddersydd dress i Oslo · Slik bestiller du"
 meta_description: "Slik bestiller du skreddersydd dress i Oslo: prosessen steg for steg hos skredderen i Torggata 8, leveringstid 2-4 uker, og når målsøm lønner seg."
 keyword: "skreddersydd dress oslo"
 published_at: "2026-05-26"
-updated_at: "2026-07-17"
+updated_at: "2026-10-08"
 hero_image: "/images/gallery/araratstandingbehindcounter.jpg"
 ---
 
@@ -33,12 +33,12 @@ Kvalitet ser du i detaljene, ikke i markedsføringen. Sjekk om mønsteret flyter
 
 ## Når lønner det seg å gå skreddersydd fremfor justert hyllevare?
 
-Hyllevarer fra butikk koster 1 500 til 4 000 kr. Tar du den med til en skredder for [justering](/blog/tilpasning-dress-oslo), ender du på 2 000 til 6 000 kr totalt. En målsydd dress starter på [8 000 kr](/blog/hva-koster-skreddersydd-dress).
+Hyllevarer fra butikk varierer mye i pris, og tar du dressen med til en skredder for [justering](/blog/tilpasning-dress-oslo), kommer det i tillegg: fra 200 kr per justering, og 200–400 kr for å legge opp buksebein eller ermer. En målsydd dress starter på [8 000 kr](/blog/hva-koster-skreddersydd-dress) eks. mva.
 
 Tre tilfeller hvor skreddersydd nesten alltid lønner seg:
 
 1. Du har en kropp som ikke matcher standardstørrelsene. Brede skuldre og smal midje. Lange armer og kort overkropp. Hyllevarer sliter med disse profilene fordi de er laget etter et matematisk gjennomsnitt.
-2. Du skal bruke dressen mye. En målsydd dress holder i 10 til 15 år hvis stoffet er godt. Det blir 600 til 1 000 kr per år, billigere enn å bytte hyllevare hver tredje sesong. Regn gjerne per bruk: en dress til 10 000 kr som brukes hver uke i fem år, koster under 40 kr per gang. Samme dress brukt én gang koster 10 000 kr per gang. Regnestykket endrer seg fort.
+2. Du skal bruke dressen mye. En målsydd dress holder i 10 til 15 år hvis stoffet er godt. Fordelt på ti år blir startprisen på 8 000 kr til 800 kr i året, billigere enn å bytte hyllevare hver tredje sesong. Regn gjerne per bruk: brukes den hver uke i fem år, koster den rundt 30 kr per gang. Samme dress brukt én gang koster 8 000 kr per gang. Regnestykket endrer seg fort.
 3. Anledningen krever det. Eget bryllup, sentral talerolle, fotosesjon. Det er forskjell på en dress som passer greit og en som faktisk er din.
 
 I motsatt fall: hvis du trenger en dress raskt, til en enkeltanledning, og du har en standardkropp, er en justert hyllevare fornuftig. Vi sier det selv om det betyr at du ikke kommer til oss.
