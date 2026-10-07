@@ -311,6 +311,10 @@ export default function SkreddersyddDressOslo() {
             målsøm. Les mer om{" "}
             <Link to="/blog/tilpasning-dress-oslo" className="text-accent hover:underline">
               tilpasning av dress
+            </Link>
+            ,{" "}
+            <Link to="/blog/hvordan-skal-en-dress-sitte" className="text-accent hover:underline">
+              hvordan en dress skal sitte
             </Link>{" "}
             eller{" "}
             <Link to="/blog/skreddersydd-dress-oslo" className="text-accent hover:underline">

@@ -1,15 +1,15 @@
 ---
 title: "Legge opp bukse i Oslo på 1–3 dager"
 slug: "legge-opp-bukse-oslo"
-meta_title: "Legge opp bukse i Oslo | Ararat Skredderi"
-meta_description: "Slik legger skredderen opp en bukse: drop-in i Torggata 8, måltaking med skoene dine, bindende prisoverslag og enkle jobber ferdig på 1–3 dager."
+meta_title: "Legge opp bukse i Oslo: 200–400 kr på 1–3 dager"
+meta_description: "Legge opp bukse hos skredder i Oslo koster 200–400 kr og tar 1–3 dager. Drop-in i Torggata 8, prøv buksen med skoene dine og få bindende pris før vi starter."
 keyword: "legge opp bukse"
 published_at: "2026-08-08"
-updated_at: "2026-08-08"
+updated_at: "2026-10-07"
 hero_image: "/images/gallery/araratmeasuringcustomerpants.jpg"
 ---
 
-> **Kort forklart**: Å legge opp en bukse tar vanligvis 1–3 dager hos Ararat Skredderi i Torggata 8. Du kommer innom uten avtale, prøver buksen med skoene du faktisk skal bruke, og får bindende prisoverslag før arbeidet starter. Skal den originale kanten på et par jeans beholdes, kortes buksen ovenfra i stedet for nedenfra.
+> **Kort forklart**: Å legge opp en bukse koster 200–400 kr og tar vanligvis 1–3 dager hos Ararat Skredderi i Torggata 8. Du kommer innom uten avtale, prøver buksen med skoene du faktisk skal bruke, og får bindende prisoverslag før arbeidet starter. Skal den originale kanten på et par jeans beholdes, kortes buksen ovenfra i stedet for nedenfra.
 
 Buksen ligger og bretter seg over skotuppen. Eller den ble kjøpt i riktig midje og feil lengde, som er en vanlig kombinasjon i en garderobe.
 
@@ -29,7 +29,7 @@ Hos Ararat Skredderi kommer du innom Torggata 8 uten avtale, og buksen vurderes 
 | Sying og pressing | Buksen kortes, falden sys og plagget presses | 1–3 dager for enkle jobber |
 | Henting | Buksen er klar til avtalt tid | Etter avtale |
 
-Prisoverslaget er bindende. Det betyr at du vet hva jobben koster før den settes i gang, og at du kan si nei hvis regnestykket ikke går opp. Veiledende startpriser står på [prissiden](/priser), mens endelig pris settes når buksen er sett.
+Å legge opp en bukse koster 200–400 kr, avhengig av plagg og om falden skal beholdes. Prisoverslaget er bindende. Det betyr at du vet hva jobben koster før den settes i gang, og at du kan si nei hvis regnestykket ikke går opp. Veiledende startpriser står på [prissiden](/priser), mens endelig pris settes når buksen er sett.
 
 Større jobber er en annen historie. Mer komplekse reparasjoner og omforminger tar 2–5 uker, og en bukse som skal gjøres om, ikke bare kortes, hører hjemme der. Trenger du buksen til en bestemt dato, si fra ved innlevering.
 

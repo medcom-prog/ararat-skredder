@@ -4,7 +4,7 @@ slug: "hvordan-skal-en-dress-sitte"
 meta_title: "Hvordan skal en dress sitte? | Ararat Skredderi"
 meta_description: "Hvordan skal en dress sitte? Slik sjekker du skuldre, ermer, jakkelengde og buksefall selv, og hva en skredder i Oslo kan justere etterpå."
 published_at: "2026-09-05"
-updated_at: "2026-09-05"
+updated_at: "2026-10-07"
 keyword: "hvordan skal en dress sitte"
 author_byline: "Ararat Skredderi, Torggata 8 Oslo"
 ---
@@ -20,7 +20,7 @@ Start med skuldrene. Sømmen der ermet møter jakken skal treffe ytterkanten av 
 
 Sjekk deretter kragen. Den skal ligge flatt mot skjortekragen hele veien rundt, uten luft bak nakken og uten at den bygger seg opp i en rull. Løfter kragen seg fra nakken, sitter jakken for langt bak eller er skåret for en annen holdning enn din.
 
-Dette er punktet der en avgjørelse tas. Skulderkonstruksjonen er selve fundamentet i en dressjakke, og å bygge den om betyr i praksis å ta jakken fra hverandre. Det er sjelden verdt kostnaden. Sitter skuldrene, kan resten justeres. Sitter de ikke, bør du velge en annen jakke eller vurdere [målsøm](/tjenester#malsom-dresser).
+Dette er punktet der en avgjørelse tas. Skulderkonstruksjonen er selve fundamentet i en dressjakke, og å bygge den om betyr i praksis å ta jakken fra hverandre. Det er sjelden verdt kostnaden. Sitter skuldrene, kan resten justeres. Sitter de ikke, bør du velge en annen jakke eller vurdere en [skreddersydd dress](/skreddersydd-dress-oslo).
 
 ## Jakken: bryst, vidde og lengde
 
@@ -69,7 +69,7 @@ Dette er vanskelig eller ulønnsomt:
 - Å endre selve snittet, for eksempel fra vid til smal silhuett i hele jakken
 - Bryststørrelse på en jakke som er flere størrelser for liten
 
-Grensen mellom justering og omforming er tema i [Tilpasning av dress i Oslo](/blog/tilpasning-dress-oslo). Skal plagget bygges for kroppen din fra første sting i stedet, starter [målsøm av dress](/tjenester#malsom-dresser) på 8 000 kr eks. mva., med normal leveringstid på 2 til 4 uker. Fullstendig oversikt står på [prissiden](/priser).
+Grensen mellom justering og omforming er tema i [Tilpasning av dress i Oslo](/blog/tilpasning-dress-oslo). Skal plagget bygges for kroppen din fra første sting i stedet, starter [målsøm av dress](/skreddersydd-dress-oslo) på 8 000 kr eks. mva., med normal leveringstid på 2 til 4 uker. Fullstendig oversikt står på [prissiden](/priser).
 
 ## Sjekk passformen selv på fem minutter
 

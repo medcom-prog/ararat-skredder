@@ -931,7 +931,7 @@ function dressBodyHtml() {
     "<p>Til jobb er en klassisk forretningsdress i ull det vanligste valget: to-knapps, klassiske detaljer, et stoff som holder fasongen gjennom en lang dag. Til fest og kveldsarrangement er smoking et alternativ, med satengrevers og andre krav til passform enn en vanlig dress.</p>" +
     "<h2>Skreddersydd, eller tilpasset hyllevare?</h2>" +
     "<p>Skreddersydd lønner seg når kroppen ikke matcher standardstørrelsene, når dressen skal brukes mye, eller når anledningen krever et plagg som faktisk er ditt. Trenger du en dress raskt, til én anledning, og har en standardkropp, er en justert hyllevare ofte det fornuftige valget. Tilpasning starter på 200 kr, og vi gjør det gjerne.</p>" +
-    "<p>Vi sier det som det er, også når svaret er at du ikke trenger målsøm. Les mer om <a href=\"/blog/tilpasning-dress-oslo\">tilpasning av dress</a> eller <a href=\"/blog/skreddersydd-dress-oslo\">fem ting du bør vite før du bestiller</a>.</p>" +
+    "<p>Vi sier det som det er, også når svaret er at du ikke trenger målsøm. Les mer om <a href=\"/blog/tilpasning-dress-oslo\">tilpasning av dress</a>, <a href=\"/blog/hvordan-skal-en-dress-sitte\">hvordan en dress skal sitte</a> eller <a href=\"/blog/skreddersydd-dress-oslo\">fem ting du bør vite før du bestiller</a>.</p>" +
     "<h2>Skreddermester Ahmad Abdulhamid</h2>" +
     "<p>Skreddermester Ahmad Abdulhamid har over 50 års erfaring med håndverket, og tar hver dress personlig fra måltaking til siste prøving. Vi snakker norsk, engelsk og arabisk, og verkstedet i Torggata 8 tar også <a href=\"/tjenester\">endringer, reparasjon og skjorter etter mål</a>, så dressen og resten av garderoben kan ordnes på ett sted.</p>" +
     "<h2>Midt i Oslo sentrum</h2>" +
@@ -943,6 +943,7 @@ function dressBodyHtml() {
       { href: "/blog/hva-koster-skreddersydd-dress", label: "Hva koster en skreddersydd dress i Oslo?" },
       { href: "/blog/dress-til-bryllup-oslo", label: "Dress til bryllup for brudgom og forlover" },
       { href: "/blog/tilpasning-dress-oslo", label: "Tilpasning av dress: justering eller skreddersøm?" },
+      { href: "/blog/hvordan-skal-en-dress-sitte", label: "Hvordan skal en dress sitte?" },
       { href: "/blog/velge-skredder-malsydd-dress", label: "Hvordan velger du riktig skredder til målsydd dress?" },
       { href: "/tjenester", label: "Se alle skreddertjenestene våre" },
       { href: "/priser", label: "Gå til prislisten" },
